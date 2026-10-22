@@ -25,7 +25,7 @@ max_err, same_top10 = 0.0, 0
 for q in questions:
     # bm25s ("lucene") omet le facteur constant (k1 + 1) du numérateur : on l'enlève pour comparer.
     # Un facteur constant ne change pas le classement.
-    a = ours.scores(q["question"]) / (ours.k1 + 1)
+    a = np.array(ours.scores(q["question"])) / (ours.k1 + 1)
     b = ref.get_scores(tokenize(q["question"]))
     max_err = max(max_err, float(np.abs(a - b).max()))
     same_top10 += set(np.argsort(-a)[:10]) == set(np.argsort(-b)[:10])
