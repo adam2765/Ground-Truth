@@ -1,0 +1,31 @@
+﻿id;doc_id;page;categorie;A_complet;A_chiffres;A_ordre;B_complet;B_chiffres;B_ordre;note
+1;insee-ip2036;2;scan;0;0;0;2;1;2;"page image sans couche texte : A vide ; OCR B lisible, quelques erreurs de caractères (ex. 'biesurer', '|a')"
+2;cc-effacements-electricite;38;graphique;2;1;2;2;1;2;graphique vectoriel : axes et légende dans le texte, mais valeurs représentées par des barres/courbes absentes des deux
+3;cc-effacements-electricite;64;graphique;2;1;2;2;1;2;graphique vectoriel : axes et légende dans le texte, mais valeurs représentées par des barres/courbes absentes des deux
+4;insee-ip2051;2;tableau;2;2;1;2;2;1;"tableau vectoriel : valeurs présentes dans A et B ; A = une cellule par ligne, B = une ligne par rangée mais frontières de cellules perdues"
+5;insee-ip2113;4;graphique;2;1;2;2;1;2;graphique vectoriel : axes et légende dans le texte, mais valeurs représentées par des barres/courbes absentes des deux
+6;insee-ip2062;2;tableau;2;2;1;2;2;1;"tableau vectoriel : valeurs présentes dans A et B ; A = une cellule par ligne, B = une ligne par rangée mais frontières de cellules perdues"
+7;insee-ip2082;1;tableau;2;2;1;2;2;1;"tableau vectoriel : valeurs présentes dans A et B ; A = une cellule par ligne, B = une ligne par rangée mais frontières de cellules perdues"
+8;insee-ip2103;2;scan;0;0;0;2;1;2;"page image sans couche texte : A vide ; OCR B lisible, quelques erreurs de caractères (ex. 'biesurer', '|a')"
+9;insee-ip2103;1;scan;0;0;0;2;1;2;"page image sans couche texte : A vide ; OCR B lisible, quelques erreurs de caractères (ex. 'biesurer', '|a')"
+10;insee-ip2103;3;scan;0;0;0;2;1;2;"page image sans couche texte : A vide ; OCR B lisible, quelques erreurs de caractères (ex. 'biesurer', '|a')"
+11;insee-ip2127;4;scan;0;0;0;2;1;2;"page image sans couche texte : A vide ; OCR B lisible, quelques erreurs de caractères (ex. 'biesurer', '|a')"
+12;insee-ip2069;2;tableau;2;2;1;2;2;1;"tableau vectoriel : valeurs présentes dans A et B ; A = une cellule par ligne, B = une ligne par rangée mais frontières de cellules perdues"
+13;cc-informatique-quantique;39;graphique;1;1;2;2;1;2;"diagramme de Sankey en image : A n'a que le texte autour ; OCR B récupère une partie des étiquettes avec montants (96,8 M€, 310,9 M€), erreurs 'ME' pour M€"
+14;insee-ip2039;2;graphique;2;1;2;2;1;2;graphique vectoriel : axes et légende dans le texte, mais valeurs représentées par des barres/courbes absentes des deux
+15;cc-vaccination-synthese;6;scan;0;0;0;2;1;2;"page image sans couche texte : A vide ; OCR B lisible, quelques erreurs de caractères (ex. 'biesurer', '|a')"
+16;cc-vaccination;7;scan;2;2;2;2;2;2;page texte (la question citait un document numérisé mais cette page a sa couche texte) : A = B
+17;insee-ip2064;3;graphique;2;1;2;2;1;2;graphique vectoriel : axes et légende dans le texte, mais valeurs représentées par des barres/courbes absentes des deux
+18;insee-ip2093;2;graphique;2;1;2;2;1;2;graphique vectoriel : axes et légende dans le texte, mais valeurs représentées par des barres/courbes absentes des deux
+19;cc-effacements-electricite;56;tableau;2;2;1;2;2;1;"tableau vectoriel : valeurs présentes dans A et B ; A = une cellule par ligne, B = une ligne par rangée mais frontières de cellules perdues"
+20;insee-ip2107;3;tableau;2;2;1;2;2;1;"tableau vectoriel : valeurs présentes dans A et B ; A = une cellule par ligne, B = une ligne par rangée mais frontières de cellules perdues"
+21;insee-ip2059;2;graphique;2;1;2;2;1;2;graphique vectoriel : axes et légende dans le texte, mais valeurs représentées par des barres/courbes absentes des deux
+22;insee-ip2046;1;tableau;2;2;1;2;2;1;"tableau vectoriel : valeurs présentes dans A et B ; A = une cellule par ligne, B = une ligne par rangée mais frontières de cellules perdues"
+23;insee-ip2076;3;tableau;2;2;1;2;2;1;"tableau vectoriel : valeurs présentes dans A et B ; A = une cellule par ligne, B = une ligne par rangée mais frontières de cellules perdues"
+24;cc-pac-synthese;7;scan;0;0;0;2;1;2;"page image sans couche texte : A vide ; OCR B lisible, quelques erreurs de caractères (ex. 'biesurer', '|a')"
+25;cc-retraites-fonctionnaires-etat;105;image de graphique;0;0;0;2;2;2;lettre scannée insérée comme image dans une page texte : A presque vide, OCR B récupère tout le texte
+26;cc-pac;133;image de graphique;1;0;1;1;0;0;"tableau entier en image (couleurs) : A n'a que le titre ; OCR B illisible. Nécessiterait un OCR de tableau ou un modèle de vision"
+27;cc-finances-locales-2026;121;image de graphique;1;1;2;2;1;2;graphique en image : B ajoute axes et légende, valeurs des barres absentes
+28;cc-finances-locales-2026;56;image de graphique;1;1;2;2;1;2;graphique en image : B ajoute années et légende, valeurs absentes
+29;cc-finances-locales-2026;211;image de graphique;1;0;2;2;1;2;camemberts en image : B récupère la légende et un seul pourcentage (17 %) sur six
+30;cc-recherche-entreprises;85;image de graphique;1;1;2;2;1;2;graphique en image : B ajoute la légende (organismes), valeurs absentes
