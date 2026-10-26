@@ -29,7 +29,32 @@ tableaux sont déjà dans le texte. Les valeurs encore manquantes sont surtout d
 entre deux chiffres, « 32 milliers » à écrire 32 000) ou des valeurs dessinées dans un graphique : c'est
 le travail du LLM, ou d'une description des graphiques par un modèle de vision (piste suivante).
 
-Annotation manuelle de 30 pages difficiles : `annotation/annoter.html` (à remplir, export CSV).
+### Annotation de 30 pages difficiles
+
+`annotation/annoter.html` (pages + les deux textes côte à côte), notes dans `annotation/annotations.csv`.
+Annotation réalisée par Claude (assistant IA) en regardant chaque page rendue, à vérifier par Adam.
+A = texte brut PyMuPDF, B = texte + OCR (retenue). Notes de 0 (mauvais) à 2 (bon), moyennes :
+
+| Catégorie | n | A complet | A chiffres | A ordre | B complet | B chiffres | B ordre |
+|---|---|---|---|---|---|---|---|
+| scan | 8 | 0,2 | 0,2 | 0,2 | 2,0 | 1,1 | 2,0 |
+| graphique vectoriel | 8 | 1,9 | 1,0 | 2,0 | 2,0 | 1,0 | 2,0 |
+| tableau | 8 | 2,0 | 2,0 | 1,0 | 2,0 | 2,0 | 1,0 |
+| graphique en image | 6 | 0,8 | 0,5 | 1,5 | 1,8 | 1,0 | 1,7 |
+| **tout** | 30 | 1,3 | 1,0 | 1,2 | **2,0** | **1,3** | **1,7** |
+
+Ce que l'annotation a appris :
+- **L'OCR règle les scans** (texte complet, quelques erreurs de caractères) et récupère le texte des
+  images insérées (une lettre scannée en annexe, des étiquettes de graphiques).
+- **Elle a révélé un bug de B** : la première version lisait les blocs avec `sort=True`, qui trie par
+  position verticale ; sur les pages Insee en 3 colonnes, les paragraphes des colonnes étaient mélangés.
+  Corrigé (ordre natif du PDF), voir `rag2/parse.py`.
+- **Les valeurs des graphiques restent le point faible** (chiffres : 1,0) : barres, courbes et camemberts
+  ne portent souvent pas leurs valeurs en texte, et l'OCR n'en récupère qu'une partie (1 pourcentage
+  sur 6 sur un camembert). Piste : décrire les graphiques à l'indexation avec un modèle de vision.
+- **Tableaux** : toutes les valeurs sont là, mais la structure est fragile (A : une cellule par ligne ;
+  B : une ligne par rangée, frontières de cellules perdues). Un tableau entièrement en image (page 133
+  du rapport PAC) reste illisible.
 
 ## 2. Recherche (BM25 seul, sans GPU)
 
@@ -46,12 +71,16 @@ Stratégies de découpage (BM25 racinisé, avec OCR) :
 
 | Chunking | Chunks | Recall@5 | Recall@10 | MRR |
 |---|---|---|---|---|
-| naive (200 mots, recouvrement 50) | 8 772 | 0,786 | 0,864 | 0,601 |
-| naive_title (+ titre du document) | 8 772 | 0,792 | 0,851 | 0,588 |
-| page (une page = un chunk) | 2 625 | 0,779 | 0,851 | 0,582 |
-| struct_title (paragraphes ~180 mots + titre) | 6 974 | **0,805** | 0,838 | **0,609** |
+| naive (200 mots, recouvrement 50) | 8 772 | 0,779 | 0,831 | 0,583 |
+| naive_title (+ titre du document) | 8 772 | 0,779 | 0,838 | 0,597 |
+| page (une page = un chunk) | 2 625 | 0,792 | 0,851 | 0,583 |
+| struct_title (paragraphes ~180 mots + titre) | 6 961 | 0,779 | 0,838 | 0,604 |
 
-Point faible restant : les questions multi-doc (Recall@5 = 0,40).
+(Après correction de l'ordre de lecture. Avant correction, struct_title faisait 0,805 : l'écart
+correspond à 2 questions sur 77, du bruit à cette taille d'échantillon. Les stratégies sont proches en
+BM25 seul ; la comparaison qui compte est celle avec la recherche dense et le reranker.)
+
+Point faible restant : les questions multi-doc (Recall@5 ≈ 0,40).
 
 ## 3. Recherche hybride, reranker, génération, abstention (GPU)
 

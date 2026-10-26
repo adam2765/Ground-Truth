@@ -64,8 +64,9 @@ def read_pdf_dir(pdf_dir: str, ocr: bool = True, ocr_images: bool = True, worker
                     if ocr:
                         jobs.append((len(pages), "page", str(pdf_path), pno, None))
                 else:
-                    # blocs de texte dans l'ordre de lecture (type 0 = texte)
-                    for b in page.get_text("blocks", sort=True):
+                    # blocs de texte dans l'ordre natif du PDF (type 0 = texte). Pas de sort=True : sur les pages
+                    # en colonnes, le tri par position verticale mélange les paragraphes des colonnes.
+                    for b in page.get_text("blocks"):
                         if b[6] == 0 and _clean(b[4]):
                             rec["blocks"].append(_clean(b[4]))
                     if ocr and ocr_images:
