@@ -4,3 +4,5 @@ index/
 runs/
 __pycache__/
 *.pyc
+index2/
+annotation/annotations.csv
