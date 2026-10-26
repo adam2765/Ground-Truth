@@ -65,9 +65,14 @@ def cmd_retrieve(args):
 
     cfg = defaults(args.index_dir)
     strategy, mode = args.strategy or cfg["strategy"], args.mode or cfg["mode"]
+    qs = load_questions(args.questions)
+    if Path(args.out).exists():                         # reprise après une coupure : déjà fait
+        old = json.loads(Path(args.out).read_text(encoding="utf-8"))
+        if old.get("strategy") == strategy and old.get("mode") == mode and len(old["items"]) == len(qs):
+            print(f"recherche déjà faite -> {args.out}")
+            return
     r = Retriever(args.index_dir, strategy, use_dense=mode != "bm25", use_rerank=mode == "hybrid_rerank")
     items, t0 = [], time.time()
-    qs = load_questions(args.questions)
     for n, q in enumerate(qs, 1):
         hits = r.search(q["question"], mode=mode, k=20)
         items.append({"qid": q["qid"], "hits": hits, "retrieved": ranked_pages(r.chunks, hits)})
@@ -87,22 +92,41 @@ def cmd_generate(args):
     ret = json.loads(Path(args.retrieval).read_text(encoding="utf-8"))
     chunks = json.loads((Path(args.index_dir) / ret["strategy"] / "chunks.json").read_text(encoding="utf-8"))
     by_qid = {it["qid"]: it for it in ret["items"]}
-    gen = OfficialGenerator(backend=args.backend)
-    preds, t0 = [], time.time()
     qs = load_questions(args.questions)
+    # Reprise après une coupure : chaque réponse est ajoutée à un fichier .partial.jsonl au fil de l'eau.
+    partial = Path(str(args.out) + ".partial.jsonl")
+    done = {}
+    if partial.exists():
+        for line in partial.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                p = json.loads(line)
+                done[p["qid"]] = p
+        print(f"reprise : {len(done)}/{len(qs)} réponses déjà faites")
+    preds, t0, n_new = [], time.time(), 0
+    gen = OfficialGenerator(backend=args.backend) if len(done) < len(qs) else None
     for n, q in enumerate(qs, 1):
+        if q["qid"] in done:
+            preds.append(done[q["qid"]])
+            continue
         it = by_qid[q["qid"]]
         p = answer_one(gen, q, chunks, it["hits"])
         p["retrieved"] = it["retrieved"]
         preds.append(p)
+        n_new += 1
+        with partial.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(p, ensure_ascii=False) + "\n")
         if n % 10 == 0 or n == len(qs):
-            print(f"  {n}/{len(qs)} ({(time.time() - t0) / n:.1f} s/question) {q['qid']}: {p['answer'][:70]}",
+            print(f"  {n}/{len(qs)} ({(time.time() - t0) / max(n_new, 1):.1f} s/question) {q['qid']}: {p['answer'][:70]}",
                   flush=True)
     write_predictions(args.out, preds, run_name=f"rag2-{ret['strategy']}-{ret['mode']}")
+    partial.unlink(missing_ok=True)
     print(f"réponses brutes (avant abstention calibrée) -> {args.out}")
 
 
 def cmd_answer(args):
+    if Path(args.out).exists() and not Path(str(args.out) + ".partial.jsonl").exists():
+        print(f"déjà fait -> {args.out}")
+        return
     ret_path = str(Path(args.out).with_suffix("")) + "_retrieval.json"
     base = [sys.executable, "-m", "rag2.pipeline"]
     r = ["retrieve", "--index-dir", args.index_dir, "--questions", args.questions, "--out", ret_path]
