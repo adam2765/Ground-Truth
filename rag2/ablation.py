@@ -72,8 +72,7 @@ def main():
     print("Recall@5 par type :", best["recall@5_par_type"])
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
-    if len(modes) > 1:      # on ne fixe la config que sur une ablation complète
-        (idx / "best.json").write_text(json.dumps({"strategy": best["strategy"], "mode": best["mode"]}))
+    (idx / "best.json").write_text(json.dumps({"strategy": best["strategy"], "mode": best["mode"]}))
 
 
 if __name__ == "__main__":
