@@ -120,7 +120,16 @@ dans le contexte : le problème est la génération, pas la recherche. Analyse d
   devient INTROUVABLE. Rejoué sur les réponses du run 1 : score brut 0,17 → **0,29** (10 réponses
   fausses écartées pour 1 juste) ;
 - 2e appel au générateur : auto-vérification (OUI/NON) de la réponse sur les extraits cités, utilisée
-  comme critère d'abstention si la calibration le juge utile.
+  comme critère d'abstention si la calibration le juge utile ;
+- **tableaux lisibles** : une rangée de tableau était aplatie en « Zone urbaine 91 567 44 243 740 21 19 4,7 72 »
+  (impossible de savoir où finit un nombre). Les cellules sont maintenant séparées :
+  « Zone urbaine | 91 567 | 44 243 740 | 21 | 19 | 4,7 | 72 » (`block_text` dans `rag2/parse.py`) ;
+- **réponse ancrée** (variante « cite ») : le modèle recopie d'abord la phrase ou la ligne de tableau qui
+  contient la réponse (`EXTRAIT: "..."`), puis répond. Le code vérifie que cette phrase existe vraiment
+  dans les extraits (80 % des mots et tous les nombres) : sinon, indice d'invention pour la calibration ;
+- **balayage de variantes** : `court5` (réponse courte, 5 extraits), `cite5` (citation + réponse, 5 extraits),
+  `cite3` (3 extraits) sont générées et notées par le juge officiel sur la validation ; la meilleure après
+  calibration est utilisée pour le leaderboard.
 
 Abstention : on répond INTROUVABLE si le modèle s'abstient, si le score du reranker du meilleur passage
 est sous un seuil, ou (option) si la réponse contient des chiffres absents des extraits. Le seuil et

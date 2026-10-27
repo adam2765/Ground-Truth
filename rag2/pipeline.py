@@ -19,6 +19,7 @@ from pathlib import Path
 
 import numpy as np
 
+from rag2.answer import DEFAULT_VARIANT, VARIANTS
 from rag2.chunking import STRATEGIES, make_chunks
 
 DEFAULT = {"strategy": "struct_title", "mode": "hybrid_rerank"}
@@ -109,7 +110,7 @@ def cmd_generate(args):
             preds.append(done[q["qid"]])
             continue
         it = by_qid[q["qid"]]
-        p = answer_one(gen, q, chunks, it["hits"])
+        p = answer_one(gen, q, chunks, it["hits"], variant=args.variant)
         p["retrieved"] = it["retrieved"]
         preds.append(p)
         n_new += 1
@@ -118,7 +119,7 @@ def cmd_generate(args):
         if n % 10 == 0 or n == len(qs):
             print(f"  {n}/{len(qs)} ({(time.time() - t0) / max(n_new, 1):.1f} s/question) {q['qid']}: {p['answer'][:70]}",
                   flush=True)
-    write_predictions(args.out, preds, run_name=f"rag2-{ret['strategy']}-{ret['mode']}")
+    write_predictions(args.out, preds, run_name=f"rag2-{ret['strategy']}-{ret['mode']}-{args.variant}")
     partial.unlink(missing_ok=True)
     print(f"réponses brutes (avant abstention calibrée) -> {args.out}")
 
@@ -136,7 +137,8 @@ def cmd_answer(args):
         r += ["--mode", args.mode]
     subprocess.run(base + r, check=True)
     subprocess.run(base + ["generate", "--index-dir", args.index_dir, "--retrieval", ret_path,
-                           "--questions", args.questions, "--out", args.out, "--backend", args.backend], check=True)
+                           "--questions", args.questions, "--out", args.out, "--backend", args.backend,
+                           "--variant", args.variant], check=True)
 
 
 def main():
@@ -159,12 +161,14 @@ def main():
         b.add_argument("--mode", default=None, choices=["bm25", "dense", "hybrid", "hybrid_rerank"])
         if name == "answer":
             b.add_argument("--backend", default="hf", choices=["hf", "openai", "echo"])
+            b.add_argument("--variant", default=DEFAULT_VARIANT, choices=list(VARIANTS))
     g = sub.add_parser("generate")
     g.add_argument("--index-dir", required=True)
     g.add_argument("--retrieval", required=True)
     g.add_argument("--questions", required=True)
     g.add_argument("--out", required=True)
     g.add_argument("--backend", default="hf", choices=["hf", "openai", "echo"])
+    g.add_argument("--variant", default=DEFAULT_VARIANT, choices=list(VARIANTS))
     args = ap.parse_args()
     {"index": cmd_index, "retrieve": cmd_retrieve, "generate": cmd_generate, "answer": cmd_answer}[args.cmd](args)
 

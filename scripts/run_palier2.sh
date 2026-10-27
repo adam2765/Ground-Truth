@@ -43,20 +43,36 @@ else
 fi
 cat index2/best.json; echo
 
-step "3. Validation : 100 questions"
-python -m rag2.pipeline answer --index-dir index2 --questions data/validation_v1.json --out runs/val_raw.json --backend "$BACKEND" $MODE_ARG
-
-step "   Notation par le juge officiel"
-[ -f runs/val_report.json ] || python -m groundtruth.evaluate --pred runs/val_raw.json --gold data/validation_v1.json \
-  --judge "$JUDGE" --out runs/val_report.json
-
-step "   Calibration de l'abstention"
-python -m rag2.calibrate fit --raw runs/val_raw.json --report runs/val_report.json --gold data/validation_v1.json \
-  --out index2/abstention.json
+step "3. Validation : recherche (une fois), puis chaque variante de génération"
+VARIANTS="${VARIANTS:-cite5 court5 cite3}"
+python -m rag2.pipeline retrieve --index-dir index2 --questions data/validation_v1.json --out runs/val_retrieval.json $MODE_ARG
+for V in $VARIANTS; do
+  step "   Variante $V : 100 questions"
+  [ -f "runs/val_raw_$V.json" ] || python -m rag2.pipeline generate --index-dir index2 --retrieval runs/val_retrieval.json \
+    --questions data/validation_v1.json --out "runs/val_raw_$V.json" --backend "$BACKEND" --variant "$V"
+  step "   Variante $V : notation par le juge officiel"
+  [ -f "runs/val_report_$V.json" ] || python -m groundtruth.evaluate --pred "runs/val_raw_$V.json" \
+    --gold data/validation_v1.json --judge "$JUDGE" --out "runs/val_report_$V.json"
+  python -c "import json; r=json.load(open('runs/val_report_$V.json')); print('score brut', r['score_confiance'], r['issues'])"
+  python -m rag2.calibrate fit --raw "runs/val_raw_$V.json" --report "runs/val_report_$V.json" \
+    --gold data/validation_v1.json --out "index2/abstention_$V.json"
+done
+BEST=$(python - $VARIANTS <<'PY'
+import json, sys
+scores = {v: json.load(open(f"index2/abstention_{v}.json"))["validation_score_calibre"] for v in sys.argv[1:]}
+print(max(scores, key=scores.get))
+PY
+)
+echo "Variante retenue : $BEST"
+cp "index2/abstention_$BEST.json" index2/abstention.json
+cp "runs/val_raw_$BEST.json" runs/val_raw.json
+cp "runs/val_report_$BEST.json" runs/val_report.json
 python -m rag2.calibrate apply --raw runs/val_raw.json --rule index2/abstention.json --out runs/val_final.json
 
-step "4. Leaderboard v1 : 200 questions"
-python -m rag2.pipeline answer --index-dir index2 --questions data/classement_v1_questions.json --out runs/cls_raw.json --backend "$BACKEND" $MODE_ARG
+step "4. Leaderboard v1 : 200 questions (variante $BEST)"
+python -m rag2.pipeline retrieve --index-dir index2 --questions data/classement_v1_questions.json --out runs/cls_retrieval.json $MODE_ARG
+python -m rag2.pipeline generate --index-dir index2 --retrieval runs/cls_retrieval.json \
+  --questions data/classement_v1_questions.json --out runs/cls_raw.json --backend "$BACKEND" --variant "$BEST"
 python -m rag2.calibrate apply --raw runs/cls_raw.json --rule index2/abstention.json --out runs/classement_v1.json
 python -m groundtruth.submit --pred runs/classement_v1.json --phase v1
 
@@ -66,6 +82,7 @@ python - "$OUT/resultats.zip" <<'PY'
 import glob, os, sys, zipfile
 files = ["runs/ablation_retrieval.json", "runs/val_report.json", "runs/val_raw.json", "runs/cls_raw.json",
          "runs/classement_v1.json", "index2/abstention.json", "index2/best.json"] + \
+        glob.glob("runs/val_raw_*.json") + glob.glob("runs/val_report_*.json") + glob.glob("index2/abstention_*.json") + \
         sorted(glob.glob("submissions/v1/*"), key=os.path.getmtime)[-1:]
 with zipfile.ZipFile(sys.argv[1], "w", zipfile.ZIP_DEFLATED) as z:
     for f in files:

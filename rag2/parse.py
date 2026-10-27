@@ -13,6 +13,7 @@ L'OCR coûte ~1 à 10 s par page/image : il est fait une fois à l'indexation, e
 générateur n'est pas chargé.
 """
 import io
+import re
 import os
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
@@ -47,6 +48,23 @@ def _clean(text: str) -> str:
     return " ".join(text.split())
 
 
+_NUMERIC_LINE = re.compile(r"^[-−–+]?\s*[\d\s.,%€$]+\s*(%|€|M€|Md€|pts?|points?)?$")
+
+
+def block_text(raw: str) -> str:
+    """Texte d'un bloc PyMuPDF. Si le bloc ressemble à une rangée de tableau (une cellule par ligne,
+    surtout des nombres), on sépare les cellules par « | » au lieu d'un espace :
+    'Zone urbaine | 91 567 | 44 243 740 | 21 | 19 | 4,7 | 72' plutôt que 'Zone urbaine 91 567 44 243 740 21 19 4,7 72',
+    où le modèle ne peut plus savoir où finit un nombre. Les paragraphes de texte restent joints par des espaces.
+    """
+    lines = [_clean(l) for l in raw.split("\n") if _clean(l)]
+    if len(lines) >= 3:
+        numeric = sum(bool(_NUMERIC_LINE.match(l)) for l in lines)
+        if numeric / len(lines) >= 0.5:
+            return " | ".join(lines)
+    return " ".join(lines)
+
+
 def read_pdf_dir(pdf_dir: str, ocr: bool = True, ocr_images: bool = True, workers: int | None = None) -> list[dict]:
     """Retourne [{doc_id, page, text, blocks, source}] pour tous les PDF du dossier.
 
@@ -68,7 +86,7 @@ def read_pdf_dir(pdf_dir: str, ocr: bool = True, ocr_images: bool = True, worker
                     # en colonnes, le tri par position verticale mélange les paragraphes des colonnes.
                     for b in page.get_text("blocks"):
                         if b[6] == 0 and _clean(b[4]):
-                            rec["blocks"].append(_clean(b[4]))
+                            rec["blocks"].append(block_text(b[4]))
                     if ocr and ocr_images:
                         area = page.rect.width * page.rect.height
                         for info in page.get_image_info():
