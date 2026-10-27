@@ -15,6 +15,7 @@ Leçons du run 1 (validation, 35 réponses fausses sur 77 questions avec répons
   - réponses longues en Markdown : on demande une phrase courte, sans mise en forme.
 """
 import re
+import time
 
 from groundtruth.normalize import _close, extract_numbers
 
@@ -63,6 +64,9 @@ VARIANTS = {
     "duo": {"system": "plain", "chunks": 5, "second": "quote"},
     # duo + les 3 lignes (phrases, rangées de tableau) les mieux notées par le reranker, en tête du prompt
     "duoL": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3},
+    # run 5 : vote à 3. Si les deux premières réponses divergent, un 3e appel (réponse courte sur les 3
+    # meilleurs extraits seulement) départage : on garde la réponse soutenue par au moins 2 appels sur 3.
+    "trioL": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "third": 3},
 }
 DEFAULT_VARIANT = "duo"
 
@@ -260,6 +264,7 @@ def verify(gen, question: str, answer: str, context: list[dict], cits: list[dict
 
 def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bool = True,
                variant: str = DEFAULT_VARIANT, key_lines: list[dict] | None = None) -> dict:
+    t_start = time.time()
     cfg = VARIANTS[variant]
     lines = (key_lines or [])[: cfg.get("key_lines", 0)] or None
     gen.start_question(q["qid"])
@@ -273,9 +278,24 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
     if cfg.get("second") and not llm_abstain:
         raw2 = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], cfg["second"], lines),
                         max_new_tokens=MAX_NEW + 100)
-        second, _, _ = parse_answer(raw2, ctx)
+        second, cits2, _ = parse_answer(raw2, ctx)
         agreement = agree(answer, second)
         do_verify = False                              # la concordance remplace l'auto-vérification (run 2 : inutile)
+        third = None
+        if cfg.get("third") and agreement is not True:
+            ctx3 = ctx[: cfg["third"]]
+            raw3 = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx3], "plain", lines),
+                            max_new_tokens=150)
+            third, cits3, _ = parse_answer(raw3, ctx3)
+            a_c, b_c = agree(answer, third), agree(second, third)
+            if a_c is True:                            # 1re et 3e réponses d'accord : on garde la 1re
+                agreement = True
+            elif b_c is True:                          # 2e et 3e d'accord : on prend la 2e
+                answer, cits, agreement = second, (cits2 or cits3 or cits), True
+            elif agreement is None and a_c is None and b_c is None:
+                agreement = None                       # aucune réponse chiffrée
+            else:
+                agreement = False
     verified = None if (llm_abstain or not do_verify) else verify(gen, q["question"], answer, ctx, cits)
     scores = [h.get("score", 0.0) for h in hits]
     return {
@@ -291,6 +311,8 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
             "variant": variant,
             "second": second,
             "agree": agreement,
+            "third": locals().get("third"),
             "n_context": len(ctx),
+            "seconds": round(time.time() - t_start, 2),
         },
     }

@@ -35,8 +35,8 @@ if [ "${FULL_ABLATION:-0}" != 1 ] && [ -f results/run1/best.json ]; then
   cp results/run1/best.json index2/best.json
   cp results/run1/ablation_retrieval.json runs/ablation_retrieval.json
   STRATS=$(python -c "import json; print(json.load(open('index2/best.json'))['strategy'])")
-  # run 4 : le même découpage, avec et sans la description des graphiques (cache/charts_v1.json.gz)
-  [ -f cache/charts_v1.json.gz ] && STRATS="$STRATS,$STRATS+graph"
+  # run 4 : la description des graphiques a fait baisser le score ; on ne la teste plus que si USE_GRAPH=1
+  [ "${USE_GRAPH:-0}" = 1 ] && [ -f cache/charts_v1.json.gz ] && STRATS="$STRATS,$STRATS+graph"
   python -m rag2.pipeline index --pdf-dir corpus/pdf --index-dir index2 --strategies "$STRATS" $EXTRA_INDEX
 else
   python -m rag2.pipeline index --pdf-dir corpus/pdf --index-dir index2 $EXTRA_INDEX
@@ -46,7 +46,10 @@ fi
 cat index2/best.json; echo
 
 step "3. Validation : chaque configuration (index x variante de génération)"
-VARIANTS="${VARIANTS:-duoL}"
+VARIANTS="${VARIANTS:-trioL}"
+# Référence : meilleure configuration déjà mesurée (résultats déterministes, pas besoin de la refaire)
+REF_FILE="${REF_FILE:-results/run4/abstention_naive_title@duoL.json}"
+REF_CLS="${REF_CLS:-results/run4/classement_v1.json}"
 CONFIGS=""
 for S in ${STRATS//,/ }; do
   python -m rag2.pipeline retrieve --index-dir index2 --questions data/validation_v1.json --strategy "$S" \
@@ -74,13 +77,26 @@ print(max(scores, key=scores.get))
 PY
 )
 BS=${BEST%@*}; BV=${BEST#*@}
-echo "Configuration retenue : $BEST"
+echo "Meilleure configuration de ce run : $BEST"
+python -c "
+import json
+s = json.load(open('index2/abstention_$BEST.json'))['validation_score_calibre']
+print(f'  temps moyen par question : {sum(p[\"_meta\"].get(\"seconds\", 0) for p in json.load(open(\"runs/val_raw_$BEST.json\"))[\"predictions\"]) / 100:.1f} s')
+"
+BETTER=1
+if [ -f "$REF_FILE" ]; then
+  BETTER=$(python -c "import json; a=json.load(open('index2/abstention_$BEST.json'))['validation_score_calibre']; r=json.load(open('$REF_FILE'))['validation_score_calibre']; print(f'  ce run {a:+.3f} contre référence {r:+.3f}', file=__import__('sys').stderr); print(int(a > r))")
+fi
 cp "index2/abstention_$BEST.json" index2/abstention.json
 cp "runs/val_raw_$BEST.json" runs/val_raw.json
 cp "runs/val_report_$BEST.json" runs/val_report.json
 python -m rag2.calibrate apply --raw runs/val_raw.json --rule index2/abstention.json --out runs/val_final.json
 
 step "4. Leaderboard v1 : 200 questions ($BEST)"
+if [ "$BETTER" != 1 ]; then
+  echo "Pas mieux que la référence : on garde sa soumission ($REF_CLS), pas de génération du leaderboard."
+  cp "$REF_CLS" runs/classement_v1.json
+else
 python -m rag2.pipeline retrieve --index-dir index2 --questions data/classement_v1_questions.json --strategy "$BS" \
   --out runs/cls_retrieval.json $MODE_ARG
 python -m rag2.pipeline generate --index-dir index2 --retrieval runs/cls_retrieval.json \
@@ -88,6 +104,7 @@ python -m rag2.pipeline generate --index-dir index2 --retrieval runs/cls_retriev
 python -m rag2.calibrate apply --raw runs/cls_raw.json --rule index2/abstention.json --out runs/classement_v1.json
 python -m groundtruth.submit --pred runs/classement_v1.json --phase v1 || \
   echo "Soumission non créée (quota de 2 par jour atteint ?) : runs/classement_v1.json est dans resultats.zip"
+fi
 
 step "5. Résumé"
 python scripts/summary.py | tee "$OUT/resume.txt"

@@ -16,6 +16,13 @@ for f in sorted(glob.glob("index2/abstention_*.json")):
     print(f"  {v:28s} brut {r['score_confiance']:+.3f}  calibré {a['validation_score_calibre']:+.3f}  "
           f"abstention {a['taux_abstention']:.0%}  issues {r['issues']}")
 
+raw = json.load(open("runs/val_raw.json"))["predictions"]
+secs = [p["_meta"].get("seconds") for p in raw if p.get("_meta", {}).get("seconds") is not None]
+if secs:
+    print(f"\nTEMPS DE GÉNÉRATION : {sum(secs) / len(secs):.1f} s par question en moyenne, max {max(secs):.1f} s "
+          f"(limite : 30 s en moyenne sur T4, recherche comprise)")
+    print("  3e appel utilisé :", sum(p["_meta"].get("third") is not None for p in raw), "questions sur", len(raw))
+
 rep = json.load(open("runs/val_report.json"))
 print("\nVALIDATION, réponses brutes (juge officiel) :", rep["score_confiance"], rep["issues"])
 print("  par type :", {t: v["score"] for t, v in rep["par_type"].items()})

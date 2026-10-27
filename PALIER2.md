@@ -211,3 +211,11 @@ Validation, juge officiel (`results/run4/`), même génération (duoL) et même 
 le générateur, et elles passent même la concordance (les deux réponses lisent la même description fausse).
 Elles ne sont pas retenues. Le résultat sans descriptions est identique au run 3 : le pipeline est
 déterministe et reproductible.
+
+### Run 5 : vote à 3 (variante `trioL`)
+
+Quand les deux premières réponses divergent, un 3e appel (réponse courte sur les 3 meilleurs extraits)
+départage : on garde la réponse soutenue par au moins 2 appels sur 3, au lieu de s'abstenir. Le 3e appel
+n'a lieu que si les deux premiers divergent, pour rester sous 30 s par question en moyenne sur T4 (temps
+mesuré question par question). Comparé à la référence run 4 (+0,425), sans la refaire (résultats
+déterministes) ; le leaderboard n'est régénéré que si le vote à 3 fait mieux.
