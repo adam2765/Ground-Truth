@@ -189,3 +189,25 @@ Validation, juge officiel (`results/run3/`) :
   0,02, et l'écart-type du score est d'environ 0,07. Les écarts de moins de ~0,05 entre deux variantes ne
   sont pas significatifs. Les prochains gains devront venir de changements structurels (valeurs des
   graphiques, synthèses), pas de réglages de prompt.
+
+### Run 4 : description des graphiques par un modèle de vision
+
+Qwen2.5-VL-3B a décrit les 1 225 pages contenant un graphique (2 h 30 sur 2 T4, `rag2/describe_charts.py`,
+cache `cache/charts_v1.json.gz`). 630 descriptions contiennent des valeurs.
+- Premier essai : avec une consigne qui autorisait « AUCUN » s'il n'y avait pas de graphique, le modèle a
+  répondu AUCUN aux 1 225 pages. Consigne corrigée, et ajout d'une sonde de 4 pages contrôlées avant le calcul.
+- Qualité : exacte quand les valeurs sont écrites sur le graphique (diagramme de flux : 133 M€ / 19 % ;
+  camemberts : 59 / 24 / 17 %), souvent fausse quand il faut les estimer sur un axe (barres inversées,
+  « environ 5 % » partout, M€ au lieu de Md€).
+
+Validation, juge officiel (`results/run4/`), même génération (duoL) et même calibration :
+
+| Index | Score brut | Après calibration | Fausses | Graphiques | Tableaux |
+|---|---|---|---|---|---|
+| **naive_title (sans descriptions)** | +0,145 | **+0,425** | 32 | −0,50 | −0,18 |
+| naive_title+graph (avec descriptions) | +0,09 | +0,37 | 38 | −0,67 | −0,35 |
+
+**Les descriptions font baisser le score** : les valeurs estimées à tort sont reprises avec assurance par
+le générateur, et elles passent même la concordance (les deux réponses lisent la même description fausse).
+Elles ne sont pas retenues. Le résultat sans descriptions est identique au run 3 : le pipeline est
+déterministe et reproductible.
