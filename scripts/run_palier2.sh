@@ -74,7 +74,8 @@ python -m rag2.pipeline retrieve --index-dir index2 --questions data/classement_
 python -m rag2.pipeline generate --index-dir index2 --retrieval runs/cls_retrieval.json \
   --questions data/classement_v1_questions.json --out runs/cls_raw.json --backend "$BACKEND" --variant "$BEST"
 python -m rag2.calibrate apply --raw runs/cls_raw.json --rule index2/abstention.json --out runs/classement_v1.json
-python -m groundtruth.submit --pred runs/classement_v1.json --phase v1
+python -m groundtruth.submit --pred runs/classement_v1.json --phase v1 || \
+  echo "Soumission non créée (quota de 2 par jour atteint ?) : runs/classement_v1.json est dans resultats.zip"
 
 step "5. Résumé"
 python scripts/summary.py | tee "$OUT/resume.txt"
