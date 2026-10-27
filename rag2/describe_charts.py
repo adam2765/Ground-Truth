@@ -24,7 +24,7 @@ import pymupdf
 
 VLM = "Qwen/Qwen2.5-VL-3B-Instruct"
 DPI = 110                      # page A4 ~ 900 x 1290 px
-MAX_NEW = 320
+MAX_NEW = 450
 
 PROMPT = (
     "This image is a page from a French public report (Insee or Cour des comptes). "
