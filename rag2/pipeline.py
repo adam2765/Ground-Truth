@@ -45,6 +45,11 @@ def cmd_index(args):
         pages_path.write_text(json.dumps(pages, ensure_ascii=False), encoding="utf-8")
         print(f"{len(pages)} pages lues en {time.time() - t0:.0f} s")
 
+    from rag2.describe_charts import add_descriptions
+    n_desc = add_descriptions(pages)                   # descriptions de graphiques en cache (modèle de vision)
+    if n_desc:
+        print(f"{n_desc} pages enrichies par la description de leurs graphiques")
+
     encoder = None
     for strat in args.strategies.split(","):
         d = idx / strat
