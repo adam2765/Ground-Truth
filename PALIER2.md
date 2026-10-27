@@ -82,10 +82,45 @@ BM25 seul ; la comparaison qui compte est celle avec la recherche dense et le re
 
 Point faible restant : les questions multi-doc (Recall@5 ≈ 0,40).
 
-## 3. Recherche hybride, reranker, génération, abstention (GPU)
+## 3. Recherche hybride et reranker (run 1, Kaggle T4)
 
-Résultats à compléter avec le notebook Colab : tableau `chunking × {bm25, dense, hybrid, hybrid_rerank}`,
-score de confiance sur validation (juge officiel) avant et après calibration de l'abstention.
+Recall@5 sur les 77 questions de validation avec réponse (`results/run1/ablation_retrieval.json`) :
+
+| Chunking | BM25 | Dense (bge-m3) | Hybride (RRF) | Hybride + reranker |
+|---|---|---|---|---|
+| naive | 0,779 | 0,818 | 0,851 | 0,942 |
+| naive_title | 0,779 | 0,851 | 0,844 | **0,948** (MRR 0,813) |
+| page | 0,792 | 0,792 | 0,838 | 0,890 |
+| struct_title | 0,779 | 0,877 | 0,877 | 0,916 (MRR 0,833) |
+
+- Le reranker est la brique qui rapporte le plus (+7 à +10 points de Recall@5 sur l'hybride).
+- La fusion hybride aide surtout le découpage naïf ; avec struct_title, le dense seul fait aussi bien.
+- Une page entière par chunk est la moins bonne option : trop de sujets mélangés dans un même vecteur.
+- Retenu : naive_title + hybride + reranker. Recall@5 par type : graphique 1,0, multi-doc 0,8,
+  scan 0,89, synthèse 1,0, tableau 0,88, texte 1,0. Recherche : 0,8 s par question.
+
+## 4. Génération et abstention
+
+### Run 1 (soumission 2026-10-27_1)
+
+Validation, juge officiel (Qwen3-4B) : **+0,17** brut, **+0,28** après calibration (abstention 54 %).
+41 réponses justes et citées, mais **35 réponses fausses** alors que la bonne page était presque toujours
+dans le contexte : le problème est la génération, pas la recherche. Analyse des 35 erreurs :
+- ~12 : le modèle applique la consigne « corrige la prémisse » à des questions normales (« Correction de
+  l'affirmation initiale : ... ») puis invente ;
+- ~10 : mauvais chiffre pris dans le contexte (ligne voisine d'un tableau, autre année) avec 8 extraits ;
+- ~8 : graphiques dont les valeurs ne sont pas dans le texte : le modèle devine ;
+- réponses partielles (« ... ; pour la 2e partie : INTROUVABLE »), et une faute « INTOUVABLE » non reconnue.
+
+### Corrections pour le run 2
+
+- consigne de correction de prémisse supprimée (INTROUVABLE sur une fausse prémisse rapporte déjà +1) ;
+- 5 extraits au lieu de 8, réponse en une ou deux phrases sans Markdown, exemple de format ;
+- toute réponse qui contient INTROUVABLE (même mal orthographié) ou qui dit que l'information manque
+  devient INTROUVABLE. Rejoué sur les réponses du run 1 : score brut 0,17 → **0,29** (10 réponses
+  fausses écartées pour 1 juste) ;
+- 2e appel au générateur : auto-vérification (OUI/NON) de la réponse sur les extraits cités, utilisée
+  comme critère d'abstention si la calibration le juge utile.
 
 Abstention : on répond INTROUVABLE si le modèle s'abstient, si le score du reranker du meilleur passage
 est sous un seuil, ou (option) si la réponse contient des chiffres absents des extraits. Le seuil et

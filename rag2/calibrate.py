@@ -5,7 +5,8 @@ On répond donc seulement quand on a de bonnes raisons de croire la réponse jus
 
 Règle : on remplace la réponse par INTROUVABLE si
     le modèle s'est abstenu, OU score du reranker du meilleur chunk < seuil,
-    OU (option) la réponse contient des chiffres absents des extraits.
+    OU (option) la réponse contient des chiffres absents des extraits,
+    OU (option) l'auto-vérification du modèle a répondu NON.
 
 fit   : cherche le seuil et l'option qui maximisent le score de confiance sur validation, à partir des
         réponses brutes (_meta) et du rapport détaillé de l'évaluateur officiel (--details / --out).
@@ -32,6 +33,8 @@ def abstains(meta: dict, rule: dict) -> bool:
     ts = meta.get("top_score")
     if rule.get("threshold") is not None and ts is not None and ts < rule["threshold"]:
         return True
+    if rule.get("require_verified") and meta.get("verified") is False:
+        return True
     u = rule.get("max_unsupported")
     return u is not None and meta.get("unsupported", 0) > u
 
@@ -57,29 +60,35 @@ def cmd_fit(args):
     scores = sorted({m["top_score"] for m in metas.values() if m.get("top_score") is not None})
     thresholds = [None] + scores
     results = []
-    for u in UNSUP_OPTIONS:
-        for t in thresholds:
-            rule = {"threshold": t, "max_unsupported": u}
-            results.append((simulate(rows, metas, answerable, rule), rule))
+    for rv in (False, True):
+        for u in UNSUP_OPTIONS:
+            for t in thresholds:
+                rule = {"threshold": t, "max_unsupported": u, "require_verified": rv}
+                results.append((simulate(rows, metas, answerable, rule), rule))
     best_score = max(s for s, _ in results)
     # parmi les règles quasi optimales, on prend le seuil médian : moins sensible au hasard des 100 questions
     near = [r for s, r in results if s >= best_score - 0.005]
-    u_best = max(set(str(r["max_unsupported"]) for r in near),
-                 key=lambda u: sum(str(r["max_unsupported"]) == u for r in near))
-    cands = [r for r in near if str(r["max_unsupported"]) == u_best]
+    opt = lambda r: (r["max_unsupported"], r["require_verified"])
+    best_opt = max({opt(r) for r in near}, key=lambda o: sum(opt(r) == o for r in near))
+    cands = [r for r in near if opt(r) == best_opt]
     ts = sorted(r["threshold"] for r in cands if r["threshold"] is not None)
-    rule = cands[0] if not ts else {"threshold": ts[len(ts) // 2], "max_unsupported": cands[0]["max_unsupported"]}
+    rule = dict(cands[0]) if not ts else {"threshold": ts[len(ts) // 2], "max_unsupported": best_opt[0],
+                                          "require_verified": best_opt[1]}
     final = simulate(rows, metas, answerable, rule)
     rule["validation_score_brut"] = round(base, 4)
     rule["validation_score_calibre"] = round(final, 4)
     rule["taux_abstention"] = round(float(np.mean([abstains(metas[q], rule) for q in rows])), 3)
     print(f"score sans calibration : {base:+.3f}")
     print(f"score avec calibration : {final:+.3f}   (seuil reranker {rule['threshold']}, "
-          f"chiffres non retrouvés tolérés : {rule['max_unsupported']}, abstention {rule['taux_abstention']:.0%})")
-    for u in UNSUP_OPTIONS:
-        sub = [(s, r) for s, r in results if r["max_unsupported"] == u]
-        s, r = max(sub, key=lambda x: x[0])
-        print(f"  option chiffres={u}: meilleur {s:+.3f} (seuil {r['threshold']})")
+          f"chiffres non retrouvés tolérés : {rule['max_unsupported']}, auto-vérification exigée : "
+          f"{rule['require_verified']}, abstention {rule['taux_abstention']:.0%})")
+    n_ver = sum(m.get("verified") is not None for m in metas.values())
+    print(f"  auto-vérification : {n_ver} verdicts, dont NON : {sum(m.get('verified') is False for m in metas.values())}")
+    for rv in (False, True):
+        for u in UNSUP_OPTIONS:
+            sub = [(s, r) for s, r in results if r["max_unsupported"] == u and r["require_verified"] == rv]
+            s, r = max(sub, key=lambda x: x[0])
+            print(f"  option chiffres={u}, vérif={rv}: meilleur {s:+.3f} (seuil {r['threshold']})")
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps(rule, indent=1))
 
