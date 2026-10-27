@@ -12,7 +12,6 @@ l'embedding et au reranker. Le champ "body" garde le texte sans en-tête (c'est 
 """
 import re
 
-from my_rag.chunk import chunk_pages as naive_chunks
 from rag2.parse import doc_titles
 
 STRATEGIES = ["naive", "naive_title", "page", "struct_title"]
@@ -63,6 +62,20 @@ def _struct(page: dict, target: int = 180, max_words: int = 260) -> list[str]:
     return chunks
 
 
+def _naive_keep_lines(text: str, size: int = 200, overlap: int = 50) -> list[str]:
+    """Mêmes fenêtres que le chunker naïf du palier 1 (200 mots, recouvrement 50), mais on garde la mise en
+    forme d'origine (retours à la ligne) : sinon la fin d'une rangée de tableau se colle au début de la
+    suivante (« ... | 72 Grands centres urbains | 46 742 ... ») et le modèle se trompe de ligne."""
+    spans = [m.span() for m in re.finditer(r"\S+", text)]
+    out, step = [], size - overlap
+    for start in range(0, len(spans), step):
+        piece = spans[start:start + size]
+        out.append(text[piece[0][0]:piece[-1][1]])
+        if start + size >= len(spans):
+            break
+    return out
+
+
 def make_chunks(pages: list[dict], strategy: str) -> list[dict]:
     """Retourne [{chunk_id, doc_id, page, body, text}] ; text = ce qu'on indexe (en-tête + body)."""
     titles = doc_titles(pages)
@@ -74,9 +87,9 @@ def make_chunks(pages: list[dict], strategy: str) -> list[dict]:
                     "body": body, "text": head + body})
 
     if strategy in ("naive", "naive_title"):
-        by_key = {(p["doc_id"], p["page"]): p for p in pages}
-        for i, c in enumerate(naive_chunks(pages)):
-            add(by_key[(c["doc_id"], c["page"])], i, c["text"], strategy == "naive_title")
+        for p in pages:
+            for i, body in enumerate(_naive_keep_lines(p["text"])):
+                add(p, i, body, strategy == "naive_title")
     elif strategy == "page":
         for p in pages:
             if p["text"].strip():

@@ -62,7 +62,7 @@ def cmd_index(args):
 
 def cmd_retrieve(args):
     from groundtruth.io import load_questions
-    from rag2.search import Retriever, ranked_pages
+    from rag2.search import Retriever, key_lines, ranked_pages
 
     cfg = defaults(args.index_dir)
     strategy, mode = args.strategy or cfg["strategy"], args.mode or cfg["mode"]
@@ -76,7 +76,10 @@ def cmd_retrieve(args):
     items, t0 = [], time.time()
     for n, q in enumerate(qs, 1):
         hits = r.search(q["question"], mode=mode, k=20)
-        items.append({"qid": q["qid"], "hits": hits, "retrieved": ranked_pages(r.chunks, hits)})
+        item = {"qid": q["qid"], "hits": hits, "retrieved": ranked_pages(r.chunks, hits)}
+        if r.reranker is not None:
+            item["key_lines"] = key_lines(r.reranker, q["question"], r.chunks, hits)
+        items.append(item)
         if n % 20 == 0:
             print(f"  {n}/{len(qs)} ({(time.time() - t0) / n:.2f} s/question)", flush=True)
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
@@ -110,7 +113,7 @@ def cmd_generate(args):
             preds.append(done[q["qid"]])
             continue
         it = by_qid[q["qid"]]
-        p = answer_one(gen, q, chunks, it["hits"], variant=args.variant)
+        p = answer_one(gen, q, chunks, it["hits"], variant=args.variant, key_lines=it.get("key_lines"))
         p["retrieved"] = it["retrieved"]
         preds.append(p)
         n_new += 1

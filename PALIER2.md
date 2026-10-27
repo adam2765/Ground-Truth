@@ -165,3 +165,11 @@ endroit ; s'il change de chiffre, il devine. Simulé sur les réponses du run 2 
 
 La concordance n'a pas besoin de seuil réglé sur la validation : elle devrait mieux se généraliser au
 leaderboard. Variante `duo` : un appel court5 + un appel cite5 (2 appels, ~20 s par question).
+
+Deux autres corrections testées au run 3, visant la cause principale des erreurs (mauvaise ligne lue) :
+- **retours à la ligne conservés dans les chunks** : le découpage naïf joignait tout par des espaces, et
+  la fin d'une rangée de tableau se collait au début de la suivante (« ... | 72 Grands centres urbains | ... »).
+  Mêmes fenêtres de 200 mots qu'au palier 1, mais avec la mise en forme d'origine ;
+- **lignes clés** (variante `duoL`) : le reranker note chaque phrase et chaque rangée de tableau des 8
+  meilleurs extraits ; les 3 meilleures sont placées en tête du prompt (« Lignes les plus pertinentes »).
+  Le run 3 compare `duo` et `duoL` sur la validation et garde la meilleure.

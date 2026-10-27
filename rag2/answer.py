@@ -61,6 +61,8 @@ VARIANTS = {
     # run 3 : réponse court5 + 2e réponse indépendante au format cite5 ; si les chiffres des deux réponses
     # ne concordent pas, le modèle devine (calibration : rag2/calibrate.py, critère « agree »)
     "duo": {"system": "plain", "chunks": 5, "second": "quote"},
+    # duo + les 3 lignes (phrases, rangées de tableau) les mieux notées par le reranker, en tête du prompt
+    "duoL": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3},
 }
 DEFAULT_VARIANT = "duo"
 
@@ -91,8 +93,12 @@ def format_extract(c: dict) -> str:
     return f"[{c['doc_id']} p.{c['page']}]\n{c['body']}"
 
 
-def build_messages(question: str, extracts: list[str], system: str = "plain") -> list[dict]:
-    user = "Extraits :\n\n" + "\n\n".join(extracts) + f"\n\nQuestion : {question}"
+def build_messages(question: str, extracts: list[str], system: str = "plain", lines: list[dict] | None = None) -> list[dict]:
+    head = ""
+    if lines:
+        head = ("Lignes les plus pertinentes (à vérifier dans les extraits) :\n"
+                + "\n".join(f"[{x['doc_id']} p.{x['page']}] {x['text']}" for x in lines) + "\n\n")
+    user = head + "Extraits :\n\n" + "\n\n".join(extracts) + f"\n\nQuestion : {question}"
     return [{"role": "system", "content": SYSTEM_QUOTE if system == "quote" else SYSTEM},
             {"role": "user", "content": user}]
 
@@ -139,18 +145,19 @@ def diversify(chunks: list[dict], scores: list[float], max_chunks: int, min_othe
     return sorted(kept, key=lambda c: order[id(c)])
 
 
-def fit_context(gen, question: str, chunks: list[dict], max_chunks: int = MAX_CHUNKS) -> list[dict]:
+def fit_context(gen, question: str, chunks: list[dict], max_chunks: int = MAX_CHUNKS,
+                lines: list[dict] | None = None) -> list[dict]:
     """Ajoute les chunks (du meilleur au moins bon) tant que le prompt tient dans 4 096 tokens."""
     kept = []
     for c in chunks[:max_chunks]:
         trial = kept + [c]
-        if gen.count_tokens(build_messages(question, [format_extract(x) for x in trial], "quote")) > MAX_INPUT - 16:
+        if gen.count_tokens(build_messages(question, [format_extract(x) for x in trial], "quote", lines)) > MAX_INPUT - 16:
             continue                                   # trop long : on essaie le suivant (plus court ?)
         kept = trial
     if not kept and chunks:                            # même le premier ne tient pas : on le tronque
         c = dict(chunks[0])
         words = c["body"].split()
-        while words and gen.count_tokens(build_messages(question, [format_extract(c)], "quote")) > MAX_INPUT - 16:
+        while words and gen.count_tokens(build_messages(question, [format_extract(c)], "quote", lines)) > MAX_INPUT - 16:
             words = words[: int(len(words) * 0.8)]
             c["body"] = " ".join(words)
         kept = [c]
@@ -179,7 +186,7 @@ def parse_answer(raw: str, context: list[dict]) -> tuple[str, list[dict], bool]:
     if _HEDGE.search(answer):                          # (sur la réponse seule : un EXTRAIT peut contenir « ne ... pas »)
         return "INTROUVABLE", [], True
     answer = re.sub(r"\s*" + _REF.pattern, "", answer).strip() or answer
-    allowed = {(c["doc_id"], c["page"]) for c in context}
+    allowed = {(c["doc_id"], c["page"]) for c in context}   # (lignes clés : toujours issues des extraits)
     cits, seen = [], set()
     for d, p in _REF.findall(text):
         key = (d, int(p))
@@ -252,18 +259,19 @@ def verify(gen, question: str, answer: str, context: list[dict], cits: list[dict
 
 
 def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bool = True,
-               variant: str = DEFAULT_VARIANT) -> dict:
+               variant: str = DEFAULT_VARIANT, key_lines: list[dict] | None = None) -> dict:
     cfg = VARIANTS[variant]
+    lines = (key_lines or [])[: cfg.get("key_lines", 0)] or None
     gen.start_question(q["qid"])
     cand = [chunks[h["idx"]] for h in hits]
     picked = diversify(cand, [h.get("score") for h in hits], cfg["chunks"])
-    ctx = fit_context(gen, q["question"], picked, cfg["chunks"])
-    raw = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], cfg["system"]),
+    ctx = fit_context(gen, q["question"], picked, cfg["chunks"], lines)
+    raw = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], cfg["system"], lines),
                    max_new_tokens=MAX_NEW + (100 if cfg["system"] == "quote" else 0))
     answer, cits, llm_abstain = parse_answer(raw, ctx)
     second = agreement = None
     if cfg.get("second") and not llm_abstain:
-        raw2 = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], cfg["second"]),
+        raw2 = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], cfg["second"], lines),
                         max_new_tokens=MAX_NEW + 100)
         second, _, _ = parse_answer(raw2, ctx)
         agreement = agree(answer, second)

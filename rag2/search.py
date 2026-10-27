@@ -154,6 +154,39 @@ class Retriever:
         return [{"idx": i, "score": s, "rerank": s, "bm25": bm_s.get(i), "dense": de_s.get(i)} for i, s in order[:k]]
 
 
+def split_units(body: str, max_words: int = 60) -> list[str]:
+    """Découpe un extrait en « lignes » : rangées de tableau, puis phrases pour les longs paragraphes."""
+    units = []
+    for line in body.split("\n"):
+        line = " ".join(line.split())
+        if len(line.split()) < 3:
+            continue
+        if len(line.split()) > max_words:
+            units.extend(x for x in re.split(r"(?<=[.!?;])\s+", line) if len(x.split()) >= 3)
+        else:
+            units.append(line)
+    return units
+
+
+def key_lines(reranker: "Reranker", query: str, chunks: list[dict], hits: list[dict], n_chunks: int = 8,
+              top: int = 3) -> list[dict]:
+    """Les lignes (phrases, rangées de tableau) des meilleurs extraits les plus proches de la question,
+    notées par le cross-encoder. Elles sont placées en tête du prompt pour guider le petit modèle."""
+    cand, seen = [], set()
+    for h in hits[:n_chunks]:
+        c = chunks[h["idx"]]
+        for u in split_units(c["body"]):
+            if u not in seen:
+                seen.add(u)
+                cand.append({"doc_id": c["doc_id"], "page": c["page"], "text": u})
+    if not cand:
+        return []
+    scores = reranker.score(query, [x["text"] for x in cand])
+    for x, sc in zip(cand, scores):
+        x["score"] = sc
+    return sorted(cand, key=lambda x: -x["score"])[:top]
+
+
 def ranked_pages(chunks: list[dict], hits: list[dict]) -> list[dict]:
     """Pages distinctes, dans l'ordre de leur meilleur chunk."""
     seen, out = set(), []
