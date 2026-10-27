@@ -45,16 +45,25 @@ def cmd_index(args):
         pages_path.write_text(json.dumps(pages, ensure_ascii=False), encoding="utf-8")
         print(f"{len(pages)} pages lues en {time.time() - t0:.0f} s")
 
+    # Un découpage suffixé « +graph » (ex. naive_title+graph) utilise les pages enrichies par la description de
+    # leurs graphiques (modèle de vision, en cache) ; sans suffixe, les pages telles que lues (texte + OCR).
+    import copy
+
     from rag2.describe_charts import add_descriptions
-    n_desc = add_descriptions(pages)                   # descriptions de graphiques en cache (modèle de vision)
-    if n_desc:
-        print(f"{n_desc} pages enrichies par la description de leurs graphiques")
+    pages_graph = None
 
     encoder = None
     for strat in args.strategies.split(","):
         d = idx / strat
         d.mkdir(exist_ok=True)
-        chunks = make_chunks(pages, strat)
+        base, _, extra = strat.partition("+")
+        if extra == "graph":
+            if pages_graph is None:
+                pages_graph = copy.deepcopy(pages)
+                print(f"{add_descriptions(pages_graph)} pages enrichies par la description de leurs graphiques")
+            chunks = make_chunks(pages_graph, base)
+        else:
+            chunks = make_chunks(pages, strat)
         (d / "chunks.json").write_text(json.dumps(chunks, ensure_ascii=False), encoding="utf-8")
         print(f"[{strat}] {len(chunks)} chunks")
         if not args.no_dense and not (d / "dense.npy").exists():

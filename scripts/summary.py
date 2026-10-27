@@ -13,7 +13,7 @@ print("\nVARIANTES DE GÉNÉRATION (validation, juge officiel)")
 for f in sorted(glob.glob("index2/abstention_*.json")):
     v = f.split("abstention_")[1][:-5]
     a = json.load(open(f)); r = json.load(open(f"runs/val_report_{v}.json"))
-    print(f"  {v:8s} brut {r['score_confiance']:+.3f}  calibré {a['validation_score_calibre']:+.3f}  "
+    print(f"  {v:28s} brut {r['score_confiance']:+.3f}  calibré {a['validation_score_calibre']:+.3f}  "
           f"abstention {a['taux_abstention']:.0%}  issues {r['issues']}")
 
 rep = json.load(open("runs/val_report.json"))
