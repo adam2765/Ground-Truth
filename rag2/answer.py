@@ -79,6 +79,48 @@ def build_messages(question: str, extracts: list[str], system: str = "plain") ->
             {"role": "user", "content": user}]
 
 
+def _family(doc_id: str) -> str:
+    """Un rapport et sa synthèse disent souvent la même chose : même « famille »."""
+    return doc_id[: -len("-synthese")] if doc_id.endswith("-synthese") else doc_id
+
+
+def diversify(chunks: list[dict], scores: list[float], max_chunks: int, min_other: float = 0.3) -> list[dict]:
+    """Choisit les extraits du contexte en évitant qu'un seul document prenne toutes les places.
+
+    - au plus ~60 % des places pour une même famille (rapport + synthèse) ;
+    - si tout vient d'une seule famille mais qu'un extrait d'un autre document a un score du reranker
+      >= min_other, il remplace le dernier : les questions multi-doc demandent de croiser deux rapports.
+    """
+    cap = max(1, round(max_chunks * 0.6))
+    kept, count = [], {}
+    for i, c in enumerate(chunks):
+        f = _family(c["doc_id"])
+        # plafond par famille, seulement s'il existe plus loin un extrait pertinent d'un autre document
+        other = any(_family(o["doc_id"]) != f and sc is not None and sc >= min_other
+                    for o, sc in zip(chunks[i + 1:], scores[i + 1:]))
+        if count.get(f, 0) >= cap and other:
+            continue
+        kept.append(c)
+        count[f] = count.get(f, 0) + 1
+        if len(kept) == max_chunks:
+            break
+    if len(kept) < max_chunks:                         # pas assez d'autres documents : on complète dans l'ordre
+        for c in chunks:
+            if c not in kept:
+                kept.append(c)
+                if len(kept) == max_chunks:
+                    break
+    fams = {_family(c["doc_id"]) for c in kept}
+    if len(fams) == 1 and len(kept) > 1:
+        for c, sc in zip(chunks, scores):
+            if _family(c["doc_id"]) not in fams and sc is not None and sc >= min_other:
+                kept[-1] = c
+                break
+    # on garde l'ordre du reranker (le meilleur d'abord)
+    order = {id(c): i for i, c in enumerate(chunks)}
+    return sorted(kept, key=lambda c: order[id(c)])
+
+
 def fit_context(gen, question: str, chunks: list[dict], max_chunks: int = MAX_CHUNKS) -> list[dict]:
     """Ajoute les chunks (du meilleur au moins bon) tant que le prompt tient dans 4 096 tokens."""
     kept = []
@@ -196,7 +238,8 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
     cfg = VARIANTS[variant]
     gen.start_question(q["qid"])
     cand = [chunks[h["idx"]] for h in hits]
-    ctx = fit_context(gen, q["question"], cand, cfg["chunks"])
+    picked = diversify(cand, [h.get("score") for h in hits], cfg["chunks"])
+    ctx = fit_context(gen, q["question"], picked, cfg["chunks"])
     raw = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], cfg["system"]),
                    max_new_tokens=MAX_NEW + (100 if cfg["system"] == "quote" else 0))
     answer, cits, llm_abstain = parse_answer(raw, ctx)
