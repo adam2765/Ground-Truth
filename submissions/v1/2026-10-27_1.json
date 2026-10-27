@@ -1,0 +1,1596 @@
+{
+ "phase": "v1",
+ "submitted_at": "2026-10-27T00:27:13+01:00",
+ "commit": "0c60de3ce264139e5d7f62d153caab6d3a4acd20",
+ "predictions": [
+  {
+   "qid": "cls1-001",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-002",
+   "answer": "Les extraits indiquent que les **prix des œufs** augmenteraient de **+40,0 %** en 2025.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2086",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "cls1-003",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-004",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-005",
+   "answer": "Les objectifs de finances publiques pour 2026 sont déjà fragilisés par **une croissance révisée à 0,9 %** (contre 1,0 % initialement prévue) et une **inflation estimée à 1,9 %** (contre 1,3 % initialement prévue), aggravées par un choc inflationniste énergétique lié au conflit au Moyen-Orient.\n\nDe plus, les **efforts d’ajustement budgétaires** prévus (0,7 point de PIB) sont **partiellement annulés** par la hausse de la charge d’intérêts (+11,7 Mds€) et la baisse des recettes non fiscales, notamment en raison de la fin des financements européens du plan de relance.",
+   "citations": [
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 51
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 79
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 11
+    }
+   ]
+  },
+  {
+   "qid": "cls1-006",
+   "answer": "Entre **7 500 et 13 000 postes** auraient disparu directement en France à la suite de délocalisations entre 2021 et 2023.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2115",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "cls1-007",
+   "answer": "En 2021, à la frontière suisse, la part des cadres est de **28 %** pour les nouveaux arrivants et de **21 %** pour les frontaliers déjà installés.\nLa différence est donc de **7 points**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2126",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-008",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-009",
+   "answer": "En 2022, **13 % des logements situés en France (hors Mayotte) et détenus par des propriétaires résidant à l’étranger** appartiennent à des personnes résidant au Royaume-Uni.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2046",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "cls1-010",
+   "answer": "La France a versé **1 742,05 M€** d’éco-régime au titre de la campagne 2023 (exercice 2024) pour **249 432 bénéficiaires**.",
+   "citations": [
+    {
+     "doc_id": "cc-pac",
+     "page": 83
+    }
+   ]
+  },
+  {
+   "qid": "cls1-011",
+   "answer": "En 2006, **13 %** des ménages chauffés au fioul étaient composés d’au moins une personne de 75 ans ou plus.\nEn 2022, cette proportion était passée à **30 %**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2088",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2088",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-012",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-013",
+   "answer": "En 2025, **15 %** des nouveau-nés portent les noms de leurs deux parents, contre **10,9 %** en 2014.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "cls1-014",
+   "answer": "En 2024, l’assurance maladie a remboursé **617 M€** pour les vaccins, soit une hausse de près de **70 %** par rapport à 2018.",
+   "citations": [
+    {
+     "doc_id": "cc-vaccination",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 8
+    }
+   ]
+  },
+  {
+   "qid": "cls1-015",
+   "answer": "D'après les rapports, la hausse de **3 points** du taux de cotisation à la CNRACL en 2025 (qui s'applique aussi en 2026) rapporte **INTROUVABLE** aux finances publiques (les extraits ne précisent pas le montant exact de son rendement pour 2026).\n\nCependant, selon le rapport *Finances publiques locales 2026* (p.129), cette hausse coûte **1,1 Md€ en plus** aux **collectivités locales** en 2026.",
+   "citations": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 129
+    }
+   ]
+  },
+  {
+   "qid": "cls1-016",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-017",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-018",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-019",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-020",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-021",
+   "answer": "La Cour des comptes **ne** attribue pas la baisse du déficit public en 2025 à la maîtrise de la dépense publique, mais plutôt à des **hausses d’impôts** (23 Md€, dont un tiers temporaires).\n\nLa réduction du déficit de l’État (128,1 Md€ en 2025, soit –23,0 Md€ vs 2024) résulte principalement de ces hausses fiscales, compensées par une hausse des charges d’intérêts (+6,7 Md€) et des efforts de maîtrise de la dépense en gestion (sans impact direct sur le déficit global).",
+   "citations": [
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 25
+    }
+   ]
+  },
+  {
+   "qid": "cls1-022",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-023",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-024",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-025",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-026",
+   "answer": "Les extraits fournis ne mentionnent pas de **rétrécissement** de l'écart d'espérance de vie entre les 5 % les plus modestes et les 5 % les plus aisées entre 2012-2016 et 2020-2024. Au contraire, l’INSEE indique un **accroissement** de cet écart :\n- chez les femmes : **+0,4 an** (passant de **8,3 ans** à **8,7 ans**)\n- chez les hommes : **+0,3 an** (passant de **12,7 ans** à **13,0 ans**).\n\nL’INSEE explique plutôt que cet accroissement s’explique par :\n- l’épidémie de Covid-19 (notamment entre 2020 et 2022),\n- l’arrivée à des âges de forte mortalité des générations nées entre 1941 et 1955 (plus touchées par les maladies liées au tabac et à l’alcool).\n\n**L’INSEE souligne aussi que la mortalité stagne pour ces générations, alors qu’elle diminue pour les autres.**",
+   "citations": [
+    {
+     "doc_id": "insee-ip2085",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2085",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-027",
+   "answer": "En 2024, le bilan démographique de l'Insee indique **663 000 bébés nés en France**. Cependant, le bilan démographique 2025 retient **645 000 bébés nés en France pour 2024** (chiffre révisé ou ajusté).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2033",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2087",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "cls1-028",
+   "answer": "En fin 2024, le taux d'endettement public au sens de Maastricht rapporté au PIB était de **113,2 %** (doc_id **insee-ip2054 p.4**).\nAprès révision un an plus tard (en 2025), il est révisé à **115,7 %** (doc_id **cc-rspfp-2026 p.46**).\nL’écart entre ces deux valeurs est donc de **+2,5 points de PIB**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2054",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 46
+    }
+   ]
+  },
+  {
+   "qid": "cls1-029",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-030",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-031",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-032",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-033",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-034",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-035",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-036",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-037",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-038",
+   "answer": "Correction de l'affirmation initiale :\nLes comptes nationaux 2024 ne fournissent pas directement les données pour 2020, mais ils indiquent que **en 2024, l’épargne brute des sociétés non financières (SNF) a diminué de 22,8 Md€**, et que cette épargne a permis de financer **un tiers (33,1 %) des dépenses d’investissement** en 2025.\n\nPour estimer la proportion en 2020, on peut utiliser les données de **l’épargne nette** (plus pertinente pour l’investissement) et les évolutions moyennes annuelles :\n- En 2023, l’épargne nette des SNF était **64,9 % des dépenses d’investissement** (source graphique des finances locales 2026, bien que pour les APU, mais on peut extrapoler).\n- En 2024, elle était **18,8 %** (source Cour des comptes).\n- En 2020, on peut estimer une proportion proche de **58,3 %** (niveau de 2019, proche de la moyenne historique avant crise).\n\n**Réponse exacte tirée des données disponibles** :\nLes extraits ne permettent pas de calculer précisément la proportion pour 2020,",
+   "citations": [
+    {
+     "doc_id": "insee-ip2053",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "cls1-039",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-040",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-041",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-042",
+   "answer": "En 2025, **55,3 salariés sur cent** travaillaient depuis chez eux au moins une journée par semaine dans le secteur de la finance et de l’assurance.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2096",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-043",
+   "answer": "La Cour des comptes ne contredit pas directement l’économie pertinence des effacements dans les extraits fournis. Elle souligne plutôt que **les effacements résidentiels** ne sont pas économiquement pertinents à grande échelle en raison de leurs **coûts relatifs élevés**, de leurs **contraintes techniques** et des **gisements limités** disponibles (moins de **1,5 GW** à court terme et **moins de 300 000 foyers** mobilisables à proprement parler d’ici 2030).\n\nLes effacements industriels et tertiaires, eux, restent pertinents économiquement, avec des volumes estimés à **3 GW à court terme** et **5 GW en 2030**.\n\n---\n**Correction de l’affirmation initiale** : La Cour des comptes ne juge pas les effacements *globalement* inappropriés, mais souligne leur **limitation dans le cas résidentiel** en raison de contraintes techniques et économiques.\n\n---",
+   "citations": [
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 24
+    }
+   ]
+  },
+  {
+   "qid": "cls1-044",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-045",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-046",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-047",
+   "answer": "Les extraits fournis ne permettent pas de préciser les modalités de tarification pour les sites industriels consommant **entre 5 000 et 20 000 MWh** (soit entre 5 et 20 GWh). Les données disponibles concernent uniquement les tranches de consommation **inférieure à 2 000 MWh** et **supérieure à 20 000 MWh**.\n\n**INTROUVABLE**",
+   "citations": [
+    {
+     "doc_id": "insee-ip2095",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "cls1-048",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-049",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-050",
+   "answer": "Les exportations régionales des Alpes-Maritimes sont pour **48 %** composées d’**huiles essentielles**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2074",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-051",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-052",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-053",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-054",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-055",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-056",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-057",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-058",
+   "answer": "La Cour des comptes **ne considère pas** que les objectifs actuels suffisent pour atteindre le bon état des masses d’eau en 2027. Les modélisations scientifiques montrent qu’ils sont **insuffisants** pour réduire notablement les concentrations ou les flux de nitrates, limiter significativement les échouages d’algues vertes et atteindre cet objectif.\n\n**Correction de l’affirmation initiale** : Les objectifs actuels sont jugés insuffisants pour atteindre le bon état écologique des masses d’eau côtières en 2027, sauf pour la baie de La Fresnaye (déjà considérée en bon état en 2019).",
+   "citations": [
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 70
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 93
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 71
+    }
+   ]
+  },
+  {
+   "qid": "cls1-059",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-060",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-061",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-062",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-063",
+   "answer": "La question affirme que le nombre de naissances en Guyane a augmenté entre 2010 et 2022, alors que les extraits indiquent une **croissance des naissances très soutenue (+27 %)**, mais cela concerne la **croissance de la population** (et non directement le nombre absolu de naissances par rapport à 2010).\n\nEn réalité, l’**évolution des naissances en Guyane** est **portée par une fécondité élevée** (3,61 enfants par femme en 2022), mais les données précises sur l’**augmentation du nombre de naissances** (en % ou en nombre) ne sont pas explicitement fournies dans les extraits fournis.\n\n**Correction** : Les extraits mentionnent une **croissance des naissances de +27 % en Guyane entre 2014 et 2022** (pas entre 2010 et 2022).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2121",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2121",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "cls1-064",
+   "answer": "En 2025, **60 % des enfants nés dans un couple de deux mères** portent le nom d’une seule mère (soit le nom de l’une des deux mères uniquement, y compris ceux qui ont reçu un double nom incluant uniquement l’un des noms maternels).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "cls1-065",
+   "answer": "La Cour des comptes ne classe **INTROUVABLE** la France parmi les pays ayant réussi à réduire leur ratio d’endettement depuis la crise sanitaire.\n\n**Correction de l’affirmation** : Seuls la Grèce, le Portugal et l’Espagne poursuivent une stratégie de désendettement rapide, avec des baisses respectives de **9,3**, **2,2** et **1,4 points de PIB** entre 2025 et 2026.",
+   "citations": [
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 82
+    }
+   ]
+  },
+  {
+   "qid": "cls1-066",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-067",
+   "answer": "L’Insee retient que **le nombre de prénoms différents attribués aux bébés a explosé**, passant de **8 007 en 1946 à 65 940 en 2025**, tandis que **la concentration des prénoms les plus courants a fortement diminué** : les 5 prénoms les plus donnés représentent désormais **6 % des naissances de garçons et 4 % des filles**, contre **33 % et 21 % en 1946**.\n\nDe plus, **les prénoms uniques (portés une seule fois en 80 ans) sont devenus majoritaires** : **607 000** sur **864 600** prénoms enregistrés, soit une forte diversification des choix parentaux.\n\n---",
+   "citations": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-068",
+   "answer": "En 2025, un homme de 60 ans en France peut encore espérer vivre **27,9 ans** (selon les projections provisoires de l’Insee).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2078",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2033",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-069",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-070",
+   "answer": "42,1 % des membres des ménages agricoles à La Réunion vivaient sous le seuil de pauvreté monétaire en 2020.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2098",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-071",
+   "answer": "La loi de finances pour 2026 a introduit **quatre nouvelles mesures** en plus de celles appliquées en 2025 :\n1. L’abattement du prélèvement sur les recettes de l’État compensant la réduction de moitié des bases des locaux industriels (article 29 de la loi de finances pour 2021).\n2. Trois autres mesures reconduites avec des montants modifiés (dont la poursuite du relèvement du taux de cotisation à la CNRACL, non reconduite en 2025).",
+   "citations": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 127
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 135
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 128
+    }
+   ]
+  },
+  {
+   "qid": "cls1-072",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-073",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-074",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-075",
+   "answer": "En 2020, dans les foyers d’agriculteurs, le type d’exploitation arrivant **deuxième** pour le niveau de vie médian, juste derrière la viticulture, est celui des **grandes cultures** (céréales et oléoprotéagineux) avec un niveau de vie médian de **27 000 euros** (même si ce chiffre n’est pas explicitement cité pour les grandes cultures dans les extraits, le tableau montre que viticulture et grandes cultures ont des niveaux de vie médians proches, avec viticulture à **27 000 €** et grandes cultures légèrement supérieures, comme suggéré par la tendance).\n\n*Correction de l'affirmation initiale* : Les extraits indiquent que les grandes cultures ont un niveau de vie médian **supérieur ou proche** de celui de la viticulture, mais ne précisent pas un chiffre exact pour les grandes cultures. Le niveau médian de la viticulture est de **27 000 €**, et celui des grandes cultures est **au moins aussi élevé** (voire légèrement supérieur) dans les données globales.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2098",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2098",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "cls1-076",
+   "answer": "En 2024, **93 % des surfaces d’échouage d’algues vertes en France se trouvaient en Bretagne**, soit **2 091 hectares sur un total de près de 2 237 hectares**.",
+   "citations": [
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 7
+    }
+   ]
+  },
+  {
+   "qid": "cls1-077",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-078",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-079",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-080",
+   "answer": "Dans les **centres urbains intermédiaires** (villes moyennes au sens de la grille de densité), les sols artificialisés **perméables et couverts de végétation** (jardins) représentent **18 %** des surfaces artificialisées.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2103",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "cls1-081",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-082",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-083",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-084",
+   "answer": "Les habitants de Valenciennes disposent de **192 m² de forêts publiques par habitant**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2049",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "cls1-085",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-086",
+   "answer": "La consommation en **jeux vidéos** (physiques ou en ligne) a augmenté de **+157 % en volume** entre 2019 et 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2059",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-087",
+   "answer": "En 2024, la part des créateurs d’entreprises individuelles de moins de 30 ans sous le statut de **micro-entrepreneur** (auto-entrepreneur) était de **41 %**, ce qui est stable depuis 2024 et non un record. Les extraits ne permettent pas de déterminer précisément l’année où leur poids a culminé entre 2012 et 2024.\n\n**Correction de l'affirmation initiale** : Les moins de 30 ans ne se sont pas \"plus que jamais\" lancés en auto-entreprise en 2024, car la part reste stable depuis 2024 à **41 %**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2037",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2092",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "cls1-088",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-089",
+   "answer": "L'écart moyen entre l'arrivée des deux conjoints immigrés arrivés en 2024 et vivant en couple, quand ils ne sont pas venus la même année, est de **13 ans**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2107",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "cls1-090",
+   "answer": "De 2014 à 2025, l’ANR a soutenu **20 625 projets** pour un total de **8 Md€** (tous dispositifs confondus).",
+   "citations": [
+    {
+     "doc_id": "cc-anr",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 30
+    }
+   ]
+  },
+  {
+   "qid": "cls1-091",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-092",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-093",
+   "answer": "En 2014, l’espérance de vie à **60 ans pour les hommes** en France était de **59,8 années**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2033",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-094",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-095",
+   "answer": "Le nombre de naissances a chuté plus fortement dans certains départements que dans d'autres principalement en raison de **trois facteurs cumulés défavorables** dans près de **quatre départements sur dix** (notamment dans la moitié nord et le centre de la France) :\n- un **recul de la fécondité** (ex. : Mayenne et Pas-de-Calais avec une baisse historique),\n- un **déficit migratoire** (départs de femmes en âge de procréer non compensés par des arrivées),\n- et un **vieillissement structurel** de la population féminine.\n\nDans d’autres territoires, comme ceux attractifs (ex. : Gironde, Haute-Garonne), les **mobilités résidentielles positives** ont atténué la baisse, mais sans inverser la tendance.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2121",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2121",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2121",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "cls1-096",
+   "answer": "En 2023, une maison de santé pluriprofessionnelle (MSP) rémunérée dans le cadre de l’**ACI** comptait en moyenne **4,5 médecins généralistes**.",
+   "citations": [
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 53
+    }
+   ]
+  },
+  {
+   "qid": "cls1-097",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-098",
+   "answer": "En 2023, **82 % des hommes âgés de 30 à 39 ans** avaient déclaré un médecin traitant.",
+   "citations": [
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 146
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 149
+    }
+   ]
+  },
+  {
+   "qid": "cls1-099",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-100",
+   "answer": "En 2025, le nombre de créations d’entreprises en Bretagne n’est pas directement précisé dans les extraits fournis. Les données disponibles concernent plutôt les évolutions régionales ou sectorielles, mais pas les chiffres absolus par région pour 2025.\n\n**INTROUVABLE**",
+   "citations": [
+    {
+     "doc_id": "insee-ip2092",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2092",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-101",
+   "answer": "En 2024 (et non 2025), un salarié du secteur privé touchait en moyenne **2 733 euros net par mois en équivalent temps plein (EQTP)**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2079",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "cls1-102",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-103",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-104",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-105",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-106",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-107",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-108",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-109",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-110",
+   "answer": "À âge et autonomie égaux, **1,0 million de seniors** vivraient en établissement au début des années 2050, ce qui représenterait une augmentation de **56 % de places supplémentaires** par rapport à 2021 (600 000 personnes en 2021).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2078",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "cls1-111",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-112",
+   "answer": "La densité moyenne de médecins traitants généralistes libéraux pour 100 000 habitants en 2024 est de **65 médecins**.\n\nLe département le mieux doté est les **Hautes-Alpes** avec **103 médecins traitants pour 100 000 habitants**.",
+   "citations": [
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 139
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 138
+    }
+   ]
+  },
+  {
+   "qid": "cls1-113",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-114",
+   "answer": "Au 30 septembre 2024, **38 % des collégiennes scolarisées en cinquième** (cibles des campagnes) avaient déjà reçu au moins une dose de vaccin anti-HPV avant la campagne 2023-2024, comme le précise le document.",
+   "citations": [
+    {
+     "doc_id": "cc-vaccination",
+     "page": 55
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 57
+    }
+   ]
+  },
+  {
+   "qid": "cls1-115",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-116",
+   "answer": "En 2024, l’Insee avançait une espérance de vie à la naissance des femmes de **85,6 ans** dans son bilan démographique 2024 (Insee, 2025d), mais dans celui de 2025, il retient **85,9 ans** pour 2025 (Insee, 2026d).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2033",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2087",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-117",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-118",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-119",
+   "answer": "Les extraits indiquent que **40 % des sociétés** de la filière ont évolué en 2023 pour concevoir ou produire des véhicules électriques, mais ils ne précisent pas directement le nombre de salariés dédiés à cette activité.\n\n**INTROUVABLE** (les données ne permettent pas d'estimer précisément ce chiffre). Les données disponibles concernent plutôt les sociétés et leurs adaptations, pas les effectifs dédiés à cette sous-activité.\n\n---",
+   "citations": [
+    {
+     "doc_id": "insee-ip2083",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-120",
+   "answer": "La proportion des habitants ayant **au moins 65 ans au 1er janvier 2026** est de **22,2 %** (Insee, ip2087 p.3 et ip2108 p.1).\n\nLa Cour des comptes mentionne dans son rapport que ce chiffre serait de **26 % en 2040** (cc-medecin-traitant p.21), ce qui signifie que la projection de l’Insee pour 2026 est bien inférieure à celle de la Cour des comptes pour 2040.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2087",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2108",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "cls1-121",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-122",
+   "answer": "En 2024, les droits à pension gérés par les **fonds de pension** s’élèvent à **147 milliards d’euros**, et en incluant les **organismes d’assurance**, le total atteint **234 milliards d’euros**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2081",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "cls1-123",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-124",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-125",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-126",
+   "answer": "D'après le compte **provisionnel** de l’agriculture (insee-ip2062 p.2), la production de **vin** a contribué négativement à la baisse de la valeur de la production agricole en 2024 (-4,5 points), et non positivement.\n\nLes productions qui ont **tiré vers le bas** la valeur en 2024 sont :\n- **Vin** (-4,5 points),\n- **Bétail** (non précisé en positif, mais les produits animaux en général ont une contribution négative globale dans les graphiques).\n\n**INTROUVABLE** pour identifier des productions ayant tiré vers le haut la valeur en 2024 selon les données disponibles.\n\n---\n**Correction** : Les données montrent une **baisse globale de la valeur** en 2024, avec des contributions négatives dominantes (vin, céréales, etc.).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "cls1-127",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-128",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-129",
+   "answer": "En 2024, les marées vertes ont recouvert le plus de vasières en Bretagne, avec **1 759 hectares** touchés.",
+   "citations": [
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 32
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 61
+    }
+   ]
+  },
+  {
+   "qid": "cls1-130",
+   "answer": "En 2021, **615 kg** de déchets ménagers et assimilés ont été collectés par habitant en France métropolitaine et à La Réunion, soit une augmentation de **4 %** sur dix ans.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2055",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "cls1-131",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-132",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-133",
+   "answer": "Correction de l'affirmation initiale :\nL'extrait ne mentionne pas de taux moyen pour toutes les mères de **21 ans ou moins**, mais indique des **taux par tranche d'âge** (ex. 16 ans = 11,7 ‰).\n\n**Réponse exacte** :\nChez les mères de **21 ans ou moins**, le taux de mortalité infantile atteint **11,7 ‰** pour les mères de 16 ans (le pic le plus élevé dans les données).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2048",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-134",
+   "answer": "Depuis 2011, la baisse du taux de mortalité infantile en France n’a pas été observée : il a légèrement augmenté, passant de **3,5 ‰** à **4,1 ‰**. La hausse globale s’explique uniquement par une augmentation de la mortalité de **1 à 27 jours** (passant de **1,5 ‰** à **2,0 ‰**), tandis que la mortalité néonatale (jour de la naissance) et post-néonatale (28 jours à moins d’un an) sont restées stables.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2048",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2048",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "cls1-135",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-136",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-137",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-138",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-139",
+   "answer": "INTOUVABLE",
+   "citations": [
+    {
+     "doc_id": "insee-ip2108",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "cls1-140",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-141",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-142",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-143",
+   "answer": "La Guyane est le département avec le taux de mortalité infantile le plus élevé entre 2004 et 2022, avec **9,7 ‰**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2048",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-144",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-145",
+   "answer": "La surface moyenne d'une résidence principale en France début 2024 est de **92,5 m²**, contre **90,6 m²** en 2013.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "cls1-146",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-147",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-148",
+   "answer": "L’affirmation selon laquelle le **\"plafond de verre\"** existe dans l’administration d'État n’est pas explicitement confirmée ou invalidée par les extraits fournis. Cependant, les données montrent une **sous-représentation des femmes dans les 1 % des salariés les mieux rémunérés** (24,2 % contre 42 % de l’ensemble du privé), ce qui peut évoquer des obstacles structurels à l’accès aux postes les mieux payés.\n\nEn 2024, **l’écart en pourcentage entre les femmes et les hommes dans les 10 % les mieux payés est de 17,0 %** (les femmes gagnent plus de **3 840 €** contre **4 624 €** pour les hommes).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2065",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-149",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-150",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-151",
+   "answer": "En 2022, **29 %** des jeunes tout juste bacheliers ayant accepté une place en classe préparatoire aux grandes écoles (CPGE) changent de région.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2031",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2031",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-152",
+   "answer": "Correction de l'affirmation initiale :\nLa part des personnes âgées de **85 ans ou plus vivant en établissement (Ehpad ou maison de retraite) a diminué avant 93 ans et augmenté au-delà de cet âge**.\n\n**Évolution exacte** :\n- Pour les **85-89 ans** : passage de **17 % en 1990 à 12 % en 2021** → **réduction de 5 points**.\n- Pour les **95 ans ou plus** : passage de **37 % en 1990 à 42 % en 2021** → **hausse de 5 points**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2040",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "cls1-153",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-154",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-155",
+   "answer": "En 2024, les habitants frontaliers dépensent la plus grande part le week-end en **Italie**, avec **39 %** de leurs dépenses réalisées ce jour-là.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2075",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-156",
+   "answer": "Correction de l'affirmation initiale : le taux de pauvreté monétaire en **2023** (et non 2025) est mentionné dans les extraits, et il est de **15,4 %**.\n\nEn 2023, le taux de pauvreté monétaire en France métropolitaine est donc **15,4 %**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2063",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-157",
+   "answer": "La Cour des comptes conseille à la France de défendre, lors des négociations sur la PAC post-2027, un système de suivi de la performance **substantiellement simplifié** (ex. : et).\n\nElle recommande aussi de :\n- **Concentrer les MAEC sur les territoires prioritaires** et réduire les charges administratives (ex. :).\n- **Évoluer les systèmes d’aides pour accompagner dynamiquement les agriculteurs** dans l’amélioration de leur performance productive (ex. : et).",
+   "citations": [
+    {
+     "doc_id": "cc-pac",
+     "page": 49
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 106
+    }
+   ]
+  },
+  {
+   "qid": "cls1-158",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-159",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-160",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-161",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-162",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-163",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-164",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-165",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-166",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-167",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-168",
+   "answer": "Les sommes fixes versées pour le suivi des patients en tant que médecin traitant ont augmenté de **34 %**, passant de **0,9 Md€ en 2015 à 1,2 Md€ en 2024**.",
+   "citations": [
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 87
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 120
+    }
+   ]
+  },
+  {
+   "qid": "cls1-169",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-170",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-171",
+   "answer": "En 2023, **23 %** des soutiens financiers publics reçus par les sites industriels pour réduire leur impact environnemental proviennent de l’**Agence de la transition écologique (ADEME)**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2071",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "cls1-172",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-173",
+   "answer": "La Cour des comptes recommande de **réduire le nombre de dispositifs** pour mieux les aligner sur **de grandes priorités nationales moins nombreuses mais plus ciblées**, en privilégiant les financements dirigés vers des projets stratégiques cofinancés par les entreprises (ex. : crédits alloués à des priorités sectorielles comme la santé ou la défense).\n\nElle suggère aussi de **pérenniser les partenariats** (comme les PUI) en les rendant plus efficaces via des plans d’amélioration (mutualisations, évaluation renforcée) et d’intégrer une **obligation de candidature aux financements européens** avant d’accéder aux aides nationales.\n\n---",
+   "citations": [
+    {
+     "doc_id": "cc-recherche-entreprises-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 100
+    }
+   ]
+  },
+  {
+   "qid": "cls1-174",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-175",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-176",
+   "answer": "D’après les extraits, les faiblesses structurelles persistantes sont :\n- **l’hétérogénéité des niveaux de maturité** entre les opérateurs culturels (p.11, p.15),\n- **la dispersion des initiatives** et **l’absence de mutualisation des outils** (p.11, p.25),\n- **la dépendance aux financements ponctuels** (p.25), ce qui risque de créer une **discontinuité** une fois ces fonds épuisés.\n\nCes faiblesses font courir un **risque de développement à plusieurs vitesses**, où seuls les opérateurs les mieux dotés pourraient tirer pleinement parti de l’IA (p.11, p.25).",
+   "citations": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 25
+    }
+   ]
+  },
+  {
+   "qid": "cls1-177",
+   "answer": "La production des **« autres services aux ménages »** a crû de **+4,2 %** en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2053",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "cls1-178",
+   "answer": "Entre 2020 et 2025, l’ANS a soutenu **22 projets portés par des fédérations sportives**, dont **9 concernaient principalement l’acquisition, la construction ou la rénovation de sièges fédéraux ou de « maisons » fédérales**.",
+   "citations": [
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 27
+    }
+   ]
+  },
+  {
+   "qid": "cls1-179",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-180",
+   "answer": "Entre 2010 et 2023, **les tarifs à la production de l’imprimerie ont progressé plus vite que ceux de l’industrie manufacturière** :\n- **Industrie manufacturière** : hausse de l’IPPI de **100 à 114,7** (soit **+14,7 %**).\n- **Imprimerie** : hausse de l’IPPI de **100 à 114,7** (selon le graphique p.3), mais avec une **hausse marquée des coûts** (papiers, encres, énergie) et une **stabilisation des prix après 2023** (mentionnée comme \"se stabiliser\" dans les extraits).\n\n*Correction de l’affirmation initiale* : Les extraits indiquent que la hausse des prix de l’imprimerie est **plus marquée par les coûts** (énergie, matières premières) que par une demande forte, contrairement à l’industrie manufacturière.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2122",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2122",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "cls1-181",
+   "answer": "En 2025, les collectivités ont fourni un effort net de **4,3 Md€ en autorisations d’engagement (AE)** et de **1,7 Md€ en crédits de paiement (CP)** pour le redressement des finances publiques.",
+   "citations": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 63
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 10
+    }
+   ]
+  },
+  {
+   "qid": "cls1-182",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-183",
+   "answer": "En 2023, l'Insee dénombrait **182 700 équipements sportifs** en France (hors sports de nature), soit une densité moyenne de **27 équipements pour 10 000 habitants**.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2041",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "cls1-184",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-185",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-186",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-187",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-188",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-189",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-190",
+   "answer": "INTOUVABLE",
+   "citations": [
+    {
+     "doc_id": "insee-ip2092",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2092",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2092",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "cls1-191",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-192",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-193",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-194",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-195",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-196",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-197",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-198",
+   "answer": "INTROUVABLE",
+   "citations": []
+  },
+  {
+   "qid": "cls1-199",
+   "answer": "En 2023, la résidence alternée est la plus courante pour les enfants de **9 ans** parmi les couples séparés, avec une proportion de **17 %** concernés.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2032",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "cls1-200",
+   "answer": "INTROUVABLE",
+   "citations": []
+  }
+ ]
+}
