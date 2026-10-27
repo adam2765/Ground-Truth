@@ -173,3 +173,19 @@ Deux autres corrections testées au run 3, visant la cause principale des erreur
 - **lignes clés** (variante `duoL`) : le reranker note chaque phrase et chaque rangée de tableau des 8
   meilleurs extraits ; les 3 meilleures sont placées en tête du prompt (« Lignes les plus pertinentes »).
   Le run 3 compare `duo` et `duoL` sur la validation et garde la meilleure.
+
+### Run 3
+
+Validation, juge officiel (`results/run3/`) :
+
+| Variante | Score brut | Après calibration | Abstention | Justes + citées | Fausses |
+|---|---|---|---|---|---|
+| duo (court5 + contrôle par concordance) | +0,175 | +0,410 | 68 % | 34 | 30 |
+| duoL (duo + lignes clés en tête du prompt) | +0,145 | **+0,425** | 76 % | 33 | 32 |
+
+- La concordance tient ses promesses : +0,355 (run 2) → +0,41 / +0,425, et sans seuil fin sur le reranker.
+- Les lignes clés n'améliorent pas les réponses brutes ; l'écart entre duo et duoL (0,015) est dans le bruit.
+- **Limite de la mesure** : avec 100 questions, une question qui bascule de juste à fausse change le score de
+  0,02, et l'écart-type du score est d'environ 0,07. Les écarts de moins de ~0,05 entre deux variantes ne
+  sont pas significatifs. Les prochains gains devront venir de changements structurels (valeurs des
+  graphiques, synthèses), pas de réglages de prompt.
