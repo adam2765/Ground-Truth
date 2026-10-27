@@ -38,10 +38,20 @@ def abstains(meta: dict, rule: dict) -> bool:
     if rule.get("require_quote") and meta.get("quote_ok") is False:
         return True
     ag = rule.get("agreement", "off")                  # concordance de deux réponses indépendantes
-    if ag != "off" and "agree" in meta and (meta["agree"] is False or (ag == "strict" and meta["agree"] is None)):
+    key = "agree_inclus" if ag.endswith("_inclus") else "agree"
+    if ag != "off" and key in meta and (meta[key] is False or (ag.startswith("strict") and meta[key] is None)):
         return True
     u = rule.get("max_unsupported")
     return u is not None and meta.get("unsupported", 0) > u
+
+
+def enrich(preds: dict) -> None:
+    """Ajoute la concordance « inclusion » aux réponses qui ont une 2e réponse (variantes duo / trio)."""
+    from rag2.answer import agree_inclus
+    for p in preds.values():
+        m = p.get("_meta", {})
+        if "second" in m and "agree_inclus" not in m and not m.get("llm_abstain"):
+            m["agree_inclus"] = agree_inclus(p["answer"], m["second"])
 
 
 def simulate(rows, metas, answerable, rule) -> float:
@@ -56,6 +66,7 @@ def simulate(rows, metas, answerable, rule) -> float:
 
 def cmd_fit(args):
     preds = load_predictions(args.raw)
+    enrich(preds)
     report = json.loads(Path(args.report).read_text(encoding="utf-8"))
     rows = {r["qid"]: r["points"] for r in report["details"]}
     answerable = {q["qid"]: q["answerable"] for q in load_questions(args.gold)}
@@ -66,7 +77,7 @@ def cmd_fit(args):
     thresholds = [None] + scores
     results = []
     has_agree = any(m.get("agree") is not None for m in metas.values())
-    for ag in (("off", "souple", "strict") if has_agree else ("off",)):
+    for ag in (("off", "souple", "strict", "souple_inclus", "strict_inclus") if has_agree else ("off",)):
         for rq in (False, True):
             for rv in (False, True):
                 for u in UNSUP_OPTIONS:
@@ -110,6 +121,7 @@ def cmd_fit(args):
 def cmd_apply(args):
     rule = json.loads(Path(args.rule).read_text())
     preds = load_predictions(args.raw)
+    enrich(preds)
     out, n_abs = [], 0
     for qid, p in preds.items():
         meta = p.get("_meta", {})

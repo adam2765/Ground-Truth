@@ -76,6 +76,18 @@ def _key_numbers(answer: str) -> list[float]:
             if not (float(r).is_integer() and (1900 <= r <= 2100 or abs(r) <= 10))]
 
 
+def agree_inclus(a: str, b: str) -> bool | None:
+    """Concordance « inclusion » (run 5) : tous les chiffres de la réponse la plus courte se retrouvent dans
+    l'autre. « de 308 000 en 2022 à 276 600 » et « 276 600 » concordent ; la règle exacte les rejetait."""
+    if a == "INTROUVABLE" or b in (None, "INTROUVABLE"):
+        return False
+    na, nb = _key_numbers(a), _key_numbers(b)
+    if not na and not nb:
+        return None
+    short, long_ = (na, nb) if len(na) <= len(nb) else (nb, na)
+    return bool(short) and all(any(_close(x, y) for y in long_) for x in short)
+
+
 def agree(a: str, b: str) -> bool | None:
     """Les deux réponses donnent-elles les mêmes chiffres ? None si aucune ne contient de chiffre."""
     if a == "INTROUVABLE" or b == "INTROUVABLE":

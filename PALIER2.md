@@ -219,3 +219,20 @@ départage : on garde la réponse soutenue par au moins 2 appels sur 3, au lieu 
 n'a lieu que si les deux premiers divergent, pour rester sous 30 s par question en moyenne sur T4 (temps
 mesuré question par question). Comparé à la référence run 4 (+0,425), sans la refaire (résultats
 déterministes) ; le leaderboard n'est régénéré que si le vote à 3 fait mieux.
+
+### Concordance « inclusion » (soumission du 28/10, sans nouveau run)
+
+Analyse du filtre du run 4 : sur les 24 réponses qu'il laisse passer, une seule est fausse ; mais il écarte
+12 bonnes réponses, dont 10 parce que les deux réponses « ne concordent pas ». La règle exacte exigeait les
+mêmes chiffres des deux côtés : « de 308 000 en 2022 à 276 600 » et « 276 600 » étaient jugées en désaccord.
+Règle « inclusion » : tous les chiffres de la réponse la plus courte doivent se retrouver dans l'autre.
+
+| Concordance (+ chiffres absents des extraits) | Validation | Répond | Fausses |
+|---|---|---|---|
+| exacte | +0,425 | 24 | 1 |
+| **inclusion** | **+0,465** | 32 | 3 |
+| une valeur commune suffit | +0,425 | 36 | 7 |
+
+Les règles voisines (inclusion avec ou sans tolérance, « chiffres de la 1re dans la 2e ») donnent toutes entre
++0,445 et +0,465 : le gain ne tient pas à un réglage fin. Appliquée aux réponses déjà calculées du leaderboard
+(run 4), sans nouveau passage GPU (`results/run4b/`).
