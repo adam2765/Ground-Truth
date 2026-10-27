@@ -2,6 +2,7 @@
 # Description des graphiques par un modèle de vision (Qwen2.5-VL-3B), sur les 2 GPU T4 de Kaggle. ~3-4 h.
 #   Kaggle (Save & Run All, GPU T4 x2, Internet On) :
 #     !git clone -q https://github.com/adam2765/Ground-Truth.git /tmp/gt; bash /tmp/gt/scripts/run_charts.sh
+#   Test rapide (sonde seule, ~10 min) : ... ; PROBE_ONLY=1 bash /tmp/gt/scripts/run_charts.sh
 # Résultat : charts_v1.json.gz dans /kaggle/working (à envoyer à Claude), plus les journaux.
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -22,6 +23,16 @@ python corpus/download_corpus.py | tail -n 2
 mkdir -p index2 runs
 [ -f index2/pages.json ] || gunzip -c cache/pages_v1.json.gz > index2/pages.json
 python -m rag2.describe_charts select --index-dir index2 --out runs/chart_pages.json
+
+step "Sonde : 4 pages avec graphiques connus (descriptions complètes)"
+CUDA_VISIBLE_DEVICES=0 python -m rag2.describe_charts run --probe --pages runs/chart_pages.json --out runs/probe.jsonl
+cp runs/probe.jsonl "$OUT/probe.jsonl"
+N_OK=$(python -c "
+import json; from rag2.describe_charts import _useful
+print(sum(_useful(json.loads(l)['text']) for l in open('runs/probe.jsonl') if l.strip()))")
+echo "Descriptions utiles sur la sonde : $N_OK / 4"
+if [ "$N_OK" -lt 2 ]; then echo "Sonde ratée : arrêt. Envoie ce log à Claude."; exit 1; fi
+if [ "${PROBE_ONLY:-0}" = 1 ]; then echo "PROBE_ONLY=1 : arrêt après la sonde."; exit 0; fi
 
 step "Description ($NGPU GPU en parallèle)"
 PIDS=()

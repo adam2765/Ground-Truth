@@ -27,15 +27,21 @@ DPI = 110                      # page A4 ~ 900 x 1290 px
 MAX_NEW = 320
 
 PROMPT = (
-    "Cette image est une page d'un rapport public français (Insee ou Cour des comptes). "
-    "Pour chaque graphique, carte ou tableau présenté sous forme d'image de la page, écris :\n"
-    "- son titre (ou son numéro, par exemple « Figure 2 » ou « Graphique n° 7 ») ;\n"
-    "- toutes les valeurs que l'on peut lire, une par ligne, sous la forme « catégorie ou année : valeur unité ».\n"
-    "Si une valeur n'est pas écrite sur le graphique, donne une estimation lue sur l'axe, précédée de « environ ». "
-    "Indique aussi la catégorie la plus élevée et la plus faible. N'invente aucune catégorie. "
-    "Ignore le texte courant de la page. Écris en français. "
-    "S'il n'y a aucun graphique ni tableau en image, réponds seulement : AUCUN"
+    "This image is a page from a French public report (Insee or Cour des comptes). "
+    "Describe every chart, graph, map or table drawn on this page. For each one, write its title or number "
+    "(for example « Figure 2 » or « Graphique n° 7 »), then list every data value you can read, one per line, "
+    "as « label: value unit » (years, categories, percentages, amounts). "
+    "If a value is not printed, estimate it from the axis and write « environ » before it. "
+    "Then say which category is the highest and which is the lowest. "
+    "Do not copy the body text of the page. Answer in French."
 )
+# Run 1 de cette tâche : avec une consigne qui autorisait « AUCUN » s'il n'y avait pas de graphique, le modèle
+# a répondu AUCUN aux 1 225 pages, graphiques compris. La consigne ne propose plus d'échappatoire ; on filtre
+# ensuite les descriptions sans chiffres (merge).
+
+# Pages de contrôle (graphiques connus, preuves de questions de validation) : décrites d'abord, en entier dans le log
+PROBE = [["cc-informatique-quantique", 39], ["cc-effacements-electricite", 38], ["insee-ip2039", 2],
+         ["cc-finances-locales-2026", 211]]
 
 CAPTION = re.compile(r"(Graphique\s*n\s*°|Figure\s*\d|figure\s*\d|►\s*\d+\.|Carte\s*n\s*°|Schéma\s*n\s*°)", re.I)
 
@@ -62,7 +68,12 @@ def _looks_broken(text: str) -> bool:
     return not t or (len(set(t)) <= 3 and len(t) > 10)
 
 
-def run(pages: list[list], out_path: str, pdf_dir: str = "corpus/pdf") -> None:
+def _useful(text: str) -> bool:
+    """Une description utile contient au moins 3 nombres (valeurs lues sur le graphique)."""
+    return len(re.findall(r"\d+(?:[.,]\d+)?", text)) >= 3 and not re.match(r"^\W*AUCUN\W*$", text, re.I)
+
+
+def run(pages: list[list], out_path: str, pdf_dir: str = "corpus/pdf", probe: bool = False) -> None:
     import torch
     from PIL import Image
     from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
@@ -95,13 +106,15 @@ def run(pages: list[list], out_path: str, pdf_dir: str = "corpus/pdf") -> None:
                 out = model.generate(**inputs, max_new_tokens=MAX_NEW, do_sample=False)
             text = processor.batch_decode(out[:, inputs["input_ids"].shape[1]:], skip_special_tokens=True)[0].strip()
             ok = not _looks_broken(text)
-            broken = broken + (not ok) if n <= 5 else broken
-            if n == 5 and broken == 5:
+            broken = broken + (not ok or not _useful(text)) if n <= 5 else broken
+            if not probe and n == 5 and broken == 5:
                 raise SystemExit("Les 5 premières descriptions sont illisibles (float16 ?) : arrêt pour ne pas "
                                  "gaspiller le GPU. Envoie le log à Claude.")
             f.write(json.dumps({"doc_id": doc_id, "page": page_no, "text": text, "ok": ok}, ensure_ascii=False) + "\n")
             f.flush()
-            if n <= 3 or n % 25 == 0:
+            if probe:
+                print(f"\n===== {doc_id} p.{page_no} ({'utile' if _useful(text) else 'INUTILE'}) =====\n{text}", flush=True)
+            elif n <= 3 or n % 25 == 0:
                 print(f"  {n}/{len(todo)} ({(time.time() - t0) / n:.1f} s/page) {doc_id} p.{page_no}: "
                       f"{' '.join(text.split())[:160]}", flush=True)
 
@@ -113,7 +126,7 @@ def merge(inputs: list[str], out_path: str) -> None:
             if line.strip():
                 r = json.loads(line)
                 rows[(r["doc_id"], r["page"])] = r
-    kept = [r for r in rows.values() if r["ok"] and not re.match(r"^\W*AUCUN\W*$", r["text"], re.I)]
+    kept = [r for r in rows.values() if r["ok"] and _useful(r["text"])]
     with gzip.open(out_path, "wt", encoding="utf-8") as f:
         json.dump(kept, f, ensure_ascii=False)
     print(f"{len(rows)} pages décrites, {len(kept)} avec un graphique -> {out_path}")
@@ -146,6 +159,7 @@ def main():
     r.add_argument("--shard", default="0/1")
     r.add_argument("--out", required=True)
     r.add_argument("--limit", type=int, default=0)
+    r.add_argument("--probe", action="store_true", help="décrit seulement les pages de contrôle, en entier")
     m = sub.add_parser("merge")
     m.add_argument("--inputs", nargs="+", required=True)
     m.add_argument("--out", required=True)
@@ -156,6 +170,9 @@ def main():
         Path(args.out).write_text(json.dumps(sel))
         print(f"{len(sel)} pages à décrire -> {args.out}")
     elif args.cmd == "run":
+        if args.probe:
+            run(PROBE, args.out, probe=True)
+            return
         i, n = map(int, args.shard.split("/"))
         pages = json.loads(Path(args.pages).read_text())[i::n]
         if args.limit:
