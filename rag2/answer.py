@@ -58,8 +58,26 @@ VARIANTS = {
     "court5": {"system": "plain", "chunks": 5},       # réponse courte, 5 extraits
     "cite5": {"system": "quote", "chunks": 5},        # recopie d'abord l'extrait, puis répond
     "cite3": {"system": "quote", "chunks": 3},        # idem avec 3 extraits seulement
+    # run 3 : réponse court5 + 2e réponse indépendante au format cite5 ; si les chiffres des deux réponses
+    # ne concordent pas, le modèle devine (calibration : rag2/calibrate.py, critère « agree »)
+    "duo": {"system": "plain", "chunks": 5, "second": "quote"},
 }
-DEFAULT_VARIANT = "cite5"
+DEFAULT_VARIANT = "duo"
+
+
+def _key_numbers(answer: str) -> list[float]:
+    return [r for r, _ in extract_numbers(answer)
+            if not (float(r).is_integer() and (1900 <= r <= 2100 or abs(r) <= 10))]
+
+
+def agree(a: str, b: str) -> bool | None:
+    """Les deux réponses donnent-elles les mêmes chiffres ? None si aucune ne contient de chiffre."""
+    if a == "INTROUVABLE" or b == "INTROUVABLE":
+        return False
+    na, nb = _key_numbers(a), _key_numbers(b)
+    if not na and not nb:
+        return None
+    return all(any(_close(x, y) for y in nb) for x in na) and all(any(_close(y, x) for x in na) for y in nb)
 
 VERIFY_SYSTEM = (
     "Tu vérifies une réponse. On te donne des extraits de rapports, une question et une réponse proposée. "
@@ -243,6 +261,13 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
     raw = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], cfg["system"]),
                    max_new_tokens=MAX_NEW + (100 if cfg["system"] == "quote" else 0))
     answer, cits, llm_abstain = parse_answer(raw, ctx)
+    second = agreement = None
+    if cfg.get("second") and not llm_abstain:
+        raw2 = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], cfg["second"]),
+                        max_new_tokens=MAX_NEW + 100)
+        second, _, _ = parse_answer(raw2, ctx)
+        agreement = agree(answer, second)
+        do_verify = False                              # la concordance remplace l'auto-vérification (run 2 : inutile)
     verified = None if (llm_abstain or not do_verify) else verify(gen, q["question"], answer, ctx, cits)
     scores = [h.get("score", 0.0) for h in hits]
     return {
@@ -256,6 +281,8 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
             "verified": verified,
             "quote_ok": None if llm_abstain else quote_check(raw, ctx),
             "variant": variant,
+            "second": second,
+            "agree": agreement,
             "n_context": len(ctx),
         },
     }

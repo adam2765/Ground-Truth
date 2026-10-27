@@ -134,3 +134,34 @@ dans le contexte : le problème est la génération, pas la recherche. Analyse d
 Abstention : on répond INTROUVABLE si le modèle s'abstient, si le score du reranker du meilleur passage
 est sous un seuil, ou (option) si la réponse contient des chiffres absents des extraits. Le seuil et
 l'option sont choisis pour maximiser le score de confiance sur validation (`rag2/calibrate.py`).
+
+### Run 2 (soumission 2026-10-27_2)
+
+Validation, juge officiel (`results/run2/`) :
+
+| Variante | Score brut | Après calibration | Abstention | Justes + citées | Fausses |
+|---|---|---|---|---|---|
+| court5 (réponse courte, 5 extraits) | +0,235 | **+0,355** | 68 % | 35 | 27 |
+| cite5 (citation puis réponse, 5 extraits) | +0,155 | +0,345 | 74 % | 35 | 30 |
+| cite3 (citation puis réponse, 3 extraits) | +0,135 | +0,280 | 72 % | 28 | 34 |
+
+- Gain réel mais modeste (+0,28 → +0,355). Demander une citation n'aide pas ce petit modèle, et 3 extraits
+  sont trop peu (il manque souvent la bonne page).
+- Analyse des 27 erreurs de court5 : 15 fois la valeur attendue est absente de la réponse (mauvaise ligne
+  de tableau, autre année, moyenne au lieu de médiane), 9 questions sans valeur clé (synthèses, « quelle
+  année / quel secteur » sur un graphique), 3 réponses jugées incomplètes.
+- **L'auto-vérification ne marche pas** : le modèle valide la plupart de ses propres erreurs (13 NON sur 69).
+
+### Concordance (run 3)
+
+Si le modèle donne le même chiffre à partir de deux consignes différentes, il a probablement lu le bon
+endroit ; s'il change de chiffre, il devine. Simulé sur les réponses du run 2 (court5, contrôlée par cite5) :
+
+| Critère d'abstention | Validation |
+|---|---|
+| seuil du reranker + chiffres absents des extraits (run 2) | +0,355 |
+| concordance souple (abstention si les chiffres diffèrent) | +0,41 |
+| **concordance stricte** (abstention aussi si aucune des deux réponses n'a de chiffre) | **+0,42 à +0,44** |
+
+La concordance n'a pas besoin de seuil réglé sur la validation : elle devrait mieux se généraliser au
+leaderboard. Variante `duo` : un appel court5 + un appel cite5 (2 appels, ~20 s par question).

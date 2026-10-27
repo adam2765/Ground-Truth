@@ -44,7 +44,7 @@ fi
 cat index2/best.json; echo
 
 step "3. Validation : recherche (une fois), puis chaque variante de génération"
-VARIANTS="${VARIANTS:-cite5 court5 cite3}"
+VARIANTS="${VARIANTS:-duo}"
 python -m rag2.pipeline retrieve --index-dir index2 --questions data/validation_v1.json --out runs/val_retrieval.json $MODE_ARG
 for V in $VARIANTS; do
   step "   Variante $V : 100 questions"

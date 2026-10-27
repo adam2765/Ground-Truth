@@ -37,6 +37,9 @@ def abstains(meta: dict, rule: dict) -> bool:
         return True
     if rule.get("require_quote") and meta.get("quote_ok") is False:
         return True
+    ag = rule.get("agreement", "off")                  # concordance de deux réponses indépendantes
+    if ag != "off" and "agree" in meta and (meta["agree"] is False or (ag == "strict" and meta["agree"] is None)):
+        return True
     u = rule.get("max_unsupported")
     return u is not None and meta.get("unsupported", 0) > u
 
@@ -62,21 +65,25 @@ def cmd_fit(args):
     scores = sorted({m["top_score"] for m in metas.values() if m.get("top_score") is not None})
     thresholds = [None] + scores
     results = []
-    for rq in (False, True):
-        for rv in (False, True):
-            for u in UNSUP_OPTIONS:
-                for t in thresholds:
-                    rule = {"threshold": t, "max_unsupported": u, "require_verified": rv, "require_quote": rq}
-                    results.append((simulate(rows, metas, answerable, rule), rule))
+    has_agree = any(m.get("agree") is not None for m in metas.values())
+    for ag in (("off", "souple", "strict") if has_agree else ("off",)):
+        for rq in (False, True):
+            for rv in (False, True):
+                for u in UNSUP_OPTIONS:
+                    for t in thresholds:
+                        rule = {"threshold": t, "max_unsupported": u, "require_verified": rv, "require_quote": rq,
+                                "agreement": ag}
+                        results.append((simulate(rows, metas, answerable, rule), rule))
     best_score = max(s for s, _ in results)
     # parmi les règles quasi optimales, on prend le seuil médian : moins sensible au hasard des 100 questions
     near = [r for s, r in results if s >= best_score - 0.005]
-    opt = lambda r: (r["max_unsupported"], r["require_verified"], r["require_quote"])
+    opt = lambda r: (r["max_unsupported"], r["require_verified"], r["require_quote"], r["agreement"])
     best_opt = max({opt(r) for r in near}, key=lambda o: sum(opt(r) == o for r in near))
     cands = [r for r in near if opt(r) == best_opt]
     ts = sorted(r["threshold"] for r in cands if r["threshold"] is not None)
     rule = dict(cands[0]) if not ts else {"threshold": ts[len(ts) // 2], "max_unsupported": best_opt[0],
-                                          "require_verified": best_opt[1], "require_quote": best_opt[2]}
+                                          "require_verified": best_opt[1], "require_quote": best_opt[2],
+                                          "agreement": best_opt[3]}
     final = simulate(rows, metas, answerable, rule)
     rule["validation_score_brut"] = round(base, 4)
     rule["validation_score_calibre"] = round(final, 4)
@@ -85,18 +92,17 @@ def cmd_fit(args):
     print(f"score avec calibration : {final:+.3f}   (seuil reranker {rule['threshold']}, "
           f"chiffres non retrouvés tolérés : {rule['max_unsupported']}, auto-vérification exigée : "
           f"{rule['require_verified']}, citation vérifiée exigée : {rule['require_quote']}, "
-          f"abstention {rule['taux_abstention']:.0%})")
+          f"concordance : {rule.get('agreement')}, abstention {rule['taux_abstention']:.0%})")
     print(f"  citations recopiées : {sum(m.get('quote_ok') is not None for m in metas.values())}, "
           f"dont introuvables dans les extraits : {sum(m.get('quote_ok') is False for m in metas.values())}")
     n_ver = sum(m.get("verified") is not None for m in metas.values())
     print(f"  auto-vérification : {n_ver} verdicts, dont NON : {sum(m.get('verified') is False for m in metas.values())}")
-    for rq in (False, True):
-        for rv in (False, True):
-            for u in UNSUP_OPTIONS:
-                sub = [(s, r) for s, r in results
-                       if r["max_unsupported"] == u and r["require_verified"] == rv and r["require_quote"] == rq]
-                s, r = max(sub, key=lambda x: x[0])
-                print(f"  chiffres={u}, vérif={rv}, citation={rq}: meilleur {s:+.3f} (seuil {r['threshold']})")
+    for ag in sorted({r["agreement"] for _, r in results}):
+        for u in UNSUP_OPTIONS:
+            sub = [(s, r) for s, r in results if r["max_unsupported"] == u and r["agreement"] == ag]
+            s, r = max(sub, key=lambda x: x[0])
+            print(f"  concordance={ag}, chiffres={u}: meilleur {s:+.3f} (seuil {r['threshold']}, "
+                  f"vérif={r['require_verified']}, citation={r['require_quote']})")
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps(rule, indent=1))
 
