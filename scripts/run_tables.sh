@@ -23,7 +23,7 @@ step "GPU"
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || [ "$BACKEND" != hf ] || { echo "Pas de GPU : active un GPU T4."; exit 1; }
 
 step "Installation"
-[ "$BACKEND" = hf ] && pip install -q -r requirements.txt sentence-transformers PyStemmer 2>&1 | grep -v -i "warning\|dependency" || true
+[ "$BACKEND" = hf ] && pip install -q -r requirements.txt sentence-transformers PyStemmer "mistral-common[hf-hub]" huggingface_hub 2>&1 | grep -v -i "warning\|dependency" || true
 
 step "Corpus"
 python corpus/download_corpus.py | tail -n 2

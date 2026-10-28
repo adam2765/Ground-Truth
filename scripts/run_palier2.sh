@@ -20,7 +20,7 @@ nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || [ "$BACKEND" !
 step "Installation"
 (apt-get -qq update && apt-get -qq install -y tesseract-ocr tesseract-ocr-fra) > /dev/null 2>&1 || \
   echo "tesseract non installé (OCR déjà en cache, pas bloquant)"
-pip install -q -r requirements.txt sentence-transformers PyStemmer pytesseract 2>&1 | grep -v -i "warning\|dependency" || true
+pip install -q -r requirements.txt sentence-transformers PyStemmer pytesseract "mistral-common[hf-hub]" huggingface_hub 2>&1 | grep -v -i "warning\|dependency" || true
 python -c "import transformers, sentence_transformers; print('transformers', transformers.__version__, '| sentence-transformers', sentence_transformers.__version__)"
 
 step "Corpus"
