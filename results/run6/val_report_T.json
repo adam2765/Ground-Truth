@@ -1,0 +1,1063 @@
+{
+ "score_confiance": 0.215,
+ "n_questions": 100,
+ "issues": {
+  "juste + citation": 37,
+  "réponse fausse": 29,
+  "abstention": 10,
+  "abstention juste": 17,
+  "prémisse corrigée": 1,
+  "juste, citation invalide": 1,
+  "hallucination (piège)": 5
+ },
+ "par_type": {
+  "graphique": {
+   "n": 12,
+   "score": -0.375
+  },
+  "multi-doc": {
+   "n": 5,
+   "score": -0.8
+  },
+  "piege": {
+   "n": 23,
+   "score": 0.5652
+  },
+  "scan": {
+   "n": 9,
+   "score": 0.1111
+  },
+  "synthese": {
+   "n": 8,
+   "score": 0.0
+  },
+  "tableau": {
+   "n": 17,
+   "score": 0.1765
+  },
+  "texte": {
+   "n": 26,
+   "score": 0.5
+  }
+ },
+ "taux_abstention": 0.27,
+ "taux_hallucination": 0.34,
+ "problemes_format": [],
+ "retrieval": {
+  "recall@5": 0.9416,
+  "recall@10": 0.9416,
+  "mrr": 0.8323,
+  "ndcg@10": 0.8159,
+  "n": 77
+ },
+ "details": [
+  {
+   "qid": "val1-001",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-002",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-003",
+   "type": "scan",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-004",
+   "type": "synthese",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points_couverts": 2,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-005",
+   "type": "synthese",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points_couverts": 3,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-006",
+   "type": "graphique",
+   "answerable": true,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 0.0,
+   "outcome": "abstention"
+  },
+  {
+   "qid": "val1-007",
+   "type": "synthese",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points_couverts": 0,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-008",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 0.0,
+   "outcome": "abstention"
+  },
+  {
+   "qid": "val1-009",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-010",
+   "type": "graphique",
+   "answerable": true,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 0.0,
+   "outcome": "abstention"
+  },
+  {
+   "qid": "val1-011",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-012",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-013",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-014",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-015",
+   "type": "scan",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-016",
+   "type": "multi-doc",
+   "answerable": true,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 0.0,
+   "outcome": "abstention"
+  },
+  {
+   "qid": "val1-017",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-018",
+   "type": "scan",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-019",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-020",
+   "type": "scan",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-021",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 0.0,
+   "outcome": "abstention"
+  },
+  {
+   "qid": "val1-022",
+   "type": "graphique",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-023",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-024",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-025",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-026",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-027",
+   "type": "graphique",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-028",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-029",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-030",
+   "type": "scan",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-031",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-032",
+   "type": "synthese",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points_couverts": 1,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-033",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-034",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-035",
+   "type": "piege",
+   "answerable": false,
+   "abstained": false,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "prémisse corrigée"
+  },
+  {
+   "qid": "val1-036",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-037",
+   "type": "multi-doc",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-038",
+   "type": "multi-doc",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-039",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-040",
+   "type": "multi-doc",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-041",
+   "type": "graphique",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-042",
+   "type": "graphique",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-043",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-044",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-045",
+   "type": "graphique",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-046",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-047",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-048",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-049",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-050",
+   "type": "graphique",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": false,
+   "points": 0.5,
+   "outcome": "juste, citation invalide"
+  },
+  {
+   "qid": "val1-051",
+   "type": "piege",
+   "answerable": false,
+   "abstained": false,
+   "correct": null,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "hallucination (piège)"
+  },
+  {
+   "qid": "val1-052",
+   "type": "texte",
+   "answerable": true,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 0.0,
+   "outcome": "abstention"
+  },
+  {
+   "qid": "val1-053",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-054",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-055",
+   "type": "graphique",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-056",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-057",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-058",
+   "type": "multi-doc",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-059",
+   "type": "piege",
+   "answerable": false,
+   "abstained": false,
+   "correct": null,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "hallucination (piège)"
+  },
+  {
+   "qid": "val1-060",
+   "type": "graphique",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-061",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-062",
+   "type": "graphique",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-063",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-064",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-065",
+   "type": "scan",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-066",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 0.0,
+   "outcome": "abstention"
+  },
+  {
+   "qid": "val1-067",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 0.0,
+   "outcome": "abstention"
+  },
+  {
+   "qid": "val1-068",
+   "type": "synthese",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points_couverts": 3,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-069",
+   "type": "piege",
+   "answerable": false,
+   "abstained": false,
+   "correct": null,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "hallucination (piège)"
+  },
+  {
+   "qid": "val1-070",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-071",
+   "type": "piege",
+   "answerable": false,
+   "abstained": false,
+   "correct": null,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "hallucination (piège)"
+  },
+  {
+   "qid": "val1-072",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-073",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-074",
+   "type": "synthese",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points_couverts": 6,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-075",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 0.0,
+   "outcome": "abstention"
+  },
+  {
+   "qid": "val1-076",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-077",
+   "type": "graphique",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-078",
+   "type": "scan",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-079",
+   "type": "synthese",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points_couverts": 1,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-080",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-081",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-082",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-083",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-084",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-085",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-086",
+   "type": "scan",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-087",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-088",
+   "type": "scan",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-089",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-090",
+   "type": "synthese",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points_couverts": 4,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-091",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-092",
+   "type": "piege",
+   "answerable": false,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 1.0,
+   "outcome": "abstention juste"
+  },
+  {
+   "qid": "val1-093",
+   "type": "piege",
+   "answerable": false,
+   "abstained": false,
+   "correct": null,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "hallucination (piège)"
+  },
+  {
+   "qid": "val1-094",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": true,
+   "correct": null,
+   "citation_valid": null,
+   "points": 0.0,
+   "outcome": "abstention"
+  },
+  {
+   "qid": "val1-095",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-096",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-097",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  },
+  {
+   "qid": "val1-098",
+   "type": "texte",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-099",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": false,
+   "correct": true,
+   "citation_valid": true,
+   "points": 1.0,
+   "outcome": "juste + citation"
+  },
+  {
+   "qid": "val1-100",
+   "type": "tableau",
+   "answerable": true,
+   "abstained": false,
+   "correct": false,
+   "citation_valid": null,
+   "points": -1.0,
+   "outcome": "réponse fausse"
+  }
+ ]
+}

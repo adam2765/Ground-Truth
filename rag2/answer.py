@@ -71,6 +71,10 @@ VARIANTS = {
     # run 6 : duoL + les tableaux des pages du contexte, réécrits avec l'en-tête de colonne devant chaque
     # valeur (rag2/tables.py) : « Europe du Sud | 2014 : 16 » au lieu de « Europe du Sud | 11 | 11 | 16 ».
     "duoT": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2},
+    # run 6 bis : les deux réponses lisent des contextes différents. 1re : avec les tableaux structurés ;
+    # 2e : sans. Avec duoT, les deux appels lisaient la même version du tableau et se trompaient ensemble
+    # (même piège que les descriptions de graphiques du run 4) : la concordance filtrait moins bien.
+    "duoX": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True},
 }
 DEFAULT_VARIANT = "duo"
 
@@ -312,9 +316,10 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
     answer, cits, llm_abstain = parse_answer(raw, ctx)
     second = agreement = None
     if cfg.get("second") and not llm_abstain:
-        raw2 = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], cfg["second"], lines),
+        ctx2 = [c for c in ctx if not c.get("table")] if cfg.get("second_no_tables") else ctx
+        raw2 = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx2], cfg["second"], lines),
                         max_new_tokens=MAX_NEW + 100)
-        second, cits2, _ = parse_answer(raw2, ctx)
+        second, cits2, _ = parse_answer(raw2, ctx2)
         agreement = agree(answer, second)
         do_verify = False                              # la concordance remplace l'auto-vérification (run 2 : inutile)
         third = None

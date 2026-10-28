@@ -1,0 +1,10 @@
+{
+ "threshold": 0.59326171875,
+ "max_unsupported": null,
+ "require_verified": true,
+ "require_quote": true,
+ "agreement": "strict",
+ "validation_score_brut": 0.255,
+ "validation_score_calibre": 0.445,
+ "taux_abstention": 0.74
+}
