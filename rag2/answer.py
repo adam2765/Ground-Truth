@@ -75,6 +75,12 @@ VARIANTS = {
     # 2e : sans. Avec duoT, les deux appels lisaient la même version du tableau et se trompaient ensemble
     # (même piège que les descriptions de graphiques du run 4) : la concordance filtrait moins bien.
     "duoX": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True},
+    # run 8 : duoX + consigne de lecture des tableaux (rangée puis colonne) pour la 1re réponse
+    "duoXH": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
+              "table_hint": True},
+    # run 8 : 2e réponse avec les mêmes tableaux mais présentés colonne par colonne (« 2014 : Europe du Sud 16 ;
+    # Afrique 36… ») : l'information est là pour les deux réponses, mais leur lecture diffère.
+    "duoC": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_by_column": True},
 }
 DEFAULT_VARIANT = "duo"
 
@@ -117,14 +123,25 @@ def format_extract(c: dict) -> str:
     return f"[{c['doc_id']} p.{c['page']}]\n{c['body']}"
 
 
-def build_messages(question: str, extracts: list[str], system: str = "plain", lines: list[dict] | None = None) -> list[dict]:
+TABLE_HINT = (
+    "\n- Pour lire un tableau : repère d'abord la rangée de la catégorie demandée (lieu, population, secteur), "
+    "puis la colonne de l'indicateur et de l'année demandés ; la réponse est la valeur à leur croisement. "
+    "Ne prends pas la valeur d'une rangée ou d'une colonne voisine."
+)
+
+
+def build_messages(question: str, extracts: list[str], system: str = "plain", lines: list[dict] | None = None,
+                   table_hint: bool = False) -> list[dict]:
     head = ""
     if lines:
         head = ("Lignes les plus pertinentes (à vérifier dans les extraits) :\n"
                 + "\n".join(f"[{x['doc_id']} p.{x['page']}] {x['text']}" for x in lines) + "\n\n")
     user = head + "Extraits :\n\n" + "\n\n".join(extracts) + f"\n\nQuestion : {question}"
-    return [{"role": "system", "content": SYSTEM_QUOTE if system == "quote" else SYSTEM},
-            {"role": "user", "content": user}]
+    sys_prompt = SYSTEM_QUOTE if system == "quote" else SYSTEM
+    if table_hint:                                     # inséré avant la ligne « SOURCES » des consignes
+        cut = sys_prompt.index("\n- Termine") if "\n- Termine" in sys_prompt else len(sys_prompt)
+        sys_prompt = sys_prompt[:cut] + TABLE_HINT + sys_prompt[cut:]
+    return [{"role": "system", "content": sys_prompt}, {"role": "user", "content": user}]
 
 
 def _family(doc_id: str) -> str:
@@ -180,7 +197,9 @@ def add_tables(chunks: list[dict], tables: dict[str, list[dict]], max_tables: in
             seen.add(key)
             out.append({"doc_id": c["doc_id"], "page": c["page"], "table": True,
                         "body": "Tableau de cette page, chaque valeur précédée du titre de sa colonne :\n"
-                                + "\n\n".join(render(t, question) for t in tables[key])})
+                                + "\n\n".join(render(t, question) for t in tables[key]),
+                        "body_col": "Tableau de cette page, lu colonne par colonne :\n"
+                                    + "\n\n".join(render(t, question, by_column=True) for t in tables[key])})
     return out
 
 
@@ -311,12 +330,21 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
         picked = add_tables(picked, tables, cfg["tables"], q["question"])
         n_max = len(picked)
     ctx = fit_context(gen, q["question"], picked, n_max, lines)
-    raw = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], cfg["system"], lines),
+    hint = bool(cfg.get("table_hint")) and any(c.get("table") for c in ctx)
+    while hint and len(ctx) > 1 and gen.count_tokens(build_messages(
+            q["question"], [format_extract(c) for c in ctx], cfg["system"], lines, True)) > MAX_INPUT - 8:
+        ctx = ctx[:-1]
+    raw = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], cfg["system"], lines, hint),
                    max_new_tokens=MAX_NEW + (100 if cfg["system"] == "quote" else 0))
     answer, cits, llm_abstain = parse_answer(raw, ctx)
     second = agreement = None
     if cfg.get("second") and not llm_abstain:
         ctx2 = [c for c in ctx if not c.get("table")] if cfg.get("second_no_tables") else ctx
+        if cfg.get("second_by_column"):                # 2e lecture : mêmes tableaux, présentés par colonne
+            ctx2 = [dict(c, body=c["body_col"]) if c.get("table") else c for c in ctx]
+            while len(ctx2) > 1 and gen.count_tokens(build_messages(
+                    q["question"], [format_extract(c) for c in ctx2], cfg["second"], lines)) > MAX_INPUT - 8:
+                ctx2 = ctx2[:-1]                        # (présentation par colonne un peu plus longue)
         raw2 = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx2], cfg["second"], lines),
                         max_new_tokens=MAX_NEW + 100)
         second, cits2, _ = parse_answer(raw2, ctx2)

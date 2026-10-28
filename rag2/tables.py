@@ -130,7 +130,7 @@ def table_text(page, t) -> str | None:
     return {"first": head[0], "heads": [h or f"colonne {j + 1}" for j, h in enumerate(head)], "rows": rows}
 
 
-def render(t: dict, question: str = "", budget: int = MAX_CHARS) -> str:
+def render(t: dict, question: str = "", budget: int = MAX_CHARS, by_column: bool = False) -> str:
     """Texte d'un tableau pour le prompt. En-têtes courts : écrits devant chaque valeur
     (« Europe du Sud | 2014 : 16 »). En-têtes longs : numérotés une fois en légende, puis « (6) 101 ».
     Si le tableau dépasse le budget, on garde les rangées qui partagent le plus de mots avec la question
@@ -146,17 +146,32 @@ def render(t: dict, question: str = "", budget: int = MAX_CHARS) -> str:
         head_lines.append("Colonnes : " + " ; ".join(f"({num[j]}) {heads[j]}" for j in used))
         fmt = lambda vals: " | ".join(f"({num[j]}) {v}" for j, v in vals)
     lines = [f"{label} | {fmt(vals)}" for label, vals in t["rows"]]
-    size = lambda ls: sum(len(x) + 1 for x in head_lines + ls)
-    if size(lines) > budget:
-        from rag2.search import tokenize
-        q = set(tokenize(question))
-        order = sorted(range(len(lines)), key=lambda i: -len(q & set(tokenize(t["rows"][i][0]))))
-        keep = set()
-        for i in order:
-            if size([lines[k] for k in sorted(keep | {i})]) <= budget:
-                keep.add(i)
-        lines = [lines[i] for i in sorted(keep)]
+    if by_column:                                      # une ligne par colonne : « 2014 : Afrique 36 ; Europe du Sud 16 »
+        keep_rows = _select(t, lines, head_lines, question, budget)
+        cols = []
+        for j in used:
+            cells = [f"{t['rows'][i][0]} {v}" for i in keep_rows for jj, v in t["rows"][i][1] if jj == j]
+            if cells:
+                cols.append(f"{heads[j]} : " + " ; ".join(cells))
+        return "\n".join(([f"(rangées : {t['first']})"] if t["first"] else []) + cols)
+    lines = [lines[i] for i in _select(t, lines, head_lines, question, budget)]
     return "\n".join(head_lines + lines)
+
+
+def _select(t: dict, lines: list[str], head_lines: list[str], question: str, budget: int) -> list[int]:
+    """Indices des rangées gardées : toutes si elles tiennent dans le budget, sinon celles qui partagent le
+    plus de mots avec la question (dans l'ordre du tableau)."""
+    size = lambda ls: sum(len(x) + 1 for x in head_lines + ls)
+    if size(lines) <= budget:
+        return list(range(len(lines)))
+    from rag2.search import tokenize
+    q = set(tokenize(question))
+    order = sorted(range(len(lines)), key=lambda i: -len(q & set(tokenize(t["rows"][i][0]))))
+    keep = set()
+    for i in order:
+        if size([lines[k] for k in sorted(keep | {i})]) <= budget:
+            keep.add(i)
+    return sorted(keep)
 
 
 def page_tables(page) -> list[dict]:
