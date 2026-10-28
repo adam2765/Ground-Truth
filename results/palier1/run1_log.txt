@@ -1,0 +1,144 @@
+=== Installation
+=== Corpus
+numérisé : cc-pac-synthese
+numérisé : cc-vaccination-synthese
+=== Vérification du BM25 maison contre bm25s, et des métriques contre l'évaluateur officiel
+BM25 : écart max de score avec bm25s = 4.03e-06, top-10 identique sur 77/77 questions
+Métriques : écart max avec l'évaluateur officiel = 0.00e+00
+=== Recherche : BM25 maison seul
+bm25 / chunk (200 mots, recouvrement 50) - 8443 unités, 77 questions
+  recall@5   0.558
+  recall@10  0.662
+  mrr        0.409
+  ndcg@10    0.411
+  Recall@5 par type :
+    graphique  0.67  (n=12)
+    multi-doc  0.20  (n=5)
+    scan       0.11  (n=9)
+    synthese   0.50  (n=8)
+    tableau    0.65  (n=17)
+    texte      0.69  (n=26)
+  détail par question : runs/retrieval_bm25_chunk.json
+=== Recherche : dense maison seul (multilingual-e5-small, cosinus en NumPy)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+32/844364/844396/8443128/8443160/8443192/8443224/8443256/8443288/8443320/8443352/8443384/8443416/8443448/8443480/8443512/8443544/8443576/8443608/8443640/8443672/8443704/8443736/8443768/8443800/8443832/8443864/8443896/8443928/8443960/8443992/84431024/84431056/84431088/84431120/84431152/84431184/84431216/84431248/84431280/84431312/84431344/84431376/84431408/84431440/84431472/84431504/84431536/84431568/84431600/84431632/84431664/84431696/84431728/84431760/84431792/84431824/84431856/84431888/84431920/84431952/84431984/84432016/84432048/84432080/84432112/84432144/84432176/84432208/84432240/84432272/84432304/84432336/84432368/84432400/84432432/84432464/84432496/84432528/84432560/84432592/84432624/84432656/84432688/84432720/84432752/84432784/84432816/84432848/84432880/84432912/84432944/84432976/84433008/84433040/84433072/84433104/84433136/84433168/84433200/84433232/84433264/84433296/84433328/84433360/84433392/84433424/84433456/84433488/84433520/84433552/84433584/84433616/84433648/84433680/84433712/84433744/84433776/84433808/84433840/84433872/84433904/84433936/84433968/84434000/84434032/84434064/84434096/84434128/84434160/84434192/84434224/84434256/84434288/84434320/84434352/84434384/84434416/84434448/84434480/84434512/84434544/84434576/84434608/84434640/84434672/84434704/84434736/84434768/84434800/84434832/84434864/84434896/84434928/84434960/84434992/84435024/84435056/84435088/84435120/84435152/84435184/84435216/84435248/84435280/84435312/84435344/84435376/84435408/84435440/84435472/84435504/84435536/84435568/84435600/84435632/84435664/84435696/84435728/84435760/84435792/84435824/84435856/84435888/84435920/84435952/84435984/84436016/84436048/84436080/84436112/84436144/84436176/84436208/84436240/84436272/84436304/84436336/84436368/84436400/84436432/84436464/84436496/84436528/84436560/84436592/84436624/84436656/84436688/84436720/84436752/84436784/84436816/84436848/84436880/84436912/84436944/84436976/84437008/84437040/84437072/84437104/84437136/84437168/84437200/84437232/84437264/84437296/84437328/84437360/84437392/84437424/84437456/84437488/84437520/84437552/84437584/84437616/84437648/84437680/84437712/84437744/84437776/84437808/84437840/84437872/84437904/84437936/84437968/84438000/84438032/84438064/84438096/84438128/84438160/84438192/84438224/84438256/84438288/84438320/84438352/84438384/84438416/84438443/8443
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+1/1
+dense / chunk (200 mots, recouvrement 50) - 8443 unités, 77 questions
+  recall@5   0.565
+  recall@10  0.662
+  mrr        0.412
+  ndcg@10    0.422
+  Recall@5 par type :
+    graphique  0.67  (n=12)
+    multi-doc  0.20  (n=5)
+    scan       0.11  (n=9)
+    synthese   0.44  (n=8)
+    tableau    0.71  (n=17)
+    texte      0.69  (n=26)
+  détail par question : runs/retrieval_dense_chunk.json
+=== RAG de base (BM25 maison + générateur officiel, 1 appel) sur les 100 questions
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/gt/my_rag/rag.py", line 96, in <module>
+    main()
+    ~~~~^^
+  File "/tmp/gt/my_rag/rag.py", line 71, in main
+    gen = OfficialGenerator(backend=args.backend)
+  File "/tmp/gt/groundtruth/generator.py", line 63, in __init__
+    self.tok = _load_tokenizer(model_id)
+               ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/tmp/gt/groundtruth/generator.py", line 47, in _load_tokenizer
+    return MistralCommonBackend.from_pretrained(model_id)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/transformers/tokenization_mistral_common.py", line 1511, in from_pretrained
+    tokenizer_path = download_tokenizer_from_hf_hub(
+        repo_id=pretrained_model_name_or_path,
+    ...<4 lines>...
+        local_files_only=local_files_only,
+    )
+  File "/usr/local/lib/python3.13/dist-packages/mistral_common/tokens/tokenizers/utils.py", line 195, in download_tokenizer_from_hf_hub
+    _assert_hub_installed()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/dist-packages/mistral_common/tokens/tokenizers/utils.py", line 29, in _assert_hub_installed
+    raise ImportError(
+    ...<2 lines>...
+    )
+ImportError: Please install the `huggingface_hub` package to use this method.
+Run `pip install mistral-common[hf-hub]` to install it.

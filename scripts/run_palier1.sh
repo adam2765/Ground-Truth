@@ -6,20 +6,23 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 OUT="${OUT:-$( [ -d /kaggle/working ] && echo /kaggle/working || pwd )}"
-BACKEND="${BACKEND:-hf}"; JUDGE="${JUDGE:-hf}"; SKIP_DENSE="${SKIP_DENSE:-0}"
+BACKEND="${BACKEND:-hf}"; JUDGE="${JUDGE:-hf}"; SKIP_DENSE="${SKIP_DENSE:-0}"; RAG_ONLY="${RAG_ONLY:-0}"
 mkdir -p runs
 {
 echo "=== Installation"
-pip install -q -r requirements.txt 2>&1 | grep -v -i "warning\|dependency" || true
+pip install -q -r requirements.txt sentence-transformers "mistral-common[hf-hub]" huggingface_hub 2>&1 | grep -v -i "warning\|dependency" || true
+python -c "import huggingface_hub, transformers; print('huggingface_hub', huggingface_hub.__version__, '| transformers', transformers.__version__)"
 echo "=== Corpus"
 python corpus/download_corpus.py | tail -n 2
 
+if [ "$RAG_ONLY" != 1 ]; then
 echo "=== Vérification du BM25 maison contre bm25s, et des métriques contre l'évaluateur officiel"
 python -m my_rag.check_bm25
 
 echo "=== Recherche : BM25 maison seul"
 python -m my_rag.eval_retrieval --method bm25
-if [ "$SKIP_DENSE" != 1 ]; then
+fi
+if [ "$SKIP_DENSE" != 1 ] && [ "$RAG_ONLY" != 1 ]; then
   echo "=== Recherche : dense maison seul (multilingual-e5-small, cosinus en NumPy)"
   python -m my_rag.eval_retrieval --method dense
 fi
