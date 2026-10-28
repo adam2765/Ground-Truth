@@ -154,6 +154,46 @@ class Retriever:
         return [{"idx": i, "score": s, "rerank": s, "bm25": bm_s.get(i), "dense": de_s.get(i)} for i, s in order[:k]]
 
 
+_SPLIT = re.compile(r"\s*(?:,\s*(?:et\s+|puis\s+)?|\s(?:et|puis)\s+)(?=(?:combien|quel|quelle|quels|quelles|que|qu['’]|à combien"
+                    r"|de combien|selon|d['’]après|dans|pour)\b)|\s*;\s*|\?\s+(?=\S)", re.I)
+_ASK = re.compile(r"\b(combien|quel|quelle|quels|quelles|où|comment|pourquoi|que|qu['’])\b", re.I)
+
+
+def split_question(question: str, min_words: int = 6) -> list[str]:
+    """Questions en plusieurs parties (« combien ... selon le rapport X, et quelle ... selon le rapport Y ? ») :
+    une sous-question par partie. Les parties trop courtes (« combien de points les séparent ») sont ignorées.
+    Retourne [question] si la question n'a qu'une partie."""
+    parts = [p.strip(" ,?") for p in _SPLIT.split(question)]
+    # une vraie sous-question contient son propre mot interrogatif (sinon c'est un complément :
+    # « Parmi les immigrés entrés en 2014, quelle proportion... » reste une seule question)
+    def asks(p):                                       # mot interrogatif dans les 3 premiers mots
+        p = re.sub(r"^(selon|d['’]après)[^,]*,\s*", "", p, flags=re.I)
+        return bool(_ASK.search(" ".join(p.split()[:3])))
+    parts = [p for p in parts if len(p.split()) >= min_words and asks(p)]
+    return parts if len(parts) >= 2 else [question]
+
+
+def search_multi(retriever: "Retriever", question: str, mode: str = "hybrid_rerank", k: int = 20,
+                 per_part: int = 2) -> list[dict]:
+    """Recherche « multi-parties » (run 6). Une seule recherche sur une question qui porte sur deux rapports
+    ramène surtout le rapport le plus proche des mots de la question : l'autre partie manque au contexte.
+    On cherche aussi chaque partie séparément et on place ses `per_part` meilleurs extraits juste après le
+    meilleur extrait de la question entière (qui reste en tête : son score sert au seuil d'abstention)."""
+    main = retriever.search(question, mode=mode, k=k)
+    parts = split_question(question)
+    if len(parts) < 2 or not main:
+        return main
+    extra = [retriever.search(p, mode=mode, k=per_part) for p in parts]
+    out, seen = [main[0]], {main[0]["idx"]}
+    for r in range(per_part):
+        for hits in extra:
+            if r < len(hits) and hits[r]["idx"] not in seen:
+                seen.add(hits[r]["idx"])
+                out.append({**hits[r], "part": True})
+    out += [h for h in main[1:] if h["idx"] not in seen]
+    return out[:k]
+
+
 def split_units(body: str, max_words: int = 60) -> list[str]:
     """Découpe un extrait en « lignes » : rangées de tableau, puis phrases pour les longs paragraphes."""
     units = []

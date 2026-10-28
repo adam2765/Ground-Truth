@@ -18,6 +18,7 @@ import re
 import time
 
 from groundtruth.normalize import _close, extract_numbers
+from rag2.tables import render
 
 MAX_INPUT = 4096
 MAX_NEW = 200
@@ -67,6 +68,9 @@ VARIANTS = {
     # run 5 : vote à 3. Si les deux premières réponses divergent, un 3e appel (réponse courte sur les 3
     # meilleurs extraits seulement) départage : on garde la réponse soutenue par au moins 2 appels sur 3.
     "trioL": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "third": 3},
+    # run 6 : duoL + les tableaux des pages du contexte, réécrits avec l'en-tête de colonne devant chaque
+    # valeur (rag2/tables.py) : « Europe du Sud | 2014 : 16 » au lieu de « Europe du Sud | 11 | 11 | 16 ».
+    "duoT": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2},
 }
 DEFAULT_VARIANT = "duo"
 
@@ -159,6 +163,21 @@ def diversify(chunks: list[dict], scores: list[float], max_chunks: int, min_othe
     # on garde l'ordre du reranker (le meilleur d'abord)
     order = {id(c): i for i, c in enumerate(chunks)}
     return sorted(kept, key=lambda c: order[id(c)])
+
+
+def add_tables(chunks: list[dict], tables: dict[str, list[dict]], max_tables: int, question: str = "") -> list[dict]:
+    """Insère, juste après le premier extrait de chaque page qui contient un tableau, ce tableau réécrit
+    avec ses en-têtes de colonnes (au plus max_tables pages, en partant des meilleurs extraits)."""
+    out, seen = [], set()
+    for c in chunks:
+        out.append(c)
+        key = f"{c['doc_id']}|{c['page']}"
+        if key in tables and key not in seen and len(seen) < max_tables:
+            seen.add(key)
+            out.append({"doc_id": c["doc_id"], "page": c["page"], "table": True,
+                        "body": "Tableau de cette page, chaque valeur précédée du titre de sa colonne :\n"
+                                + "\n\n".join(render(t, question) for t in tables[key])})
+    return out
 
 
 def fit_context(gen, question: str, chunks: list[dict], max_chunks: int = MAX_CHUNKS,
@@ -275,14 +294,19 @@ def verify(gen, question: str, answer: str, context: list[dict], cits: list[dict
 
 
 def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bool = True,
-               variant: str = DEFAULT_VARIANT, key_lines: list[dict] | None = None) -> dict:
+               variant: str = DEFAULT_VARIANT, key_lines: list[dict] | None = None,
+               tables: dict[str, list[dict]] | None = None) -> dict:
     t_start = time.time()
     cfg = VARIANTS[variant]
     lines = (key_lines or [])[: cfg.get("key_lines", 0)] or None
     gen.start_question(q["qid"])
     cand = [chunks[h["idx"]] for h in hits]
     picked = diversify(cand, [h.get("score") for h in hits], cfg["chunks"])
-    ctx = fit_context(gen, q["question"], picked, cfg["chunks"], lines)
+    n_max = cfg["chunks"]
+    if cfg.get("tables") and tables:
+        picked = add_tables(picked, tables, cfg["tables"], q["question"])
+        n_max = len(picked)
+    ctx = fit_context(gen, q["question"], picked, n_max, lines)
     raw = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], cfg["system"], lines),
                    max_new_tokens=MAX_NEW + (100 if cfg["system"] == "quote" else 0))
     answer, cits, llm_abstain = parse_answer(raw, ctx)
@@ -325,6 +349,7 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
             "agree": agreement,
             "third": locals().get("third"),
             "n_context": len(ctx),
+            "n_tables": sum(bool(c.get("table")) for c in ctx),
             "seconds": round(time.time() - t_start, 2),
         },
     }

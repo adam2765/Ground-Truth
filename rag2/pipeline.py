@@ -52,6 +52,18 @@ def cmd_index(args):
     from rag2.describe_charts import add_descriptions
     pages_graph = None
 
+    # Tableaux réécrits avec leurs en-têtes de colonnes (rag2/tables.py), pour la génération (variante duoT)
+    tab_path = idx / "tables.json.gz"
+    if not tab_path.exists():
+        import shutil
+
+        from rag2.tables import extract_dir, save
+        cache = Path(__file__).resolve().parents[1] / "cache" / "tables_v1.json.gz"
+        if cache.exists() and Path(args.pdf_dir).resolve() == (cache.parents[1] / "corpus" / "pdf").resolve():
+            shutil.copy(cache, tab_path)
+        else:
+            save(extract_dir(args.pdf_dir), tab_path)
+
     encoder = None
     for strat in args.strategies.split(","):
         d = idx / strat
@@ -76,20 +88,21 @@ def cmd_index(args):
 
 def cmd_retrieve(args):
     from groundtruth.io import load_questions
-    from rag2.search import Retriever, key_lines, ranked_pages
+    from rag2.search import Retriever, key_lines, ranked_pages, search_multi
 
     cfg = defaults(args.index_dir)
     strategy, mode = args.strategy or cfg["strategy"], args.mode or cfg["mode"]
     qs = load_questions(args.questions)
     if Path(args.out).exists():                         # reprise après une coupure : déjà fait
         old = json.loads(Path(args.out).read_text(encoding="utf-8"))
-        if old.get("strategy") == strategy and old.get("mode") == mode and len(old["items"]) == len(qs):
+        if (old.get("strategy") == strategy and old.get("mode") == mode and len(old["items"]) == len(qs)
+                and old.get("split", False) == args.split):
             print(f"recherche déjà faite -> {args.out}")
             return
     r = Retriever(args.index_dir, strategy, use_dense=mode != "bm25", use_rerank=mode == "hybrid_rerank")
     items, t0 = [], time.time()
     for n, q in enumerate(qs, 1):
-        hits = r.search(q["question"], mode=mode, k=20)
+        hits = search_multi(r, q["question"], mode=mode, k=20) if args.split else r.search(q["question"], mode=mode, k=20)
         item = {"qid": q["qid"], "hits": hits, "retrieved": ranked_pages(r.chunks, hits)}
         if r.reranker is not None:
             item["key_lines"] = key_lines(r.reranker, q["question"], r.chunks, hits)
@@ -97,7 +110,7 @@ def cmd_retrieve(args):
         if n % 20 == 0:
             print(f"  {n}/{len(qs)} ({(time.time() - t0) / n:.2f} s/question)", flush=True)
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
-    Path(args.out).write_text(json.dumps({"strategy": strategy, "mode": mode, "items": items}, ensure_ascii=False),
+    Path(args.out).write_text(json.dumps({"strategy": strategy, "mode": mode, "split": args.split, "items": items}, ensure_ascii=False),
                               encoding="utf-8")
     print(f"recherche : {strategy} / {mode}, {len(items)} questions -> {args.out}")
 
@@ -111,6 +124,11 @@ def cmd_generate(args):
     chunks = json.loads((Path(args.index_dir) / ret["strategy"] / "chunks.json").read_text(encoding="utf-8"))
     by_qid = {it["qid"]: it for it in ret["items"]}
     qs = load_questions(args.questions)
+    tables = None
+    if VARIANTS[args.variant].get("tables"):
+        from rag2.tables import load
+        tables = load(Path(args.index_dir) / "tables.json.gz")
+        print(f"tableaux structurés : {len(tables)} pages")
     # Reprise après une coupure : chaque réponse est ajoutée à un fichier .partial.jsonl au fil de l'eau.
     partial = Path(str(args.out) + ".partial.jsonl")
     done = {}
@@ -127,7 +145,8 @@ def cmd_generate(args):
             preds.append(done[q["qid"]])
             continue
         it = by_qid[q["qid"]]
-        p = answer_one(gen, q, chunks, it["hits"], variant=args.variant, key_lines=it.get("key_lines"))
+        p = answer_one(gen, q, chunks, it["hits"], variant=args.variant, key_lines=it.get("key_lines"),
+                       tables=tables)
         p["retrieved"] = it["retrieved"]
         preds.append(p)
         n_new += 1
@@ -152,6 +171,8 @@ def cmd_answer(args):
         r += ["--strategy", args.strategy]
     if args.mode:
         r += ["--mode", args.mode]
+    if args.split:
+        r += ["--split"]
     subprocess.run(base + r, check=True)
     subprocess.run(base + ["generate", "--index-dir", args.index_dir, "--retrieval", ret_path,
                            "--questions", args.questions, "--out", args.out, "--backend", args.backend,
@@ -176,6 +197,7 @@ def main():
         b.add_argument("--out", required=True)
         b.add_argument("--strategy", default=None)
         b.add_argument("--mode", default=None, choices=["bm25", "dense", "hybrid", "hybrid_rerank"])
+        b.add_argument("--split", action="store_true", help="questions en plusieurs parties : une recherche par partie")
         if name == "answer":
             b.add_argument("--backend", default="hf", choices=["hf", "openai", "echo"])
             b.add_argument("--variant", default=DEFAULT_VARIANT, choices=list(VARIANTS))
