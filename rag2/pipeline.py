@@ -88,7 +88,8 @@ def cmd_index(args):
 
 def cmd_retrieve(args):
     from groundtruth.io import load_questions
-    from rag2.search import Retriever, key_lines, ranked_pages, search_multi
+    from rag2.search import Retriever, key_lines, ranked_pages, search_multi, table_rows
+    from rag2.tables import load as load_tables
 
     cfg = defaults(args.index_dir)
     strategy, mode = args.strategy or cfg["strategy"], args.mode or cfg["mode"]
@@ -96,16 +97,19 @@ def cmd_retrieve(args):
     if Path(args.out).exists():                         # reprise après une coupure : déjà fait
         old = json.loads(Path(args.out).read_text(encoding="utf-8"))
         if (old.get("strategy") == strategy and old.get("mode") == mode and len(old["items"]) == len(qs)
-                and old.get("split", False) == args.split):
+                and old.get("split", False) == args.split and "table_rows" in old["items"][0]):
             print(f"recherche déjà faite -> {args.out}")
             return
     r = Retriever(args.index_dir, strategy, use_dense=mode != "bm25", use_rerank=mode == "hybrid_rerank")
+    tables = load_tables(Path(args.index_dir) / "tables.json.gz")
     items, t0 = [], time.time()
     for n, q in enumerate(qs, 1):
         hits = search_multi(r, q["question"], mode=mode, k=20) if args.split else r.search(q["question"], mode=mode, k=20)
         item = {"qid": q["qid"], "hits": hits, "retrieved": ranked_pages(r.chunks, hits)}
         if r.reranker is not None:
             item["key_lines"] = key_lines(r.reranker, q["question"], r.chunks, hits)
+            if tables:
+                item["table_rows"] = table_rows(r.reranker, q["question"], r.chunks, hits, tables)
         items.append(item)
         if n % 20 == 0:
             print(f"  {n}/{len(qs)} ({(time.time() - t0) / n:.2f} s/question)", flush=True)
@@ -146,7 +150,7 @@ def cmd_generate(args):
             continue
         it = by_qid[q["qid"]]
         p = answer_one(gen, q, chunks, it["hits"], variant=args.variant, key_lines=it.get("key_lines"),
-                       tables=tables)
+                       tables=tables, table_rows=it.get("table_rows"))
         p["retrieved"] = it["retrieved"]
         preds.append(p)
         n_new += 1

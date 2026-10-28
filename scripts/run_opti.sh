@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-# Run 8 : deux variantes testées contre le run 7 (duoX, +0,475) :
-#   duoXH : duoX + consigne de lecture des tableaux (rangée, puis colonne) pour la 1re réponse ;
-#   duoC  : 2e réponse avec les mêmes tableaux présentés colonne par colonne (au lieu de sans tableau).
+# Variantes testées contre le run 7 (duoX, +0,475). Par défaut (run 9) :
+#   duoXR  : duoX + 3e appel ciblé quand les deux réponses divergent sur une question à tableau
+#            (4 rangées de tableau choisies par le reranker) ;
+#   duoXHR : idem + consigne de lecture des tableaux pour la 1re réponse.
+# Run 8 (VARIANTS="duoXH duoC") : consigne de lecture seule ; 2e lecture des tableaux par colonne.
 #
 #   Kaggle (GPU T4, Internet activé, Save Version -> Save & Run All) :
 #     !git clone -q https://github.com/adam2765/Ground-Truth.git /tmp/gt; bash /tmp/gt/scripts/run_opti.sh
@@ -17,7 +19,7 @@ REF_FILE="${REF_FILE:-results/run7/abstention_X.json}"
 EXTRA_INDEX="${EXTRA_INDEX:-}"; MODE_ARG="${MODE_ARG:-}"   # test sans GPU : EXTRA_INDEX=--no-dense MODE_ARG="--mode bm25"
 T0=$(date +%s)
 step() { echo; echo "=== [$(( ($(date +%s) - T0) / 60 )) min] $* ==="; }
-VAL=data/validation_v1.json; VARIANTS="${VARIANTS:-duoXH duoC}"
+VAL=data/validation_v1.json; VARIANTS="${VARIANTS:-duoXR duoXHR}"
 
 step "GPU"
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || [ "$BACKEND" != hf ] || { echo "Pas de GPU : active un GPU T4."; exit 1; }

@@ -227,6 +227,28 @@ def key_lines(reranker: "Reranker", query: str, chunks: list[dict], hits: list[d
     return sorted(cand, key=lambda x: -x["score"])[:top]
 
 
+def table_rows(reranker: "Reranker", query: str, chunks: list[dict], hits: list[dict], tables: dict,
+               n_chunks: int = 5, top: int = 4) -> list[dict]:
+    """Rangées des tableaux des meilleures pages, chacune écrite seule avec ses en-têtes
+    (« Europe du Sud | 2006 : 11 | 2014 : 16 ... »), notées par le cross-encoder (run 9 : 3e appel ciblé)."""
+    cand, seen = [], set()
+    for h in hits[:n_chunks]:
+        c = chunks[h["idx"]]
+        key = f"{c['doc_id']}|{c['page']}"
+        if key in seen or key not in tables:
+            continue
+        seen.add(key)
+        for t in tables[key]:
+            for label, vals in t["rows"]:
+                txt = label + " | " + " | ".join(f"{t['heads'][j]} : {v}" for j, v in vals)
+                cand.append({"doc_id": c["doc_id"], "page": c["page"], "text": txt})
+    if not cand:
+        return []
+    for x, sc in zip(cand, reranker.score(query, [x["text"] for x in cand])):
+        x["score"] = sc
+    return sorted(cand, key=lambda x: -x["score"])[:top]
+
+
 def ranked_pages(chunks: list[dict], hits: list[dict]) -> list[dict]:
     """Pages distinctes, dans l'ordre de leur meilleur chunk."""
     seen, out = set(), []

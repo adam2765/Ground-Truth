@@ -80,6 +80,13 @@ VARIANTS = {
               "table_hint": True},
     # run 8 : 2e réponse avec les mêmes tableaux mais présentés colonne par colonne (« 2014 : Europe du Sud 16 ;
     # Afrique 36… ») : l'information est là pour les deux réponses, mais leur lecture diffère.
+    # run 9 : duoX + 3e appel ciblé. Quand les deux réponses divergent et qu'un tableau est en jeu, on repose
+    # la question avec seulement les 4 rangées de tableau que le reranker juge les plus proches (chacune avec
+    # ses en-têtes). Si cette 3e réponse confirme la 1re, la concordance est rétablie (sinon : abstention).
+    "duoXR": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
+              "row_check": 4},
+    "duoXHR": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
+               "table_hint": True, "row_check": 4},
     "duoC": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_by_column": True},
 }
 DEFAULT_VARIANT = "duo"
@@ -318,7 +325,7 @@ def verify(gen, question: str, answer: str, context: list[dict], cits: list[dict
 
 def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bool = True,
                variant: str = DEFAULT_VARIANT, key_lines: list[dict] | None = None,
-               tables: dict[str, list[dict]] | None = None) -> dict:
+               tables: dict[str, list[dict]] | None = None, table_rows: list[dict] | None = None) -> dict:
     t_start = time.time()
     cfg = VARIANTS[variant]
     lines = (key_lines or [])[: cfg.get("key_lines", 0)] or None
@@ -351,6 +358,17 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
         agreement = agree(answer, second)
         do_verify = False                              # la concordance remplace l'auto-vérification (run 2 : inutile)
         third = None
+        if (cfg.get("row_check") and table_rows and any(c.get("table") for c in ctx)
+                and agree_inclus(answer, second) is not True):
+            rows = table_rows[: cfg["row_check"]]
+            user = ("Rangées de tableaux (chaque valeur est précédée du titre de sa colonne) :\n"
+                    + "\n".join(f"[{x['doc_id']} p.{x['page']}] {x['text']}" for x in rows)
+                    + f"\n\nQuestion : {q['question']}")
+            raw3 = gen.chat([{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}],
+                            max_new_tokens=150)
+            third, _, _ = parse_answer(raw3, [{"doc_id": x["doc_id"], "page": x["page"]} for x in rows])
+            agree_rows = agree_inclus(answer, third)
+            meta_extra = {"row_check": third, "agree_inclus": bool(agree_rows)}
         if cfg.get("third") and agreement is not True:
             ctx3 = ctx[: cfg["third"]]
             raw3 = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx3], "plain", lines),
@@ -383,6 +401,7 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
             "third": locals().get("third"),
             "n_context": len(ctx),
             "n_tables": sum(bool(c.get("table")) for c in ctx),
+            **(locals().get("meta_extra") or {}),
             "seconds": round(time.time() - t_start, 2),
         },
     }
