@@ -1,0 +1,165 @@
+=== Installation
+gradio 6.26.0 requires pillow<13.0,>=8.0, but you have pillow 13.0.0 which is incompatible.
+huggingface_hub 1.33.0 | transformers 5.16.1
+=== Corpus
+numérisé : cc-pac-synthese
+numérisé : cc-vaccination-synthese
+=== RAG de base (BM25 maison + générateur officiel, 1 appel) sur les 100 questions
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+val1-001: 8 chunks | INTROUVABLE
+val1-002: 8 chunks | En 2023, **4 % des surfaces des aires d’alimentation de captage (AAC)** étaient 
+val1-003: 8 chunks | INTROUVABLE
+val1-004: 8 chunks | La Cour des comptes souligne que **une consolidation budgétaire choisie et durab
+val1-005: 8 chunks | Entre 2021 et 2023, les entreprises de 50 salariés ou plus en France ayant déloc
+val1-006: 8 chunks | En 2024, le cours spot horaire du courant a dépassé le barème de compensation de
+val1-007: 8 chunks | INTROUVABLE
+val1-008: 8 chunks | En 2014, **16 %** des personnes immigrées entrées en France étaient originaires 
+val1-009: 8 chunks | Les programmes et équipements prioritaires de recherche (PEPR) financés par Fran
+val1-010: 8 chunks | 2,6 % des personnes en métropole déclarent que, pour le climat, aucune incitatio
+val1-011: 8 chunks | La production de vin a contribué à une baisse de **4,5 points** en valeur de la 
+val1-012: 8 chunks | Entre avril 2024 et mai 2025, le nombre de **points de charge** dans les zones r
+val1-013: 8 chunks | Le taux de marge des **débits de boissons** (incluant les bistrots) a diminué de
+val1-014: 8 chunks | INTROUVABLE
+val1-015: 8 chunks | INTOUVABLE
+
+*(Les extraits fournis concernent des données de 2025, et ne mention
+val1-016: 8 chunks | INTROUVABLE
+val1-017: 8 chunks | INTROUVABLE
+val1-018: 8 chunks | INTROUVABLE
+val1-019: 8 chunks | En 2025, le DILICO ponctionnait **1 Md€** sur les budgets des collectivités, tan
+val1-020: 8 chunks | INTROUVABLE
+val1-021: 8 chunks | INTROUVABLE
+val1-022: 8 chunks | Sur la période 2020-2025, le programme **PROQCIMA** représente **57,5 M€** en au
+val1-023: 8 chunks | INTROUVABLE
+val1-024: 8 chunks | INTROUVABLE
+val1-025: 8 chunks | INTROUVABLE
+val1-026: 8 chunks | En 2023, **16 % des émissions de GES de l’empreinte carbone du tourisme** provie
+val1-027: 8 chunks | Entre 2012 et 2021, hors Mayotte, **l’hébergement-restauration** contribue le mo
+val1-028: 8 chunks | En 2023, le niveau de vie médian des personnes pauvres se situe à **19,2 %** en 
+val1-029: 8 chunks | Le ministère des Armées a inscrit **50 M€** dans la Loi de programmation militai
+val1-030: 8 chunks | En 2010, **61 %** de la population se disait plutôt ou très favorable à la vacci
+val1-031: 8 chunks | En 2021, **18,9 %** des salariés en France travaillaient à distance au moins un 
+val1-032: 8 chunks | En 2024, le taux d’emploi des **15-64 ans** augmente de **0,5 point** par rappor
+val1-033: 8 chunks | INTROUVABLE
+val1-034: 8 chunks | INTROUVABLE
+val1-035: 8 chunks | En 2025, le taux de chômage au sens du BIT en France **repart à la hausse** (pas
+val1-036: 8 chunks | En moyenne, un salarié de la filière bois gagnait **1,9 euro net par heure de mo
+val1-037: 8 chunks | En 2017, la taxe sur les transactions financières a rapporté **947 M€** pour les
+val1-038: 8 chunks | En 2025, le taux de contribution patronale pour les **fonctionnaires civils de l
+val1-039: 8 chunks | En moyenne, un enseignant fonctionnaire payé par l'État gagne **3 138 euros net 
+val1-040: 8 chunks | En 2024, **326 exploitations bretonnes** avaient souscrit à des mesures agroenvi
+val1-041: 8 chunks | En 2022, **plus de logements largement sous-occupés sont observés dans les couro
+val1-042: 8 chunks | En 2024, les dépenses publiques des **collectivités territoriales et des organis
+val1-043: 8 chunks | INTROUVABLE
+val1-044: 8 chunks | En 2024, **32 000** immigrés nés dans d’autres pays de l’UE27 (hors Espagne, Ita
+val1-045: 8 chunks | Les **activités spécialisées, scientifiques et techniques** ont contribué davant
+val1-046: 8 chunks | INTROUVABLE
+val1-047: 8 chunks | En 2024, **41 UMR** avaient une **délégation globale de gestion (DGG)** confiée 
+val1-048: 8 chunks | INTROUVABLE
+val1-049: 8 chunks | La Cour des comptes ne mentionne pas explicitement une échéance précise pour la 
+val1-050: 8 chunks | Les sociétés françaises utilisent principalement des **solutions développées en 
+val1-051: 8 chunks | INTROUVABLE
+val1-052: 8 chunks | Entre 2017 et 2025, **16,7 %** des transactions standards non exonérées (montant
+val1-053: 8 chunks | Dans le scénario « économies » (1 Md€ d'AE par an), le taux de succès des appels
+val1-054: 8 chunks | En 2022, **3 % des propriétaires** (soit **0,87 million de personnes**) détienne
+val1-055: 8 chunks | En 2023, le salaire net moyen en euros constants des agents de la **fonction pub
+val1-056: 8 chunks | En 2024, **24,3 %** des immigrés nés dans un pays d'Europe extérieur à l'Union e
+val1-057: 8 chunks | INTROUVABLE
+val1-058: 8 chunks | INTROUVABLE
+val1-059: 8 chunks | INTROUVABLE
+val1-060: 8 chunks | INTROUVABLE
+val1-061: 8 chunks | En 2024, le coût total de la recherche partenariale avec les entreprises financé
+val1-062: 8 chunks | Les activités **ingénierie et services techniques** ont été la moins souvent dép
+val1-063: 8 chunks | INTROUVABLE
+val1-064: 8 chunks | INTROUVABLE
+val1-065: 8 chunks | D'après les extraits, la fraction des aides directes européennes dans le PSN fra
+val1-066: 8 chunks | En 2025, **500 000 €** en moyenne par étalement de dettes fiscales et sociales a
+val1-067: 8 chunks | La production viticole représenterait **1,8 point** de la variation totale de la
+val1-068: 8 chunks | La Cour des comptes souligne que l’action publique doit être renforcée sur **les
+val1-069: 8 chunks | La Cour des comptes **ne préconise pas explicitement de diminuer la part des ava
+val1-070: 8 chunks | La Corée du Sud déposait le plus de brevets dans les technologies quantiques en 
+val1-071: 8 chunks | INTROUVABLE
+val1-072: 8 chunks | En 2023, les **départements** paient le mieux leurs agents en moyenne avec **2 4
+val1-073: 8 chunks | En 2024, le salaire annuel brut moyen d'un doctorant CIFRE était de **33 391 €**
+val1-074: 8 chunks | Le risque de perdre un bébé avant son premier anniversaire est plus élevé pour l
+val1-075: 8 chunks | Les diplômés de licence ont un taux d'emploi en 2023 de **89 %**, alors que ceux
+val1-076: 8 chunks | En 2021, **13,5 % des ménages** dans les intercommunalités rurales non périurbai
+val1-077: 8 chunks | En 2021, **14 250 établissements** composent le maillon de la construction dans 
+val1-078: 8 chunks | INTROUVABLE
+val1-079: 8 chunks | Les données extraites ne permettent pas d'établir une comparaison directe entre 
+val1-080: 8 chunks | INTROUVABLE
+val1-081: 8 chunks | INTROUVABLE
+val1-082: 8 chunks | Depuis 2019, **5 projets** intégraient de l’intelligence artificielle dans le di
+val1-083: 8 chunks | INTROUVABLE
+val1-084: 8 chunks | L'aide moyenne par projet de l'ANS a baissé de **37 %**, passant de **520 000 €*
+val1-085: 8 chunks | INTROUVABLE
+val1-086: 8 chunks | INTROUVABLE
+val1-087: 8 chunks | INTROUVABLE
+val1-088: 8 chunks | INTROUVABLE
+val1-089: 8 chunks | En 2026, le rapport d’avancement annuel du PSMT anticipe un solde déficitaire de
+val1-090: 8 chunks | INTROUVABLE
+val1-091: 8 chunks | INTROUVABLE
+val1-092: 8 chunks | INTROUVABLE
+val1-093: 8 chunks | En 2024, les entreprises françaises utilisant l’IA étaient **8 points moins nomb
+val1-094: 8 chunks | INTROUVABLE
+val1-095: 8 chunks | En 2025, les dépenses de protection juridique de la Présidence de la République 
+val1-096: 8 chunks | Le rapport prévoyait un investissement d’**20 millions d'euros** pour former les
+val1-097: 8 chunks | Les produits réels de fonctionnement des **collectivités locales** (bloc communa
+val1-098: 8 chunks | En France, les dépenses de recherche réalisées par les entreprises (DIRDE) ont a
+val1-099: 8 chunks | L’Institut National de l'Audiovisuel (INA) a dispensé **2 450 heures** de format
+val1-100: 8 chunks | INTROUVABLE
+écrit : runs/rag_val1.json
+=== Notation par le juge officiel
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{
+  "score_confiance": 0.02,
+  "n_questions": 100,
+  "issues": {
+    "abstention": 20,
+    "réponse fausse": 36,
+    "juste + citation": 21,
+    "abstention juste": 18,
+    "hallucination (piège)": 3,
+    "prémisse corrigée": 2
+  },
+  "par_type": {
+    "graphique": {
+      "n": 12,
+      "score": -0.5833
+    },
+    "multi-doc": {
+      "n": 5,
+      "score": -0.2
+    },
+    "piege": {
+      "n": 23,
+      "score": 0.7391
+    },
+    "scan": {
+      "n": 9,
+      "score": -0.1111
+    },
+    "synthese": {
+      "n": 8,
+      "score": -0.75
+    },
+    "tableau": {
+      "n": 17,
+      "score": 0.0
+    },
+    "texte": {
+      "n": 26,
+      "score": 0.0
+    }
+  },
+  "taux_abstention": 0.38,
+  "taux_hallucination": 0.39,
+  "problemes_format": [],
+  "retrieval": {
+    "recall@5": 0.5584,
+    "recall@10": 0.6623,
+    "mrr": 0.4065,
+    "ndcg@10": 0.4111,
+    "n": 77
+  }
+}
