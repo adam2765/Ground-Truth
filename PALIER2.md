@@ -236,3 +236,14 @@ Règle « inclusion » : tous les chiffres de la réponse la plus courte doivent
 Les règles voisines (inclusion avec ou sans tolérance, « chiffres de la 1re dans la 2e ») donnent toutes entre
 +0,445 et +0,465 : le gain ne tient pas à un réglage fin. Appliquée aux réponses déjà calculées du leaderboard
 (run 4), sans nouveau passage GPU (`results/run4b/`).
+
+Résultat du run 5 (`results/run5/`) : le vote à 3 fait **moins bien** que la concordance à deux réponses.
+
+| Abstention | duo (run 4) | vote à 3 (run 5) |
+|---|---|---|
+| concordance exacte | +0,425 | +0,395 |
+| concordance par inclusion | **+0,465** | +0,455 |
+
+Le 3e appel (utilisé sur 47 questions) récupère surtout des réponses fausses. Temps de génération mesuré
+sur T4 : 17,7 s par question en moyenne (max 41 s) avec 3 appels, sous la limite de 30 s. La configuration
+retenue reste duo + concordance par inclusion (soumission du 28/10).
