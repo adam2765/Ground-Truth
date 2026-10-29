@@ -1,0 +1,7178 @@
+{
+ "run_name": "rag2-recheck",
+ "commit": "",
+ "predictions": [
+  {
+   "qid": "val1-001",
+   "answer": "Le nombre de bénéficiaires de la PAC était de 308 000 en 2022 et de 276 600 en 2023.",
+   "citations": [
+    {
+     "doc_id": "cc-pac",
+     "page": 25
+    }
+   ],
+   "_meta": {
+    "raw": "Le nombre de bénéficiaires de la PAC était de 308 000 en 2022 et de 276 600 en 2023.\n\nSOURCES: [cc-pac p.25]",
+    "top_score": 0.67578125,
+    "margin": 0.15869140625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2022, 308 000 exploitants bénéficiaient des paiements européens de la PAC, et en 2023, ce nombre a chuté à 276 600.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 15.8
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-pac",
+     "page": 25
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2097",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2097",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2097",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-002",
+   "answer": "En 2023, 4 % des surfaces des aires d’alimentation de captage (AAC) étaient couvertes par une aide MAEC ou une aide à l’agriculture biologique, soit 218 000 ha sur 5,7 Mha.",
+   "citations": [
+    {
+     "doc_id": "cc-pac",
+     "page": 88
+    }
+   ],
+   "_meta": {
+    "raw": "En 2023, 4 % des surfaces des aires d’alimentation de captage (AAC) étaient couvertes par une aide MAEC ou une aide à l’agriculture biologique, soit 218 000 ha sur 5,7 Mha.\n\nSOURCES: [cc-pac p.88]",
+    "top_score": 0.8232421875,
+    "margin": 0.1064453125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2023, 4 % des surfaces des aires d’alimentation de captage (5,7 millions d’hectares) étaient couvertes par des engagements agroenvironnementaux ou des aides à l’agriculture biologique, soit 218 000 hectares.",
+    "agree": true,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "seconds": 27.35
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-pac",
+     "page": 88
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 91
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 87
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 140
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 90
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 92
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 124
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 59
+    }
+   ]
+  },
+  {
+   "qid": "val1-003",
+   "answer": "En 2022, il y avait 22 700 officines en France, contre 23 400 en 2015.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2036",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En 2022, il y avait 22 700 officines en France, contre 23 400 en 2015.\n\nSOURCES: [insee-ip2036 p.2]",
+    "top_score": 0.98193359375,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2022, il y avait 22 700 officines en France, contre 23 400 en 2015, soit une baisse de 700 officines.",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 15.69
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2036",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 88
+    }
+   ]
+  },
+  {
+   "qid": "val1-004",
+   "answer": "La Cour des comptes souligne que ces pays ont réussi à dégager durablement un excédent primaire entre 2010 et 2025 grâce à une consolidation budgétaire choisie et progressive, évitant les ajustements subis sous pression extérieure, et en combinant efforts budgétaires avec des politiques favorisant la compétitivité et la croissance.",
+   "citations": [
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 101
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 24
+    }
+   ],
+   "_meta": {
+    "raw": "La Cour des comptes souligne que ces pays ont réussi à dégager durablement un excédent primaire entre 2010 et 2025 grâce à une consolidation budgétaire **choisie et progressive**, évitant les ajustements subis sous pression extérieure, et en combinant efforts budgétaires avec des politiques favorisant la compétitivité et la croissance.\n\nSOURCES: [cc-rspfp-2026 p.20], [cc-rspfp-2026-synthese p.19], [cc-rspfp-2026 p.101], [cc-rspfp-2026 p.24]",
+    "top_score": 0.99609375,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "La Cour des comptes souligne que les pays comme l’Allemagne, le Portugal et l’Italie ont réussi à maintenir un excédent primaire durable grâce à des efforts progressifs et planifiés sur plusieurs années, évitant ainsi des ajustements brusques et les risques de stagnation économique.",
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 34.23,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 101
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 24
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 142
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 95
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 104
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 156
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 102
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 48
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 82
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 123
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 103
+    }
+   ]
+  },
+  {
+   "qid": "val1-005",
+   "answer": "La réduction du coût de la main-d’œuvre est la principale motivation, citée par 55 % des entreprises ayant délocalisé entre 2021 et 2023. La décision stratégique prise par la tête de groupe suit avec 47 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2115",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "La réduction du coût de la main-d’œuvre est la principale motivation, citée par 55 % des entreprises ayant délocalisé entre 2021 et 2023. La décision stratégique prise par la tête de groupe suit avec 47 %.\n\nSOURCES: [insee-ip2115 p.3]",
+    "top_score": 0.6474609375,
+    "margin": 0.01025390625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Les principales motivations sont la réduction du coût de la main-d’œuvre (55 %) et les décisions stratégiques prises par la tête de groupe (47 %), suivies de la réduction de coûts autres que salariaux (17 %) et du pallier au manque de main-d’œuvre qualifiée en France (17 %).",
+    "agree": false,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 23.14
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2115",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2045",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-006",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.900390625,
+    "margin": 0.1337890625,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.65
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 37
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 64
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 84
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 87
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 73
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 67
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 82
+    },
+    {
+     "doc_id": "insee-ip2038",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 50
+    }
+   ]
+  },
+  {
+   "qid": "val1-007",
+   "answer": "En 2020-2024, parmi les 5 % de personnes les plus aisées (niveau de vie moyen de 6 427 euros par mois), l’espérance de vie à la naissance des hommes est de 85,0 ans.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2085",
+     "page": 4
+    }
+   ],
+   "_meta": {
+    "raw": "En 2020-2024, parmi les 5 % de personnes les plus aisées (niveau de vie moyen de 6 427 euros par mois), l’espérance de vie à la naissance des hommes est de 85,0 ans.\n\nSOURCES: [insee-ip2085 p.1]",
+    "top_score": 0.88525390625,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 2,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Pour les hommes dans les 5 % les plus aisés (niveau de vie moyen de 6 427 €/mois), l’espérance de vie à la naissance est de 85 ans sur la période 2020-2024.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 21.96
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2085",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2085",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2085",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2085",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2104",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-008",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99462890625,
+    "margin": 0.00048828125,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "seconds": 6.13
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2051",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2050",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2051",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2107",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2051",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2051",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2050",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2107",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-009",
+   "answer": "Les grands programmes de recherche thématiques financés par France 2030 avaient engagé 240 M€ en 2025 pour des projets menés avec des entreprises, notamment via l’appel à projets IA-Cluster.",
+   "citations": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 50
+    }
+   ],
+   "_meta": {
+    "raw": "Les grands programmes de recherche thématiques financés par France 2030 avaient engagé **240 M€** en 2025 pour des projets menés avec des entreprises, notamment via l’appel à projets IA-Cluster.\n\nSOURCES: [cc-recherche-entreprises p.50]",
+    "top_score": 0.98193359375,
+    "margin": 0.0078125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Les PEPR ont consacré 23 millions d'euros à des projets public-privé au milieu de 2025, représentant environ 1 % de leur budget total de 2,45 milliards d'euros.",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 16.73,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 222
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 50
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 221
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 51
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 186
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 67
+    },
+    {
+     "doc_id": "cc-recherche-entreprises-synthese",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 30
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 49
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 195
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 196
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 207
+    }
+   ]
+  },
+  {
+   "qid": "val1-010",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.9931640625,
+    "margin": 0.00537109375,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 3.39
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2113",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2113",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2113",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2113",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-011",
+   "answer": "La valeur de la production viticole en vin en 2024 est de 10,9 milliards d'euros, avec une baisse de 28,8 % par rapport à 2023.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "La valeur de la production viticole en vin en 2024 est de 10,9 milliards d'euros, avec une baisse de 28,8 % par rapport à 2023.\n\nSOURCES: [insee-ip2062 p.2]",
+    "top_score": 0.9990234375,
+    "margin": 0.40283203125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2024, la valeur de la production viticole (vin) s'élève à 10,9 milliards d'euros, soit une baisse de 28,8 % par rapport à 2023.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 18.56
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2057",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 52
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-012",
+   "answer": "Entre avril 2024 et mai 2025, le nombre de points de charge dans les zones rurales à habitat très dispersé a progressé de 101 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2082",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "Entre avril 2024 et mai 2025, le nombre de points de charge dans les zones rurales à habitat très dispersé a progressé de 101 %.\n\nSOURCES: [insee-ip2082 p.1]",
+    "top_score": 0.99365234375,
+    "margin": 0.00146484375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": "Le nombre de points de charge a progressé de 101 % entre avril 2024 et mai 2025 dans les campagnes les plus isolées (rural à habitat très dispersé).",
+    "n_context": 6,
+    "n_tables": 1,
+    "row_check": "Le nombre de points de charge a progressé de 101 % entre avril 2024 et mai 2025 dans les campagnes les plus isolées (rural à habitat très dispersé).",
+    "agree_inclus": true,
+    "seconds": 30.53
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2082",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2082",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2082",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2082",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-013",
+   "answer": "Entre 2016 et 2023, le taux de marge aux coûts des facteurs des bistrots (débits de boissons) a baissé de 29,6 % à 24,0 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2123",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "Entre 2016 et 2023, le taux de marge aux coûts des facteurs des bistrots (débits de boissons) a baissé de 29,6 % à 24,0 %.\n\nSOURCES: [insee-ip2123 p.2]",
+    "top_score": 0.84814453125,
+    "margin": 0.22802734375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Le taux de marge des débits de boissons (incluant les bistrots) a baissé de 5,6 points entre 2016 (29,6 %) et 2023 (24,0 %).",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 18.26
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2123",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2084",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2123",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2084",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2123",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2070",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-014",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.95068359375,
+    "margin": 0.341796875,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "seconds": 3.22
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 65
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 112
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 90
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 89
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 50
+    }
+   ]
+  },
+  {
+   "qid": "val1-015",
+   "answer": "Dans les campagnes à habitat très dispersé, le taux est de 4 % de surface artificialisée par habitant, soit 4 m² par habitant.\nDans les grands centres urbains, ce taux est de 55,7 %, soit 204 m² par habitant.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2103",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "Dans les campagnes à habitat très dispersé, le taux est de **4 %** de surface artificialisée par habitant, soit **4 m² par habitant**.\nDans les grands centres urbains, ce taux est de **55,7 %**, soit **204 m² par habitant**.\n\nSOURCES: [insee-ip2103 p.2]",
+    "top_score": 0.9892578125,
+    "margin": 0.02880859375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Dans les campagnes à habitat très dispersé, le taux d'artificialisation par habitant est de 223 m² en 2021. Dans les grandes villes (grands centres urbains), ce chiffre atteint 1 559 m².",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 31.17,
+    "row_check": "Dans les campagnes à habitat très éparpillé, le taux d’artificialisation est de 204 m² par habitant.\nDans les grandes villes, il atteint 10 600 000 ha de surface artificialisée, soit un taux de 55,7 % par habitant (avec une population de 10,6 millions d'habitants).",
+    "agree_inclus": true
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2103",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-016",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99169921875,
+    "margin": 0.0087890625,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.47
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 18
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 68
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 77
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 17
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 54
+    }
+   ]
+  },
+  {
+   "qid": "val1-017",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.91748046875,
+    "margin": 0.03173828125,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.46
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 30
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 27
+    }
+   ]
+  },
+  {
+   "qid": "val1-018",
+   "answer": "Dans les grands centres urbains, il y a en moyenne 195 ménages par hectare de bâti collectif.\nDans le rural très dispersé, il y en a 29 ménages par hectare.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2103",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "Dans les grands centres urbains, il y a en moyenne 195 ménages par hectare de bâti collectif.\nDans le rural très dispersé, il y en a 29 ménages par hectare.\n\nSOURCES: [insee-ip2103 p.3]",
+    "top_score": 0.99072265625,
+    "margin": 0.01513671875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Dans les grands centres urbains, il y a en moyenne 195 ménages par hectare de bâti collectif, tandis que dans le rural très dispersé, ce chiffre tombe à 29 ménages par hectare.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 18.51
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2103",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2041",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2125",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2073",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2041",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-019",
+   "answer": "En 2025, le DILICO a prélevé 1 Md€ sur les collectivités, tandis qu’en 2026, il n’a prélevé que 740 M€ (exonération des communes en année d’élections).",
+   "citations": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 134
+    }
+   ],
+   "_meta": {
+    "raw": "En 2025, le DILICO a prélevé **1 Md€** sur les collectivités, tandis qu’en 2026, il n’a prélevé que **740 M€** (exonération des communes en année d’élections).\n\nSOURCES: [cc-finances-locales-2026 p.14], [cc-finances-locales-2026 p.134]",
+    "top_score": 0.99853515625,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2025, le DILICO a prélevé 1 Md€ sur les collectivités locales, contre 740 M€ en 2026 (soit une baisse de 260 M€).",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 23.74
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 171
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 134
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 148
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 133
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 149
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 237
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 135
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 25
+    }
+   ]
+  },
+  {
+   "qid": "val1-020",
+   "answer": "En 2025, 5 699 prénoms mixtes ont été donnés, portés par 536 bébés pour 10 000 naissances.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En 2025, 5 699 prénoms mixtes ont été donnés, portés par 536 bébés pour 10 000 naissances.\n\nSOURCES: [insee-ip2127 p.4] [insee-ip2127 p.2]",
+    "top_score": 0.99755859375,
+    "margin": 0.169921875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2025, 5 699 prénoms mixtes ont été attribués, portant sur 536 enfants pour 10 000 naissances.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 20.55
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-021",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.59326171875,
+    "margin": 0.052734375,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 3.16
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2069",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2069",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2069",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2070",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2118",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2118",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2070",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2070",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2118",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2118",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2069",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-022",
+   "answer": "Le programme PROQCIMA représente 50 % des financements consacrés à la stratégie nationale quantique entre 2020 et 2025, soit environ 250 M€ sur le total des AE concernées.",
+   "citations": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 39
+    }
+   ],
+   "_meta": {
+    "raw": "Le programme PROQCIMA représente 50 % des financements consacrés à la stratégie nationale quantique entre 2020 et 2025, soit environ 250 M€ sur le total des AE concernées.\n\nSOURCES: [cc-informatique-quantique p.39]",
+    "top_score": 0.96923828125,
+    "margin": 0.03515625,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Le programme PROQCIMA représente 11,5 % des financements publics de la stratégie nationale quantique (57,5 M€ sur un total estimé à environ 500 M€ pour 2024-2026).",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 20.59,
+    "row_check": "Le programme PROQCIMA représente 500 M€ sur les financements publics totaux pour l’informatique quantique entre 2020 et 2025, soit 100 % du montant total.",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 43
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 71
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 37
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 53
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 70
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 73
+    }
+   ]
+  },
+  {
+   "qid": "val1-023",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.998046875,
+    "margin": 0.00146484375,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.39
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 21
+    }
+   ]
+  },
+  {
+   "qid": "val1-024",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.951171875,
+    "margin": 0.0263671875,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.41
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2088",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2088",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2088",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2088",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val1-025",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.97998046875,
+    "margin": 0.01123046875,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.77
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 92
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 68
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 113
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 114
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 91
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 217
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 185
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 84
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 122
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 69
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 125
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 98
+    }
+   ]
+  },
+  {
+   "qid": "val1-026",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99951171875,
+    "margin": 0.0,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.25
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2099",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2099",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2099",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2099",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-027",
+   "answer": "Le secteur du commerce contribue le moins à la consommation d’espace économique entre 2012 et 2021.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2039",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "Le secteur du commerce contribue le moins à la consommation d’espace économique entre 2012 et 2021.\n\nSOURCES: [insee-ip2039 p.1]",
+    "top_score": 0.82080078125,
+    "margin": 0.005859375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Le secteur du commerce contribue le moins à la consommation d’espace économique entre 2012 et 2021, bien qu’il ne soit pas précisé ici sa part exacte en pourcentage ou en hectares.",
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 11.83,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2039",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2039",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2039",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2039",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2045",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-028",
+   "answer": "Le niveau de vie des personnes pauvres en 2023 est à 19,2 % sous le seuil de pauvreté.\nLe salaire médian des salariés de la fonction publique hospitalière (FPH) en 2023 est de 2 431 euros, et celui des 10 % les moins bien rémunérés est de 1 859 euros, donc l'écart est de 572 euros.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "Le niveau de vie des personnes pauvres en 2023 est à **19,2 %** sous le seuil de pauvreté.\nLe salaire médian des salariés de la fonction publique hospitalière (FPH) en 2023 est de **2 431 euros**, et celui des 10 % les moins bien rémunérés est de **1 859 euros**, donc l'écart est de **572 euros**.\n\nSOURCES: [insee-ip2063 p.3], [insee-ip2067 p.2]",
+    "top_score": 0.99951171875,
+    "margin": 0.03271484375,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2023, le niveau de vie des personnes pauvres est inférieur de 247 euros à la limite de pauvreté.\nLe seuil séparant la moitié la plus démunie des personnes pauvres (1er décile) de l'autre moitié est de 1 859 euros nets par mois en EQTP.",
+    "agree": false,
+    "third": "En 2023 en métropole, le niveau de vie médian des personnes pauvres est à –1 759 euros constants de 2023 par mois par rapport à la limite de pauvreté (soit un écart de 1 759 euros).\nLe niveau de vie médian des personnes pauvres est à –1 759 euros constants de 2023 par mois.",
+    "n_context": 6,
+    "n_tables": 2,
+    "row_check": "En 2023, le niveau de vie médian des personnes pauvres est à 1 041 euros, soit un écart de 247 euros par rapport au seuil de pauvreté de 1 288 euros.\nLe niveau de vie typique des personnes pauvres se situe à 24,7 % sous la limite de pauvreté.",
+    "agree_inclus": false,
+    "seconds": 37.09
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2063",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-029",
+   "answer": "Le ministère de la défense a programmé 50 M€ pour la période 2019-2025.",
+   "citations": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 41
+    }
+   ],
+   "_meta": {
+    "raw": "Le ministère de la défense a programmé **50 M€** pour la période 2019-2025.\n\nSOURCES: [cc-informatique-quantique p.41]",
+    "top_score": 0.994140625,
+    "margin": 0.01220703125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Le ministère de la Défense a programmé 50 millions d'euros pour financer les technologies quantiques entre 2019 et 2025.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 12.78
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 71
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 94
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 93
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 32
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 119
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 64
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 53
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 57
+    }
+   ]
+  },
+  {
+   "qid": "val1-030",
+   "answer": "En 2010, 61 % des personnes étaient plutôt ou très favorables à la vaccination, tandis qu’en 2024, cette proportion était de 80 %.",
+   "citations": [
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 7
+    }
+   ],
+   "_meta": {
+    "raw": "En 2010, 61 % des personnes étaient plutôt ou très favorables à la vaccination, tandis qu’en 2024, cette proportion était de 80 %.\n\nSOURCES: [cc-vaccination-synthese p.6] [cc-vaccination p.7]",
+    "top_score": 1.0,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2010, 61 % des adultes étaient plutôt ou très favorables à la vaccination, tandis qu'en 2024, cette proportion était de 80 %.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 14.5
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 99
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 53
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 138
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 144
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 92
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 98
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 142
+    }
+   ]
+  },
+  {
+   "qid": "val1-031",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.9970703125,
+    "margin": 0.00244140625,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 2,
+    "seconds": 5.45
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2096",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2068",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2043",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-032",
+   "answer": "Le taux de chômage au sens du BIT augmente de 0,3 point en 2025 par rapport à 2024, passant de 7,4 % à 7,7 %.\n\nLa part du halo autour du chômage reste stable entre 2024 et 2025, avec 4,5 % en 2025.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2096",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 4
+    }
+   ],
+   "_meta": {
+    "raw": "Le taux de chômage au sens du BIT augmente de **0,3 point** en 2025 par rapport à 2024, passant de **7,4 %** à **7,7 %**.\n\nLa part du halo autour du chômage reste stable entre 2024 et 2025, avec **4,5 %** en 2025.\n\nSOURCES: [insee-ip2096 p.2], [insee-ip2096 p.3], [insee-ip2096 p.4]",
+    "top_score": 0.99853515625,
+    "margin": 0.0009765625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Le chômage a augmenté de 0,3 point en 2025 par rapport à 2024, revenant à un niveau proche de celui de 2013, tout en restant 2,7 points en dessous du pic de 2015.",
+    "agree": false,
+    "third": "D'après les données, le taux de chômage pour l'ensemble des actifs en 2024 à 2025 augmente légèrement de 5,8 à 6,0 points (écart calculé : +0,2 point).",
+    "n_context": 7,
+    "n_tables": 2,
+    "row_check": "D'après les données de l'Insee, le taux de chômage augmente de 0,3 point en 2025 par rapport à 2024, passant de 7,4 % à 7,7 %. La part du halo autour du chômage reste stable entre 2024 et 2025 à 4,5 %.",
+    "agree_inclus": true,
+    "seconds": 36.05
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2096",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val1-033",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.9169921875,
+    "margin": 0.04052734375,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 1.89
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-vaccination",
+     "page": 149
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 147
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 150
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 52
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 136
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 148
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 110
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 92
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 144
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 55
+    }
+   ]
+  },
+  {
+   "qid": "val1-034",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.8466796875,
+    "margin": 0.171875,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.59
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 59
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 90
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 50
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 51
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 55
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 52
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 43
+    }
+   ]
+  },
+  {
+   "qid": "val1-035",
+   "answer": "Le taux de chômage au sens du BIT a augmenté de 0,3 point en 2025 pour atteindre 7,7 %, mais cette hausse ne peut pas expliquer une baisse globale. En réalité, il s’agit d’une légère augmentation par rapport à 2024, donc la tendance n’est pas une baisse.\n\nL’écart entre les données de 2024 et 2025 est de +0,3 point pour le taux de chômage au BIT.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2096",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "Le taux de chômage au sens du BIT a augmenté de 0,3 point en 2025 pour atteindre 7,7 %, mais cette hausse ne peut pas expliquer une baisse globale. En réalité, il s’agit d’une légère augmentation par rapport à 2024, donc la tendance n’est pas une baisse.\n\nL’écart entre les données de 2024 et 2025 est de **+0,3 point** pour le taux de chômage au BIT.\n\nSOURCES: [insee-ip2096 p.1]",
+    "top_score": 0.90478515625,
+    "margin": 0.0107421875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Le taux de chômage au BIT en 2025 est passé à 7,7 %, soit une légère hausse de 0,3 point par rapport à 2024, mais reste inférieur de 2,7 points au pic de 2015.",
+    "agree": false,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 25.42
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2096",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-036",
+   "answer": "En moyenne, un salarié de la filière bois gagnait 1,9 euro net moins par heure qu’en moyenne dans l’ensemble de l’économie (16,3 € vs 14,4 €).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2035",
+     "page": 4
+    }
+   ],
+   "_meta": {
+    "raw": "En moyenne, un salarié de la filière bois gagnait **1,9 euro net moins par heure** qu’en moyenne dans l’ensemble de l’économie (16,3 € vs 14,4 €).\n\nSOURCES: [insee-ip2035 p.4]",
+    "top_score": 0.99951171875,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2021, les salariés de la filière bois gagnent en moyenne 1,9 € net moins par heure que dans l’ensemble de l’économie française.",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 15.13
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2035",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-037",
+   "answer": "La taxe sur les achats de titres de capital a rapporté 2 526 M€ en 2025.\nLe rapport d’avancement annuel (RAA) pour 2026 prévoit une hausse de 1,2 Md€ de recettes supplémentaires pour les collectivités locales grâce à la dynamique de la TVA, liée à la hausse du taux de la taxe sur les transactions financières.",
+   "citations": [
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 164
+    }
+   ],
+   "_meta": {
+    "raw": "La taxe sur les achats de titres de capital a rapporté **2 526 M€** en 2025.\nLe rapport d’avancement annuel (RAA) pour 2026 prévoit une hausse de **1,2 Md€** de recettes supplémentaires pour les collectivités locales grâce à la dynamique de la TVA, liée à la hausse du taux de la taxe sur les transactions financières.\n\nSOURCES: [cc-taxe-transactions-financieres p.34], [cc-finances-locales-2026 p.164]",
+    "top_score": 0.9990234375,
+    "margin": 0.0068359375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 33.97,
+    "row_check": "D'après la Cour des comptes, la taxe sur les achats d'actions a rapporté 2,5 Md€ en 2025, et le rapport d’avancement annuel prévoit une recette supplémentaire de 2,5 Md€ en 2026 grâce au relèvement de son taux.",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 164
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 93
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 33
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 26
+    }
+   ]
+  },
+  {
+   "qid": "val1-038",
+   "answer": "Le taux de contribution patronale pour les fonctionnaires civils de l’État en 2025 est estimé à 44,1 %.\nLe taux de cotisation employeur à la CNRACL pour les fonctionnaires territoriaux en 2028 est de 43,65 %, mais en 2025, il est de 34,65 %.\n\nÉcart entre ces deux taux en 2025 : 44,1 % - 34,65 % = 9,45 points.",
+   "citations": [
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 89
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 128
+    }
+   ],
+   "_meta": {
+    "raw": "Le taux de contribution patronale pour les fonctionnaires civils de l’État en 2025 est estimé à 44,1 %.\nLe taux de cotisation employeur à la CNRACL pour les fonctionnaires territoriaux en 2028 est de 43,65 %, mais en 2025, il est de 34,65 %.\n\nÉcart entre ces deux taux en 2025 : 44,1 % - 34,65 % = **9,45 points**.\n\nSOURCES: [cc-retraites-fonctionnaires-etat p.89], [cc-finances-locales-2026 p.128]",
+    "top_score": 0.998046875,
+    "margin": 0.0078125,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2025, le taux de contribution patronale appliqué aux fonctionnaires civils de l’État est de 44,1 %. Pour les employeurs territoriaux à la CNRACL, il est fixé à 34,65 % en 2025.",
+    "agree": false,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 33.54
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 89
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 84
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 128
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 129
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 49
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 88
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 152
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 96
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 112
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 76
+    }
+   ]
+  },
+  {
+   "qid": "val1-039",
+   "answer": "En moyenne, un enseignant fonctionnaire de la FPE perçoit 3 138 euros nets par mois en 2023.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2065",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En moyenne, un enseignant fonctionnaire de la FPE perçoit **3 138 euros nets par mois** en 2023.\n\nSOURCES: [insee-ip2065 p.2]",
+    "top_score": 0.99853515625,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2023, un enseignant fonctionnaire de la FPE gagne en moyenne 3 138 euros nets par mois.",
+    "agree": true,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "seconds": 16.95
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2065",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-040",
+   "answer": "En Bretagne, 3 578 fermes ont bénéficié des MAEC pour la campagne PAC 2023, et 326 exploitations situées dans les baies algues vertes avaient souscrit un engagement MAEC fin 2024.",
+   "citations": [
+    {
+     "doc_id": "cc-pac",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 49
+    }
+   ],
+   "_meta": {
+    "raw": "En Bretagne, **3 578 fermes** ont bénéficié des MAEC pour la campagne PAC 2023, et **326 exploitations** situées dans les baies algues vertes avaient souscrit un engagement MAEC fin 2024.\n\nSOURCES: [cc-pac p.86], [cc-algues-vertes p.49]",
+    "top_score": 0.9716796875,
+    "margin": 0.0078125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2024, 326 fermes bretonnes ont bénéficié de MAEC PAC, dont 245 exploitations situées dans les baies algues vertes (11,1 % des exploitations concernées).",
+    "agree": false,
+    "third": "INTROUVABLE",
+    "n_context": 6,
+    "n_tables": 1,
+    "row_check": "Selon la Cour des comptes, 3 578 fermes bretonnes ont touché des aides agroenvironnementales et climatiques pour la campagne PAC 2023, et 245 exploitations situées dans les baies concernées par les marées vertes avaient souscrit un tel engagement fin 2024.",
+    "agree_inclus": false,
+    "seconds": 29.6
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-pac",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 49
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 48
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 88
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 9
+    }
+   ]
+  },
+  {
+   "qid": "val1-041",
+   "answer": "Dans les petites aires d’attraction des villes (50 000 à 199 999 habitants), la sous-occupation très accentuée est plus élevée qu’au cœur des grandes villes, avec 31 % des résidences principales concernées dans les couronnes des AAV de 700 000 habitants ou plus.\n\nLa tranche de taille des aires d’attraction des villes qui arrive en tête est les couronnes des AAV de 700 000 habitants ou plus.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2064",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "Dans les petites aires d’attraction des villes (50 000 à 199 999 habitants), la sous-occupation très accentuée est plus élevée qu’au cœur des grandes villes, avec 31 % des résidences principales concernées dans les couronnes des AAV de 700 000 habitants ou plus.\n\nLa tranche de taille des aires d’attraction des villes qui arrive en tête est les couronnes des AAV de 700 000 habitants ou plus.\n\nSOURCES: [insee-ip2064 p.2] et [insee-ip2064 p.3]",
+    "top_score": 0.72265625,
+    "margin": 0.675048828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2022, les couronnes des aires d’attraction des villes de plus de 700 000 habitants concentrent le plus de logements largement sous-occupés (31 %), contre une proportion moindre dans les petites aires urbaines.",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 30.21
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2064",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2064",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2121",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2064",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2047",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2064",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2046",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-042",
+   "answer": "Les collectivités locales et autres organismes locaux dépensent 322 milliards d'euros pour l'enseignement en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2093",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "Les collectivités locales et autres organismes locaux dépensent **322 milliards d'euros** pour l'enseignement en 2024.\n\nSOURCES: [insee-ip2093 p.2]",
+    "top_score": 0.99658203125,
+    "margin": 0.001953125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Les collectivités locales ont un déficit de 11,4 milliards d'euros en 2024, soit une dégradation de 6,4 milliards d'euros par rapport à 2023.",
+    "agree": false,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 19.52,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2093",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2054",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2054",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 23
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 102
+    }
+   ]
+  },
+  {
+   "qid": "val1-043",
+   "answer": "La prime par mégawatt a diminué de 20 275 € (60 850 € en 2024 à 40 575 € en 2025).",
+   "citations": [
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 56
+    }
+   ],
+   "_meta": {
+    "raw": "La prime par mégawatt a diminué de 20 275 € (60 850 € en 2024 à 40 575 € en 2025).\n\nSOURCES: [cc-effacements-electricite p.56]",
+    "top_score": 0.73779296875,
+    "margin": 0.04736328125,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": "La prime par mégawatt a diminué de 20 275 € entre 2024 (60 850 €) et 2025 (40 575 €).",
+    "n_context": 7,
+    "n_tables": 2,
+    "row_check": "La prime par mégawatt a diminué de 20 275 € entre 2024 (60 850 €) et 2025 (40 575 €).",
+    "agree_inclus": true,
+    "seconds": 34.89
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 91
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 59
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 43
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 51
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 55
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 52
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 87
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 61
+    }
+   ]
+  },
+  {
+   "qid": "val1-044",
+   "answer": "En 2024, 30 000 immigrés nés dans d’autres pays de l’UE27 (hors Espagne, Italie, Portugal) sont entrés en France, soit une baisse de 8 % par rapport à 2023.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2107",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, **30 000** immigrés nés dans d’autres pays de l’UE27 (hors Espagne, Italie, Portugal) sont entrés en France, soit une baisse de **8 %** par rapport à 2023.\n\nSOURCES: [insee-ip2107 p.3]",
+    "top_score": 0.9990234375,
+    "margin": 0.00146484375,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2024, 32 000 immigrés nés dans d'autres pays de l'UE27 (hors Espagne, Italie, Portugal) sont entrés en France.",
+    "agree": false,
+    "third": "En 2024, le nombre d'immigrés nés dans d'autres pays de l'UE27 (hors Espagne, Italie, Portugal) est estimé à 32 milliers.",
+    "n_context": 7,
+    "n_tables": 2,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false,
+    "seconds": 25.8
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2107",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2107",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2107",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2107",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2051",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-045",
+   "answer": "Les services d’hébergement-restauration ont apporté la plus forte contribution à la hausse en volume de la valeur ajoutée des services marchands non financiers en 2022, avec un rythme de croissance de +5,0 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2059",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "Les services d’hébergement-restauration ont apporté la plus forte contribution à la hausse en volume de la valeur ajoutée des services marchands non financiers en 2022, avec un rythme de croissance de **+5,0 %**.\n\nSOURCES: [insee-ip2059 p.2]",
+    "top_score": 0.9951171875,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 26.49,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2059",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2059",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2059",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2059",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-046",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.0457763671875,
+    "margin": 0.024444580078125,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 1.98
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-anr",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 59
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 249
+    },
+    {
+     "doc_id": "insee-ip2064",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 45
+    },
+    {
+     "doc_id": "insee-ip2064",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2047",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 17
+    },
+    {
+     "doc_id": "insee-ip2047",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 134
+    }
+   ]
+  },
+  {
+   "qid": "val1-047",
+   "answer": "En 2024, parmi les laboratoires sous tutelle du CNRS, 41 avaient une délégation globale de gestion (DGG) confiée à un seul établissement, dont 22 étaient confiées au CNRS et 19 à des partenaires universitaires.",
+   "citations": [
+    {
+     "doc_id": "cc-umr",
+     "page": 44
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, parmi les laboratoires sous tutelle du CNRS, **41** avaient une délégation globale de gestion (DGG) confiée à un seul établissement, dont **22** étaient confiées au CNRS et **19** à des partenaires universitaires.\n\nSOURCES: [cc-umr p.44]",
+    "top_score": 0.9912109375,
+    "margin": 0.798095703125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2024, 150 laboratoires sous tutelle du CNRS avaient une gestion entièrement confiée au CNRS, contre 181 confiés à un partenaire (université ou autre tuteur).",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 17.28,
+    "row_check": "En 2024, 41 laboratoires avaient une délégation globale de gestion (DGG) entièrement confiée à un seul établissement, dont 32 étaient confiés au CNRS et 19 à des partenaires universitaires.",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-umr",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 43
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 73
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 70
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 31
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 32
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 68
+    }
+   ]
+  },
+  {
+   "qid": "val1-048",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.87255859375,
+    "margin": 0.0087890625,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.62
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 73
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 106
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 104
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 107
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 88
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 127
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 101
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 93
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 102
+    }
+   ]
+  },
+  {
+   "qid": "val1-049",
+   "answer": "La Cour recommande de construire d’ici 2028 des partenariats industriels ciblés à l’échelle européenne, avec une spécialisation par pays si nécessaire.",
+   "citations": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 95
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 14
+    }
+   ],
+   "_meta": {
+    "raw": "La Cour recommande de construire d’ici **2028** des partenariats industriels ciblés à l’échelle européenne, avec une spécialisation par pays si nécessaire.\n\nSOURCES: [cc-informatique-quantique p.95], [cc-informatique-quantique p.13], [cc-informatique-quantique-synthese p.14]",
+    "top_score": 0.98779296875,
+    "margin": 0.10888671875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "La Cour recommande de construire ces partenariats industriels d’ici 2028 pour renforcer la souveraineté européenne en informatique quantique, avec une coordination via le SGPI.",
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 18.09,
+    "row_check": "D’ici 2028.",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 95
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 31
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 90
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 53
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 75
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 102
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 99
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 92
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 98
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 91
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 80
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 51
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 33
+    }
+   ]
+  },
+  {
+   "qid": "val1-050",
+   "answer": "En 2024, les entreprises françaises utilisant l’IA se procurent le plus souvent ces solutions en passant des contrats avec des prestataires externes (23 à 29 %), ou en développant ou modifiant des logiciels libres en interne.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2061",
+     "page": 4
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, les entreprises françaises utilisant l’IA se procurent le plus souvent ces solutions en passant des contrats avec des prestataires externes (23 à 29 %), ou en développant ou modifiant des logiciels libres en interne.\n\nSOURCES: [insee-ip2061 p.4]",
+    "top_score": 0.9951171875,
+    "margin": 0.0029296875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Les sociétés françaises utilisant l’IA se procurent le plus souvent ces solutions via des développements internes par leurs propres employés (environ 50 % dans le secteur de l’information-communication) ou des contrats avec des prestataires externes (23 à 29 % en moyenne).",
+    "agree": false,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "seconds": 27.82
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-051",
+   "answer": "La production de vin en France en 2024 s'élève à 42,9 millions d’hectolitres (chiffre moyen sur la campagne 2020-2024, mais ajusté à -28,8 % pour 2024 seul).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2057",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "La production de vin en France en 2024 s'élève à 42,9 millions d’hectolitres (chiffre moyen sur la campagne 2020-2024, mais ajusté à -28,8 % pour 2024 seul).\n\nSOURCES: [insee-ip2057 p.1], [insee-ip2062 p.2]",
+    "top_score": 0.99560546875,
+    "margin": 0.02490234375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": "INTROUVABLE",
+    "n_context": 6,
+    "n_tables": 1,
+    "row_check": "42,9 millions d’hectolitres.",
+    "agree_inclus": true,
+    "seconds": 40.27
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2057",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2057",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 67
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-052",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.97412109375,
+    "margin": 0.0,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 4.88
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 37
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 79
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 33
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 67
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 87
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 24
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 36
+    }
+   ]
+  },
+  {
+   "qid": "val1-053",
+   "answer": "Un taux de succès de 18,8 % permettrait de financer environ 1 800 projets par an.",
+   "citations": [
+    {
+     "doc_id": "cc-anr",
+     "page": 77
+    }
+   ],
+   "_meta": {
+    "raw": "Un taux de succès de 18,8 % permettrait de financer environ 1 800 projets par an.\n\nSOURCES: [cc-anr p.77]",
+    "top_score": 0.9912109375,
+    "margin": 0.015625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Avec un engagement annuel de 1 Md€, le taux de succès serait de 18,8 %, soutenant environ 1 800 projets chaque année.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 17.23
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-anr",
+     "page": 77
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 73
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 79
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 65
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 81
+    }
+   ]
+  },
+  {
+   "qid": "val1-054",
+   "answer": "En 2022, 246 600 personnes fiscalement domiciliées en France détiennent au moins dix logements, représentant 0,9 % des propriétaires.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2046",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "En 2022, **246 600 personnes** fiscalement domiciliées en France détiennent au moins dix logements, représentant **0,9 %** des propriétaires.\n\nSOURCES: [insee-ip2046 p.1]",
+    "top_score": 0.99951171875,
+    "margin": 0.15673828125,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2022, 9,7 millions de propriétaires résidant fiscalement en France hors Mayotte détiennent au moins dix logements, soit 3 % du total des propriétaires.",
+    "agree": false,
+    "third": "En 2022, 246 600 propriétaires détiennent au moins dix logements, représentant 0,9 % des propriétaires en France hors Mayotte.",
+    "n_context": 6,
+    "n_tables": 1,
+    "row_check": "En 2022, 246 600 propriétaires détiennent au moins dix logements, représentant 0,9 % des propriétaires en France hors Mayotte.",
+    "agree_inclus": true,
+    "seconds": 15.83
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2046",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2046",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2046",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2046",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-055",
+   "answer": "En 2022, le salaire net moyen en euros constants a augmenté de 1,1 % par rapport à 2021.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2067",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En 2022, le salaire net moyen en euros constants a augmenté de 1,1 % par rapport à 2021.\n\nSOURCES: [insee-ip2067 p.2]",
+    "top_score": 0.99462890625,
+    "margin": 0.0029296875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": "INTROUVABLE",
+    "n_context": 7,
+    "n_tables": 2,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false,
+    "seconds": 32.83
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2067",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-056",
+   "answer": "En 2024, 24,3 % des immigrés nés dans d’autres pays d’Europe (hors UE) ont acquis la nationalité française.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2076",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, **24,3 %** des immigrés nés dans d’autres pays d’Europe (hors UE) ont acquis la nationalité française.\n\nSOURCES: [insee-ip2076 p.3]",
+    "top_score": 0.9990234375,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "La part des immigrés nés en Europe extérieure à l'UE (hors UE27) ayant acquis la nationalité française en 2024 est de 24,3 % pour les \"Autres pays d'Europe\" (hors UE27).",
+    "agree": true,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "seconds": 17.11
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2076",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val1-057",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99853515625,
+    "margin": 0.00146484375,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "seconds": 5.29
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2094",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2094",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2094",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2094",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2052",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2052",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2052",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-058",
+   "answer": "D'après la Cour des comptes, le montant du crédit d’impôt en faveur de la recherche (CIR) devrait dépasser 8 Md€ en 2025.\n\nPour le plan national 2021-2025, l’enveloppe globale d’investissement attribuée aux technologies quantiques est de 1,8 Md€, dont 1 Md€ est consacré spécifiquement à l’informatique quantique.",
+   "citations": [
+    {
+     "doc_id": "cc-recherche-entreprises-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 15
+    }
+   ],
+   "_meta": {
+    "raw": "D'après la Cour des comptes, le montant du crédit d’impôt en faveur de la recherche (CIR) devrait dépasser **8 Md€** en 2025.\n\nPour le plan national 2021-2025, l’enveloppe globale d’investissement attribuée aux technologies quantiques est de **1,8 Md€**, dont **1 Md€** est consacré spécifiquement à l’informatique quantique.\n\nSOURCES: [cc-recherche-entreprises-synthese p.5], [cc-informatique-quantique p.15]",
+    "top_score": 0.95556640625,
+    "margin": -0.00830078125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2025, le crédit d’impôt recherche (CIR) devrait dépasser 8,068 milliards d'euros pour les entreprises.",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 28.01,
+    "row_check": "D'après la Cour des comptes, le crédit d’impôt en faveur de la recherche (CIR) devrait dépasser 8 milliards d'euros en 2025.\n\nPour les technologies quantiques, l’enveloppe globale d’investissement prévue est de 1,8 milliard d'euros, dont 1,5 milliard d'euros de fonds publics.",
+    "agree_inclus": true
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-recherche-entreprises-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 214
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 99
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 120
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 119
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 49
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 51
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 93
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 97
+    }
+   ]
+  },
+  {
+   "qid": "val1-059",
+   "answer": "Les émissions des transports maritimes (notamment liés aux armateurs français) et aériennes augmentent fortement en 2024 (+3,2 Mt pour le maritime et +0,6 Mt pour l’avion), tandis que les émissions des transports terrestres diminuent (-0,5 Mt).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2077",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "Les émissions des transports maritimes (notamment liés aux armateurs français) et aériennes augmentent fortement en 2024 (+3,2 Mt pour le maritime et +0,6 Mt pour l’avion), tandis que les émissions des transports terrestres diminuent (-0,5 Mt).\n\nSOURCES: [insee-ip2077 p.2]",
+    "top_score": 0.97802734375,
+    "margin": 0.00146484375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 23.64,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2077",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-060",
+   "answer": "Les atteintes humaines représentent la forme d’ingérence la plus fréquente, avec une part de 85 % (les atteintes capitalistiques ne représentant que 15 %).",
+   "citations": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 88
+    }
+   ],
+   "_meta": {
+    "raw": "Les atteintes humaines représentent la forme d’ingérence la plus fréquente, avec une part de 85 % (les atteintes capitalistiques ne représentant que 15 %).\n\nSOURCES: [cc-informatique-quantique p.88]",
+    "top_score": 0.91650390625,
+    "margin": 0.857513427734375,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2025, les atteintes humaines ont été la forme d'ingérence la plus fréquente dans l'industrie de défense, représentant l'essentiel (sans pour autant être quantifié en pourcentage précis dans les extraits fournis).",
+    "agree": false,
+    "third": "INTROUVABLE",
+    "n_context": 6,
+    "n_tables": 1,
+    "row_check": "Les atteintes capitalistiques ont été la forme la plus fréquente, représentant 85 % des ingérences visant les entreprises de l'industrie de défense.",
+    "agree_inclus": true,
+    "seconds": 18.08
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 88
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 69
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 24
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 15
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 82
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 68
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 45
+    },
+    {
+     "doc_id": "insee-ip2092",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2045",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 84
+    }
+   ]
+  },
+  {
+   "qid": "val1-061",
+   "answer": "Le coût total de la recherche partenariale pour l’État en 2024, incluant les financements publics et les coûts non pris en charge par l’État, s’élève à environ 3,53 Md€ (3,3 Md€ + 230 M€).",
+   "citations": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 26
+    }
+   ],
+   "_meta": {
+    "raw": "Le coût total de la recherche partenariale pour l’État en 2024, incluant les financements publics et les coûts non pris en charge par l’État, s’élève à environ 3,53 Md€ (3,3 Md€ + 230 M€).\n\nSOURCES: [cc-recherche-entreprises p.26]",
+    "top_score": 0.9912109375,
+    "margin": 0.0029296875,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Le coût total de la recherche partenariale pour l’État en 2024 est estimé à 3,3 milliards d'euros, incluant les 3,0 Md€ d’intervention directe et les 230 millions d'euros supplémentaires payés par les opérateurs publics.",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 24.0
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 100
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-recherche-entreprises-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 176
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 80
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 180
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 186
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 177
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 179
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 181
+    }
+   ]
+  },
+  {
+   "qid": "val1-062",
+   "answer": "Les activités commerciales ont été la moins souvent déplacées, avec seulement 22 % des entreprises concernées (services informatiques et technologies de l’information à 27 %, administratives et financières à 47 %).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2115",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "Les activités commerciales ont été la moins souvent déplacées, avec seulement 22 % des entreprises concernées (services informatiques et technologies de l’information à 27 %, administratives et financières à 47 %).\n\nSOURCES: [insee-ip2115 p.2]",
+    "top_score": 0.9853515625,
+    "margin": 0.00341796875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Les activités commerciales ont été la moins souvent déplacées, avec 33 % des cas.",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 13.73,
+    "row_check": "Les activités industrielles ont été la moins souvent déplacées, avec seulement 31 % des entreprises concernées.",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2115",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-063",
+   "answer": "En 2024, 2 % des terres agricoles des secteurs vasiers (2 119 hectares) ont été soumises à une obligation d’information de la SAFER.",
+   "citations": [
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 77
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, 2 % des terres agricoles des secteurs vasiers (2 119 hectares) ont été soumises à une obligation d’information de la SAFER.\n\nSOURCES: [cc-algues-vertes p.77]",
+    "top_score": 0.93212890625,
+    "margin": 0.12890625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2024, 2 % des terres agricoles des secteurs concernés par les marées vertes ont fait l'objet de cessions soumises à l'obligation d'information de la SAFER, soit 2 119 hectares.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 18.57
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 77
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 79
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 91
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 59
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 81
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 137
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "insee-ip2057",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 74
+    }
+   ]
+  },
+  {
+   "qid": "val1-064",
+   "answer": "La Bibliothèque nationale de France estime à 22 M€ l’effort nécessaire sur six ans pour moderniser son système d’information.",
+   "citations": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 26
+    }
+   ],
+   "_meta": {
+    "raw": "La Bibliothèque nationale de France estime à 22 M€ l’effort nécessaire sur six ans pour moderniser son système d’information.\n\nSOURCES: [cc-ia-ministere-culture p.26]",
+    "top_score": 0.93310546875,
+    "margin": 0.31591796875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "La BnF prévoit un investissement de 3,67 millions d'euros par an pendant six ans pour moderniser son système d’information.",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 15.67,
+    "row_check": "La Bibliothèque nationale de France estime à 22 M€ l’effort nécessaire sur six ans pour moderniser son système d’information.",
+    "agree_inclus": true
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 126
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 40
+    }
+   ]
+  },
+  {
+   "qid": "val1-065",
+   "answer": "Le soutien de base au revenu représente 43,3 % de l’enveloppe totale du programme stratégique national (PSN) français pour la période 2023-2027.",
+   "citations": [
+    {
+     "doc_id": "cc-pac",
+     "page": 122
+    }
+   ],
+   "_meta": {
+    "raw": "Le soutien de base au revenu représente **43,3 %** de l’enveloppe totale du programme stratégique national (PSN) français pour la période 2023-2027.\n\nSOURCES: [cc-pac p.122]",
+    "top_score": 0.97998046875,
+    "margin": 0.0087890625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Selon la feuille de route française de la PAC 2023-2027, 48 % de l’enveloppe totale des aides directes va au soutien de base au revenu des agriculteurs.",
+    "agree": false,
+    "third": "La fraction de l’enveloppe française allouée au soutien de base au revenu des agriculteurs est de 48 %.",
+    "n_context": 5,
+    "n_tables": 2,
+    "row_check": "D'après la Cour, l’aide de base au revenu représente 48 % du total des financements européens déployés par la France entre 2023 et 2027.",
+    "agree_inclus": false,
+    "seconds": 20.21
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-pac",
+     "page": 55
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 122
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 94
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 118
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 126
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 85
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 91
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 65
+    }
+   ]
+  },
+  {
+   "qid": "val1-066",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.91943359375,
+    "margin": 0.0517578125,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.62
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 232
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 71
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 105
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 194
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 110
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 66
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 231
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 96
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 99
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 62
+    }
+   ]
+  },
+  {
+   "qid": "val1-067",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.9990234375,
+    "margin": 0.0,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 3.67
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2086",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2057",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-068",
+   "answer": "La Cour des comptes souligne la nécessité de renforcer l’action publique sur les leviers suivants :\n- l’extension de la lutte aux sites sableux et vasières (hors les huit baies initiales) avec des objectifs évaluables dans les contrats territoriaux (SAGE).\n- la redéfinition des leviers incitatifs pour changer les pratiques agricoles et réduire les fuites d’azote.\n- la mobilisation des leviers fonciers et agroalimentaires.\n- l’adaptation et le renforcement de la réglementation.",
+   "citations": [
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 7
+    }
+   ],
+   "_meta": {
+    "raw": "La Cour des comptes souligne la nécessité de renforcer l’action publique sur les **leviers suivants** :\n- l’**extension de la lutte aux sites sableux et vasières** (hors les huit baies initiales) avec des objectifs évaluables dans les contrats territoriaux (SAGE).\n- la **redéfinition des leviers incitatifs** pour changer les pratiques agricoles et réduire les fuites d’azote.\n- la **mobilisation des leviers fonciers et agroalimentaires**.\n- l’**adaptation et le renforcement de la réglementation**.\n\nSOURCES: [cc-algues-vertes p.61], [cc-algues-vertes-synthese p.7]",
+    "top_score": 0.99365234375,
+    "margin": 0.01171875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "La Cour des comptes souligne la nécessité de renforcer l'action publique sur les objectifs évaluables à l'échelle des bassins versants, les pratiques agricoles (incitatifs et changement des systèmes), ainsi que les leviers fonciers et agroalimentaires, et d’améliorer la réglementation.",
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 27.37,
+    "row_check": "La Cour des comptes souligne notamment la nécessité d’étendre la lutte aux zones au-delà des huit baies bretonnes concernées.",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 85
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 52
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 10
+    }
+   ]
+  },
+  {
+   "qid": "val1-069",
+   "answer": "La Cour des comptes recommande d’augmenter le poids des subventions par rapport aux avances remboursables pour renforcer l’effet de levier privé et faciliter la consolidation des entreprises, notamment via des outils comme le programme PROQCIMA.",
+   "citations": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 53
+    }
+   ],
+   "_meta": {
+    "raw": "La Cour des comptes recommande d’augmenter le poids des subventions par rapport aux avances remboursables pour renforcer l’effet de levier privé et faciliter la consolidation des entreprises, notamment via des outils comme le programme PROQCIMA.\n\nSOURCES: [cc-informatique-quantique p.46] [cc-informatique-quantique p.53]",
+    "top_score": 0.95458984375,
+    "margin": 0.01513671875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "La Cour des comptes recommande d'augmenter les avances remboursables pour renforcer la consolidation des entreprises, mais elle souligne aussi que cette mesure doit être complétée par des subventions pour éviter un déséquilibre financier excessif. Le rapport insiste sur la nécessité de faciliter la trésorerie des entreprises tout en gardant un équilibre avec les subventions existantes.",
+    "agree": null,
+    "third": "La Cour des comptes souligne dans son rapport que les avances remboursables, comme celles de 4 865 482,5 € pour les dépenses externes facturation, représentent un risque financier élevé pour les fonds publics, car elles ne génèrent pas de rendement immédiat et peuvent alourdir la dette publique.",
+    "n_context": 6,
+    "n_tables": 1,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false,
+    "seconds": 34.73
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 53
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 37
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 100
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 99
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 109
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 17
+    }
+   ]
+  },
+  {
+   "qid": "val1-070",
+   "answer": "La Corée du Sud déposait le plus de brevets quantiques par million d'habitants en 2024, avec un ratio de 12 brevets.",
+   "citations": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 78
+    }
+   ],
+   "_meta": {
+    "raw": "La Corée du Sud déposait le plus de brevets quantiques par million d'habitants en 2024, avec un ratio de **12 brevets**.\n\nSOURCES: [cc-informatique-quantique p.78]",
+    "top_score": 0.9990234375,
+    "margin": 0.02734375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": "INTROUVABLE",
+    "n_context": 6,
+    "n_tables": 1,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false,
+    "seconds": 20.31
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 81
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 153
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 87
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 82
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 77
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 70
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 149
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 142
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 139
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 152
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 12
+    }
+   ]
+  },
+  {
+   "qid": "val1-071",
+   "answer": "En 2010, il y avait environ 15 900 entreprises d'imprimerie en activité en France (calcul : 17 900 entreprises en 2015 – 2 000 entreprises perdues en 8 ans, soit 15 900 en 2010).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2122",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En 2010, il y avait environ 15 900 entreprises d'imprimerie en activité en France (calcul : 17 900 entreprises en 2015 – 2 000 entreprises perdues en 8 ans, soit 15 900 en 2010).\n\nSOURCES: [insee-ip2122 p.2]",
+    "top_score": 0.9990234375,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 3,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 33.3,
+    "row_check": "En 2010, il y avait 17 900 entreprises d'imprimerie en activité en France.",
+    "agree_inclus": true
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2122",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2122",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2122",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2122",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-072",
+   "answer": "En 2023, les services départementaux d’incendie et de secours (SDIS) paient le mieux leurs agents en moyenne avec un salaire net mensuel de 3 030 euros.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2066",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En 2023, les services départementaux d’incendie et de secours (SDIS) paient le mieux leurs agents en moyenne avec un salaire net mensuel de 3 030 euros.\n\nSOURCES: [insee-ip2066 p.2]",
+    "top_score": 0.9873046875,
+    "margin": 0.009765625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Les services départementaux d’incendie et de secours (SDIS) paient en moyenne 3 030 euros net par mois à temps plein en 2023.",
+    "agree": true,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "seconds": 17.8
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2066",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-073",
+   "answer": "En 2024, le salaire annuel brut moyen d'un doctorant CIFRE était de 33 391 €.\nEn 2013, il était de 28 600 €.",
+   "citations": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 210
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, le salaire annuel brut moyen d'un doctorant CIFRE était de 33 391 €.\nEn 2013, il était de 28 600 €.\n\nSOURCES: [cc-recherche-entreprises p.210]",
+    "top_score": 0.95703125,
+    "margin": 0.01513671875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2013, le salaire annuel brut moyen était de 28 600 €, tandis qu'il était de 33 391 € en 2024.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 18.53
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 210
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 209
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 218
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 49
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 207
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 73
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-recherche-entreprises-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 157
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 208
+    }
+   ]
+  },
+  {
+   "qid": "val1-074",
+   "answer": "Le risque de mortalité infantile avant un an est plus élevé pour les enfants dont la mère est très jeune (21 ans ou moins) ou très âgée (44 ans ou plus), les employées ou ouvrières, les mères inactives, les enfants issus d’accouchement multiple, ceux dont la mère réside dans les DOM ou est née en Afrique hors Maghreb, et pour les garçons.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2048",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2048",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2048",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "Le risque de mortalité infantile avant un an est plus élevé pour les enfants dont la mère est très jeune (21 ans ou moins) ou très âgée (44 ans ou plus), les employées ou ouvrières, les mères inactives, les enfants issus d’accouchement multiple, ceux dont la mère réside dans les DOM ou est née en Afrique hors Maghreb, et pour les garçons.\n\nSOURCES: [insee-ip2048 p.3], [insee-ip2048 p.1], [insee-ip2048 p.2]",
+    "top_score": 0.99560546875,
+    "margin": 0.06494140625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Le risque de mortalité infantile est plus élevé pour les garçons (1,2 fois plus que les filles), les naissances multiples (5 fois plus), les mères résidant dans les DOM ou nées en Afrique hors Maghreb (risque doublé), ainsi que pour les mères très jeunes (≤ 24 ans) ou très âgées (≥ 38 ans), les employées (3,6 ‰), les ouvrières (3,5 ‰) et les inactives (5,1 ‰).",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 31.57,
+    "row_check": "D'après l'Insee, le risque de perdre son bébé avant son premier anniversaire est plus élevé pour les mères très jeunes ou très âgées, ainsi que pour les mères actives dans des catégories sociales moins favorisées (ouvrières et employées) avec des taux respectifs de 3,5 ‰ et 3,6 ‰.",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2048",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2048",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2048",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2048",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2085",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2087",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-075",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99853515625,
+    "margin": 0.0,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 4.64
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2109",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2109",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2109",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2109",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-076",
+   "answer": "13,5 % des ménages ruraux hors couronnes périurbaines ont consacré plus d’un mois de leurs revenus annuels en carburant en 2021, mais cette donnée ne concerne pas directement les ménages avec automobile. Cependant, parmi les ménages propriétaires d’une voiture dans ces territoires, la proportion est de 5,2 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2125",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "13,5 % des ménages ruraux hors couronnes périurbaines ont consacré plus d’un mois de leurs revenus annuels en carburant en 2021, mais cette donnée ne concerne pas directement les ménages avec automobile. Cependant, parmi les ménages propriétaires d’une voiture dans ces territoires, la proportion est de **5,2 %**.\n\nSOURCES: [insee-ip2125 p.1]",
+    "top_score": 0.998046875,
+    "margin": 0.0,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": "INTROUVABLE",
+    "n_context": 6,
+    "n_tables": 1,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false,
+    "seconds": 23.01
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2125",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2125",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2125",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2125",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-077",
+   "answer": "En 2021, la filière construction en bois compte 14 250 établissements.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2035",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "En 2021, la filière construction en bois compte **14 250 établissements**.\n\nSOURCES: [insee-ip2035 p.1]",
+    "top_score": 0.994140625,
+    "margin": 0.00146484375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2021, la filière construction en bois compte 14 250 établissements en France.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 10.49
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2035",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-078",
+   "answer": "En 2025, 65 940 prénoms distincts ont été donnés aux enfants nés en France, contre 8 007 en 1946.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "En 2025, 65 940 prénoms distincts ont été donnés aux enfants nés en France, contre 8 007 en 1946.\n\nSOURCES: [insee-ip2127 p.1]",
+    "top_score": 0.99951171875,
+    "margin": 0.0,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2025, il y a eu 65 940 prénoms différents pour les enfants nés en France, contre 8 007 en 1946.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 22.12
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-079",
+   "answer": "En ville, les salles de musculation sont plus accessibles en moyenne à pied (environ 10 minutes), tandis qu’en milieu rural, les temps d’accès à pied sont plus longs : 18 minutes pour les grands terrains de football et 26 minutes pour les bassins de natation.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2041",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2041",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En ville, les salles de musculation sont plus accessibles en moyenne à pied (environ 10 minutes), tandis qu’en milieu rural, les temps d’accès à pied sont plus longs : 18 minutes pour les grands terrains de football et 26 minutes pour les bassins de natation.\n\nSOURCES: [insee-ip2041 p.1] et [insee-ip2041 p.2]",
+    "top_score": 0.98681640625,
+    "margin": 0.021484375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Les salles de sport sont bien plus nombreuses en ville (39,1 % des équipements), alors qu'en milieu rural, elles sont moins représentées. Les temps d'accès en voiture sont plus courts en ville (2 min pour les petits terrains) que dans les zones rurales (ex. : 9 min pour les 10 % les plus éloignés).",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 21.66,
+    "row_check": "D'après les extraits, les salles de musculation, gymnases et petits terrains extérieurs sont plus nombreux et mieux répartis en milieu urbain par rapport aux autres équipements comme les terrains de foot ou les piscines, qui ne sont pas mentionnés explicitement. Les temps d'accès sont évoqués comme plus longs en milieu rural, mais les données précises sur les équipements spécifiques (foot, piscines) ne sont pas fournies.",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2041",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2041",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2041",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2041",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-080",
+   "answer": "Pendant 20 jours, les sommes produisent des intérêts au taux de 0,35 %.",
+   "citations": [
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 74
+    }
+   ],
+   "_meta": {
+    "raw": "Pendant 20 jours, les sommes produisent des intérêts au taux de 0,35 %.\n\nSOURCES: [cc-taxe-transactions-financieres p.74]",
+    "top_score": 0.77783203125,
+    "margin": 0.636962890625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Les sommes collectées génèrent des intérêts pendant 20 jours au taux de 0,35 %.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 14.69
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 33
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 43
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 63
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 68
+    }
+   ]
+  },
+  {
+   "qid": "val1-081",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.986328125,
+    "margin": 0.0322265625,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.01
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 84
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 73
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 87
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 70
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 113
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 50
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 94
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 119
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 120
+    }
+   ]
+  },
+  {
+   "qid": "val1-082",
+   "answer": "Depuis 2019, cinq projets financés par le dispositif « Services numériques innovants » ont intégré de l’intelligence artificielle pour un total de 144 315 €.",
+   "citations": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 28
+    }
+   ],
+   "_meta": {
+    "raw": "Depuis 2019, cinq projets financés par le dispositif « Services numériques innovants » ont intégré de l’intelligence artificielle pour un total de 144 315 €.\n\nSOURCES: [cc-ia-ministere-culture p.7] et [cc-ia-ministere-culture p.28]",
+    "top_score": 0.99951171875,
+    "margin": 0.005859375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Cinq projets intégraient de l'IA depuis 2019, pour un montant total de 144 315 euros.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 18.04
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 40
+    }
+   ]
+  },
+  {
+   "qid": "val1-083",
+   "answer": "Le salaire net mensuel médian des femmes dans la fonction publique de l’État (FPE) en 2023 est de 2 591 euros.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2065",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "Le salaire net mensuel médian des femmes dans la fonction publique de l’État (FPE) en 2023 est de **2 591 euros**.\n\nSOURCES: [insee-ip2065 p.3]",
+    "top_score": 0.99658203125,
+    "margin": 0.001953125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Le salaire net mensuel moyen des agents civils de la fonction publique de l'État (FPE) en 2023 est de 2 886 euros par mois en EQTP.",
+    "agree": false,
+    "third": "Le salaire net mensuel médian pour les femmes travaillant dans les ministères et établissements publics administratifs en 2023 est de 2 723 euros.",
+    "n_context": 6,
+    "n_tables": 2,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false,
+    "seconds": 22.29
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2065",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-084",
+   "answer": "Le financement moyen par projet a baissé de près de 37 %, passant de 520 000 € sous le plan « aisance aquatique » à 330 000 € sous le plan « 5 000 équipements ».",
+   "citations": [
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 40
+    }
+   ],
+   "_meta": {
+    "raw": "Le financement moyen par projet a baissé de près de 37 %, passant de 520 000 € sous le plan « aisance aquatique » à 330 000 € sous le plan « 5 000 équipements ».\n\nSOURCES: [cc-equipements-sportifs-ans p.40]",
+    "top_score": 0.9912109375,
+    "margin": 0.8780517578125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "L’aide moyenne par projet a baissé de 37 %, passant de 520 000 € à 330 000 €.",
+    "agree": false,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 17.37
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 57
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 33
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 37
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 42
+    }
+   ]
+  },
+  {
+   "qid": "val1-085",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.89453125,
+    "margin": 0.294921875,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.27
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-pac",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 63
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 77
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 112
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 94
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 127
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 102
+    }
+   ]
+  },
+  {
+   "qid": "val1-086",
+   "answer": "En 2025, le prénom de fille en sixième position est Alba et celui de garçon en sixième position est Léo.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "En 2025, le prénom de fille en sixième position est **Alba** et celui de garçon en sixième position est **Léo**.\n\nSOURCES: [insee-ip2127 p.1]",
+    "top_score": 0.99462890625,
+    "margin": 0.005859375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2025, le sixième prénom masculin le plus donné est Raphaël, et le sixième prénom féminin est Ambre.",
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 15.96,
+    "row_check": "En 2025, le sixième prénom de fille le plus donné est Alma et le sixième prénom de garçon le plus donné est Raphaël.",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-087",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.521484375,
+    "margin": 0.03759765625,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 1.93
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2042",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2042",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2042",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2042",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-088",
+   "answer": "En 2022, en France métropolitaine, 13 % des maisons étaient chauffées au fioul, soit environ 5 000 milliers (soit 5 millions) de logements selon les données historiques de 1990 à 2022 (mais cette estimation est arrondie et non exacte pour 2022).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2088",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En 2022, en France métropolitaine, **13 % des maisons** étaient chauffées au fioul, soit environ **5 000 milliers** (soit 5 millions) de logements selon les données historiques de 1990 à 2022 (mais cette estimation est arrondie et non exacte pour 2022).\n\nSOURCES: [insee-ip2088 p.2]",
+    "top_score": 0.98876953125,
+    "margin": 0.34814453125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2022, 13 % des résidences principales en France métropolitaine étaient chauffées au fioul, soit environ 5,2 millions de logements (calculé à partir de 13 % de 40 millions de résidences principales en 2022).",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 18.67,
+    "row_check": "En 2022, en France métropolitaine, 1 825 + 3 294 = 5 119 milliers de logements étaient chauffés au fioul, soit 5,119 millions de logements.\nCela représente 3,5 % des résidences principales (chiffre donné pour Marseille, mais le champ couvre la France métropolitaine).",
+    "agree_inclus": false
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2088",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2088",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 153
+    },
+    {
+     "doc_id": "insee-ip2088",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2088",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-089",
+   "answer": "Le rapport annuel d’avancement du PSMT d’avril 2026 anticipe un solde des collectivités à -4,4 Md€ en comptabilité nationale.\nLa loi de finances pour 2026 prévoyait un déficit de -6,1 Md€.",
+   "citations": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 160
+    }
+   ],
+   "_meta": {
+    "raw": "Le rapport annuel d’avancement du PSMT d’avril 2026 anticipe un solde des collectivités à **-4,4 Md€** en comptabilité nationale.\nLa loi de finances pour 2026 prévoyait un déficit de **-6,1 Md€**.\n\nSOURCES: [cc-finances-locales-2026 p.10], [cc-finances-locales-2026 p.160]",
+    "top_score": 0.99951171875,
+    "margin": 0.0029296875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Le rapport d’avancement du PSMT d’avril 2026 anticipe un solde déficitaire des collectivités locales à -4,4 milliards d’euros en comptabilité nationale pour 2026.\nLa loi de finances pour 2026 prévoyait un déficit de -6,1 milliards d’euros.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 23.32
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 237
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 160
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 166
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 23
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 127
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 172
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 145
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 93
+    }
+   ]
+  },
+  {
+   "qid": "val1-090",
+   "answer": "En 2024, les dépenses des ménages frontaliers dans les pays voisins représentent jusqu’à 14 % de leurs dépenses physiques totales.\n\nLes achats les plus fréquents concernent les stations-services (notamment essence) et les magasins de tabac, avec des parts élevées de 59 % au Luxembourg, 36 % en Belgique, 31 % en Espagne et 27 % en Allemagne.\n\nLes dépenses en hôtels et restaurants sont plus concentrées en Suisse, Luxembourg et Monaco (consommateurs réguliers), tandis qu’en Espagne, Italie et Andorre, elles sont plus occasionnelles et souvent réalisées le week-end.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2075",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2075",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, les dépenses des ménages frontaliers dans les pays voisins représentent jusqu’à **14 %** de leurs dépenses physiques totales.\n\nLes achats les plus fréquents concernent les stations-services (notamment essence) et les magasins de tabac, avec des parts élevées de **59 %** au Luxembourg, **36 %** en Belgique, **31 %** en Espagne et **27 %** en Allemagne.\n\nLes dépenses en hôtels et restaurants sont plus concentrées en Suisse, Luxembourg et Monaco (consommateurs réguliers), tandis qu’en Espagne, Italie et Andorre, elles sont plus occasionnelles et souvent réalisées le week-end.\n\nSOURCES: [insee-ip2075 p.1] et [insee-ip2075 p.2]",
+    "top_score": 0.97265625,
+    "margin": 0.0703125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2024, les dépenses des ménages frontaliers dans les pays voisins sont dominées par les achats en stations-services (Luxembourg : 59 %, Belgique : 36 %, Espagne : 31 %, Allemagne : 27 %) et les magasins de tabac.",
+    "agree": false,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 38.28
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2075",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2075",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2075",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2075",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-091",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99853515625,
+    "margin": 0.0,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.56
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 50
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 156
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 82
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 43
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 118
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 48
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 9
+    }
+   ]
+  },
+  {
+   "qid": "val1-092",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.8779296875,
+    "margin": 0.0927734375,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 2.5
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 97
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 32
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 110
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 226
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 98
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 93
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 95
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 94
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 107
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 108
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 162
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 33
+    }
+   ]
+  },
+  {
+   "qid": "val1-093",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99853515625,
+    "margin": 0.0,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "seconds": 4.25
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 39
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-094",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99853515625,
+    "margin": 0.0029296875,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "seconds": 4.78
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2068",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2068",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2068",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2068",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2050",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2050",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2080",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-095",
+   "answer": "En 2025, l’Élysée a dépensé 243 460 € pour la protection juridique fonctionnelle, contre 12 000 € en 2024.",
+   "citations": [
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 42
+    }
+   ],
+   "_meta": {
+    "raw": "En 2025, l’Élysée a dépensé 243 460 € pour la protection juridique fonctionnelle, contre 12 000 € en 2024.\n\nSOURCES: [cc-presidence-republique-2025 p.42]",
+    "top_score": 0.89453125,
+    "margin": 0.0234375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En 2025, l'Élysée a dépensé 243 460 € pour la protection juridique de ses collaborateurs, contre 12 000 € en 2024.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 19.13
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2093",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 23
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 71
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 57
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 11
+    }
+   ]
+  },
+  {
+   "qid": "val1-096",
+   "answer": "20 M€.",
+   "citations": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    }
+   ],
+   "_meta": {
+    "raw": "20 M€.\n\nSOURCES: [cc-ia-ministere-culture p.16]",
+    "top_score": 0.9912109375,
+    "margin": 0.46142578125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "L’investissement estimé pour former les métiers de la création à l’IA était de 20 millions d'euros.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 11.21
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 30
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 12
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 40
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val1-097",
+   "answer": "L’évolution globale des dotations pour la Présidence de la République entre 2020 et 2025 est de +16,4 %.",
+   "citations": [
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 19
+    }
+   ],
+   "_meta": {
+    "raw": "L’évolution globale des dotations pour la Présidence de la République entre 2020 et 2025 est de +16,4 %.\n\nSOURCES: [cc-presidence-republique-2025 p.19]",
+    "top_score": 0.82763671875,
+    "margin": 0.220703125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "Les crédits de la Présidence de la République ont augmenté de 16,4 % en moyenne annuelle sur la période 2020-2025, avec une progression globale de 17,3 % sur cinq ans (passant de 105,3 M€ en 2020 à 122,6 M€ en 2025).",
+    "agree": false,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "seconds": 25.25
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 109
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 69
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 215
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 219
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 131
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 210
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 213
+    }
+   ]
+  },
+  {
+   "qid": "val1-098",
+   "answer": "La DIRDE en France a augmenté de 0,13 point de PIB entre 2000 et 2023, alors qu’elle a progressé de 0,51 point de PIB en moyenne dans l’OCDE sur la même période.",
+   "citations": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 145
+    }
+   ],
+   "_meta": {
+    "raw": "La DIRDE en France a augmenté de 0,13 point de PIB entre 2000 et 2023, alors qu’elle a progressé de 0,51 point de PIB en moyenne dans l’OCDE sur la même période.\n\nSOURCES: [cc-recherche-entreprises p.145]",
+    "top_score": 0.99609375,
+    "margin": 0.0029296875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "En France, les dépenses de recherche des entreprises ont progressé de 0,13 point de PIB entre 2000 et 2023, alors qu’elles ont augmenté en moyenne de +0,51 point de PIB dans l’OCDE.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 17.44
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 145
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 213
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 144
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 143
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 184
+    },
+    {
+     "doc_id": "cc-recherche-entreprises-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 142
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 146
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 45
+    },
+    {
+     "doc_id": "insee-ip2084",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-099",
+   "answer": "En 2025, l’Institut national de l’audiovisuel (INA) a dispensé 2 450 heures de formation en IA, et il en prévoit 2 800 heures pour 2026.",
+   "citations": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 34
+    }
+   ],
+   "_meta": {
+    "raw": "En 2025, l’Institut national de l’audiovisuel (INA) a dispensé **2 450 heures** de formation en IA, et il en prévoit **2 800 heures** pour 2026.\n\nSOURCES: [cc-ia-ministere-culture p.34]",
+    "top_score": 0.99853515625,
+    "margin": 0.07763671875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "L’Institut national de l’audiovisuel (INA) a dispensé 2 450 heures de formation en 2025 et prévoit 2 800 heures en 2026.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "seconds": 16.7
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 24
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 27
+    }
+   ]
+  },
+  {
+   "qid": "val1-100",
+   "answer": "En 2024, un médecin généraliste libéral médecin traitant voit en moyenne 1 043 patients différents dans l’année, selon la valeur médiane.",
+   "citations": [
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 132
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, un médecin généraliste libéral médecin traitant voit en moyenne **1 043** patients différents dans l’année, selon la valeur médiane.\n\nSOURCES: [cc-medecin-traitant p.132]",
+    "top_score": 0.9990234375,
+    "margin": 0.00244140625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXR",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": "La valeur médiane pour la patientèle MT (16 ans ou plus) vue au moins une fois dans l’année par le médecin traitant est de 3 384.",
+    "n_context": 7,
+    "n_tables": 2,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false,
+    "seconds": 32.32
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 107
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 132
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 138
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 129
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 141
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 122
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 143
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 28
+    }
+   ]
+  }
+ ]
+}
