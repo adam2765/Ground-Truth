@@ -42,6 +42,10 @@ def abstains(meta: dict, rule: dict) -> bool:
     if ag != "off" and key in meta and (meta[key] is False or (ag.startswith("strict") and meta[key] is None)):
         return True
     u = rule.get("max_unsupported")
+    # run 9 : une réponse confirmée par la relecture des rangées du tableau (3e appel) peut contenir un
+    # calcul (écart de deux valeurs) absent du texte : ce n'est pas une invention, le filtre ne s'applique pas
+    if rule.get("rows_override_unsupported") and meta.get("row_check") is not None and meta.get("agree_inclus") is True:
+        return False
     return u is not None and meta.get("unsupported", 0) > u
 
 

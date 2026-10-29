@@ -1,0 +1,12 @@
+{
+ "threshold": 0.59326171875,
+ "max_unsupported": 0,
+ "require_verified": true,
+ "require_quote": false,
+ "agreement": "strict_inclus",
+ "validation_score_brut": 0.255,
+ "validation_score_calibre": 0.505,
+ "taux_abstention": 0.67,
+ "rows_override_unsupported": true,
+ "note": "règle du run 9 + dispense du filtre chiffres pour les réponses confirmées par les rangées (recalculée sur la validation : +0,505)"
+}
