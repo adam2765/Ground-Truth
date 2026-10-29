@@ -249,6 +249,34 @@ def table_rows(reranker: "Reranker", query: str, chunks: list[dict], hits: list[
     return sorted(cand, key=lambda x: -x["score"])[:top]
 
 
+def focus_lines(reranker: "Reranker", query: str, chunks: list[dict], hits: list[dict], tables: dict,
+                n_chunks: int = 8, top: int = 6) -> list[dict]:
+    """Run 10 : les `top` unités les plus proches de la question, phrases (split_units) et rangées de tableau
+    (avec leurs en-têtes) confondues, notées par le cross-encoder. Sert au 3e appel « ciblé »."""
+    cand, seen = [], set()
+    for h in hits[:n_chunks]:
+        c = chunks[h["idx"]]
+        for u in split_units(c["body"]):
+            if u not in seen:
+                seen.add(u)
+                cand.append({"doc_id": c["doc_id"], "page": c["page"], "text": u})
+    pages = []
+    for h in hits[:5]:
+        c = chunks[h["idx"]]
+        key = f"{c['doc_id']}|{c['page']}"
+        if key in tables and key not in pages:
+            pages.append(key)
+            for t in tables[key]:
+                for label, vals in t["rows"]:
+                    cand.append({"doc_id": c["doc_id"], "page": c["page"],
+                                 "text": label + " | " + " | ".join(f"{t['heads'][j]} : {v}" for j, v in vals)})
+    if not cand:
+        return []
+    for x, sc in zip(cand, reranker.score(query, [x["text"] for x in cand])):
+        x["score"] = sc
+    return sorted(cand, key=lambda x: -x["score"])[:top]
+
+
 def ranked_pages(chunks: list[dict], hits: list[dict]) -> list[dict]:
     """Pages distinctes, dans l'ordre de leur meilleur chunk."""
     seen, out = set(), []

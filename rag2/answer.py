@@ -323,6 +323,20 @@ def verify(gen, question: str, answer: str, context: list[dict], cits: list[dict
     return None
 
 
+def focus_check(gen, question: str, answer: str, lines: list[dict]) -> tuple[str, bool]:
+    """3e appel ciblé : la question reposée avec seulement les lignes (phrases ou rangées de tableau) les plus
+    proches. -> (3e réponse, confirme-t-elle la 1re ?)."""
+    user = ("Lignes extraites des rapports (pour un tableau, chaque valeur est précédée du titre de sa colonne) :\n"
+            + "\n".join(f"[{x['doc_id']} p.{x['page']}] {x['text']}" for x in lines)
+            + f"\n\nQuestion : {question}")
+    msgs = [{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}]
+    while len(lines) > 1 and gen.count_tokens(msgs) > MAX_INPUT - 8:
+        return focus_check(gen, question, answer, lines[:-1])
+    raw = gen.chat(msgs, max_new_tokens=150)
+    third, _, _ = parse_answer(raw, [{"doc_id": x["doc_id"], "page": x["page"]} for x in lines])
+    return third, agree_inclus(answer, third) is True
+
+
 def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bool = True,
                variant: str = DEFAULT_VARIANT, key_lines: list[dict] | None = None,
                tables: dict[str, list[dict]] | None = None, table_rows: list[dict] | None = None) -> dict:
