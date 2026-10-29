@@ -7,7 +7,11 @@ set -uo pipefail
 cd "$(dirname "$0")/.."
 git pull -q || true
 OUT="${OUT:-$( [ -d /kaggle/working ] && echo /kaggle/working || pwd )}"
+pip install -q -r requirements.txt 2>&1 | grep -v -i "warning\|dependency" || true
 pip install -q -U bitsandbytes accelerate 2>&1 | grep -v -i "warning\|dependency" || true
+python -c "import transformers; from transformers import Qwen3VLForConditionalGeneration" 2>/dev/null || \
+  pip install -q -U transformers 2>&1 | grep -v -i "warning\|dependency" || true
+python -c "import pymupdf, bitsandbytes, transformers; print('transformers', transformers.__version__)" || { echo "Dépendances manquantes"; exit 1; }
 python corpus/download_corpus.py | tail -n 1
 mkdir -p runs
 M1="${M1:-Qwen/Qwen2.5-VL-7B-Instruct}"; M2="${M2:-Qwen/Qwen3-VL-8B-Instruct}"
