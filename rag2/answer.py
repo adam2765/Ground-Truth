@@ -85,6 +85,10 @@ VARIANTS = {
     # ses en-têtes). Si cette 3e réponse confirme la 1re, la concordance est rétablie (sinon : abstention).
     "duoXR": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
               "row_check": 4},
+    # run 11 : duoXR, mais la 2e réponse lit les 3 meilleures PAGES entières (texte brut de la page) au lieu des
+    # mêmes extraits de 200 mots : deux découpages différents du document, donc des erreurs moins liées.
+    "duoXRP": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_pages": 3,
+               "row_check": 4},
     "duoXHR": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
                "table_hint": True, "row_check": 4},
     "duoC": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_by_column": True},
@@ -323,6 +327,26 @@ def verify(gen, question: str, answer: str, context: list[dict], cits: list[dict
     return None
 
 
+def page_context(gen, question: str, ctx: list[dict], pages: dict[str, str], n_pages: int, system: str,
+                 lines: list[dict] | None) -> list[dict]:
+    """Les n meilleures pages du contexte, en entier (tronquées si le prompt dépasse 4 096 tokens)."""
+    out, seen = [], set()
+    for c in ctx:
+        key = f"{c['doc_id']}|{c['page']}"
+        if c.get("table") or key in seen or key not in pages:
+            continue
+        seen.add(key)
+        out.append({"doc_id": c["doc_id"], "page": c["page"], "body": pages[key]})
+        if len(out) == n_pages:
+            break
+    count = lambda cs: gen.count_tokens(build_messages(question, [format_extract(c) for c in cs], system, lines))
+    while out and count(out) > MAX_INPUT - 120:        # on raccourcit la page la plus longue de 20 %
+        i = max(range(len(out)), key=lambda k: len(out[k]["body"]))
+        words = out[i]["body"].split(" ")
+        out[i] = dict(out[i], body=" ".join(words[: int(len(words) * 0.8)]))
+    return out or [c for c in ctx if not c.get("table")]
+
+
 def focus_check(gen, question: str, answer: str, lines: list[dict]) -> tuple[str, bool]:
     """3e appel ciblé : la question reposée avec seulement les lignes (phrases ou rangées de tableau) les plus
     proches. -> (3e réponse, confirme-t-elle la 1re ?)."""
@@ -339,7 +363,8 @@ def focus_check(gen, question: str, answer: str, lines: list[dict]) -> tuple[str
 
 def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bool = True,
                variant: str = DEFAULT_VARIANT, key_lines: list[dict] | None = None,
-               tables: dict[str, list[dict]] | None = None, table_rows: list[dict] | None = None) -> dict:
+               tables: dict[str, list[dict]] | None = None, table_rows: list[dict] | None = None,
+               pages: dict[str, str] | None = None) -> dict:
     t_start = time.time()
     cfg = VARIANTS[variant]
     lines = (key_lines or [])[: cfg.get("key_lines", 0)] or None
@@ -361,6 +386,8 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
     second = agreement = None
     if cfg.get("second") and not llm_abstain:
         ctx2 = [c for c in ctx if not c.get("table")] if cfg.get("second_no_tables") else ctx
+        if cfg.get("second_pages") and pages:
+            ctx2 = page_context(gen, q["question"], ctx, pages, cfg["second_pages"], cfg["second"], lines)
         if cfg.get("second_by_column"):                # 2e lecture : mêmes tableaux, présentés par colonne
             ctx2 = [dict(c, body=c["body_col"]) if c.get("table") else c for c in ctx]
             while len(ctx2) > 1 and gen.count_tokens(build_messages(

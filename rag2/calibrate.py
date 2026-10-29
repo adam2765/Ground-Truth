@@ -81,24 +81,27 @@ def cmd_fit(args):
     thresholds = [None] + scores
     results = []
     has_agree = any(m.get("agree") is not None for m in metas.values())
-    for ag in (("off", "souple", "strict", "souple_inclus", "strict_inclus") if has_agree else ("off",)):
+    has_rows = any(m.get("row_check") is not None for m in metas.values())
+    for ov in ((False, True) if has_rows else (False,)):
+     for ag in (("off", "souple", "strict", "souple_inclus", "strict_inclus") if has_agree else ("off",)):
         for rq in (False, True):
             for rv in (False, True):
                 for u in UNSUP_OPTIONS:
                     for t in thresholds:
                         rule = {"threshold": t, "max_unsupported": u, "require_verified": rv, "require_quote": rq,
-                                "agreement": ag}
+                                "agreement": ag, "rows_override_unsupported": ov}
                         results.append((simulate(rows, metas, answerable, rule), rule))
     best_score = max(s for s, _ in results)
     # parmi les règles quasi optimales, on prend le seuil médian : moins sensible au hasard des 100 questions
     near = [r for s, r in results if s >= best_score - 0.005]
-    opt = lambda r: (r["max_unsupported"], r["require_verified"], r["require_quote"], r["agreement"])
+    opt = lambda r: (r["max_unsupported"], r["require_verified"], r["require_quote"], r["agreement"],
+                     r["rows_override_unsupported"])
     best_opt = max({opt(r) for r in near}, key=lambda o: sum(opt(r) == o for r in near))
     cands = [r for r in near if opt(r) == best_opt]
     ts = sorted(r["threshold"] for r in cands if r["threshold"] is not None)
     rule = dict(cands[0]) if not ts else {"threshold": ts[len(ts) // 2], "max_unsupported": best_opt[0],
                                           "require_verified": best_opt[1], "require_quote": best_opt[2],
-                                          "agreement": best_opt[3]}
+                                          "agreement": best_opt[3], "rows_override_unsupported": best_opt[4]}
     final = simulate(rows, metas, answerable, rule)
     rule["validation_score_brut"] = round(base, 4)
     rule["validation_score_calibre"] = round(final, 4)

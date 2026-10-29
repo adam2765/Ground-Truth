@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Variantes testées contre le run 7 (duoX, +0,475). Par défaut (run 9) :
+# Par défaut (run 11) : duoXRP contre le run 9 (+0,505) : 2e réponse sur les 3 meilleures pages entières.
+# Run 9 (VARIANTS="duoXR duoXHR", REF_FILE=results/run7/abstention_X.json) :
 #   duoXR  : duoX + 3e appel ciblé quand les deux réponses divergent sur une question à tableau
 #            (4 rangées de tableau choisies par le reranker) ;
 #   duoXHR : idem + consigne de lecture des tableaux pour la 1re réponse.
@@ -8,18 +9,18 @@
 #   Kaggle (GPU T4, Internet activé, Save Version -> Save & Run All) :
 #     !git clone -q https://github.com/adam2765/Ground-Truth.git /tmp/gt; bash /tmp/gt/scripts/run_opti.sh
 #
-# Validation réelle (100 questions, juge officiel), comparaison au run 7 (+0,475), puis leaderboard
+# Validation réelle (100 questions, juge officiel), comparaison à la référence, puis leaderboard
 # (200 questions) et soumission seulement si l'une fait mieux que le run 7.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 git pull -q || true
 OUT="${OUT:-$( [ -d /kaggle/working ] && echo /kaggle/working || pwd )}"
 BACKEND="${BACKEND:-hf}"; JUDGE="${JUDGE:-hf}"          # BACKEND=echo JUDGE=none : test sans GPU
-REF_FILE="${REF_FILE:-results/run7/abstention_X.json}"
+REF_FILE="${REF_FILE:-results/run9/abstention_duoXR_rows.json}"
 EXTRA_INDEX="${EXTRA_INDEX:-}"; MODE_ARG="${MODE_ARG:-}"   # test sans GPU : EXTRA_INDEX=--no-dense MODE_ARG="--mode bm25"
 T0=$(date +%s)
 step() { echo; echo "=== [$(( ($(date +%s) - T0) / 60 )) min] $* ==="; }
-VAL=data/validation_v1.json; VARIANTS="${VARIANTS:-duoXR duoXHR}"
+VAL=data/validation_v1.json; VARIANTS="${VARIANTS:-duoXRP}"
 
 step "GPU"
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader || [ "$BACKEND" != hf ] || { echo "Pas de GPU : active un GPU T4."; exit 1; }
@@ -55,7 +56,7 @@ V=$(python - "$REF_FILE" $VARIANTS <<'PY2'
 import json, sys
 ref = json.load(open(sys.argv[1]))["validation_score_calibre"]
 sc = {c: json.load(open(f"index2/abstention_{c}.json"))["validation_score_calibre"] for c in sys.argv[2:]}
-print(f"  référence run 7 {ref:+.3f} | " + " | ".join(f"{c} {s:+.3f}" for c, s in sc.items()), file=sys.stderr)
+print(f"  référence run 9 {ref:+.3f} | " + " | ".join(f"{c} {s:+.3f}" for c, s in sc.items()), file=sys.stderr)
 best = max(sc, key=sc.get)
 print(best if sc[best] > ref else "REF")
 PY2
@@ -64,7 +65,7 @@ echo "Retenu : $V"
 
 step "Leaderboard v1 : 200 questions"
 if [ "$V" = REF ]; then
-  echo "Pas mieux que le run 7 : pas de génération du leaderboard, aucune soumission utilisée."
+  echo "Pas mieux que le run 9 : pas de génération du leaderboard, aucune soumission utilisée."
 else
   cp "index2/abstention_$V.json" index2/abstention.json
   python -m rag2.pipeline retrieve --index-dir index2 --questions data/classement_v1_questions.json --strategy "$S" \

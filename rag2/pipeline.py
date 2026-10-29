@@ -133,6 +133,10 @@ def cmd_generate(args):
         from rag2.tables import load
         tables = load(Path(args.index_dir) / "tables.json.gz")
         print(f"tableaux structurés : {len(tables)} pages")
+    pages = None
+    if VARIANTS[args.variant].get("second_pages"):
+        pages = {f"{p['doc_id']}|{p['page']}": p["text"]
+                 for p in json.loads((Path(args.index_dir) / "pages.json").read_text(encoding="utf-8"))}
     # Reprise après une coupure : chaque réponse est ajoutée à un fichier .partial.jsonl au fil de l'eau.
     partial = Path(str(args.out) + ".partial.jsonl")
     done = {}
@@ -150,7 +154,7 @@ def cmd_generate(args):
             continue
         it = by_qid[q["qid"]]
         p = answer_one(gen, q, chunks, it["hits"], variant=args.variant, key_lines=it.get("key_lines"),
-                       tables=tables, table_rows=it.get("table_rows"))
+                       tables=tables, table_rows=it.get("table_rows"), pages=pages)
         p["retrieved"] = it["retrieved"]
         preds.append(p)
         n_new += 1
