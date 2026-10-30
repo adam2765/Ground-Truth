@@ -361,6 +361,37 @@ def focus_check(gen, question: str, answer: str, lines: list[dict]) -> tuple[str
     return third, agree_inclus(answer, third) is True
 
 
+def rescue(gen, q: dict, rows: list[dict], chunks: list[dict], hits: list[dict], lines: list[dict] | None,
+           n_rows: int = 6) -> dict | None:
+    """Run 12 : le modèle a répondu INTROUVABLE alors qu'un tableau de la bonne page est dans le contexte
+    (6 des 9 questions tableau perdues au run 9 : il ne fait pas le lien entre « Espagne, Italie ou Portugal »
+    et la rangée « Europe du Sud », ou entre « livreurs » et « Livraison »).
+    1. On repose la question avec seulement les rangées de tableau les plus proches (avec leurs en-têtes) ;
+    2. si le modèle répond, on vérifie par une 2e lecture indépendante : format « citation », sur les extraits
+       de texte sans les tableaux structurés. On ne garde la réponse que si les chiffres concordent.
+    Retourne les champs à mettre à jour, ou None."""
+    if not rows:
+        return None
+    rows = rows[:n_rows]
+    user = ("Rangées de tableaux (chaque valeur est précédée du titre de sa colonne) :\n"
+            + "\n".join(f"[{x['doc_id']} p.{x['page']}] {x['text']}" for x in rows)
+            + f"\n\nQuestion : {q['question']}")
+    raw_r = gen.chat([{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}], max_new_tokens=150)
+    row_ctx = [{"doc_id": x["doc_id"], "page": x["page"], "body": x["text"]} for x in rows]
+    ans, cits, abst = parse_answer(raw_r, row_ctx)
+    if abst:
+        return None
+    cand = [chunks[h["idx"]] for h in hits]
+    ctx = fit_context(gen, q["question"], diversify(cand, [h.get("score") for h in hits], MAX_CHUNKS), MAX_CHUNKS, lines)
+    raw2 = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], "quote", lines),
+                    max_new_tokens=MAX_NEW + 100)
+    second, _, _ = parse_answer(raw2, ctx)
+    ok = agree_inclus(ans, second) is True
+    return {"answer": ans, "citations": cits, "rescue": {"rows_answer": ans, "check": second, "ok": ok},
+            "llm_abstain": not ok, "agree_inclus": ok, "row_check": ans if ok else None,
+            "unsupported": unsupported_numbers(ans, row_ctx + ctx, q["question"])}
+
+
 def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bool = True,
                variant: str = DEFAULT_VARIANT, key_lines: list[dict] | None = None,
                tables: dict[str, list[dict]] | None = None, table_rows: list[dict] | None = None,
