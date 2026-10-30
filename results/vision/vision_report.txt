@@ -1,0 +1,18 @@
+
+### Qwen/Qwen2.5-VL-7B-Instruct : 29 s/page
+  val1-006 valeurs attendues [] -> [] | attendu : C'est 2023 : le nombre d'heures à prix spot supérieur au barème du versement fournisseur y
+  val1-010 valeurs attendues ['2,6 %'] -> [True] | attendu : 2,6 % des personnes déclarent refuser de faire des efforts pour le climat.
+  val1-022 valeurs attendues ['133 M€', '19 %'] -> [True, True] | attendu : Sur les AE 2020-2025, la source « SNQ - PROQCIMA » représente 133 M€, soit 19 % des crédit
+  val1-027 valeurs attendues [] -> [] | attendu : C'est l'agriculture, dont la part dans la consommation d'espace économique est quasi nulle
+  val1-041 valeurs attendues [] -> [] | attendu : Ce sont les pôles des aires d'attraction de moins de 50 000 habitants, avec un taux d'envi
+  val1-042 valeurs attendues ['322'] -> [False] | attendu : En 2024, les administrations publiques locales sont à l'origine de 322 milliards d'euros d
+  val1-045 valeurs attendues [] -> [] | attendu : En 2022, l'hébergement-restauration est le premier contributeur à la croissance de la vale
+
+### Qwen/Qwen3-VL-8B-Instruct : 35 s/page
+  val1-006 valeurs attendues [] -> [] | attendu : C'est 2023 : le nombre d'heures à prix spot supérieur au barème du versement fournisseur y
+  val1-010 valeurs attendues ['2,6 %'] -> [True] | attendu : 2,6 % des personnes déclarent refuser de faire des efforts pour le climat.
+  val1-022 valeurs attendues ['133 M€', '19 %'] -> [True, True] | attendu : Sur les AE 2020-2025, la source « SNQ - PROQCIMA » représente 133 M€, soit 19 % des crédit
+  val1-027 valeurs attendues [] -> [] | attendu : C'est l'agriculture, dont la part dans la consommation d'espace économique est quasi nulle
+  val1-041 valeurs attendues [] -> [] | attendu : Ce sont les pôles des aires d'attraction de moins de 50 000 habitants, avec un taux d'envi
+  val1-042 valeurs attendues ['322'] -> [True] | attendu : En 2024, les administrations publiques locales sont à l'origine de 322 milliards d'euros d
+  val1-045 valeurs attendues [] -> [] | attendu : En 2022, l'hébergement-restauration est le premier contributeur à la croissance de la vale
