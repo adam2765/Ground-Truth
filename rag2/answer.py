@@ -87,6 +87,12 @@ VARIANTS = {
               "row_check": 4},
     # run 11 : duoXR, mais la 2e réponse lit les 3 meilleures PAGES entières (texte brut de la page) au lieu des
     # mêmes extraits de 200 mots : deux découpages différents du document, donc des erreurs moins liées.
+    # run 12 : duoXR + repêchage (rescue) quand le modèle répond INTROUVABLE avec un tableau dans le contexte.
+    # La réponse lue sur les rangées est gardée si la 2e lecture la confirme, ou si elle ne contient aucun chiffre
+    # absent des rangées (pas de calcul) : sur la validation, 2 réponses justes sur 2 dans ce cas, et la seule
+    # réponse fausse contenait un calcul (93 % au lieu de 95 %).
+    "duoXRS": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
+               "row_check": 4, "rescue": 6},
     "duoXRP": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_pages": 3,
                "row_check": 4},
     "duoXHR": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
@@ -414,8 +420,18 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
     raw = gen.chat(build_messages(q["question"], [format_extract(c) for c in ctx], cfg["system"], lines, hint),
                    max_new_tokens=MAX_NEW + (100 if cfg["system"] == "quote" else 0))
     answer, cits, llm_abstain = parse_answer(raw, ctx)
+    rescued = None
+    if cfg.get("rescue") and llm_abstain and table_rows and any(c.get("table") for c in ctx):
+        rescued = rescue(gen, q, table_rows, chunks, hits, lines, cfg["rescue"])
+        if rescued and (rescued["agree_inclus"] or rescued["unsupported"] == 0):
+            answer, cits, llm_abstain = rescued["answer"], rescued["citations"], False
+            meta_extra = {"rescue": rescued["rescue"], "agree_inclus": True, "row_check": answer,
+                          "unsupported": rescued["unsupported"]}
+            do_verify = False
+        else:
+            rescued = None
     second = agreement = None
-    if cfg.get("second") and not llm_abstain:
+    if cfg.get("second") and not llm_abstain and not rescued:   # (repêchée : déjà 3 appels, budget 4)
         ctx2 = [c for c in ctx if not c.get("table")] if cfg.get("second_no_tables") else ctx
         if cfg.get("second_pages") and pages:
             ctx2 = page_context(gen, q["question"], ctx, pages, cfg["second_pages"], cfg["second"], lines)
