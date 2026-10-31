@@ -34,7 +34,8 @@ def graph_pages(gold="data/validation_v1.json") -> list[dict]:
     return out
 
 
-def run(model_id: str, out_path: str, pdf_dir: str = "corpus/pdf", crops: bool = False) -> None:
+def run(model_id: str, out_path: str, pdf_dir: str = "corpus/pdf", crops: bool = False, quant: bool = True,
+        max_new: int = 600, dpi: int = 150) -> None:
     import torch
     from PIL import Image
     from transformers import AutoModelForImageTextToText, AutoProcessor, BitsAndBytesConfig
@@ -47,10 +48,10 @@ def run(model_id: str, out_path: str, pdf_dir: str = "corpus/pdf", crops: bool =
         if hasattr(model, "merge_lora_adapters"):
             model.merge_lora_adapters()
         proc = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
-    else:
+    else:                # 4 bits pour les 7-8 Md ; float16 (plus rapide) pour les petits modèles
         q4 = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_compute_dtype=torch.float16)
-        model = AutoModelForImageTextToText.from_pretrained(model_id, quantization_config=q4, device_map={"": 0},
-                                                            dtype=torch.float16).eval()
+        model = AutoModelForImageTextToText.from_pretrained(model_id, quantization_config=q4 if quant else None,
+                                                            device_map={"": 0}, dtype=torch.float16).eval()
         proc = AutoProcessor.from_pretrained(model_id)
     print(f"{model_id} chargé en {time.time() - t0:.0f} s, mémoire GPU {torch.cuda.memory_allocated() / 1e9:.1f} Go",
           flush=True)
@@ -67,12 +68,12 @@ def run(model_id: str, out_path: str, pdf_dir: str = "corpus/pdf", crops: bool =
                 page = doc[p["page"] - 1]
                 if crops:            # chaque graphique découpé (rag2/chart_crops.py) au lieu de la page entière
                     from rag2.chart_crops import chart_regions, crop_png
-                    imgs = [Image.open(io.BytesIO(crop_png(page, r))).convert("RGB") for r in chart_regions(page)]
+                    imgs = [Image.open(io.BytesIO(crop_png(page, r, dpi))).convert("RGB") for r in chart_regions(page)]
                 else:
                     imgs = [Image.open(io.BytesIO(page.get_pixmap(dpi=DPI).tobytes("png"))).convert("RGB")]
             texts, t = [], time.time()
             for img in imgs:
-                texts.append(describe(model, proc, img, granite))
+                texts.append(describe(model, proc, img, granite, max_new))
             text, dt = "\n\n".join(texts), time.time() - t
             f.write(json.dumps({**p, "model": model_id + (" (découpé)" if crops else ""), "text": text,
                                 "seconds": round(dt, 1), "n_images": len(imgs)}, ensure_ascii=False) + "\n")
@@ -80,7 +81,7 @@ def run(model_id: str, out_path: str, pdf_dir: str = "corpus/pdf", crops: bool =
             print(f"\n===== {p['qid']} {p['doc_id']} p.{p['page']} ({len(imgs)} graphiques, {dt:.0f} s) =====\n{text}", flush=True)
 
 
-def describe(model, proc, img, granite: bool) -> str:
+def describe(model, proc, img, granite: bool, max_new: int = 600) -> str:
     import torch
     if granite:      # balise de tâche : graphique -> CSV
         msgs = [{"role": "user", "content": [{"type": "image"}, {"type": "text", "text": "<chart2csv>"}]}]
@@ -91,7 +92,7 @@ def describe(model, proc, img, granite: bool) -> str:
         inputs = proc.apply_chat_template(msgs, add_generation_prompt=True, tokenize=True, return_dict=True,
                                           return_tensors="pt").to(model.device)
     with torch.no_grad():
-        out = model.generate(**inputs, max_new_tokens=600, do_sample=False)
+        out = model.generate(**inputs, max_new_tokens=max_new, do_sample=False)
     return proc.batch_decode(out[:, inputs["input_ids"].shape[1]:], skip_special_tokens=True)[0].strip()
 
 
@@ -120,11 +121,14 @@ def main():
     ap.add_argument("--out")
     ap.add_argument("--report", nargs="*")
     ap.add_argument("--crops", action="store_true")
+    ap.add_argument("--no-quant", action="store_true")
+    ap.add_argument("--max-new", type=int, default=600)
+    ap.add_argument("--dpi", type=int, default=150)
     a = ap.parse_args()
     if a.report is not None:
         report([f for pat in a.report for f in glob.glob(pat)])
     else:
-        run(a.model, a.out, crops=a.crops)
+        run(a.model, a.out, crops=a.crops, quant=not a.no_quant, max_new=a.max_new, dpi=a.dpi)
 
 
 if __name__ == "__main__":
