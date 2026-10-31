@@ -17,3 +17,10 @@ Arrêt de la sonde à la page insee-ip2112 p.2 (document absent du corpus v1).
 Conclusion : les modèles plus gros lisent mieux (4/7 contre 1/7), mais se trompent encore une fois sur deux, avec
 des valeurs inventées sûres d'elles (« Total : 149 Md€ »), et 630 pages à 30-50 s dépassent de loin les 2 h
 d'indexation autorisées sur un T4. Piste abandonnée.
+
+## Sonde n° 2 (31/10) : IBM Granite 4.0 3B Vision (ChartNet, balise <chart2csv>)
+
+15 s/page (float16, T4). Sur la page entière (texte + graphique), le modèle produit souvent un CSV vide, recopie
+du texte courant, ou décale les étiquettes d'une ligne (val1-060 : « 6 % Atteintes humaines » au lieu de 28 %).
+Valeurs attendues retrouvées : 1 question sur 7 numériques (val1-055). Il est conçu pour un graphique recadré, en
+anglais : sur nos pages françaises entières, il fait moins bien que Qwen3-VL-8B (4/7). Piste vision close.
