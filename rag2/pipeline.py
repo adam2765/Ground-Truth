@@ -133,6 +133,11 @@ def cmd_generate(args):
         from rag2.tables import load
         tables = load(Path(args.index_dir) / "tables.json.gz")
         print(f"tableaux structurés : {len(tables)} pages")
+    charts = None
+    if VARIANTS[args.variant].get("charts"):
+        from rag2.charts_vlm import load as load_charts
+        charts = (load_charts(Path(args.index_dir) / "charts_a.json.gz"), load_charts(Path(args.index_dir) / "charts_b.json.gz"))
+        print(f"graphiques décrits : {len(charts[0])} pages (lecture A), {len(charts[1])} (lecture B)")
     pages = None
     if VARIANTS[args.variant].get("second_pages"):
         pages = {f"{p['doc_id']}|{p['page']}": p["text"]
@@ -154,7 +159,8 @@ def cmd_generate(args):
             continue
         it = by_qid[q["qid"]]
         p = answer_one(gen, q, chunks, it["hits"], variant=args.variant, key_lines=it.get("key_lines"),
-                       tables=tables, table_rows=it.get("table_rows"), pages=pages)
+                       tables=tables, table_rows=it.get("table_rows"), pages=pages,
+                       charts=charts)
         p["retrieved"] = it["retrieved"]
         preds.append(p)
         n_new += 1

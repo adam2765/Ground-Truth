@@ -93,6 +93,11 @@ VARIANTS = {
     # réponse fausse contenait un calcul (93 % au lieu de 95 %).
     "duoXRS": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
                "row_check": 4, "rescue": 6},
+    # run 14 : duoXRS + descriptions des graphiques (rag2/charts_vlm.py). La 1re réponse lit la description de
+    # Qwen3-VL-2B, la 2e celle de Qwen3-VL-4B : deux lectures du graphique par deux modèles différents, pour que
+    # la concordance puisse confirmer une valeur qui n'existe que sur le graphique.
+    "duoXRSG": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
+                "row_check": 4, "rescue": 6, "charts": 2},
     "duoXRP": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_pages": 3,
                "row_check": 4},
     "duoXHR": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
@@ -217,6 +222,22 @@ def add_tables(chunks: list[dict], tables: dict[str, list[dict]], max_tables: in
                                 + "\n\n".join(render(t, question) for t in tables[key]),
                         "body_col": "Tableau de cette page, lu colonne par colonne :\n"
                                     + "\n\n".join(render(t, question, by_column=True) for t in tables[key])})
+    return out
+
+
+def add_charts(chunks: list[dict], charts_a: dict, charts_b: dict, max_pages: int) -> list[dict]:
+    """Insère après le premier extrait de chaque page à graphique sa description (lecture A pour la 1re réponse,
+    lecture B gardée à part pour la 2e)."""
+    out, seen = [], set()
+    for c in chunks:
+        out.append(c)
+        key = f"{c['doc_id']}|{c['page']}"
+        if c.get("table") or key in seen or key not in charts_a or len(seen) >= max_pages:
+            continue
+        seen.add(key)
+        head = "Graphique de cette page, lu par un modèle de vision (valeurs approximatives) :\n"
+        out.append({"doc_id": c["doc_id"], "page": c["page"], "chart": True, "body": head + charts_a[key][:1500],
+                    "body_alt": head + charts_b[key][:1500] if key in charts_b else None})
     return out
 
 
@@ -401,7 +422,7 @@ def rescue(gen, q: dict, rows: list[dict], chunks: list[dict], hits: list[dict],
 def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bool = True,
                variant: str = DEFAULT_VARIANT, key_lines: list[dict] | None = None,
                tables: dict[str, list[dict]] | None = None, table_rows: list[dict] | None = None,
-               pages: dict[str, str] | None = None) -> dict:
+               pages: dict[str, str] | None = None, charts: tuple[dict, dict] | None = None) -> dict:
     t_start = time.time()
     cfg = VARIANTS[variant]
     lines = (key_lines or [])[: cfg.get("key_lines", 0)] or None
@@ -411,6 +432,9 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
     n_max = cfg["chunks"]
     if cfg.get("tables") and tables:
         picked = add_tables(picked, tables, cfg["tables"], q["question"])
+        n_max = len(picked)
+    if cfg.get("charts") and charts:
+        picked = add_charts(picked, charts[0], charts[1], cfg["charts"])
         n_max = len(picked)
     ctx = fit_context(gen, q["question"], picked, n_max, lines)
     hint = bool(cfg.get("table_hint")) and any(c.get("table") for c in ctx)
@@ -433,6 +457,8 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
     second = agreement = None
     if cfg.get("second") and not llm_abstain and not rescued:   # (repêchée : déjà 3 appels, budget 4)
         ctx2 = [c for c in ctx if not c.get("table")] if cfg.get("second_no_tables") else ctx
+        # graphiques : la 2e réponse lit la description de l'autre modèle de vision (ou rien s'il n'en a pas)
+        ctx2 = [dict(c, body=c["body_alt"]) if c.get("chart") else c for c in ctx2 if not c.get("chart") or c.get("body_alt")]
         if cfg.get("second_pages") and pages:
             ctx2 = page_context(gen, q["question"], ctx, pages, cfg["second_pages"], cfg["second"], lines)
         if cfg.get("second_by_column"):                # 2e lecture : mêmes tableaux, présentés par colonne
@@ -489,6 +515,7 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
             "third": locals().get("third"),
             "n_context": len(ctx),
             "n_tables": sum(bool(c.get("table")) for c in ctx),
+            "n_charts": sum(bool(c.get("chart")) for c in ctx),
             **(locals().get("meta_extra") or {}),
             "seconds": round(time.time() - t_start, 2),
         },
