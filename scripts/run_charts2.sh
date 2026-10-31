@@ -20,7 +20,7 @@ mkdir -p index2 runs
 
 step "1. Description des graphiques (2B sur GPU 0, 4B sur GPU 1)"
 CUDA_VISIBLE_DEVICES=0 python -m rag2.charts_vlm --model Qwen/Qwen3-VL-2B-Instruct --out runs/charts_2b.jsonl > runs/charts_2b.log 2>&1 &
-CUDA_VISIBLE_DEVICES=1 python -m rag2.charts_vlm --model Qwen/Qwen3-VL-4B-Instruct --out runs/charts_4b.jsonl > runs/charts_4b.log 2>&1 &
+CUDA_VISIBLE_DEVICES=1 python -m rag2.charts_vlm --model Qwen/Qwen3-VL-4B-Instruct --batch 4 --out runs/charts_4b.jsonl > runs/charts_4b.log 2>&1 &
 wait
 tail -n 2 runs/charts_2b.log runs/charts_4b.log
 python -m rag2.charts_vlm --merge runs/charts_2b.jsonl --out index2/charts_a.json.gz
