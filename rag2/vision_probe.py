@@ -39,11 +39,19 @@ def run(model_id: str, out_path: str, pdf_dir: str = "corpus/pdf") -> None:
     from PIL import Image
     from transformers import AutoModelForImageTextToText, AutoProcessor, BitsAndBytesConfig
 
-    q4 = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_compute_dtype=torch.float16)
     t0 = time.time()
-    model = AutoModelForImageTextToText.from_pretrained(model_id, quantization_config=q4, device_map={"": 0},
-                                                        dtype=torch.float16).eval()
-    proc = AutoProcessor.from_pretrained(model_id)
+    granite = "granite" in model_id.lower()
+    if granite:          # IBM Granite 4.0 3B Vision (entraîné sur ChartNet) : 4 Md, tient en float16 sur T4
+        model = AutoModelForImageTextToText.from_pretrained(model_id, trust_remote_code=True, dtype=torch.float16,
+                                                            device_map={"": 0}).eval()
+        if hasattr(model, "merge_lora_adapters"):
+            model.merge_lora_adapters()
+        proc = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
+    else:
+        q4 = BitsAndBytesConfig(load_in_4bit=True, bnb_4bit_quant_type="nf4", bnb_4bit_compute_dtype=torch.float16)
+        model = AutoModelForImageTextToText.from_pretrained(model_id, quantization_config=q4, device_map={"": 0},
+                                                            dtype=torch.float16).eval()
+        proc = AutoProcessor.from_pretrained(model_id)
     print(f"{model_id} chargé en {time.time() - t0:.0f} s, mémoire GPU {torch.cuda.memory_allocated() / 1e9:.1f} Go",
           flush=True)
     seen = set()
@@ -53,11 +61,18 @@ def run(model_id: str, out_path: str, pdf_dir: str = "corpus/pdf") -> None:
             if key in seen:
                 continue
             seen.add(key)
+            if not (Path(pdf_dir) / f"{p['doc_id']}.pdf").exists():
+                continue                               # (document hors corpus v1)
             with pymupdf.open(Path(pdf_dir) / f"{p['doc_id']}.pdf") as doc:
                 img = Image.open(io.BytesIO(doc[p["page"] - 1].get_pixmap(dpi=DPI).tobytes("png"))).convert("RGB")
-            msgs = [{"role": "user", "content": [{"type": "image", "image": img}, {"type": "text", "text": PROMPT}]}]
-            inputs = proc.apply_chat_template(msgs, add_generation_prompt=True, tokenize=True, return_dict=True,
-                                              return_tensors="pt").to(model.device)
+            if granite:      # balise de tâche : graphique -> CSV
+                msgs = [{"role": "user", "content": [{"type": "image"}, {"type": "text", "text": "<chart2csv>"}]}]
+                text = proc.apply_chat_template(msgs, add_generation_prompt=True)
+                inputs = proc(text=text, images=img, return_tensors="pt", padding=True).to(model.device)
+            else:
+                msgs = [{"role": "user", "content": [{"type": "image", "image": img}, {"type": "text", "text": PROMPT}]}]
+                inputs = proc.apply_chat_template(msgs, add_generation_prompt=True, tokenize=True, return_dict=True,
+                                                  return_tensors="pt").to(model.device)
             t = time.time()
             with torch.no_grad():
                 out = model.generate(**inputs, max_new_tokens=600, do_sample=False)
