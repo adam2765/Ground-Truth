@@ -24,9 +24,8 @@ S=$(python -c "import json; print(json.load(open('index2/best.json'))['strategy'
 
 # GPU 0 : Granite Vision, dans un environnement séparé (il demande transformers 4.57.6)
 ( export CUDA_VISIBLE_DEVICES=0
-  python -m venv --system-site-packages /tmp/venv_granite && . /tmp/venv_granite/bin/activate &&
-  pip install -q "transformers==4.57.6" "peft==0.18.1" 2>&1 | grep -v -i "warning\|dependency"
-  python -m rag2.vision_probe --model ibm-granite/granite-4.0-3b-vision --out runs/vision_granite.jsonl
+  pip install -q --target /tmp/granite_libs "transformers==4.57.6" "peft==0.18.1" "tokenizers==0.22.2" --no-deps 2>&1 | grep -v -i "warning\|dependency"
+  PYTHONPATH=/tmp/granite_libs python -m rag2.vision_probe --model ibm-granite/granite-4.0-3b-vision --out runs/vision_granite.jsonl
 ) > runs/vision_granite.log 2>&1 &
 
 wait
