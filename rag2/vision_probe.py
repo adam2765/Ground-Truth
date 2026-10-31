@@ -34,7 +34,7 @@ def graph_pages(gold="data/validation_v1.json") -> list[dict]:
     return out
 
 
-def run(model_id: str, out_path: str, pdf_dir: str = "corpus/pdf") -> None:
+def run(model_id: str, out_path: str, pdf_dir: str = "corpus/pdf", crops: bool = False) -> None:
     import torch
     from PIL import Image
     from transformers import AutoModelForImageTextToText, AutoProcessor, BitsAndBytesConfig
@@ -64,23 +64,35 @@ def run(model_id: str, out_path: str, pdf_dir: str = "corpus/pdf") -> None:
             if not (Path(pdf_dir) / f"{p['doc_id']}.pdf").exists():
                 continue                               # (document hors corpus v1)
             with pymupdf.open(Path(pdf_dir) / f"{p['doc_id']}.pdf") as doc:
-                img = Image.open(io.BytesIO(doc[p["page"] - 1].get_pixmap(dpi=DPI).tobytes("png"))).convert("RGB")
-            if granite:      # balise de tâche : graphique -> CSV
-                msgs = [{"role": "user", "content": [{"type": "image"}, {"type": "text", "text": "<chart2csv>"}]}]
-                text = proc.apply_chat_template(msgs, add_generation_prompt=True)
-                inputs = proc(text=text, images=img, return_tensors="pt", padding=True).to(model.device)
-            else:
-                msgs = [{"role": "user", "content": [{"type": "image", "image": img}, {"type": "text", "text": PROMPT}]}]
-                inputs = proc.apply_chat_template(msgs, add_generation_prompt=True, tokenize=True, return_dict=True,
-                                                  return_tensors="pt").to(model.device)
-            t = time.time()
-            with torch.no_grad():
-                out = model.generate(**inputs, max_new_tokens=600, do_sample=False)
-            text = proc.batch_decode(out[:, inputs["input_ids"].shape[1]:], skip_special_tokens=True)[0].strip()
-            dt = time.time() - t
-            f.write(json.dumps({**p, "model": model_id, "text": text, "seconds": round(dt, 1)}, ensure_ascii=False) + "\n")
+                page = doc[p["page"] - 1]
+                if crops:            # chaque graphique découpé (rag2/chart_crops.py) au lieu de la page entière
+                    from rag2.chart_crops import chart_regions, crop_png
+                    imgs = [Image.open(io.BytesIO(crop_png(page, r))).convert("RGB") for r in chart_regions(page)]
+                else:
+                    imgs = [Image.open(io.BytesIO(page.get_pixmap(dpi=DPI).tobytes("png"))).convert("RGB")]
+            texts, t = [], time.time()
+            for img in imgs:
+                texts.append(describe(model, proc, img, granite))
+            text, dt = "\n\n".join(texts), time.time() - t
+            f.write(json.dumps({**p, "model": model_id + (" (découpé)" if crops else ""), "text": text,
+                                "seconds": round(dt, 1), "n_images": len(imgs)}, ensure_ascii=False) + "\n")
             f.flush()
-            print(f"\n===== {p['qid']} {p['doc_id']} p.{p['page']} ({dt:.0f} s) =====\n{text}", flush=True)
+            print(f"\n===== {p['qid']} {p['doc_id']} p.{p['page']} ({len(imgs)} graphiques, {dt:.0f} s) =====\n{text}", flush=True)
+
+
+def describe(model, proc, img, granite: bool) -> str:
+    import torch
+    if granite:      # balise de tâche : graphique -> CSV
+        msgs = [{"role": "user", "content": [{"type": "image"}, {"type": "text", "text": "<chart2csv>"}]}]
+        text = proc.apply_chat_template(msgs, add_generation_prompt=True)
+        inputs = proc(text=text, images=img, return_tensors="pt", padding=True).to(model.device)
+    else:
+        msgs = [{"role": "user", "content": [{"type": "image", "image": img}, {"type": "text", "text": PROMPT}]}]
+        inputs = proc.apply_chat_template(msgs, add_generation_prompt=True, tokenize=True, return_dict=True,
+                                          return_tensors="pt").to(model.device)
+    with torch.no_grad():
+        out = model.generate(**inputs, max_new_tokens=600, do_sample=False)
+    return proc.batch_decode(out[:, inputs["input_ids"].shape[1]:], skip_special_tokens=True)[0].strip()
 
 
 def report(files: list[str], gold="data/validation_v1.json") -> None:
@@ -107,11 +119,12 @@ def main():
     ap.add_argument("--model")
     ap.add_argument("--out")
     ap.add_argument("--report", nargs="*")
+    ap.add_argument("--crops", action="store_true")
     a = ap.parse_args()
     if a.report is not None:
         report([f for pat in a.report for f in glob.glob(pat)])
     else:
-        run(a.model, a.out)
+        run(a.model, a.out, crops=a.crops)
 
 
 if __name__ == "__main__":
