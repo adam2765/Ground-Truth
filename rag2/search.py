@@ -194,6 +194,36 @@ def search_multi(retriever: "Retriever", question: str, mode: str = "hybrid_rera
     return out[:k]
 
 
+def add_newer_editions(r: "Retriever", query: str, hits: list[dict], docs: dict, top_hits: int = 5,
+                       max_add: int = 2, min_score: float = 0.3) -> list[dict]:
+    """Palier 3 (graphe des éditions) : si un des meilleurs extraits vient d'un document dont une édition plus
+    récente est dans l'index, on ajoute juste après lui le meilleur extrait de cette édition récente (choisi par
+    le cross-encoder parmi ses 5 chunks les plus proches en embeddings). Le modèle voit ainsi les deux dates et
+    applique la consigne « la publication la plus récente fait foi »."""
+    if not hasattr(r, "_by_doc"):
+        r._by_doc = {}
+        for i, c in enumerate(r.chunks):
+            r._by_doc.setdefault(c["doc_id"], []).append(i)
+    present = {r.chunks[h["idx"]]["doc_id"] for h in hits}
+    out, added, qv = list(hits), 0, None
+    for h in hits[:top_hits]:
+        for nd in docs.get(r.chunks[h["idx"]]["doc_id"], {}).get("newer", []):
+            if nd in present or nd not in r._by_doc or added >= max_add:
+                continue
+            idxs = r._by_doc[nd]
+            if qv is None:
+                qv = r.encoder.encode([query], progress=False)[0].astype(np.float32)
+            near = sorted(idxs, key=lambda i: -float(r.vectors[i] @ qv))[:5]
+            sc = r.reranker.score(query, [r.chunks[i]["text"] for i in near])
+            best = max(range(len(near)), key=lambda k: sc[k])
+            if sc[best] < min_score:                    # l'édition récente ne parle pas de la question
+                continue
+            out.insert(out.index(h) + 1, {"idx": near[best], "score": sc[best], "rerank": sc[best], "edition": True})
+            present.add(nd)
+            added += 1
+    return out[: len(hits)]
+
+
 def split_units(body: str, max_words: int = 60) -> list[str]:
     """Découpe un extrait en « lignes » : rangées de tableau, puis phrases pour les longs paragraphes."""
     units = []

@@ -33,6 +33,8 @@ SYSTEM = (
     "Recopie les chiffres exactement comme dans l'extrait, avec leur unité. Vérifie que le chiffre correspond "
     "bien à l'année, au lieu et à la catégorie demandés. Si la question demande un écart ou une somme, "
     "calcule-le et donne aussi les chiffres utilisés.\n"
+    "- Si deux extraits de dates différentes donnent des chiffres différents pour la même chose, la publication "
+    "la plus récente fait foi : donne son chiffre.\n"
     "- Termine par une ligne : SOURCES: [doc_id p.N] (seulement les extraits qui contiennent la réponse).\n"
     "Exemple de réponse :\n"
     "Le nombre de bénéficiaires est passé de 308 000 en 2022 à 276 600 en 2023.\n"
@@ -49,6 +51,8 @@ SYSTEM_QUOTE = (
     "unité ; si la question demande un écart ou une somme, calcule-le à partir de l'extrait>\n"
     "SOURCES: [doc_id p.N]\n"
     "Vérifie que le chiffre correspond bien à l'année, au lieu et à la catégorie demandés.\n"
+    "Si deux extraits de dates différentes donnent des chiffres différents pour la même chose, la publication la plus "
+    "récente fait foi.\n"
     "Exemple :\n"
     "EXTRAIT: \"une baisse du nombre des bénéficiaires de la PAC entre 2022 et 2023 de 308 000 à 276 600\"\n"
     "RÉPONSE: Le nombre de bénéficiaires est passé de 308 000 en 2022 à 276 600 en 2023.\n"
@@ -107,8 +111,16 @@ VARIANTS = {
 DEFAULT_VARIANT = "duo"
 
 
+def numbers(text: str) -> list[tuple[float, float]]:
+    """extract_numbers, sans la double lecture des milliers anglais : « 246,600 » donne 246 600 et 246,6 ;
+    on ne garde que 246 600 (sinon 246,6 passerait pour un chiffre inventé)."""
+    found = extract_numbers(text)
+    raws = [r for r, _ in found]
+    return [(r, s) for r, s in found if not any(abs(o - r * 1000) < 1e-6 * max(1, o) for o in raws)]
+
+
 def _key_numbers(answer: str) -> list[float]:
-    return [r for r, _ in extract_numbers(answer)
+    return [r for r, _ in numbers(answer)
             if not (float(r).is_integer() and (1900 <= r <= 2100 or abs(r) <= 10))]
 
 
@@ -141,8 +153,13 @@ VERIFY_SYSTEM = (
 )
 
 
+DOC_DATES: dict[str, str] = {}      # doc_id -> date de publication (rag2/docmeta.py), rempli par le pipeline
+
+
 def format_extract(c: dict) -> str:
-    return f"[{c['doc_id']} p.{c['page']}]\n{c['body']}"
+    date = DOC_DATES.get(c["doc_id"])
+    head = f"[{c['doc_id']} p.{c['page']}]" + (f" (publié le {date})" if date else "")
+    return f"{head}\n{c['body']}"
 
 
 TABLE_HINT = (
@@ -150,6 +167,19 @@ TABLE_HINT = (
     "puis la colonne de l'indicateur et de l'année demandés ; la réponse est la valeur à leur croisement. "
     "Ne prends pas la valeur d'une rangée ou d'une colonne voisine."
 )
+
+
+_EN_WORDS = re.compile(r"\b(the|what|which|how|many|much|in|of|did|does|was|were|is|are|according|between)\b", re.I)
+_FR_WORDS = re.compile(r"\b(le|la|les|des|du|quel|quelle|combien|en|est|sont|selon|entre|dans)\b", re.I)
+
+
+def is_english(question: str) -> bool:
+    """Palier 3 : questions en anglais sur un corpus en français."""
+    return len(_EN_WORDS.findall(question)) > len(_FR_WORDS.findall(question))
+
+
+EN_RULE = ("\n- The question is in English: write your answer in English (numbers with their unit, as in the "
+           "extract). If the answer is not in the extracts, still write only: INTROUVABLE")
 
 
 def build_messages(question: str, extracts: list[str], system: str = "plain", lines: list[dict] | None = None,
@@ -160,6 +190,8 @@ def build_messages(question: str, extracts: list[str], system: str = "plain", li
                 + "\n".join(f"[{x['doc_id']} p.{x['page']}] {x['text']}" for x in lines) + "\n\n")
     user = head + "Extraits :\n\n" + "\n\n".join(extracts) + f"\n\nQuestion : {question}"
     sys_prompt = SYSTEM_QUOTE if system == "quote" else SYSTEM
+    if is_english(question):
+        sys_prompt += EN_RULE
     if table_hint:                                     # inséré avant la ligne « SOURCES » des consignes
         cut = sys_prompt.index("\n- Termine") if "\n- Termine" in sys_prompt else len(sys_prompt)
         sys_prompt = sys_prompt[:cut] + TABLE_HINT + sys_prompt[cut:]
@@ -263,7 +295,9 @@ def fit_context(gen, question: str, chunks: list[dict], max_chunks: int = MAX_CH
 _REF = re.compile(r"\[([\w\-]+)\s*,?\s*p\.?\s*(\d+)\]")
 _ABSTAIN = re.compile(r"\bIN?TR?O?U?VABLE\b", re.I)
 _HEDGE = re.compile(r"\b(ne|n['’])\s*(\w+\s+)?(mentionne|précise|fourni|donne|indique|contien|permet|détaille)\w*\s+pas"
-                    r"|pas d['’]information|aucun extrait|non (précisé|mentionné|disponible)", re.I)
+                    r"|pas d['’]information|aucun extrait|non (précisé|mentionné|disponible)"
+                    r"|\b(does|do|did) not (mention|specify|provide|contain|state|indicate)|not (mentioned|specified|provided|available)"
+                    r"|no information|cannot be (found|determined)", re.I)
 
 
 def parse_answer(raw: str, context: list[dict]) -> tuple[str, list[dict], bool]:
@@ -304,7 +338,7 @@ def unsupported_numbers(answer: str, context: list[dict], question: str) -> int:
     ctx = " ".join(c["body"] for c in context) + " " + question
     ctx_nums = extract_numbers(ctx)
     n = 0
-    for raw, scaled in extract_numbers(answer):
+    for raw, scaled in numbers(answer):
         if float(raw).is_integer() and (1900 <= raw <= 2100 or abs(raw) <= 10):
             continue
         if not any(_close(raw, r) or _close(scaled, s) or _close(raw, s) or _close(scaled, r) for r, s in ctx_nums):

@@ -59,7 +59,9 @@ def cmd_index(args):
 
         from rag2.tables import extract_dir, save
         cache = Path(__file__).resolve().parents[1] / "cache" / "tables_v1.json.gz"
-        if cache.exists() and Path(args.pdf_dir).resolve() == (cache.parents[1] / "corpus" / "pdf").resolve():
+        import os
+        if (cache.exists() and not os.environ.get("RAG_NO_CACHE")
+                and Path(args.pdf_dir).resolve() == (cache.parents[1] / "corpus" / "pdf").resolve()):
             shutil.copy(cache, tab_path)
         else:
             save(extract_dir(args.pdf_dir), tab_path)
@@ -85,10 +87,68 @@ def cmd_index(args):
             np.save(d / "dense.npy", encoder.encode([c["text"] for c in chunks]))
             print(f"[{strat}] embeddings en {time.time() - t:.0f} s")
 
+    # palier 3 : dates et graphe des éditions (rag2/docmeta.py)
+    from rag2 import docmeta
+    if not args.no_dense:
+        from rag2.search import DenseEncoder
+        encoder = encoder or DenseEncoder()
+    docs = docmeta.build(pages, encoder if not args.no_dense else None)
+    docmeta.save(docs, idx)
+    print(f"{len(docs)} documents, {sum(len(v['newer']) for v in docs.values())} liens « édition plus récente »")
+    print(f"indexation terminée en {(time.time() - t0) / 60:.1f} min")
+
+
+def cmd_update(args):
+    """Palier 3 : ajoute les PDF d'un nouveau dossier à un index existant, sans rien recalculer pour l'ancien
+    corpus. Seuls les nouveaux documents sont lus (OCR compris), découpés et encodés ; les vecteurs sont ajoutés à
+    la fin de dense.npy (les numéros des anciens chunks ne changent pas) ; BM25 est reconstruit au chargement
+    (quelques secondes) ; le graphe des éditions est recalculé (titres seulement)."""
+    from rag2 import docmeta
+    from rag2.parse import read_pdf_dir
+    from rag2.search import DenseEncoder
+    from rag2.tables import extract_dir, load as load_tables, save as save_tables
+
+    t0 = time.time()
+    idx = Path(args.index_dir)
+    pages = json.loads((idx / "pages.json").read_text(encoding="utf-8"))
+    known = {p["doc_id"] for p in pages}
+    new_pdfs = [p for p in sorted(Path(args.pdf_dir).glob("*.pdf")) if p.stem not in known]
+    print(f"{len(new_pdfs)} nouveaux documents (sur {len(list(Path(args.pdf_dir).glob('*.pdf')))})")
+    if not new_pdfs:
+        return
+    import shutil
+    import tempfile
+    tmp = Path(tempfile.mkdtemp())
+    for p in new_pdfs:                                  # on ne lit que les nouveaux fichiers
+        shutil.copy(p, tmp / p.name)
+    new_pages = read_pdf_dir(str(tmp), ocr=True, ocr_images=True)
+    print(f"  {len(new_pages)} pages lues en {time.time() - t0:.0f} s")
+    pages += new_pages
+    (idx / "pages.json").write_text(json.dumps(pages, ensure_ascii=False), encoding="utf-8")
+    tabs = load_tables(idx / "tables.json.gz")
+    tabs.update(extract_dir(str(tmp)))
+    save_tables(tabs, idx / "tables.json.gz")
+    encoder = None
+    for d in sorted(p for p in idx.iterdir() if (p / "chunks.json").exists()):
+        chunks = json.loads((d / "chunks.json").read_text(encoding="utf-8"))
+        add = make_chunks(new_pages, d.name.partition("+")[0])
+        (d / "chunks.json").write_text(json.dumps(chunks + add, ensure_ascii=False), encoding="utf-8")
+        if (d / "dense.npy").exists():
+            encoder = encoder or DenseEncoder()
+            old = np.load(d / "dense.npy")
+            np.save(d / "dense.npy", np.concatenate([old, encoder.encode([c["text"] for c in add])]))
+        print(f"  [{d.name}] +{len(add)} chunks")
+    docs = docmeta.build(pages, encoder, docmeta.load(idx))
+    docmeta.save(docs, idx)
+    print(f"  {sum(len(v['newer']) for v in docs.values())} liens « édition plus récente »")
+    shutil.rmtree(tmp, ignore_errors=True)
+    print(f"mise à jour terminée en {(time.time() - t0) / 60:.1f} min")
+
 
 def cmd_retrieve(args):
     from groundtruth.io import load_questions
-    from rag2.search import Retriever, key_lines, ranked_pages, search_multi, table_rows
+    from rag2 import docmeta
+    from rag2.search import Retriever, add_newer_editions, key_lines, ranked_pages, search_multi, table_rows
     from rag2.tables import load as load_tables
 
     cfg = defaults(args.index_dir)
@@ -102,9 +162,12 @@ def cmd_retrieve(args):
             return
     r = Retriever(args.index_dir, strategy, use_dense=mode != "bm25", use_rerank=mode == "hybrid_rerank")
     tables = load_tables(Path(args.index_dir) / "tables.json.gz")
+    docs = docmeta.load(args.index_dir)
     items, t0 = [], time.time()
     for n, q in enumerate(qs, 1):
         hits = search_multi(r, q["question"], mode=mode, k=20) if args.split else r.search(q["question"], mode=mode, k=20)
+        if docs and r.reranker is not None:
+            hits = add_newer_editions(r, q["question"], hits, docs)
         item = {"qid": q["qid"], "hits": hits, "retrieved": ranked_pages(r.chunks, hits)}
         if r.reranker is not None:
             item["key_lines"] = key_lines(r.reranker, q["question"], r.chunks, hits)
@@ -128,6 +191,9 @@ def cmd_generate(args):
     chunks = json.loads((Path(args.index_dir) / ret["strategy"] / "chunks.json").read_text(encoding="utf-8"))
     by_qid = {it["qid"]: it for it in ret["items"]}
     qs = load_questions(args.questions)
+    import rag2.answer as answer_mod
+    from rag2 import docmeta
+    answer_mod.DOC_DATES.update({d: v["date"] for d, v in docmeta.load(args.index_dir).items() if v.get("date")})
     tables = None
     if VARIANTS[args.variant].get("tables"):
         from rag2.tables import load
@@ -204,6 +270,9 @@ def main():
     a.add_argument("--no-ocr", action="store_true")
     a.add_argument("--no-ocr-images", action="store_true")
     a.add_argument("--reparse", action="store_true")
+    u = sub.add_parser("update")
+    u.add_argument("--index-dir", required=True)
+    u.add_argument("--pdf-dir", required=True)
     for name in ("retrieve", "answer"):
         b = sub.add_parser(name)
         b.add_argument("--index-dir", required=True)
@@ -223,7 +292,8 @@ def main():
     g.add_argument("--backend", default="hf", choices=["hf", "openai", "echo"])
     g.add_argument("--variant", default=DEFAULT_VARIANT, choices=list(VARIANTS))
     args = ap.parse_args()
-    {"index": cmd_index, "retrieve": cmd_retrieve, "generate": cmd_generate, "answer": cmd_answer}[args.cmd](args)
+    {"index": cmd_index, "update": cmd_update, "retrieve": cmd_retrieve, "generate": cmd_generate,
+     "answer": cmd_answer}[args.cmd](args)
 
 
 if __name__ == "__main__":
