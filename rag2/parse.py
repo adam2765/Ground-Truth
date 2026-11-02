@@ -27,6 +27,8 @@ OCR_DPI = 300
 
 
 def _ocr_image(png_bytes: bytes) -> str:
+    # un processus par cœur : Tesseract ne doit pas lancer en plus ses propres threads (sinon ils se gênent)
+    os.environ.setdefault("OMP_THREAD_LIMIT", "1")
     import pytesseract
     from PIL import Image
 

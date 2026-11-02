@@ -7,13 +7,25 @@ cd "$(dirname "$0")"
   (sudo apt-get -qq update && sudo apt-get -qq install -y tesseract-ocr tesseract-ocr-fra) > /dev/null 2>&1 || \
   echo "ATTENTION : tesseract (OCR des pages numérisées) non installé"
 pip install -q -r requirements.txt sentence-transformers PyStemmer pytesseract "mistral-common[hf-hub]" huggingface_hub
+# Téléchargement classique (le nouveau protocole « xet » est resté bloqué une nuit sur Kaggle, le 2/11),
+# et seulement les fichiers utilisés : pas les doublons « consolidated » (format mistral-inference) ni ONNX.
+export HF_HUB_DISABLE_XET=1 HF_HUB_DOWNLOAD_TIMEOUT=60 HF_HUB_ETAG_TIMEOUT=60
 python - <<'PY'
+import time
 from huggingface_hub import snapshot_download
+IGNORE = ["consolidated*", "*.gguf", "onnx/*", "*.onnx", "*.msgpack", "*.h5", "colbert*", "sparse*"]
 for repo in [
     "mistralai/Ministral-3-3B-Instruct-2512",   # générateur officiel
     "BAAI/bge-m3",                              # embeddings (recherche dense, graphe des éditions)
     "BAAI/bge-reranker-v2-m3",                  # reranker (cross-encoder)
 ]:
-    snapshot_download(repo)
+    for attempt in range(3):
+        try:
+            t = time.time()
+            snapshot_download(repo, ignore_patterns=IGNORE)
+            print(f"{repo} : {time.time() - t:.0f} s", flush=True)
+            break
+        except Exception as e:                  # coupure réseau : on reprend (les fichiers déjà là sont gardés)
+            print(f"{repo} : essai {attempt + 1} échoué ({e})", flush=True)
 PY
 python -c "import Stemmer, pytesseract, pymupdf, sentence_transformers; print('setup OK')"

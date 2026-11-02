@@ -16,16 +16,17 @@ V2=$(python -c "import datetime; print(int(datetime.date.today() >= datetime.dat
 mkdir -p runs final
 
 step "setup.sh (réseau)"
-chrono bash setup.sh
+export HF_HUB_DISABLE_XET=1
+chrono timeout 1800 bash setup.sh 2>&1 | grep -v -E "Downloading|Reconstructing|Fetching|it/s" || true
 python corpus/download_corpus.py | tail -n 2
 
 step "run.sh index (v1, limite 2 h)"
-chrono bash run.sh index corpus/pdf /tmp/index | grep -v "^  [0-9]*/" | tail -n 8
+chrono timeout 9000 bash run.sh index corpus/pdf /tmp/index 2>&1 | grep -v -E "^  [0-9]*/|Batches|Loading weights|it/s"
 python -c "import json; d=json.load(open('/tmp/index/docs.json')); [print('  ', k, '->', v['newer']) for k, v in d.items() if v['newer']]"
 
 if [ "$V2" = 1 ]; then
   step "run.sh update (v2, limite 20 min)"
-  chrono bash run.sh update /tmp/index corpus/pdf_v2 | tail -n 6
+  chrono timeout 2400 bash run.sh update /tmp/index corpus/pdf_v2 2>&1 | grep -v -E "Batches|Loading weights|it/s"
   python -c "import json; d=json.load(open('/tmp/index/docs.json')); [print('  ', k, '->', v['newer']) for k, v in d.items() if v['newer']]"
 fi
 
