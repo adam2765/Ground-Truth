@@ -11,9 +11,10 @@ apt_install() {
   timeout --foreground 600 $1 apt-get -qq -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confold \
     install -y --no-install-recommends tesseract-ocr tesseract-ocr-fra < /dev/null > /dev/null 2>&1
 }
-command -v tesseract > /dev/null || { timeout --foreground 300 apt-get -qq update < /dev/null > /dev/null 2>&1; apt_install ""; } || \
+has_fra() { command -v tesseract > /dev/null && tesseract --list-langs 2>/dev/null | grep -qx fra; }
+has_fra || { timeout --foreground 300 apt-get -qq update < /dev/null > /dev/null 2>&1; apt_install ""; } || \
   { timeout --foreground 300 sudo apt-get -qq update < /dev/null > /dev/null 2>&1; apt_install sudo; } || true
-command -v tesseract > /dev/null && echo "tesseract OK" || echo "ATTENTION : tesseract non installé (OCR des pages numérisées impossible)"
+has_fra && echo "tesseract OK (français)" || echo "ATTENTION : tesseract ou sa langue française manquent (OCR dégradé)"
 # Téléchargement classique (le nouveau protocole « xet » est resté bloqué une nuit sur Kaggle, le 2/11),
 # et seulement les fichiers utilisés : pas les doublons « consolidated » (format mistral-inference) ni ONNX.
 export HF_HUB_DISABLE_XET=1 HF_HUB_DOWNLOAD_TIMEOUT=60 HF_HUB_ETAG_TIMEOUT=60

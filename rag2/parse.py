@@ -33,7 +33,20 @@ def _ocr_image(png_bytes: bytes) -> str:
     from PIL import Image
 
     img = Image.open(io.BytesIO(png_bytes)).convert("L")       # niveaux de gris
-    return pytesseract.image_to_string(img, lang="fra", config="--psm 3")
+    global _LANG
+    if _LANG is None:              # français si installé, sinon la langue par défaut (OCR dégradé, pas de plantage)
+        try:
+            _LANG = "fra" if "fra" in pytesseract.get_languages(config="") else "eng"
+        except Exception:
+            _LANG = "eng"
+    try:
+        return pytesseract.image_to_string(img, lang=_LANG, config="--psm 3")
+    except Exception as e:         # une image illisible ne doit pas arrêter l'indexation
+        print(f"OCR impossible ({str(e)[:80]})", flush=True)
+        return ""
+
+
+_LANG = None
 
 
 def _ocr_job(job):
