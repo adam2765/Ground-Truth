@@ -167,7 +167,7 @@ def cmd_retrieve(args):
     for n, q in enumerate(qs, 1):
         hits = search_multi(r, q["question"], mode=mode, k=20) if args.split else r.search(q["question"], mode=mode, k=20)
         if docs and r.reranker is not None:
-            hits = add_newer_editions(r, q["question"], hits, docs)
+            hits = add_newer_editions(r, q["question"], hits, docs, drop_old=not args.keep_old)
         item = {"qid": q["qid"], "hits": hits, "retrieved": ranked_pages(r.chunks, hits)}
         if r.reranker is not None:
             item["key_lines"] = key_lines(r.reranker, q["question"], r.chunks, hits)
@@ -253,6 +253,8 @@ def cmd_answer(args):
         r += ["--mode", args.mode]
     if args.split:
         r += ["--split"]
+    if getattr(args, "keep_old", False):
+        r += ["--keep-old"]
     subprocess.run(base + r, check=True)
     subprocess.run(base + ["generate", "--index-dir", args.index_dir, "--retrieval", ret_path,
                            "--questions", args.questions, "--out", args.out, "--backend", args.backend,
@@ -281,6 +283,7 @@ def main():
         b.add_argument("--strategy", default=None)
         b.add_argument("--mode", default=None, choices=["bm25", "dense", "hybrid", "hybrid_rerank"])
         b.add_argument("--split", action="store_true", help="questions en plusieurs parties : une recherche par partie")
+        b.add_argument("--keep-old", action="store_true", help="garder les extraits des éditions remplacées")
         if name == "answer":
             b.add_argument("--backend", default="hf", choices=["hf", "openai", "echo"])
             b.add_argument("--variant", default=DEFAULT_VARIANT, choices=list(VARIANTS))

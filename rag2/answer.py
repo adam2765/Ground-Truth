@@ -102,6 +102,10 @@ VARIANTS = {
     # la concordance puisse confirmer une valeur qui n'existe que sur le graphique.
     "duoXRSG": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
                 "row_check": 4, "rescue": 6, "charts": 2},
+    # palier 3 (budget de temps) : la 2e lecture en format court (« plain », ~50 tokens écrits au lieu de ~250
+    # pour le format citation). L'indépendance vient du contexte différent (sans tableaux), pas du format.
+    "duoXRSf": {"system": "plain", "chunks": 5, "second": "plain", "key_lines": 3, "tables": 2, "second_no_tables": True,
+                "row_check": 4, "rescue": 6},
     "duoXRP": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_pages": 3,
                "row_check": 4},
     "duoXHR": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,

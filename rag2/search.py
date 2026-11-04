@@ -195,7 +195,7 @@ def search_multi(retriever: "Retriever", question: str, mode: str = "hybrid_rera
 
 
 def add_newer_editions(r: "Retriever", query: str, hits: list[dict], docs: dict, top_hits: int = 5,
-                       max_add: int = 2, min_score: float = 0.3) -> list[dict]:
+                       max_add: int = 2, min_score: float = 0.3, drop_old: bool = True) -> list[dict]:
     """Palier 3 (graphe des éditions) : si un des meilleurs extraits vient d'un document dont une édition plus
     récente est dans l'index, on ajoute juste après lui le meilleur extrait de cette édition récente (choisi par
     le cross-encoder parmi ses 5 chunks les plus proches en embeddings). Le modèle voit ainsi les deux dates et
@@ -205,7 +205,7 @@ def add_newer_editions(r: "Retriever", query: str, hits: list[dict], docs: dict,
         for i, c in enumerate(r.chunks):
             r._by_doc.setdefault(c["doc_id"], []).append(i)
     present = {r.chunks[h["idx"]]["doc_id"] for h in hits}
-    out, added, qv = list(hits), 0, None
+    out, added, qv, replaced = list(hits), 0, None, set()
     for h in hits[:top_hits]:
         for nd in docs.get(r.chunks[h["idx"]]["doc_id"], {}).get("newer", []):
             if nd in present or nd not in r._by_doc or added >= max_add:
@@ -221,7 +221,19 @@ def add_newer_editions(r: "Retriever", query: str, hits: list[dict], docs: dict,
             out.insert(out.index(h) + 1, {"idx": near[best], "score": sc[best], "rerank": sc[best], "edition": True})
             present.add(nd)
             added += 1
+            replaced.add(r.chunks[h["idx"]]["doc_id"])
+    if replaced and drop_old and not _EVOLUTION.search(query):
+        # VersionRAG (2025) : pour une question sur le contenu (pas sur une évolution d'une édition à l'autre),
+        # seule l'édition la plus récente fait foi -> on retire les extraits des éditions remplacées, pour que le
+        # modèle 3B n'ait pas deux chiffres contradictoires sous les yeux.
+        out = [x for x in out if r.chunks[x["idx"]]["doc_id"] not in replaced]
     return out[: len(hits)]
+
+
+_EVOLUTION = re.compile(
+    r"évolu|révis|revu|d['’]une édition|édition précédente|précédent|successi|initial|auparavant|annonçait|"
+    r"puis |depuis|entre .* et|changé|changer|revised|previous|earlier|initially|successive|trace|changed|since|"
+    r"first estimate|from .* to", re.I)
 
 
 def split_units(body: str, max_words: int = 60) -> list[str]:
