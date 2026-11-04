@@ -41,6 +41,14 @@ for V in $VARIANTS; do
   done
 done
 
+python - $VARIANTS <<'EN'
+import json, sys
+g = json.load(open("data/validation_v2.json")); g = g["questions"] if isinstance(g, dict) else g
+en = [q for q in g if q.get("lang") == "en"]
+for V in sys.argv[1:]:
+    r = {d["qid"]: d["points"] for d in json.load(open(f"runs/rep_{V}_v2.json"))["details"]}
+    print(f"{V} : questions en anglais, score brut {sum(r[q['qid']] for q in en) / len(en):+.3f} sur {len(en)}")
+EN
 step "Choix de la variante et de la règle (validation v1 + v2)"
 python - $VARIANTS <<'PY'
 import json, statistics, sys

@@ -145,7 +145,18 @@ class Retriever:
         if mode == "dense":
             return [{"idx": i, "score": s, "dense": s} for i, s in de[:k]]
         bm_s, de_s = dict(bm), dict(de)
-        fused = rrf([[i for i, _ in bm], [i for i, _ in de]])
+        if is_english(query):
+            # question en anglais sur un corpus français : le BM25 (mots racinisés en français) ne trouve presque
+            # rien d'utile et ses résultats pollueraient la fusion. On reranke surtout les résultats denses
+            # (bge-m3 est multilingue), plus les 5 premiers BM25 (noms propres, sigles, chiffres communs).
+            seen, cand_en = set(), []
+            for i in [i for i, _ in de[: n_rerank - 5]] + [i for i, _ in bm[:5]]:
+                if i not in seen:
+                    seen.add(i)
+                    cand_en.append(i)
+            fused = [(i, 1.0 / (60 + r)) for r, i in enumerate(cand_en)]
+        else:
+            fused = rrf([[i for i, _ in bm], [i for i, _ in de]])
         if mode == "hybrid":
             return [{"idx": i, "score": s, "bm25": bm_s.get(i), "dense": de_s.get(i)} for i, s in fused[:k]]
         cand = [i for i, _ in fused[:n_rerank]]
@@ -234,6 +245,15 @@ _EVOLUTION = re.compile(
     r"évolu|révis|revu|d['’]une édition|édition précédente|précédent|successi|initial|auparavant|annonçait|"
     r"puis |depuis|entre .* et|changé|changer|revised|previous|earlier|initially|successive|trace|changed|since|"
     r"first estimate|from .* to", re.I)
+
+
+_EN_WORDS = re.compile(r"\b(the|what|which|how|many|much|in|of|did|does|was|were|is|are|according|between)\b", re.I)
+_FR_WORDS = re.compile(r"\b(le|la|les|des|du|quel|quelle|combien|en|est|sont|selon|entre|dans)\b", re.I)
+
+
+def is_english(question: str) -> bool:
+    """Palier 3 : questions en anglais sur un corpus en français."""
+    return len(_EN_WORDS.findall(question)) > len(_FR_WORDS.findall(question))
 
 
 def split_units(body: str, max_words: int = 60) -> list[str]:

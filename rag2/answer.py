@@ -173,13 +173,7 @@ TABLE_HINT = (
 )
 
 
-_EN_WORDS = re.compile(r"\b(the|what|which|how|many|much|in|of|did|does|was|were|is|are|according|between)\b", re.I)
-_FR_WORDS = re.compile(r"\b(le|la|les|des|du|quel|quelle|combien|en|est|sont|selon|entre|dans)\b", re.I)
-
-
-def is_english(question: str) -> bool:
-    """Palier 3 : questions en anglais sur un corpus en français."""
-    return len(_EN_WORDS.findall(question)) > len(_FR_WORDS.findall(question))
+from rag2.search import is_english  # noqa: E402  (questions en anglais, palier 3)
 
 
 EN_RULE = ("\n- The question is in English: write your answer in English (numbers with their unit, as in the "
