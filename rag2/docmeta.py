@@ -48,6 +48,11 @@ def build(pages: list[dict], encoder=None, old: dict | None = None) -> dict:
     return docs
 
 
+def _stem(doc_id: str) -> str:
+    """cc-finances-locales-2026-synthese -> cc-finances-locales"""
+    return re.sub(r"(-synthese|-?(19|20)\d\d)", "", doc_id)
+
+
 def link(docs: dict, encoder=None) -> None:
     """Arêtes « édition plus récente » : même famille (Insee / Cour des comptes), titres proches, dates différentes.
     Un rapport et sa synthèse (même date) ne sont pas des éditions."""
@@ -70,6 +75,10 @@ def link(docs: dict, encoder=None) -> None:
             A, B = docs[a], docs[b]
             if (i == j or _family(A["collection"]) != _family(B["collection"]) or not A["date"] or not B["date"]
                     or A["date"] >= B["date"] or sim[i, j] < thr):
+                continue
+            # Cour des comptes : les titres se ressemblent tous (« Rapport public… ») ; une édition suivante a le
+            # même identifiant à l'année près (cc-finances-locales-2025 -> -2026). Sinon, pas de lien.
+            if _family(A["collection"]) == "cc" and _stem(a) != _stem(b):
                 continue
             A["newer"].append(b)
             B["older"].append(a)

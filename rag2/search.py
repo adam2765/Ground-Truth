@@ -219,7 +219,10 @@ def add_newer_editions(r: "Retriever", query: str, hits: list[dict], docs: dict,
     out, added, qv, replaced = list(hits), 0, None, set()
     for h in hits[:top_hits]:
         for nd in docs.get(r.chunks[h["idx"]]["doc_id"], {}).get("newer", []):
-            if nd in present or nd not in r._by_doc or added >= max_add:
+            if nd in present:                           # l'édition récente est déjà dans les résultats
+                replaced.add(r.chunks[h["idx"]]["doc_id"])
+                continue
+            if nd not in r._by_doc or added >= max_add:
                 continue
             idxs = r._by_doc[nd]
             if qv is None:
