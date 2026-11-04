@@ -96,7 +96,7 @@ VARIANTS = {
     # absent des rangées (pas de calcul) : sur la validation, 2 réponses justes sur 2 dans ce cas, et la seule
     # réponse fausse contenait un calcul (93 % au lieu de 95 %).
     "duoXRS": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
-               "row_check": 4, "rescue": 6},
+               "row_check": 4, "rescue": 6, "translate": True},
     # run 14 : duoXRS + descriptions des graphiques (rag2/charts_vlm.py). La 1re réponse lit la description de
     # Qwen3-VL-2B, la 2e celle de Qwen3-VL-4B : deux lectures du graphique par deux modèles différents, pour que
     # la concordance puisse confirmer une valeur qui n'existe que sur le graphique.
@@ -105,7 +105,7 @@ VARIANTS = {
     # palier 3 (budget de temps) : la 2e lecture en format court (« plain », ~50 tokens écrits au lieu de ~250
     # pour le format citation). L'indépendance vient du contexte différent (sans tableaux), pas du format.
     "duoXRSf": {"system": "plain", "chunks": 5, "second": "plain", "key_lines": 3, "tables": 2, "second_no_tables": True,
-                "row_check": 4, "rescue": 6},
+                "row_check": 4, "rescue": 6, "translate": True},
     "duoXRP": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_pages": 3,
                "row_check": 4},
     "duoXHR": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
@@ -451,6 +451,23 @@ def rescue(gen, q: dict, rows: list[dict], chunks: list[dict], hits: list[dict],
             "unsupported": unsupported_numbers(ans, row_ctx + ctx, q["question"])}
 
 
+TRANSLATE = ("Traduis cette question en français, fidèlement, sans y répondre. Garde tels quels les chiffres, les "
+             "années, les sigles et les noms propres ; si un terme français est donné entre parenthèses, utilise-le. "
+             "Écris uniquement la question traduite.")
+
+
+def translate_question(gen, question: str) -> str:
+    """Questions en anglais (palier 3, 30 dans le test final) : on les traduit en français avant de répondre.
+    Le modèle 3B lit alors une question dans la même langue que les extraits (les rapports sont en français) :
+    les mots de la question se retrouvent tels quels dans le texte, et la réponse sort en français (accepté par
+    le juge). 1 appel court (~2 s), compté dans le budget de 4."""
+    raw = gen.chat([{"role": "system", "content": TRANSLATE}, {"role": "user", "content": question}],
+                   max_new_tokens=120)
+    fr = " ".join(raw.strip().strip('"«» ').split())
+    ok = 10 <= len(fr) <= 3 * len(question) + 50 and not is_english(fr) and "INTROUVABLE" not in fr.upper()
+    return fr if ok else question
+
+
 def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bool = True,
                variant: str = DEFAULT_VARIANT, key_lines: list[dict] | None = None,
                tables: dict[str, list[dict]] | None = None, table_rows: list[dict] | None = None,
@@ -459,6 +476,10 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
     cfg = VARIANTS[variant]
     lines = (key_lines or [])[: cfg.get("key_lines", 0)] or None
     gen.start_question(q["qid"])
+    q_en = None
+    if cfg.get("translate") and is_english(q["question"]):
+        q_en = q["question"]
+        q = dict(q, question=translate_question(gen, q_en))
     cand = [chunks[h["idx"]] for h in hits]
     picked = diversify(cand, [h.get("score") for h in hits], cfg["chunks"])
     n_max = cfg["chunks"]
@@ -547,6 +568,7 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
             "third": locals().get("third"),
             "n_context": len(ctx),
             "n_tables": sum(bool(c.get("table")) for c in ctx),
+            **({"question_fr": q["question"]} if q_en else {}),
             "n_charts": sum(bool(c.get("chart")) for c in ctx),
             **(locals().get("meta_extra") or {}),
             "seconds": round(time.time() - t_start, 2),
