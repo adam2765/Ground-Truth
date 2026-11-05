@@ -1,0 +1,10 @@
+{
+ "agreement": "souple_inclus",
+ "max_unsupported": 0,
+ "threshold": null,
+ "rows_override_unsupported": true,
+ "validation_score_calibre": 0.3387,
+ "v1": 0.44,
+ "v2": 0.2375,
+ "variant": "duoXRS"
+}

@@ -96,7 +96,7 @@ VARIANTS = {
     # absent des rangées (pas de calcul) : sur la validation, 2 réponses justes sur 2 dans ce cas, et la seule
     # réponse fausse contenait un calcul (93 % au lieu de 95 %).
     "duoXRS": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
-               "row_check": 4, "rescue": 6, "translate": True},
+               "row_check": 4, "rescue": 6, "translate": False},
     # run 14 : duoXRS + descriptions des graphiques (rag2/charts_vlm.py). La 1re réponse lit la description de
     # Qwen3-VL-2B, la 2e celle de Qwen3-VL-4B : deux lectures du graphique par deux modèles différents, pour que
     # la concordance puisse confirmer une valeur qui n'existe que sur le graphique.
@@ -105,7 +105,7 @@ VARIANTS = {
     # palier 3 (budget de temps) : la 2e lecture en format court (« plain », ~50 tokens écrits au lieu de ~250
     # pour le format citation). L'indépendance vient du contexte différent (sans tableaux), pas du format.
     "duoXRSf": {"system": "plain", "chunks": 5, "second": "plain", "key_lines": 3, "tables": 2, "second_no_tables": True,
-                "row_check": 4, "rescue": 6, "translate": True},
+                "row_check": 4, "rescue": 6, "translate": False},
     "duoXRP": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_pages": 3,
                "row_check": 4},
     "duoXHR": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
@@ -457,7 +457,10 @@ TRANSLATE = ("Traduis cette question en français, fidèlement, sans y répondre
 
 
 def translate_question(gen, question: str) -> str:
-    """Questions en anglais (palier 3, 30 dans le test final) : on les traduit en français avant de répondre.
+    """(Testé le 5/11, désactivé : sur les 6 questions en anglais de la validation v2, une gagnée (val2-034), une
+    perdue (val2-040 : « self-employed » traduit en « professionnels libéraux » au lieu de « non-salariés », le
+    terme du rapport), pour 2 s de plus par question. La recherche multilingue suffit.)
+    Questions en anglais (palier 3, 30 dans le test final) : on les traduit en français avant de répondre.
     Le modèle 3B lit alors une question dans la même langue que les extraits (les rapports sont en français) :
     les mots de la question se retrouvent tels quels dans le texte, et la réponse sort en français (accepté par
     le juge). 1 appel court (~2 s), compté dans le budget de 4."""
