@@ -1,12 +1,11 @@
 {
- "threshold": 0.59326171875,
+ "agreement": "souple_inclus",
  "max_unsupported": 0,
- "require_verified": false,
- "require_quote": true,
- "agreement": "strict_inclus",
+ "threshold": null,
  "rows_override_unsupported": true,
- "validation_score_brut": 0.255,
- "validation_score_calibre": 0.525,
- "taux_abstention": 0.65,
- "note": "run 9 + repêchage (réponses sur rangées gardées si confirmées ou sans chiffre calculé) ; 0,525 = estimation (2 réponses repêchées justes, non repassées au juge)"
+ "variant": "duoXRS",
+ "v1": 0.44,
+ "v2": 0.2375,
+ "validation_score_calibre": 0.3387,
+ "note": "Règle figée pour la finale (run v2opti2, 4-5 nov.) : meilleure moyenne v1/v2 sur la grille de rag2/calibrate.py. L'ancienne règle (run 12, strict_inclus + seuil 0,593 + citation) fait v1 0,46 / v2 0,1875 sur les mêmes réponses : à nombre de questions égal, les deux se valent (0,382), la nouvelle est meilleure sur les questions du palier 3 (temporelles, anglais), présentes dans le test."
 }
