@@ -1,0 +1,60 @@
+
+=== [0 min] setup ===
+BAAI/bge-m3 : 13 s
+BAAI/bge-reranker-v2-m3 : 18 s
+setup OK
+numérisé : cc-vaccination-synthese
+
+=== [3 min] run.sh index + update (comme la référence : tout recalculé, ~25 min) ===
+[naive_title] embeddings en 148 s
+110 documents, 6 liens « édition plus récente »
+indexation terminée en 18.2 min
+  [naive_title] +2220 chunks
+  21 liens « édition plus récente »
+mise à jour terminée en 4.3 min
+
+=== [25 min] recherche v1 : actuelle (A) et avec correctif (B) ===
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+recherche : naive_title / hybrid_rerank, 100 questions -> runs/retA_v1.json
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+recherche : naive_title / hybrid_rerank, 100 questions -> runs/retB_v1.json
+v1 : recherche modifiée pour 8 questions : ['val1-008', 'val1-011', 'val1-039', 'val1-051', 'val1-055', 'val1-063', 'val1-072', 'val1-083']
+
+=== [31 min] génération v1 (questions modifiées seulement) ===
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tableaux structurés : 410 pages
+reprise : 92/100 réponses déjà faites
+réponses brutes (avant abstention calibrée) -> runs/rawB_v1.json
+100 réponses, 55 INTROUVABLE (55%) -> runs/valB_v1.json
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+=== [36 min] recherche v2 : actuelle (A) et avec correctif (B) ===
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+recherche : naive_title / hybrid_rerank, 40 questions -> runs/retA_v2.json
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+recherche : naive_title / hybrid_rerank, 40 questions -> runs/retB_v2.json
+v2 : recherche modifiée pour 3 questions : ['val2-006', 'val2-014', 'val2-031']
+
+=== [39 min] génération v2 (questions modifiées seulement) ===
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tableaux structurés : 410 pages
+reprise : 37/40 réponses déjà faites
+réponses brutes (avant abstention calibrée) -> runs/rawB_v2.json
+40 réponses, 21 INTROUVABLE (52%) -> runs/valB_v2.json
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+=== [41 min] Comparaison (référence : répétition générale du 9/11) ===
+v1 : actuel +0.4200 | correctif +0.4550
+   val1-008 : +0.0 -> +0.0
+   val1-011 : +0.0 -> +1.0
+   val1-039 : +0.0 -> +1.0
+   val1-051 : +1.0 -> +1.0
+   val1-055 : +0.0 -> +0.0
+   val1-063 : +0.0 -> +0.0
+   val1-072 : -1.0 -> +0.5
+   val1-083 : +0.0 -> +0.0
+v2 : actuel +0.2375 | correctif +0.2125
+   val2-006 : +1.0 -> +0.0
+   val2-014 : +1.0 -> +1.0
+   val2-031 : +1.0 -> +1.0
+ÉCART : v1 +0.0350, v2 -0.0250 -> GARDER le correctif

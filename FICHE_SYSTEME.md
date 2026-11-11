@@ -47,7 +47,7 @@ recherche dense exacte (produit matriciel numpy sur ~11 000 vecteurs) prend ~1 m
 
 | | v1 (100 q.) | v2 (40 q.) |
 |---|---|---|
-| Score de confiance (répétition générale du 9/11) | +0,42 | +0,2375 |
+| Score de confiance (répétition générale du 9/11, + correctif des questions datées) | +0,42 → +0,455 | +0,2375 |
 | Meilleur score v1 avant le palier 3 (run 12, estimé) | +0,525 | |
 | Recall@5 de la recherche | 0,87 | 0,94 |
 

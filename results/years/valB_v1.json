@@ -1,0 +1,5411 @@
+{
+ "run_name": "rag2-calibre",
+ "commit": "",
+ "predictions": [
+  {
+   "qid": "val1-001",
+   "answer": "Le nombre de bénéficiaires de la PAC était de 308 000 en 2022 et de 276 600 en 2023.",
+   "citations": [
+    {
+     "doc_id": "cc-pac",
+     "page": 25
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-pac",
+     "page": 25
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2097",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2097",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2097",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-002",
+   "answer": "En 2023, 4 % des surfaces des aires d’alimentation de captage (AAC) étaient couvertes par une aide MAEC ou une aide à l’agriculture biologique, soit 218 000 hectares sur une surface totale de 5,7 millions d’hectares.",
+   "citations": [
+    {
+     "doc_id": "cc-pac",
+     "page": 88
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-pac",
+     "page": 88
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 91
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 87
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 140
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 90
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 92
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 124
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 143
+    }
+   ]
+  },
+  {
+   "qid": "val1-003",
+   "answer": "En 2022, il y avait 22 700 officines en France, contre 23 400 en 2015.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2036",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2036",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 88
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-004",
+   "answer": "La Cour des comptes souligne que ces pays ont réussi à dégager durablement un excédent primaire entre 2010 et 2025 grâce à une consolidation budgétaire choisie et pluriannuelle, évitant ainsi les efforts subis sous pression extérieure.\n\nElle recommande aussi de privilégier des mesures minimisant les coûts macroéconomiques et sociaux, tout en alignant la consolidation sur des politiques favorisant la compétitivité et la croissance pour éviter des pièges structurels comme celui de l’Italie.",
+   "citations": [
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 24
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 101
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 24
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 142
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 95
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 104
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 156
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 102
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 48
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 82
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 123
+    }
+   ]
+  },
+  {
+   "qid": "val1-005",
+   "answer": "La réduction du coût de la main-d’œuvre est la principale motivation, citée par 55 % des entreprises ayant délocalisé entre 2021 et 2023. La décision stratégique prise par la tête de groupe suit avec 47 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2115",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2115",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2045",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-006",
+   "answer": "En 2022, le prix spot horaire n’a jamais dépassé le barème du versement fournisseur hors période exceptionnelle.",
+   "citations": [
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 37
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 37
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 64
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 84
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 87
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 73
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 67
+    },
+    {
+     "doc_id": "insee-ip2038",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 50
+    }
+   ]
+  },
+  {
+   "qid": "val1-007",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2085",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2085",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2085",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-008",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2051",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2050",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2051",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2107",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2051",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2051",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2050",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2107",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-009",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 222
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 50
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 221
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 51
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 186
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 67
+    },
+    {
+     "doc_id": "cc-recherche-entreprises-synthese",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 30
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 49
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 195
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 207
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 85
+    }
+   ]
+  },
+  {
+   "qid": "val1-010",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2113",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2113",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2113",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2113",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-011",
+   "answer": "En 2024, la valeur de la production viticole en vin est de 10,9 milliards d'euros, avec une baisse de 28,8 % par rapport à 2023.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2057",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 52
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val1-012",
+   "answer": "Entre avril 2024 et mai 2025, le nombre de points de charge dans les zones rurales à habitat très dispersé a progressé de 101 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2082",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2082",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2082",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2082",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2082",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-013",
+   "answer": "Entre 2016 et 2023, le taux de marge aux coûts des facteurs des débits de boissons a baissé de 29,6 % à 24,0 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2123",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2123",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2084",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2123",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2084",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2123",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2070",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-014",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 52
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 65
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 90
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 89
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 83
+    }
+   ]
+  },
+  {
+   "qid": "val1-015",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2103",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-016",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 18
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 68
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 77
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 133
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 54
+    }
+   ]
+  },
+  {
+   "qid": "val1-017",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 30
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 27
+    }
+   ]
+  },
+  {
+   "qid": "val1-018",
+   "answer": "Dans les grands centres urbains, il y a en moyenne 195 ménages par hectare de bâti collectif.\nDans le rural très dispersé, il y a en moyenne 29 ménages par hectare de bâti collectif.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2103",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2103",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 20
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2041",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2125",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2041",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-019",
+   "answer": "En 2025, le DILICO a prélevé 1 Md€ sur les collectivités, tandis qu’en 2026, il n’a prélevé que 740 M€ (exemptant les communes en année d’élections).",
+   "citations": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 134
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 171
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 134
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 148
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 133
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 149
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 237
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 135
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 25
+    }
+   ]
+  },
+  {
+   "qid": "val1-020",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-021",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2069",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2069",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2069",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2070",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2118",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2118",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2070",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2070",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2118",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2118",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2069",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-022",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 43
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 71
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 37
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 53
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 70
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 73
+    }
+   ]
+  },
+  {
+   "qid": "val1-023",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 21
+    }
+   ]
+  },
+  {
+   "qid": "val1-024",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2088",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2088",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2088",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2088",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val1-025",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 92
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 68
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 113
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 114
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 91
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 217
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 185
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 84
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 122
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 69
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 125
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 98
+    }
+   ]
+  },
+  {
+   "qid": "val1-026",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2099",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2099",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2099",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2099",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-027",
+   "answer": "Le secteur du commerce contribue le moins à la consommation d’espace économique entre 2012 et 2021.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2039",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2039",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2039",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2039",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2039",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2045",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-028",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2063",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-029",
+   "answer": "Le ministère de la défense a programmé 50 M€ dans la LPM pour la période 2019-2025.",
+   "citations": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 41
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 71
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 94
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 93
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 32
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 119
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 64
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 53
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 57
+    }
+   ]
+  },
+  {
+   "qid": "val1-030",
+   "answer": "En 2010, 61 % des personnes étaient plutôt ou très favorables à la vaccination, puis en 2024, cette proportion est tombée à 80 %.",
+   "citations": [
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 7
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 99
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 53
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 92
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 138
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 144
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 98
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 142
+    }
+   ]
+  },
+  {
+   "qid": "val1-031",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2096",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2068",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2043",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-032",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2096",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val1-033",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-vaccination",
+     "page": 149
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 147
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 150
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 52
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 144
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 136
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 148
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 110
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 92
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 55
+    }
+   ]
+  },
+  {
+   "qid": "val1-034",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 59
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 90
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 50
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 51
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 55
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 52
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 43
+    }
+   ]
+  },
+  {
+   "qid": "val1-035",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2096",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-036",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2035",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-037",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 164
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 93
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 33
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 26
+    }
+   ]
+  },
+  {
+   "qid": "val1-038",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 89
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 84
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 128
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 129
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 49
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 88
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 152
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 96
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 112
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 76
+    }
+   ]
+  },
+  {
+   "qid": "val1-039",
+   "answer": "En moyenne, un enseignant fonctionnaire de la FPE perçoit 3 138 euros nets par mois en 2023.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2065",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2065",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-040",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-pac",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 49
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 48
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 85
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 88
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 9
+    }
+   ]
+  },
+  {
+   "qid": "val1-041",
+   "answer": "Les logements largement sous-occupés sont plus fréquents dans les couronnes des aires d’attraction des villes (AAV) de 700 000 habitants ou plus, avec un taux de 31 % en 2022, contre les petites AAV.\n\nLa tranche de taille des aires d’attraction des villes qui arrive en tête pour la sous-occupation très accentuée est celle des grands pôles urbains, bien que leur taux soit moins marqué en raison de la présence de jeunes ménages (étudiants).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2064",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2064",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2064",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2064",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2121",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2064",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 20
+    },
+    {
+     "doc_id": "insee-ip2047",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2064",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2103",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2046",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-042",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2093",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2054",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2054",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 23
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 102
+    }
+   ]
+  },
+  {
+   "qid": "val1-043",
+   "answer": "La prime par mégawatt a diminué de 20 275 € (60 850 € en 2024 à 40 575 € en 2025).",
+   "citations": [
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 56
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 91
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 59
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 64
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 43
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 51
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 55
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 87
+    },
+    {
+     "doc_id": "cc-effacements-electricite",
+     "page": 52
+    }
+   ]
+  },
+  {
+   "qid": "val1-044",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2107",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2107",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2107",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2107",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2051",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-045",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2112",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2059",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2059",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2059",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2112",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2059",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2112",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-046",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 117
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 73
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 108
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 31
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 33
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 93
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 92
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 9
+    }
+   ]
+  },
+  {
+   "qid": "val1-047",
+   "answer": "En 2024, parmi les laboratoires sous tutelle du CNRS, 41 avaient une délégation globale de gestion (DGG) confiée à un seul établissement, dont 22 étaient confiées au CNRS et 19 à des partenaires universitaires.",
+   "citations": [
+    {
+     "doc_id": "cc-umr",
+     "page": 44
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-umr",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 43
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 73
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 70
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 31
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 32
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 68
+    }
+   ]
+  },
+  {
+   "qid": "val1-048",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 30
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 150
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 147
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 68
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 151
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 63
+    }
+   ]
+  },
+  {
+   "qid": "val1-049",
+   "answer": "La Cour demande au Secrétariat général pour l’investissement (SGPI) de construire d’ici 2028 des partenariats industriels ciblés à l’échelle européenne, avec une spécialisation par pays si nécessaire.",
+   "citations": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 95
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 14
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 95
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 31
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 90
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 53
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 75
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 102
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 99
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 92
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 98
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 91
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 80
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 51
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 33
+    }
+   ]
+  },
+  {
+   "qid": "val1-050",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-051",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2057",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2057",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-052",
+   "answer": "95 % des transactions déclarées ont été exonérées entre 2017 et 2025.",
+   "citations": [
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 8
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 37
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 79
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 33
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 67
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 87
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 24
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 36
+    }
+   ]
+  },
+  {
+   "qid": "val1-053",
+   "answer": "Le scénario « économies » avec 1 Md€ d’engagements annuels permettrait un taux de succès de 18,8 %, financant environ 1 800 projets par an.",
+   "citations": [
+    {
+     "doc_id": "cc-anr",
+     "page": 77
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-anr",
+     "page": 77
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 73
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 79
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 65
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-anr",
+     "page": 81
+    }
+   ]
+  },
+  {
+   "qid": "val1-054",
+   "answer": "En 2022, 246 600 personnes fiscalement domiciliées en France (hors Mayotte) détiennent au moins dix logements, représentant 0,9 % des propriétaires.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2046",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2046",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2046",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2046",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2046",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-055",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2067",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-056",
+   "answer": "24,3 % des immigrés nés dans un pays d'Europe extérieur à l'Union européenne ont acquis la nationalité française en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2076",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2076",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val1-057",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2094",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2094",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2094",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2094",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2052",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2052",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2052",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-058",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-recherche-entreprises-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 214
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 99
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 120
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 119
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 49
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 51
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 93
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 61
+    }
+   ]
+  },
+  {
+   "qid": "val1-059",
+   "answer": "Les émissions de GES des unités résidentes françaises en 2025 sont principalement portées par les industries agroalimentaires (64 Mt CO₂ éq) et la construction (61 Mt CO₂ éq), avec une baisse respective de -0,9 Mt et -2,9 Mt par rapport à 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val1-060",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 88
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 69
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 24
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 15
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 82
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 68
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 45
+    }
+   ]
+  },
+  {
+   "qid": "val1-061",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 100
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-recherche-entreprises-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 176
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 80
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 180
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 186
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 177
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 179
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 181
+    }
+   ]
+  },
+  {
+   "qid": "val1-062",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2115",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2115",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-063",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2062",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 79
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 91
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 59
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 137
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "insee-ip2057",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 91
+    }
+   ]
+  },
+  {
+   "qid": "val1-064",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 126
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 22
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 40
+    }
+   ]
+  },
+  {
+   "qid": "val1-065",
+   "answer": "Le soutien de base au revenu représente 48 % de l’enveloppe totale des paiements directs pour la France dans la PAC 2023-2027.",
+   "citations": [
+    {
+     "doc_id": "cc-pac",
+     "page": 55
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-pac",
+     "page": 55
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 122
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 56
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 94
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 118
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 126
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 85
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 91
+    }
+   ]
+  },
+  {
+   "qid": "val1-066",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 232
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 71
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 105
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 194
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 110
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 66
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-difficultes-entreprises",
+     "page": 96
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 99
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 231
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 59
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 62
+    }
+   ]
+  },
+  {
+   "qid": "val1-067",
+   "answer": "La production viticole en 2025 est estimée à 11,9 milliards d'euros hors subventions.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2086",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-068",
+   "answer": "La Cour des comptes souligne la nécessité de renforcer l’action publique sur plusieurs leviers : l’extension de la lutte aux vasières et aux sites sableux au-delà des huit baies concernées par les PLAV, la définition d’objectifs évaluables dans les contrats territoriaux (SAGE), la mobilisation des leviers du foncier agricole et des filières agroalimentaires, ainsi que l’adaptation et le renforcement de la réglementation, notamment via des obligations renforcées dans le septième programme d’action régional de la directive nitrates (plafonds de fertilisation, indicateurs de fuites d’azote, gestion des zones humides, etc.).",
+   "citations": [
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 7
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 85
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 67
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 52
+    },
+    {
+     "doc_id": "cc-algues-vertes-synthese",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 9
+    }
+   ]
+  },
+  {
+   "qid": "val1-069",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 53
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 37
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 100
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 99
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 109
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 17
+    }
+   ]
+  },
+  {
+   "qid": "val1-070",
+   "answer": "La Corée du Sud déposait le plus de brevets quantiques par million d'habitants en 2024, avec un ratio de 12 brevets.",
+   "citations": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 78
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 81
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 153
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 87
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 82
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 77
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 70
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 149
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 142
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 139
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 152
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-informatique-quantique-synthese",
+     "page": 12
+    }
+   ]
+  },
+  {
+   "qid": "val1-071",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2122",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2122",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2122",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2122",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-072",
+   "answer": "Les services départementaux d’incendie et de secours (SDIS) paient le mieux leurs agents en moyenne en net mensuel à temps plein avec 3 030 euros.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2066",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2066",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val1-073",
+   "answer": "En 2024, le salaire annuel brut moyen d’un doctorant CIFRE était de 33 391 €, contre 28 600 € en 2013.",
+   "citations": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 210
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 41
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 210
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 209
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 218
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 49
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 207
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 73
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-recherche-entreprises-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 177
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 157
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-074",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2048",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2048",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2048",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2048",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2085",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2087",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-075",
+   "answer": "Le taux d'emploi en 2023 est supérieur chez les jeunes ayant abandonné en année terminale (91 %) que chez ceux ayant obtenu leur licence (89 %).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2109",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2109",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2109",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2109",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2109",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-076",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2125",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2125",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2125",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2125",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val1-077",
+   "answer": "En 2021, la filière construction en bois comptait 14 250 établissements.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2035",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2035",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2035",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-078",
+   "answer": "En 2025, les enfants nés en France portent 65 940 prénoms distincts, contre 8 007 pour ceux nés en 1946.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-079",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2041",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2041",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2041",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2041",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-080",
+   "answer": "Pendant 20 jours, les sommes produisent des intérêts au taux de 0,35 %.",
+   "citations": [
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 74
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 33
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 43
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres-synthese",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 63
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 68
+    }
+   ]
+  },
+  {
+   "qid": "val1-081",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 84
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 73
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 87
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 70
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 113
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 50
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 94
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 119
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-informatique-quantique",
+     "page": 120
+    }
+   ]
+  },
+  {
+   "qid": "val1-082",
+   "answer": "Depuis 2019, cinq projets financés par le dispositif « Services numériques innovants » ont intégré de l’intelligence artificielle pour un total de 144 315 €.",
+   "citations": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 28
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 11
+    }
+   ]
+  },
+  {
+   "qid": "val1-083",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2065",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val1-084",
+   "answer": "Le financement moyen par projet a baissé de près de 37 % entre le plan « aisance aquatique » (520 000 €) et le plan « 5 000 équipements » (330 000 €).",
+   "citations": [
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 40
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-algues-vertes",
+     "page": 57
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 39
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 33
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 37
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-equipements-sportifs-ans",
+     "page": 36
+    }
+   ]
+  },
+  {
+   "qid": "val1-085",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-pac",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 63
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 77
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 112
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 94
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 127
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 102
+    }
+   ]
+  },
+  {
+   "qid": "val1-086",
+   "answer": "En 2025, le prénom de fille en sixième position est Alba et celui de garçon en sixième position est Lours.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-087",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2042",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2042",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2042",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2042",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-088",
+   "answer": "En 2022, 13 % des résidences principales en France métropolitaine étaient chauffées au fioul, soit environ 13 millions de logements (selon les données arrondies du graphique pour les maisons).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2088",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2088",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2088",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-taxe-transactions-financieres",
+     "page": 37
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 150
+    },
+    {
+     "doc_id": "insee-ip2088",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2088",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val1-089",
+   "answer": "Le rapport annuel d’avancement du PSMT d’avril 2026 anticipe un solde des collectivités à - 4,4 Md€ en comptabilité nationale.\nLa loi de finances pour 2026 prévoyait un déficit de 6,1 Md€.",
+   "citations": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 160
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 237
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 160
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 166
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 23
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 127
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 172
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 145
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 93
+    }
+   ]
+  },
+  {
+   "qid": "val1-090",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2075",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2075",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2075",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2075",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-091",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 50
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 156
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 44
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 82
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 78
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 118
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 43
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 48
+    }
+   ]
+  },
+  {
+   "qid": "val1-092",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 97
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 32
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 110
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 226
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 98
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 93
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 95
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 94
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 107
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 108
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 162
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 33
+    }
+   ]
+  },
+  {
+   "qid": "val1-093",
+   "answer": "En 2025, les entreprises françaises utilisant l’IA représentent 18 %, alors que la moyenne européenne est de 20 %, soit un écart de 2 points en leur défaveur.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2076",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 39
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-094",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2068",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2068",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2068",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2068",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2050",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2050",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2080",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-095",
+   "answer": "En 2025, l’Élysée a dépensé 243 460 € pour la protection juridique fonctionnelle, contre 12 000 € en 2024.",
+   "citations": [
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 42
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2093",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 23
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 71
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 57
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 11
+    }
+   ]
+  },
+  {
+   "qid": "val1-096",
+   "answer": "20 M€.",
+   "citations": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 38
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 30
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 40
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val1-097",
+   "answer": "Le Conseil constitutionnel a augmenté ses crédits de 43,4 % au total entre 2020 et 2025.",
+   "citations": [
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 19
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 109
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 69
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 215
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 219
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 131
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 210
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 213
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-presidence-republique-2025",
+     "page": 7
+    }
+   ]
+  },
+  {
+   "qid": "val1-098",
+   "answer": "La DIRDE en France a augmenté de 0,13 point de PIB entre 2000 et 2023, alors qu’elle a progressé de 0,51 point de PIB en moyenne dans l’OCDE sur la même période.",
+   "citations": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 145
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 145
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 213
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 144
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 143
+    },
+    {
+     "doc_id": "cc-umr",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 184
+    },
+    {
+     "doc_id": "cc-recherche-entreprises-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 142
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 146
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 45
+    },
+    {
+     "doc_id": "insee-ip2084",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val1-099",
+   "answer": "En 2025, l’Institut national de l’audiovisuel (INA) a dispensé 2 450 heures de formation en IA, et il en prévoit 2 800 heures pour 2026.",
+   "citations": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 34
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 20
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 24
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 36
+    },
+    {
+     "doc_id": "cc-ia-ministere-culture",
+     "page": 27
+    }
+   ]
+  },
+  {
+   "qid": "val1-100",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 107
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 132
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 138
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 129
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 34
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 141
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 122
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 19
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 143
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 28
+    }
+   ]
+  }
+ ]
+}

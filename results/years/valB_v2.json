@@ -1,0 +1,1981 @@
+{
+ "run_name": "rag2-calibre",
+ "commit": "",
+ "predictions": [
+  {
+   "qid": "val2-001",
+   "answer": "En 2024, les ventes des supermarchés ont augmenté de +2,2 % en volume, tandis que celles des petites surfaces d’alimentation générale et magasins de produits surgelés ont progressé de +4,4 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2058",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2111",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2058",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2111",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2058",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2111",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2058",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2111",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-002",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 212
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 201
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 14
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 71
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 162
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2054",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-003",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2114",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-004",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2063",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-005",
+   "answer": "Le taux de croissance du PIB en 2023 a été révisé à +1,6 % lors de la publication de mai 2025, après une révision précédente à +1,4 % en mai 2024.\n\nÉcart entre les révisions : +0,2 point (de +1,4 % à +1,6 %).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2053",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2058",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2097",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 53
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 122
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 54
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 190
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 182
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 188
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 192
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 184
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 180
+    }
+   ]
+  },
+  {
+   "qid": "val2-006",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 14
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 6
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 60
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 94
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val2-007",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 17
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 21
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-008",
+   "answer": "69 % des grands établissements de 500 salariés ou plus disposent d’au moins un spécialiste entièrement dédié aux activités de protection de l’environnement en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2124",
+     "page": 4
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2124",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-009",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-010",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2056",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2095",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2095",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2095",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2038",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-011",
+   "answer": "L'indicateur synthétique mesurant les inégalités de niveau de vie en 2024 en métropole est de 19,7 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2117",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-012",
+   "answer": "La croissance de la valeur de la production agricole hors subventions a été révisée à la hausse de 1,0 point (de 3,7 % à 4,7 %).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2086",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2086",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-013",
+   "answer": "Le salaire net moyen d’un fonctionnaire de catégorie C dans la fonction publique de l’État en 2024 est de 2 266 euros par mois en EQTP.\nSa rémunération a baissé de -2,6 % en euros constants.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val2-014",
+   "answer": "Le déficit commercial de la France s’établit à -14,4 milliards d’euros (Md€) en 2025.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2053",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 156
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 16
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-015",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2124",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-016",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2124",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val2-017",
+   "answer": "La gouvernance de la planification écologique reste à consolider car le Secrétariat général à la planification écologique (SGPE) doit renforcer son rôle pour mieux piloter les arbitrages interministériels et assurer une articulation claire entre trajectoires physiques et financières, tout en améliorant la transparence des résultats et des écarts par rapport aux cibles fixées.\n\nLes Conferences des parties (COP) régionales du plan France Nation Verte, bien que favorisant la mobilisation locale, se sont parfois superposées à des démarches territoriales existantes sans permettre une évaluation claire de leur contribution à la transition écologique.",
+   "citations": [
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 35
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 63
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 65
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 164
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 150
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 79
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 14
+    }
+   ]
+  },
+  {
+   "qid": "val2-018",
+   "answer": "Les femmes non salariées classiques gagnent en moyenne 3 620 euros par mois, contre 4 470 euros pour les hommes, soit un écart de 19 % en faveur des hommes.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2114",
+     "page": 4
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2114",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val2-019",
+   "answer": "En 2025, 80 % des entreprises utilisant l’IA optent pour l’achat de logiciels ou systèmes du commerce prêts à l’emploi.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2061",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-020",
+   "answer": "Parmi les personnes au chômage début 2022, 22,4 % des personnes de 16 ans ou plus ont vécu sous le seuil de pauvreté monétaire de manière continue de 2021 à 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2129",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2129",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-021",
+   "answer": "Les loyers parisiens encadrés ont augmenté de 11,4 % en cumul entre juillet 2019 et juin 2025, alors qu’ils auraient augmenté de 17,2 % sans l’encadrement.",
+   "citations": [
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 84
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 84
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 138
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 238
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 183
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 23
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 215
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 185
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 54
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 53
+    }
+   ]
+  },
+  {
+   "qid": "val2-022",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-023",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 138
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 83
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 81
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 84
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 89
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 82
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 140
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 218
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 90
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 176
+    }
+   ]
+  },
+  {
+   "qid": "val2-024",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 24
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 23
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 59
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 138
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 31
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 41
+    }
+   ]
+  },
+  {
+   "qid": "val2-025",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2081",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 81
+    },
+    {
+     "doc_id": "insee-ip2054",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 110
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 60
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-026",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2124",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 25
+    },
+    {
+     "doc_id": "insee-ip2042",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-027",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val2-028",
+   "answer": "La Cour des comptes propose notamment de renforcer la fiabilisation des données pour le calcul des loyers de référence, d’améliorer la cohérence des catégories réglementaires, de renforcer la transparence et l’homogénéité des méthodes, de clarifier le cadre juridique, et de simplifier les voies de recours pour les locataires.",
+   "citations": [
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 96
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 88
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 96
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 89
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 91
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 100
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 24
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 174
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 183
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 95
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 93
+    }
+   ]
+  },
+  {
+   "qid": "val2-029",
+   "answer": "La Cour préconise d’offrir un nombre de terrains de stages strictement égal au nombre d’internes à partir de la campagne d’ouverture des stages de novembre 2027.",
+   "citations": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 117
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 12
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 117
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 112
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 105
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 31
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 110
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 114
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 103
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 107
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 100
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 108
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 102
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 30
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 99
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 15
+    }
+   ]
+  },
+  {
+   "qid": "val2-030",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-031",
+   "answer": "En 2024, les agents de l’État âgés de 60 ans et plus touchent en moyenne 3 657 euros par mois, net et en équivalent temps plein.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2065",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-032",
+   "answer": "En 2025, le taux d’adoption de l’IA dans le secteur du commerce est de 13 % en France et de 19 % dans l’Union européenne.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-033",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 181
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 180
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 143
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 183
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 142
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 182
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 184
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 163
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 138
+    }
+   ]
+  },
+  {
+   "qid": "val2-034",
+   "answer": "Le salaire net moyen en équivalent temps plein (EQTP) pour les personnels médicaux (médecins, odontologistes et pharmaciens) est de 6 926 euros par mois en 2024, et leur pouvoir d’achat a diminué de 0,3 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2102",
+     "page": 4
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2102",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-035",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-036",
+   "answer": "En 2023-2024, 19 % des étudiants en neuvième année de troisième cycle de médecine ont redoublé cette année-là.",
+   "citations": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 46
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 43
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 68
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 95
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 73
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 128
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 59
+    }
+   ]
+  },
+  {
+   "qid": "val2-037",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2110",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 88
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 62
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-038",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2066",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-039",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-040",
+   "answer": "En 2024, le revenu mensuel moyen des non-salariés dans le secteur architecture, ingénierie est de 4 070 euros.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2114",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2114",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2118",
+     "page": 4
+    }
+   ]
+  }
+ ]
+}

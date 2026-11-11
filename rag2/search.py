@@ -237,10 +237,14 @@ def add_newer_editions(r: "Retriever", query: str, hits: list[dict], docs: dict,
             present.add(nd)
             added += 1
             replaced.add(r.chunks[h["idx"]]["doc_id"])
-    if year_keep and _YEAR.search(query) and not _RECENT.search(query):
-        # Question datée sans « dernier / plus récent » (« en 2023, combien… ») : l'édition remplacée est souvent
-        # la seule à donner cette année-là (l'édition 2026 donne 2024). On la garde, à côté de l'édition récente.
-        drop_old = False
+    if year_keep and not _RECENT.search(query):
+        # Question datée sans « dernier / plus récent » : on garde l'édition remplacée si elle est la seule à porter
+        # sur l'année demandée (« en 2023, combien gagne un enseignant ? » : l'édition 2025 porte sur 2023, la
+        # nouvelle sur 2024). Si la nouvelle édition porte sur la même année (compte prévisionnel 2025 -> provisoire
+        # 2025), l'ancienne est bien remplacée.
+        years = {int(y) for y in _YEAR.findall(query)}
+        replaced = {d for d in replaced if not (ref_year(docs.get(d, {})) in years and ref_year(docs.get(d, {}))
+                    < min((ref_year(docs.get(n, {})) or 9999) for n in docs.get(d, {}).get("newer", [])))}
     if replaced and drop_old and not _EVOLUTION.search(query):
         # VersionRAG (2025) : pour une question sur le contenu (pas sur une évolution d'une édition à l'autre),
         # seule l'édition la plus récente fait foi -> on retire les extraits des éditions remplacées, pour que le
@@ -256,6 +260,13 @@ _EVOLUTION = re.compile(
 
 
 _YEAR = re.compile(r"\b(?:19|20)\d\d\b")
+
+
+def ref_year(doc: dict) -> int | None:
+    """Année sur laquelle porte un document : la plus récente citée dans son titre (« LES COMPTES DE LA NATION EN
+    2025 », « En 2023, un agent… »)."""
+    ys = [int(y) for y in _YEAR.findall(doc.get("title", ""))]
+    return max(ys) if ys else None
 _RECENT = re.compile(r"derni|plus récent|actuel|aujourd|latest|most recent|current|now\b", re.I)
 
 

@@ -42,7 +42,12 @@ Utilisation à la recherche (`add_newer_editions`, `rag2/search.py`) :
 une année que seule celle-ci couvre (« En 2023, combien gagne un enseignant de l'État ? » : l'édition 2026 donne
 2024). 3 questions de la validation v1 perdues (val1-011, val1-039, val1-072). Option `--year-keep` : on garde
 l'ancienne édition si la question donne une année sans « dernier / plus récent ». Testé par `scripts/run_years.sh`
-(résultat : à compléter après le run).
+(11/11, `results/years/`) : v1 +0,42 → +0,455 (val1-011, 039, 072 retrouvent leur preuve), mais v2 +0,2375 →
++0,2125 : val2-006 (« compte provisoire… en 2025 ») gardait le compte **prévisionnel** 2025 (8,4 Md€) à côté du
+compte provisoire 2025 (8,0 Md€), et le modèle a pris le mauvais. **Règle affinée** (`ref_year`, année du titre
+de chaque édition) : on garde l'ancienne édition seulement si elle porte sur l'année demandée **et** que la
+nouvelle porte sur une année postérieure. Sur les 11 questions concernées, cette règle reproduit exactement l'une
+des deux recherches du test, d'où le résultat sans nouveau run : **v1 +0,455, v2 +0,2375**. Activée dans `run.sh`.
 
 ## 3. Questions en anglais
 
@@ -111,6 +116,7 @@ Les commandes exactes du jour J (`setup.sh`, `run.sh index`, `update`, `answer`)
 | + filtre VersionRAG, anglais (v2opti1, ancienne règle d'abstention → nouvelle) | +0,46 | +0,225 |
 | + règle d'abstention choisie sur v1 + v2 (v2opti2) | +0,44 | +0,2375 |
 | Répétition générale sans cache (9/11) | +0,42 | +0,2375 |
+| + correctif des questions datées (11/11, règle affinée) | **+0,455** | **+0,2375** |
 
 La consigne temporelle et les dates coûtent ~0,05 sur la v1 (le modèle hésite davantage quand deux dates sont
 présentes) ; le filtre VersionRAG retire la preuve de 3 questions v1 datées (corrigé par `--year-keep`, section 2).

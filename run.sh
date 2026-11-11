@@ -25,7 +25,7 @@ case "$cmd" in
     python -m rag2.pipeline update --index-dir "$1" --pdf-dir "$2" ;;
   answer)
     tmp=$(mktemp -d)
-    python -m rag2.pipeline retrieve --index-dir "$1" --questions "$2" --out "$tmp/ret.json" --split
+    python -m rag2.pipeline retrieve --index-dir "$1" --questions "$2" --out "$tmp/ret.json" --split --year-keep
     python -m rag2.pipeline generate --index-dir "$1" --retrieval "$tmp/ret.json" --questions "$2" \
       --out "$tmp/raw.json" --variant "$VARIANT"
     mkdir -p "$(dirname "$3")"
