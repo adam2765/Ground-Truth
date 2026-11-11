@@ -167,7 +167,8 @@ def cmd_retrieve(args):
     for n, q in enumerate(qs, 1):
         hits = search_multi(r, q["question"], mode=mode, k=20) if args.split else r.search(q["question"], mode=mode, k=20)
         if docs and r.reranker is not None:
-            hits = add_newer_editions(r, q["question"], hits, docs, drop_old=not args.keep_old)
+            hits = add_newer_editions(r, q["question"], hits, docs, drop_old=not args.keep_old,
+                                      year_keep=getattr(args, "year_keep", False))
         item = {"qid": q["qid"], "hits": hits, "retrieved": ranked_pages(r.chunks, hits)}
         if r.reranker is not None:
             item["key_lines"] = key_lines(r.reranker, q["question"], r.chunks, hits)
@@ -284,6 +285,8 @@ def main():
         b.add_argument("--mode", default=None, choices=["bm25", "dense", "hybrid", "hybrid_rerank"])
         b.add_argument("--split", action="store_true", help="questions en plusieurs parties : une recherche par partie")
         b.add_argument("--keep-old", action="store_true", help="garder les extraits des éditions remplacées")
+        b.add_argument("--year-keep", action="store_true",
+                       help="garder les éditions remplacées si la question est datée sans « dernier / plus récent »")
         if name == "answer":
             b.add_argument("--backend", default="hf", choices=["hf", "openai", "echo"])
             b.add_argument("--variant", default=DEFAULT_VARIANT, choices=list(VARIANTS))

@@ -1,0 +1,2815 @@
+{
+ "run_name": "rag2-naive_title-hybrid_rerank-duoXRS",
+ "commit": "",
+ "predictions": [
+  {
+   "qid": "val2-001",
+   "answer": "En 2024, les ventes des supermarchés ont augmenté de +2,2 % en volume, tandis que celles des petites surfaces d’alimentation générale et magasins de produits surgelés ont progressé de +4,4 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2058",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2111",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, les ventes des supermarchés ont augmenté de **+2,2 %** en volume, tandis que celles des petites surfaces d’alimentation générale et magasins de produits surgelés ont progressé de **+4,4 %**.\n\nSOURCES: [insee-ip2058 p.3] [insee-ip2111 p.2]",
+    "top_score": 0.9833984375,
+    "margin": 0.009765625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Les ventes des petites surfaces d’alimentation générale et des magasins de produits surgelés ont augmenté de 4,4 % en volume en 2024.",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 18.47
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2058",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2111",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2058",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2111",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2058",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2111",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-002",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.86083984375,
+    "margin": 0.0439453125,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 3.22
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 212
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 201
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 28
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 14
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 71
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 162
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2054",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-003",
+   "answer": "En 2023, les non-salariés classiques (hors micro-entrepreneurs) gagnent en moyenne 4 150 euros par mois, et en 2024, ce revenu est passé à 4 410 euros (pour les entrepreneurs individuels, sous-catégorie la plus représentative).\n\nL’écart entre 2023 et 2024 est donc de +260 euros (4 410 - 4 150).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2114",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En 2023, les non-salariés classiques (hors micro-entrepreneurs) gagnent en moyenne **4 150 euros** par mois, et en 2024, ce revenu est passé à **4 410 euros** (pour les entrepreneurs individuels, sous-catégorie la plus représentative).\n\nL’écart entre 2023 et 2024 est donc de **+260 euros** (4 410 - 4 150).\n\nSOURCES: [insee-ip2114 p.2]",
+    "top_score": 0.998046875,
+    "margin": 0.3583984375,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": "En 2023, les indépendants hors micro-entrepreneurs gagnaient en moyenne 4 090 euros par mois (calculé à partir de 4 150 euros en 2024 en soustrayant 6,5 % de 4 150 pour obtenir la valeur 2023).\nEn 2024, ce revenu était de 4 150 euros par mois.\nL'augmentation est donc de 55 euros (4 150 - 4 095 ≈ 55, mais ajusté avec les données exactes : 4 150 - (4 15",
+    "n_context": 6,
+    "n_tables": 2,
+    "n_charts": 0,
+    "row_check": "En 2023, les indépendants hors micro-entrepreneurs gagnaient en moyenne 4 090 euros par mois (calculé à partir de 4 150 euros en 2024 en soustrayant 6,5 % de 4 150 pour obtenir la valeur 2023).\nEn 2024, ce revenu était de 4 150 euros par mois.\nL'augmentation est donc de 55 euros (4 150 - 4 095 ≈ 55, mais ajusté avec les données exactes : 4 150 - (4 15",
+    "agree_inclus": false,
+    "seconds": 46.9
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2114",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-004",
+   "answer": "Le niveau de vie médian annuel en euros courants a augmenté de 5,9 % en 2023 et de 3,8 % en 2024 par rapport à l'année précédente.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2063",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "Le niveau de vie médian annuel en euros courants a augmenté de **5,9 % en 2023** et de **3,8 % en 2024** par rapport à l'année précédente.\n\nSOURCES: [insee-ip2063 p.1], [insee-ip2117 p.1]",
+    "top_score": 0.99951171875,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "The annual median standard of living in euros courants rose from 25 760 euros in 2023 to 26 7",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 33.32
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2063",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-005",
+   "answer": "Le taux de croissance du PIB en 2023 a été révisé à +1,6 % lors de la publication de mai 2025, après une révision précédente à +1,4 % en mai 2024.\n\nÉcart entre les révisions : +0,2 point (de +1,4 % à +1,6 %).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2053",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    }
+   ],
+   "_meta": {
+    "raw": "Le taux de croissance du PIB en 2023 a été révisé à **+1,6 %** lors de la publication de mai 2025, après une révision précédente à **+1,4 %** en mai 2024.\n\nÉcart entre les révisions : **+0,2 point** (de +1,4 % à +1,6 %).\n\nSOURCES: [insee-ip2053 p.4], [insee-ip2105 p.4]",
+    "top_score": 0.71337890625,
+    "margin": 0.1435546875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "La première révision (mai 2024) a porté la croissance à +1,4 %, puis elle a été révisée à +1,6 % lors de la publication de mai 2025, soit une hausse cumulative de +0,2 point.",
+    "agree": true,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 34.66
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2058",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2097",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 53
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 122
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 54
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 190
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 182
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 188
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 192
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 184
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 180
+    }
+   ]
+  },
+  {
+   "qid": "val2-006",
+   "answer": "Les subventions d’exploitation devraient atteindre 8,0 milliards d’euros en 2025 selon l’Insee.\nLa PAC verse plus de 9 milliards d’euros de financements européens par an en France pour la période 2023-2027.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2116",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 14
+    }
+   ],
+   "_meta": {
+    "raw": "Les subventions d’exploitation devraient atteindre **8,0 milliards d’euros** en 2025 selon l’Insee.\nLa PAC verse plus de **9 milliards d’euros** de financements européens par an en France pour la période 2023-2027.\n\nSOURCES: [insee-ip2116 p.4], [cc-pac p.14]",
+    "top_score": 0.994140625,
+    "margin": -0.00341796875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Les exploitants agricoles devraient percevoir 8,0 milliards d'euros de subventions d’exploitation en 2025 selon l'Insee.\n\nRÉPONSE: La PAC verse plus de 9 milliards d'euros par an en financements européens en France pour la période 2023-2027.",
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 22.77
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 14
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-pac-synthese",
+     "page": 6
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 60
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-pac",
+     "page": 94
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val2-007",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.93017578125,
+    "margin": 0.02734375,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 4.66
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 17
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 21
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-008",
+   "answer": "69 % des grands établissements de 500 salariés ou plus disposent d’au moins un spécialiste entièrement dédié aux activités de protection de l’environnement en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2124",
+     "page": 4
+    }
+   ],
+   "_meta": {
+    "raw": "69 % des grands établissements de 500 salariés ou plus disposent d’au moins un spécialiste entièrement dédié aux activités de protection de l’environnement en 2024.\n\nSOURCES: [insee-ip2124 p.4]",
+    "top_score": 0.998046875,
+    "margin": 0.01708984375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Dans les grands établissements (500 salariés ou plus), 69 % ont au moins une personne entièrement dédiée aux activités de protection de l’environnement en 2024.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 15.73
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2124",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-009",
+   "answer": "L’IA a progressé significativement entre 2024 et 2025, avec une adoption en hausse de 8 points (passant de 10 % à 18 % des entreprises). Les constats suivants restent stables entre les deux années :\n- L’adoption de l’IA est bien plus marquée chez les grandes entreprises (250 salariés ou plus) que chez les petites.\n- Les secteurs comme l’information-communication restent les plus avancés, avec un taux d’usage élevé.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "L’IA a progressé significativement entre 2024 et 2025, avec une adoption en hausse de 8 points (passant de 10 % à 18 % des entreprises). Les constats suivants restent stables entre les deux années :\n- L’adoption de l’IA est bien plus marquée chez les grandes entreprises (250 salariés ou plus) que chez les petites.\n- Les secteurs comme l’information-communication restent les plus avancés, avec un taux d’usage élevé.\n\nSOURCES: [insee-ip2120 p.1], [insee-ip2120 p.2]",
+    "top_score": 0.99853515625,
+    "margin": 0.0009765625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Oui, l’IA a progressé entre 2024 et 2025, avec une hausse de 8 points (passant de 10 % à 18 % en 2025). Le taux d’adoption reste cependant inégal selon les secteurs et la taille des entreprises.\n\n\"Les entreprises qui déclarent mobiliser une technologie d’IA d’analyse de langage écrit représentent 27 % du total des effectifs salariés en 2024 et 48 % en 2025.\"\n\nRÉPONSE :\nLes deux enquêtes montrent que l’analyse de langage écrit via l’IA est une finalité majeure, avec une forte croissance : +21 points d’effectifs concernés entre 2024 et 2025.",
+    "agree": false,
+    "third": "Entre 2024 et 2025, l’IA n’a pas percé dans les entreprises françaises en termes de nombre de salariés ou de secteurs, car les chiffres restent stables ou progressent très lentement (ex. : 21 salariés en 2023 vs 33 en 2024, puis 58 en 2025 pour les entreprises de 250+ salariés).\n\nLes constats qui restent les mêmes entre 2023 et 2024 concernent les entreprises de 10 à 49 salariés : le nombre passe de 5 à 9, soit une progression de 4 unités, mais pas de constance absolue sur",
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "row_check": "Entre 2024 et 2025, l’IA n’a pas percé dans les entreprises françaises en termes de nombre de salariés ou de secteurs, car les chiffres restent stables ou progressent très lentement (ex. : 21 salariés en 2023 vs 33 en 2024, puis 58 en 2025 pour les entreprises de 250+ salariés).\n\nLes constats qui restent les mêmes entre 2023 et 2024 concernent les entreprises de 10 à 49 salariés : le nombre passe de 5 à 9, soit une progression de 4 unités, mais pas de constance absolue sur",
+    "agree_inclus": false,
+    "seconds": 44.78
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-010",
+   "answer": "En 2024, les prix de l’électricité, du gaz et des autres combustibles ont augmenté de 11,5 % (extrait 2025) et de 12,4 % en prix (extrait 2026). Le chiffre a été légèrement modifié : il est passé de 11,5 % à 12,4 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2056",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, les prix de l’électricité, du gaz et des autres combustibles ont augmenté de 11,5 % (extrait 2025) et de 12,4 % en prix (extrait 2026). Le chiffre a été légèrement modifié : il est passé de 11,5 % à 12,4 %.\n\nSOURCES: [insee-ip2056 p.1], [insee-ip2110 p.2]",
+    "top_score": 0.9990234375,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "En 2024, les dépenses des ménages en électricité, gaz et autres combustibles ont augmenté de 1,3 % en volume, mais les prix ont baissé de 3,0 % en 2025 (données récentes). Le chiffre de +1,3 % reste celui du bilan 2024, sans modification entre les publications 2025 et 2026.",
+    "agree": false,
+    "third": "INTROUVABLE",
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false,
+    "seconds": 44.4
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2056",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2095",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2095",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2095",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2038",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-011",
+   "answer": "L'indicateur synthétique mesurant les inégalités de niveau de vie en 2024 en métropole est de 19,7 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99853515625,
+    "margin": 0.01123046875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "rescue": {
+     "rows_answer": "L'indicateur synthétique mesurant les inégalités de niveau de vie en 2024 en métropole est de 19,7 %.",
+     "check": "INTROUVABLE",
+     "ok": false
+    },
+    "agree_inclus": true,
+    "row_check": "L'indicateur synthétique mesurant les inégalités de niveau de vie en 2024 en métropole est de 19,7 %.",
+    "seconds": 34.46
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2117",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-012",
+   "answer": "La croissance de la valeur de la production agricole hors subventions a été révisée à la hausse de 1,0 point (de 3,7 % à 4,7 %).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2086",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "La croissance de la valeur de la production agricole hors subventions a été révisée à la hausse de **1,0 point** (de 3,7 % à 4,7 %).\n\nSOURCES: [insee-ip2086 p.1], [insee-ip2116 p.2]",
+    "top_score": 0.99951171875,
+    "margin": 0.0,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "",
+    "agree": false,
+    "third": "La croissance de la valeur de la production agricole hors subventions a été révisée à la hausse de 1,0 point (de 3,7 % à 4,7 %).",
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "row_check": "La croissance de la valeur de la production agricole hors subventions a été révisée à la hausse de 1,0 point (de 3,7 % à 4,7 %).",
+    "agree_inclus": true,
+    "seconds": 34.15
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2086",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-013",
+   "answer": "Le salaire net moyen d’un fonctionnaire de catégorie C dans la fonction publique de l’État en 2024 est de 2 266 euros par mois en EQTP.\nSa rémunération a baissé de -2,6 % en euros constants.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "Le salaire net moyen d’un fonctionnaire de catégorie C dans la fonction publique de l’État en 2024 est de **2 266 euros** par mois en EQTP.\nSa rémunération a baissé de **-2,6 %** en euros constants.\n\nSOURCES: [insee-ip2100 p.3]",
+    "top_score": 0.994140625,
+    "margin": 0.01220703125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "En 2024, un fonctionnaire de catégorie C dans la fonction publique de l’État touche en moyenne 2 266 euros nets par mois. Sa rémunération n’a pas progressé en pouvoir d’achat, car elle a baissé de 2,6 %.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 22.91
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2067",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val2-014",
+   "answer": "Le déficit commercial de la France s'établit à -14,4 milliards d'euros en 2025.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "Le déficit commercial de la France s'établit à -14,4 milliards d'euros en 2025.\n\nSOURCES: [insee-ip2105 p.3]",
+    "top_score": 0.9765625,
+    "margin": 0.01806640625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Le déficit commercial de la France en 2025 s'élève à 14,4 milliards d'euros.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 18.08
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 156
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 42
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 16
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-015",
+   "answer": "En 2024, hors énergies renouvelables et économies d’énergie, les usines ont investi le plus dans la gestion des déchets dans le secteur de la métallurgie, avec plus d’un quart des montants (soit environ 84 millions d’euros en surcoût des équipements).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2124",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, hors énergies renouvelables et économies d’énergie, les usines ont investi le plus dans la **gestion des déchets** dans le secteur de la métallurgie, avec plus d’un quart des montants (soit environ 84 millions d’euros en surcoût des équipements).\n\nSOURCES: [insee-ip2124 p.3]",
+    "top_score": 0.98876953125,
+    "margin": 0.005859375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Hors énergies renouvelables et économies d’énergie, le recyclage des déchets a reçu le plus d’investissements en équipements antipollution en 2024, avec un montant de 39 millions d’euros (hors données précises dans les extraits, mais l’Insee cite une hausse de +58 % dans ce domaine).",
+    "agree": false,
+    "third": "En 2024, hors énergies renouvelables et économies d'énergie, l’enjeu environnemental le plus investi en équipements antipollution est l’industrie chimique et pharmaceutique avec un surcoût de 55 millions d'euros.",
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "row_check": "En 2024, hors énergies renouvelables et économies d'énergie, l’enjeu environnemental le plus investi en équipements antipollution est l’industrie chimique et pharmaceutique avec un surcoût de 55 millions d'euros.",
+    "agree_inclus": false,
+    "seconds": 28.66
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2124",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-016",
+   "answer": "En 2024, les usines de 20 salariés ou plus ont dépensé 3 500 millions d’euros pour réduire l’impact environnemental de leur activité.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2124",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, les usines de 20 salariés ou plus ont dépensé **3 500 millions d’euros** pour réduire l’impact environnemental de leur activité.\n\nSOURCES: [insee-ip2124 p.1]",
+    "top_score": 0.9921875,
+    "margin": 0.001953125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "En 2024, les usines de 20 salariés ou plus ont dépensé 3,5 milliards d'euros pour limiter leurs nuisances environnementales, incluant équipements et études.",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 18.32
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2124",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val2-017",
+   "answer": "La gouvernance de la planification écologique reste à consolider car le Secrétariat général à la planification écologique (SGPE) doit renforcer son rôle pour mieux piloter les arbitrages interministériels et assurer une articulation claire entre trajectoires physiques et financières, tout en améliorant la transparence des résultats et des écarts par rapport aux cibles fixées.\n\nLes Conferences des parties (COP) régionales du plan France Nation Verte, bien que favorisant la mobilisation locale, se sont parfois superposées à des démarches territoriales existantes sans permettre une évaluation claire de leur contribution à la transition écologique.",
+   "citations": [
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 35
+    }
+   ],
+   "_meta": {
+    "raw": "La gouvernance de la planification écologique reste à consolider car le **Secrétariat général à la planification écologique (SGPE)** doit renforcer son rôle pour mieux piloter les arbitrages interministériels et assurer une articulation claire entre trajectoires physiques et financières, tout en améliorant la transparence des résultats et des écarts par rapport aux cibles fixées.\n\nLes **Conferences des parties (COP) régionales** du plan France Nation Verte, bien que favorisant la mobilisation locale, se sont parfois superposées à des démarches territoriales existantes sans permettre une évaluation claire de leur contribution à la transition écologique.\n\nSOURCES: [cc-transition-ecologique p.61], [cc-transition-ecologique p.86], [cc-transition-ecologique-synthese p.35]",
+    "top_score": 0.998046875,
+    "margin": 0.0,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "La gouvernance reste fragile car le SGPE manque de moyens pour clarifier les arbitrages interministériels et aligner les trajectoires écologiques avec les financements, ce qui limite la transparence et l’efficacité des engagements nationaux.",
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 36.36
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 63
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 65
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 29
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 76
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 164
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 13
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 150
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 79
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 14
+    }
+   ]
+  },
+  {
+   "qid": "val2-018",
+   "answer": "Les femmes non salariées classiques gagnent en moyenne 3 620 euros par mois, contre 4 470 euros pour les hommes, soit un écart de 19 % en faveur des hommes.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2114",
+     "page": 4
+    }
+   ],
+   "_meta": {
+    "raw": "Les femmes non salariées classiques gagnent en moyenne **3 620 euros** par mois, contre **4 470 euros** pour les hommes, soit un écart de **19 %** en faveur des hommes.\nSOURCES: [insee-ip2114 p.4]",
+    "top_score": 0.98095703125,
+    "margin": 0.0234375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "En 2024, les indépendantes non salariées classiques gagnent en moyenne 3 620 € par mois, contre 4 470 € pour les indépendants, soit un écart de 19 %.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 22.15
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2114",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2096",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val2-019",
+   "answer": "En 2025, 80 % des entreprises utilisant l’IA optent pour l’achat de logiciels ou systèmes du commerce prêts à l’emploi.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "En 2025, 80 % des entreprises utilisant l’IA optent pour l’achat de logiciels ou systèmes du commerce prêts à l’emploi.\n\nSOURCES: [insee-ip2120 p.3]",
+    "top_score": 0.94384765625,
+    "margin": 0.21630859375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "En 2025, 80 % des entreprises utilisant l’IA achètent des solutions toutes faites.",
+    "agree": true,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 17.4
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2061",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-020",
+   "answer": "Parmi les personnes au chômage début 2022, 22,4 % des personnes de 16 ans ou plus ont vécu sous le seuil de pauvreté monétaire de manière continue de 2021 à 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2129",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "Parmi les personnes au chômage début 2022, **22,4 %** des personnes de 16 ans ou plus ont vécu sous le seuil de pauvreté monétaire de manière continue de 2021 à 2024.\n\nSOURCES: [insee-ip2129 p.3]",
+    "top_score": 0.99951171875,
+    "margin": 0.0,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "22,4 % des personnes au chômage début 2022 ont vécu sous le seuil de pauvreté chaque année de 2021 à 2024.",
+    "agree": false,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 20.75
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2129",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2044",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-021",
+   "answer": "Les loyers parisiens encadrés ont augmenté de 11,4 % en cumul entre juillet 2019 et juin 2025, alors qu’ils auraient augmenté de 17,2 % sans l’encadrement.",
+   "citations": [
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 84
+    }
+   ],
+   "_meta": {
+    "raw": "Les loyers parisiens encadrés ont augmenté de 11,4 % en cumul entre juillet 2019 et juin 2025, alors qu’ils auraient augmenté de 17,2 % sans l’encadrement.\n\nSOURCES: [cc-encadrement-loyers p.84]",
+    "top_score": 0.99560546875,
+    "margin": 0.20263671875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Sans l'encadrement, les loyers à Paris auraient augmenté de 17,2 % entre juillet 2019 et juin 2025, contre 11,4 % avec cette mesure.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 21.87
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 84
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 138
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 238
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 183
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 11
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 23
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 215
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 86
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 185
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 54
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 53
+    }
+   ]
+  },
+  {
+   "qid": "val2-022",
+   "answer": "En 2025, la technologie d’IA la plus peu utilisée en termes de part des salariés est le mouvement de machine basé sur l’observation des environs, avec 7 % des entreprises concernées.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2061",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "En 2025, la technologie d’IA la plus peu utilisée en termes de part des salariés est le mouvement de machine basé sur l’observation des environs, avec 7 % des entreprises concernées.\n\nSOURCES: [insee-ip2061 p.3]",
+    "top_score": 0.98095703125,
+    "margin": 0.005859375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Les technologies d’apprentissage automatique (machine learning) représentent la plus grande part des effectifs, mais parmi les technologies étudiées, l'usage des robots autonomes (mouvement physique des machines) touche la plus petite part des salariés, avec 7 % des entreprises déclarant les utiliser en 2025.",
+    "agree": null,
+    "third": "INTROUVABLE",
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false,
+    "seconds": 31.08
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-023",
+   "answer": "Le coût chargé des internes et docteurs juniors en médecine est estimé à 2 153 M€ en 2024, selon la Cour des comptes.\nDans l’Insee, les dépenses de santé dans les services hospitaliers publics atteignent 109 Md€ en 2024, soit un poids de 6,4 % (calcul : 2 153 / 109 000).",
+   "citations": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 138
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "Le coût chargé des internes et docteurs juniors en médecine est estimé à **2 153 M€** en 2024, selon la Cour des comptes.\nDans l’Insee, les dépenses de santé dans les services hospitaliers publics atteignent **109 Md€** en 2024, soit un poids de **6,4 %** (calcul : 2 153 / 109 000).\n\nSOURCES: [cc-3e-cycle-medecine p.138], [insee-ip2093 p.3]",
+    "top_score": 0.97998046875,
+    "margin": 0.4677734375,
+    "llm_abstain": false,
+    "unsupported": 2,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 31.3
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 138
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 83
+    },
+    {
+     "doc_id": "insee-ip2093",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 81
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 84
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 89
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 82
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 140
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 218
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 90
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 176
+    }
+   ]
+  },
+  {
+   "qid": "val2-024",
+   "answer": "Les recettes des administrations publiques locales (collectivités territoriales et ODAL) ont atteint 202,5 Md€ en 2025, soit une progression de +5,9 Md€ (+2,3 % hors syndicats) par rapport à 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2106",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "Les recettes des administrations publiques locales (collectivités territoriales et ODAL) ont atteint **202,5 Md€** en 2025, soit une progression de **+5,9 Md€** (+2,3 % hors syndicats) par rapport à 2024.\n\nSOURCES: [insee-ip2106 p.1], [cc-finances-locales-2026-synthese p.4]",
+    "top_score": 0.98779296875,
+    "margin": 0.005859375,
+    "llm_abstain": false,
+    "unsupported": 2,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Les recettes des administrations publiques locales (collectivités + ODAL) ont totalisé 1 000 Md€ en 2025 (chiffre non explicitement donné, mais calculé à partir du ratio de 43,6 % du PIB, soit 1 000 Md€ × 43,6 % = ~436 Md€ pour l’ensemble des APU, et en déduisant les autres secteurs déficitaires comme l’État ou la Sécurité sociale). La progression sur un an est de +3,9 %.",
+    "agree": false,
+    "third": "Les administrations publiques locales ont encaissé 319,9 milliards d'euros en 2025, avec une progression de +2,3 % sur un an.",
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "row_check": "Les administrations publiques locales ont encaissé 319,9 milliards d'euros en 2025, avec une progression de +2,3 % sur un an.",
+    "agree_inclus": false,
+    "seconds": 42.22
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 24
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 23
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 59
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 138
+    },
+    {
+     "doc_id": "cc-finances-locales-2026-synthese",
+     "page": 5
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 31
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 47
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 27
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 61
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 41
+    }
+   ]
+  },
+  {
+   "qid": "val2-025",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.91796875,
+    "margin": 0.04443359375,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 7.02
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2081",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 81
+    },
+    {
+     "doc_id": "insee-ip2054",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 110
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 60
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "val2-026",
+   "answer": "En 2024, les achats de matériels entièrement dédiés à la protection de l’environnement ont représenté le poste dominant des dépenses, avec 3 529 millions d’euros.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2124",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, les achats de matériels entièrement dédiés à la protection de l’environnement ont représenté le poste dominant des dépenses, avec **3 529 millions d’euros**.\n\nSOURCES: [insee-ip2124 p.2]",
+    "top_score": 0.4208984375,
+    "margin": 0.228515625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "En 2024, les énergies renouvelables représentent le poste dominant des investissements verts, avec 812 millions d'euros dépensés par les établissements industriels français.",
+    "agree": false,
+    "third": "Le poste \"Énergie\" a pris la tête des dépenses d'équipements verts avec un investissement total de 813 millions d'euros.",
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "row_check": "Le poste \"Énergie\" a pris la tête des dépenses d'équipements verts avec un investissement total de 813 millions d'euros.",
+    "agree_inclus": false,
+    "seconds": 21.79
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2124",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-recherche-entreprises",
+     "page": 25
+    },
+    {
+     "doc_id": "insee-ip2042",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-027",
+   "answer": "54 % des entreprises de 250 salariés ou plus ne utilisant pas l’IA évoquent des difficultés liées aux données nécessaires en 2025.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 4
+    }
+   ],
+   "_meta": {
+    "raw": "54 % des entreprises de 250 salariés ou plus ne utilisant pas l’IA évoquent des difficultés liées aux données nécessaires en 2025.\n\nSOURCES: [insee-ip2120 p.4]",
+    "top_score": 0.99267578125,
+    "margin": 0.00341796875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Parmi les entreprises de 250 salariés ou plus ne utilisant pas l’IA, environ 43 % citent les inquiétudes concernant la violation des données comme frein principal.",
+    "agree": false,
+    "third": "INTROUVABLE",
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false,
+    "seconds": 25.62
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "val2-028",
+   "answer": "La Cour des comptes propose notamment de renforcer la fiabilisation des données pour le calcul des loyers de référence, d’améliorer la cohérence des catégories réglementaires, de renforcer la transparence et l’homogénéité des méthodes, de clarifier le cadre juridique, et de simplifier les voies de recours pour les locataires.",
+   "citations": [
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 96
+    }
+   ],
+   "_meta": {
+    "raw": "La Cour des comptes propose notamment de renforcer la **fiabilisation des données** pour le calcul des loyers de référence, d’améliorer la **cohérence des catégories réglementaires**, de renforcer la **transparence et l’homogénéité des méthodes**, de clarifier le **cadre juridique**, et de simplifier les **voies de recours** pour les locataires.\n\nSOURCES: [cc-encadrement-loyers p.96]",
+    "top_score": 0.98779296875,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "La Cour propose de renforcer la fiabilisation des données pour les loyers de référence, d’améliorer la cohérence des catégories réglementaires et de clarifier le cadre juridique, tout en simplifiant les recours pour les locataires.",
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 24.8
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 88
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 96
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 15
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 6
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 89
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 40
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 91
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 26
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 100
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 24
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 174
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 183
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 95
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 93
+    }
+   ]
+  },
+  {
+   "qid": "val2-029",
+   "answer": "La Cour préconise d’offrir un nombre de terrains de stages strictement égal au nombre d’internes à partir de la campagne d’ouverture des stages de novembre 2027.",
+   "citations": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 117
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 12
+    }
+   ],
+   "_meta": {
+    "raw": "La Cour préconise d’offrir un nombre de terrains de stages strictement égal au nombre d’internes à partir de la campagne d’ouverture des stages de **novembre 2027**.\n\nSOURCES: [cc-3e-cycle-medecine p.117] [cc-3e-cycle-medecine p.12]",
+    "top_score": 0.99853515625,
+    "margin": 0.0029296875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "La Cour préconise d’offrir un nombre de terrains de stages strictement égal au nombre d’internes à partir de la campagne d’ouverture des stages de novembre 2027.",
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 19.4
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 117
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 12
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 112
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 105
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 31
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 110
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 114
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 103
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 107
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 100
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 108
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 102
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 30
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 99
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 15
+    }
+   ]
+  },
+  {
+   "qid": "val2-030",
+   "answer": "Le recul en valeur de la production agricole hors subventions en 2024 est passé de -8,8 % en 2024 à +4,7 % en 2025 (écart de 13,5 %).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "Le recul en valeur de la production agricole hors subventions en 2024 est passé de **-8,8 %** en 2024 à **+4,7 %** en 2025 (écart de 13,5 %).\n\nSOURCES: [insee-ip2062 p.2], [insee-ip2116 p.2]",
+    "top_score": 0.99951171875,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "L’Insee n’a pas corrigé l’ampleur du recul en valeur de la production agricole hors subventions pour 2024 dans son compte provisoire de 2025, car le recul reste à 8,8 % (contre 15 % pour la valeur ajoutée brute, qui diffère d’un poste distinct).",
+    "agree": false,
+    "third": "La valeur de la production hors subventions sur les produits en 2024 est passée de -8,8 % à -8,7 % entre les éditions 2024 et 2025 du compte provisoire de l’agriculture.",
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "row_check": "La valeur de la production hors subventions sur les produits en 2024 est passée de -8,8 % à -8,7 % entre les éditions 2024 et 2025 du compte provisoire de l’agriculture.",
+    "agree_inclus": false,
+    "seconds": 33.04
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2086",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-031",
+   "answer": "En 2024, les agents de l'État âgés de 60 ans et plus touchent en moyenne 3 657 euros par mois, net et en équivalent temps plein.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, les agents de l'État âgés de 60 ans et plus touchent en moyenne **3 657 euros** par mois, net et en équivalent temps plein.\n\nSOURCES: [insee-ip2100 p.3]",
+    "top_score": 0.99951171875,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": "En 2024, le salaire net moyen par mois pour les agents de l'État âgés de 60 ans et plus est de 3 657 euros en équivalent temps plein.",
+    "n_context": 6,
+    "n_tables": 2,
+    "n_charts": 0,
+    "row_check": "En 2024, le salaire net moyen par mois pour les agents de l'État âgés de 60 ans et plus est de 3 657 euros en équivalent temps plein.",
+    "agree_inclus": true,
+    "seconds": 17.68
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-032",
+   "answer": "En 2025, le taux d’adoption de l’IA dans le secteur du commerce est de 13 % en France et de 19 % dans l’Union européenne.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "En 2025, le taux d’adoption de l’IA dans le secteur du commerce est de 13 % en France et de 19 % dans l’Union européenne.\n\nSOURCES: [insee-ip2120 p.2], [insee-ip2120 p.1]",
+    "top_score": 0.9990234375,
+    "margin": 0.00341796875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": "En 2025, le taux d’adoption des commerçants français est de 13 %, contre 19 % pour les commerçants européens.",
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "row_check": "En 2025, le taux d’adoption des commerçants français est de 13 %, contre 19 % pour les commerçants européens.",
+    "agree_inclus": true,
+    "seconds": 29.14
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2120",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2061",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2120",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "val2-033",
+   "answer": "En 2026, 11,4 % des bénéficiaires des aides à la décarbonation sont exposés à un risque significatif de retrait-gonflement des argiles.",
+   "citations": [
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 181
+    }
+   ],
+   "_meta": {
+    "raw": "En 2026, 11,4 % des bénéficiaires des aides à la décarbonation sont exposés à un risque significatif de retrait-gonflement des argiles.\nSOURCES: [cc-transition-ecologique p.181]",
+    "top_score": 0.96435546875,
+    "margin": 0.0009765625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "En 2026, 93 % des entreprises énergétiques aidées par l'ADEME sont exposées au retrait-gonflement des argiles, contre 26,9 % pour l'ensemble des entreprises.",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 29.05
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 181
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 180
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 143
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 183
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 142
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 182
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 184
+    },
+    {
+     "doc_id": "insee-ip2071",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-transition-ecologique-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 163
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 25
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 138
+    }
+   ]
+  },
+  {
+   "qid": "val2-034",
+   "answer": "Le salaire net moyen en équivalent temps plein (EQTP) pour les personnels médicaux (médecins, odontologistes et pharmaciens) est de 6 926 euros par mois en 2024, et leur pouvoir d’achat a diminué de 0,3 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2102",
+     "page": 4
+    }
+   ],
+   "_meta": {
+    "raw": "Le salaire net moyen en équivalent temps plein (EQTP) pour les personnels médicaux (médecins, odontologistes et pharmaciens) est de **6 926 euros par mois en 2024**, et leur pouvoir d’achat a diminué de **0,3 %**.\n\nSOURCES: [insee-ip2102 p.2]",
+    "top_score": 0.91357421875,
+    "margin": 0.04443359375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "The average monthly net full-time-equivalent salary for medical personnel (doctors, pharmacists, and dentists) in public hospitals is 6 926 euros in 2024. Their purchasing power has slightly decreased by 0.3% in euros constants.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 24.6
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2102",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-035",
+   "answer": "Depuis le Covid, les émissions des activités économiques (hors ménages) ont reculé en 2020 (-12 %), puis augmenté en 2021 (+12 %), avant de diminuer à nouveau en 2022 (-8 %), 2023 (-6 %), et 2024 (-1,1 %), puis une légère hausse projetée en 2025 (+0,8 %). La seule hausse après 2020 s’est produite en 2021.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "Depuis le Covid, les émissions des activités économiques (hors ménages) ont reculé en 2020 (-12 %), puis augmenté en 2021 (+12 %), avant de diminuer à nouveau en 2022 (-8 %), 2023 (-6 %), et 2024 (-1,1 %), puis une légère hausse projetée en 2025 (+0,8 %). La seule hausse après 2020 s’est produite en 2021.\n\nSOURCES: [insee-ip2130 p.2], [insee-ip2077 p.2]",
+    "top_score": 0.9794921875,
+    "margin": 0.00439453125,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Oui, les émissions des activités économiques (hors ménages) ont augmenté une seule fois depuis 2020, en 2021 (+6,0 %), après une chute de -10,3 % en 2020.",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 27.44
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-036",
+   "answer": "En 2023-2024, 19 % des étudiants en neuvième année de troisième cycle de médecine ont redoublé cette année-là.",
+   "citations": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 46
+    }
+   ],
+   "_meta": {
+    "raw": "En 2023-2024, 19 % des étudiants en neuvième année de troisième cycle de médecine ont redoublé cette année-là.\n\nSOURCES: [cc-3e-cycle-medecine p.46]",
+    "top_score": 0.89404296875,
+    "margin": 0.06982421875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "In the 2023-2024 academic year, 19% of medical students in their ninth year had to repeat that year.",
+    "agree": true,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 16.51
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 46
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 43
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 35
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 68
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 95
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 73
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 14
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 128
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 17
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 59
+    }
+   ]
+  },
+  {
+   "qid": "val2-037",
+   "answer": "Le taux d'épargne des ménages pour 2024 était de 18,2 % dans les comptes de la Nation 2024 (Insee-ip2056 p.4).\nDans les comptes de la Nation 2025 (Insee-ip2110 p.4), il est retenti à 17,9 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2056",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 4
+    }
+   ],
+   "_meta": {
+    "raw": "Le taux d'épargne des ménages pour 2024 était de **18,2 %** dans les comptes de la Nation 2024 (Insee-ip2056 p.4).\nDans les comptes de la Nation 2025 (Insee-ip2110 p.4), il est retenti à **17,9 %**.\n\nSOURCES: [insee-ip2056 p.4], [insee-ip2110 p.4]",
+    "top_score": 0.99951171875,
+    "margin": 0.0009765625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "En 2024, l'Insee indique un taux d'épargne des ménages de 18,2 % dans les comptes de la Nation 2024 (Insee, IP2056 p.4).\nDans les comptes de 2025, il est précisé que ce taux était de 18,5 % en 2024 (Insee, IP2110 p.4).",
+    "agree": false,
+    "third": "Le taux d'épargne des ménages pour 2024 était annoncé à 18,5 % dans les comptes de la Nation 2024, et il est retendu à 17,9 % pour cette même année dans ceux de 2025.",
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "row_check": "Le taux d'épargne des ménages pour 2024 était annoncé à 18,5 % dans les comptes de la Nation 2024, et il est retendu à 17,9 % pour cette même année dans ceux de 2025.",
+    "agree_inclus": false,
+    "seconds": 34.68
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2110",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-retraites-fonctionnaires-etat",
+     "page": 88
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-finances-locales-2026",
+     "page": 62
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2056",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-038",
+   "answer": "En euros constants, le pouvoir d'achat du salaire net médian des agents de la FPT a reculé de 0,8 % en 2023, puis progressé de 1,4 % en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "En euros constants, le pouvoir d'achat du salaire net médian des agents de la FPT a reculé de 0,8 % en 2023, puis progressé de 1,4 % en 2024.\n\nSOURCES: [insee-ip2066 p.2], [insee-ip2101 p.2]",
+    "top_score": 0.93798828125,
+    "margin": 0.574951171875,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Entre 2022 et 2023, le pouvoir d'achat du salaire net moyen des agents territoriaux en place a baissé de 0,2 %, tandis qu'il a augmenté de 3,9 % entre 2023 et 2024.",
+    "agree": false,
+    "third": "INTROUVABLE",
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false,
+    "seconds": 28.21
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2066",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-039",
+   "answer": "Le taux de pauvreté des retraités est passé de 10,8 % en 2022 à 11,1 % en 2023, puis à 10,4 % en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "Le taux de pauvreté des retraités est passé de **10,8 % en 2022** à **11,1 % en 2023**, puis à **10,4 % en 2024**.\n\nSOURCES: [insee-ip2063 p.3], [insee-ip2117 p.1]",
+    "top_score": 0.89599609375,
+    "margin": 0.1201171875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": "Le taux de pauvreté chez les retraités a augmenté de 10,8 % en 2022 à 11,1 % en 2023.\nPour les trois dernières années disponibles, les taux sont : 14,4 % en 2022, 15,4 % en 2023 et 13,7 % en 2016.",
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "row_check": "Le taux de pauvreté chez les retraités a augmenté de 10,8 % en 2022 à 11,1 % en 2023.\nPour les trois dernières années disponibles, les taux sont : 14,4 % en 2022, 15,4 % en 2023 et 13,7 % en 2016.",
+    "agree_inclus": false,
+    "seconds": 35.23
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "val2-040",
+   "answer": "En 2024, le revenu mensuel moyen des non-salariés dans le secteur architecture, ingénierie est de 4 070 euros.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2114",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.8369140625,
+    "margin": 0.12841796875,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 2,
+    "n_charts": 0,
+    "rescue": {
+     "rows_answer": "En 2024, le revenu mensuel moyen des non-salariés dans le secteur architecture, ingénierie est de 4 070 euros.",
+     "check": "INTROUVABLE",
+     "ok": false
+    },
+    "agree_inclus": true,
+    "row_check": "En 2024, le revenu mensuel moyen des non-salariés dans le secteur architecture, ingénierie est de 4 070 euros.",
+    "seconds": 12.04
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2114",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2079",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2114",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2060",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2118",
+     "page": 4
+    }
+   ]
+  }
+ ]
+}

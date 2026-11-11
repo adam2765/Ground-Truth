@@ -1,0 +1,43 @@
+=== [0 min] setup.sh (réseau) ===
+  -> 2 min 25 s
+=== [2 min] run.sh index (v1, limite 2 h) ===
+  -> 18 min 22 s
+   insee-ip2033 -> ['insee-ip2108']
+   insee-ip2037 -> ['insee-ip2092']
+   insee-ip2038 -> ['insee-ip2095']
+   insee-ip2045 -> ['insee-ip2097']
+   insee-ip2051 -> ['insee-ip2107']
+   insee-ip2052 -> ['insee-ip2094']
+=== [21 min] run.sh update (v2, limite 20 min) ===
+  -> 4 min 21 s
+   insee-ip2033 -> ['insee-ip2108']
+   insee-ip2037 -> ['insee-ip2092']
+   insee-ip2038 -> ['insee-ip2095']
+   insee-ip2045 -> ['insee-ip2097']
+   insee-ip2051 -> ['insee-ip2107']
+   insee-ip2052 -> ['insee-ip2094']
+   insee-ip2053 -> ['insee-ip2105']
+   insee-ip2054 -> ['insee-ip2106']
+   insee-ip2056 -> ['insee-ip2110']
+   insee-ip2060 -> ['insee-ip2114']
+   insee-ip2062 -> ['insee-ip2116']
+   insee-ip2065 -> ['insee-ip2100', 'insee-ip2101', 'insee-ip2102']
+   insee-ip2066 -> ['insee-ip2100', 'insee-ip2101']
+   insee-ip2067 -> ['insee-ip2100', 'insee-ip2102']
+   insee-ip2071 -> ['insee-ip2124']
+   insee-ip2077 -> ['insee-ip2130']
+   insee-ip2086 -> ['insee-ip2116']
+=== [25 min] run.sh answer : validation v1 ===
+100 réponses, 57 INTROUVABLE (57%) -> runs/val_v1.json
+  -> 32 min 47 s
+  -> 19.7 s/question tout compris (recherche + génération + abstention)
+VALIDATION v1 : score 0.42 (brut 0.23 ) {'juste + citation': 31, 'réponse fausse': 10, 'abstention': 36, 'abstention juste': 21, 'hallucination (piège)': 1, 'prémisse corrigée': 1}
+  par type : {'graphique': -0.1667, 'multi-doc': 0.0, 'piege': 0.913, 'scan': 0.1111, 'synthese': 0.125, 'tableau': 0.4118, 'texte': 0.5385}
+=== [61 min] run.sh answer : validation v2 ===
+40 réponses, 20 INTROUVABLE (50%) -> runs/val_v2.json
+  -> 19 min 2 s
+  -> 28.6 s/question tout compris (recherche + génération + abstention)
+VALIDATION v2 : score 0.2375 (brut 0.05 ) {'réponse fausse': 5, 'abstention': 20, 'juste + citation': 14, 'juste, citation invalide': 1}
+  par type : {'graphique': 0.0, 'multi-doc': 0.2857, 'synthese': 0.0, 'tableau': 0.6667, 'temporel': 0.125, 'texte': 0.25}
+temps de génération : 20.2 s/question (max 47 s), limite 30 s tout compris
+journal du générateur : 296 appels, 140 questions, max 3 appels/question (limite 4)

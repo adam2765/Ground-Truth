@@ -206,7 +206,8 @@ def search_multi(retriever: "Retriever", question: str, mode: str = "hybrid_rera
 
 
 def add_newer_editions(r: "Retriever", query: str, hits: list[dict], docs: dict, top_hits: int = 5,
-                       max_add: int = 2, min_score: float = 0.3, drop_old: bool = True) -> list[dict]:
+                       max_add: int = 2, min_score: float = 0.3, drop_old: bool = True,
+                       year_keep: bool = False) -> list[dict]:
     """Palier 3 (graphe des éditions) : si un des meilleurs extraits vient d'un document dont une édition plus
     récente est dans l'index, on ajoute juste après lui le meilleur extrait de cette édition récente (choisi par
     le cross-encoder parmi ses 5 chunks les plus proches en embeddings). Le modèle voit ainsi les deux dates et
@@ -236,6 +237,10 @@ def add_newer_editions(r: "Retriever", query: str, hits: list[dict], docs: dict,
             present.add(nd)
             added += 1
             replaced.add(r.chunks[h["idx"]]["doc_id"])
+    if year_keep and _YEAR.search(query) and not _RECENT.search(query):
+        # Question datée sans « dernier / plus récent » (« en 2023, combien… ») : l'édition remplacée est souvent
+        # la seule à donner cette année-là (l'édition 2026 donne 2024). On la garde, à côté de l'édition récente.
+        drop_old = False
     if replaced and drop_old and not _EVOLUTION.search(query):
         # VersionRAG (2025) : pour une question sur le contenu (pas sur une évolution d'une édition à l'autre),
         # seule l'édition la plus récente fait foi -> on retire les extraits des éditions remplacées, pour que le
@@ -248,6 +253,10 @@ _EVOLUTION = re.compile(
     r"évolu|révis|revu|d['’]une édition|édition précédente|précédent|successi|initial|auparavant|annonçait|"
     r"puis |depuis|entre .* et|changé|changer|revised|previous|earlier|initially|successive|trace|changed|since|"
     r"first estimate|from .* to", re.I)
+
+
+_YEAR = re.compile(r"\b(?:19|20)\d\d\b")
+_RECENT = re.compile(r"derni|plus récent|actuel|aujourd|latest|most recent|current|now\b", re.I)
 
 
 _EN_WORDS = re.compile(r"\b(the|what|which|how|many|much|in|of|did|does|was|were|is|are|according|between)\b", re.I)
