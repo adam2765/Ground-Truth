@@ -194,7 +194,9 @@ def cmd_generate(args):
     qs = load_questions(args.questions)
     import rag2.answer as answer_mod
     from rag2 import docmeta
-    answer_mod.DOC_DATES.update({d: v["date"] for d, v in docmeta.load(args.index_dir).items() if v.get("date")})
+    meta = docmeta.load(args.index_dir)
+    answer_mod.DOC_DATES.update({d: v["date"] for d, v in meta.items() if v.get("date")})
+    answer_mod.DOC_EDITIONS.update({d: set(v.get("newer", [])) | set(v.get("older", [])) for d, v in meta.items()})
     tables = None
     if VARIANTS[args.variant].get("tables"):
         from rag2.tables import load

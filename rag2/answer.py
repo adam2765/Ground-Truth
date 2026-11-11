@@ -97,6 +97,10 @@ VARIANTS = {
     # réponse fausse contenait un calcul (93 % au lieu de 95 %).
     "duoXRS": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2, "second_no_tables": True,
                "row_check": 4, "rescue": 6, "translate": False},
+    # 12/11 : duoXRS, mais dates et consigne temporelle seulement si deux éditions sont dans le contexte ou si la
+    # question porte sur une évolution (rag2/answer.py, temporal_needed)
+    "duoXRSt": {"system": "plain", "chunks": 5, "second": "quote", "key_lines": 3, "tables": 2,
+                "second_no_tables": True, "row_check": 4, "rescue": 6, "translate": False, "temporal_auto": True},
     # run 14 : duoXRS + descriptions des graphiques (rag2/charts_vlm.py). La 1re réponse lit la description de
     # Qwen3-VL-2B, la 2e celle de Qwen3-VL-4B : deux lectures du graphique par deux modèles différents, pour que
     # la concordance puisse confirmer une valeur qui n'existe que sur le graphique.
@@ -158,10 +162,29 @@ VERIFY_SYSTEM = (
 
 
 DOC_DATES: dict[str, str] = {}      # doc_id -> date de publication (rag2/docmeta.py), rempli par le pipeline
+DOC_EDITIONS: dict[str, set] = {}   # doc_id -> autres éditions du même document (graphe des éditions)
+_TEMPORAL = {"on": True}            # dates + consigne « la plus récente fait foi » pour la question en cours
+
+_TEMPORAL_RULES = (
+    "\n- Si deux extraits de dates différentes donnent des chiffres différents pour la même chose, la publication "
+    "la plus récente fait foi : donne son chiffre.",
+    "\nSi deux extraits de dates différentes donnent des chiffres différents pour la même chose, la publication la plus "
+    "récente fait foi.")
+
+
+def temporal_needed(question: str, docs: list[str]) -> bool:
+    """Palier 3, variante « temporal auto » : les dates et la consigne temporelle ne servent que si deux éditions
+    d'un même document sont dans le contexte, ou si la question porte sur une évolution / la donnée la plus
+    récente. Ailleurs, elles font hésiter le modèle (v1 : +0,525 au palier 2 -> +0,475 avec)."""
+    from rag2.search import _EVOLUTION, _RECENT
+    if _EVOLUTION.search(question) or _RECENT.search(question):
+        return True
+    ds = set(docs)
+    return any(DOC_EDITIONS.get(d, set()) & ds for d in ds)
 
 
 def format_extract(c: dict) -> str:
-    date = DOC_DATES.get(c["doc_id"])
+    date = DOC_DATES.get(c["doc_id"]) if _TEMPORAL["on"] else None
     head = f"[{c['doc_id']} p.{c['page']}]" + (f" (publié le {date})" if date else "")
     return f"{head}\n{c['body']}"
 
@@ -188,6 +211,9 @@ def build_messages(question: str, extracts: list[str], system: str = "plain", li
                 + "\n".join(f"[{x['doc_id']} p.{x['page']}] {x['text']}" for x in lines) + "\n\n")
     user = head + "Extraits :\n\n" + "\n\n".join(extracts) + f"\n\nQuestion : {question}"
     sys_prompt = SYSTEM_QUOTE if system == "quote" else SYSTEM
+    if not _TEMPORAL["on"]:
+        for rule in _TEMPORAL_RULES:
+            sys_prompt = sys_prompt.replace(rule, "")
     if is_english(question):
         sys_prompt += EN_RULE
     if table_hint:                                     # inséré avant la ligne « SOURCES » des consignes
@@ -484,6 +510,7 @@ def answer_one(gen, q: dict, chunks: list[dict], hits: list[dict], do_verify: bo
         q_en = q["question"]
         q = dict(q, question=translate_question(gen, q_en))
     cand = [chunks[h["idx"]] for h in hits]
+    _TEMPORAL["on"] = (not cfg.get("temporal_auto")) or temporal_needed(q["question"], [c["doc_id"] for c in cand])
     picked = diversify(cand, [h.get("score") for h in hits], cfg["chunks"])
     n_max = cfg["chunks"]
     if cfg.get("tables") and tables:
