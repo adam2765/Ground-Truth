@@ -247,3 +247,104 @@ Résultat du run 5 (`results/run5/`) : le vote à 3 fait **moins bien** que la c
 Le 3e appel (utilisé sur 47 questions) récupère surtout des réponses fausses. Temps de génération mesuré
 sur T4 : 17,7 s par question en moyenne (max 41 s) avec 3 appels, sous la limite de 30 s. La configuration
 retenue reste duo + concordance par inclusion (soumission du 28/10).
+
+### Run 6 : tableaux structurés et recherche par sous-question
+
+Cause n° 1 des réponses fausses : la mauvaise case d'un tableau. Le texte d'une rangée (« Europe du Sud | 11 | 11 |
+16 ») ne dit pas à quelle colonne appartient chaque valeur. `rag2/tables.py` relit les tableaux des PDF
+(`find_tables` + position des mots) et réécrit chaque rangée avec l'en-tête devant chaque valeur :
+« Europe du Sud | 2014 : 16 ». Les tableaux des pages du contexte sont ajoutés au prompt. Recherche par
+sous-question (`search_multi`) : une question en plusieurs parties (« en 2023, puis en 2024 ») est découpée et
+chaque partie a sa propre recherche.
+
+| Variante (`results/run6/`) | Validation | |
+|---|---|---|
+| référence (run 4b) | +0,465 | |
+| T : tableaux structurés dans les deux lectures | +0,435 | |
+| TS : T + recherche par sous-question | +0,445 | |
+
+**Moins bien que la référence**, et l'analyse dit pourquoi : les deux lectures lisaient la même version du
+tableau et se trompaient ensemble, donc la concordance laissait passer leurs erreurs (le même piège que les
+descriptions de graphiques du run 4).
+
+### Run 7 : deux lectures sur deux contextes différents (`duoX`)
+
+1re lecture avec les tableaux structurés, 2e lecture sans. Les erreurs des deux lectures coïncident moins, et la
+concordance redevient un bon filtre. Validation **+0,475** (`results/run7/`), soumission 2026-10-28_2.
+
+### Run 8 : autres présentations des tableaux
+
+| Variante (`results/run8/`) | Validation |
+|---|---|
+| duoXH : consigne de lecture (rangée puis colonne) | +0,470 |
+| duoC : 2e lecture avec les tableaux présentés colonne par colonne | +0,465 |
+
+Pas mieux que duoX (+0,475) : écarts dans le bruit, non retenus.
+
+### Run 9 : 3e appel ciblé sur les rangées (`duoXR`)
+
+Quand les deux lectures divergent et qu'un tableau est en jeu, un 3e appel repose la question avec seulement les
+4 rangées que le reranker juge les plus proches, chacune avec ses en-têtes. Si la réponse confirme la 1re lecture,
+la concordance est rétablie. Validation **+0,485** ; en dispensant ces réponses confirmées du filtre « chiffre
+absent des extraits » (le chiffre est dans la rangée structurée, pas toujours dans l'extrait brut) : **+0,505**
+(`results/run9/`, soumissions 2026-10-29_1 et _2).
+
+### Runs 10 et 11 : deux généralisations qui ne marchent pas
+
+- Run 10 : le 3e appel ciblé étendu aux phrases (pas seulement aux rangées de tableau) : +0,445. Sur 7
+  confirmations, 6 réponses fausses : hors tableau, le modèle « confirme » sa propre erreur.
+- Run 11 : la 2e lecture sur les 3 meilleures pages entières au lieu des extraits (deux découpages différents) :
+  +0,45. Probablement parce que 3 pages entières diluent l'information utile dans les 4 096 tokens.
+
+### Run 12 : repêchage (`duoXRS`)
+
+Quand le modèle répond INTROUVABLE alors qu'un tableau est dans le contexte, on repose la question sur les
+rangées. La réponse est gardée si la 2e lecture la confirme, ou si elle ne contient aucun chiffre absent des
+rangées (pas de calcul) : 2 réponses justes sur 2 dans ce cas sur la validation ; la seule fausse contenait un
+calcul. Validation **+0,525** (estimation : les 2 réponses repêchées ont été vérifiées à la main, pas repassées au
+juge). Soumission 2026-10-30_1. **C'est la configuration de fin de palier 2.**
+
+### Run 13 : vérificateur NLI indépendant (rejeté)
+
+mDeBERTa-v3 (XNLI) note si les extraits impliquent la réponse. Aucun seuil n'améliore la validation (+0,525 →
++0,485 au mieux) : les 3 réponses fausses restantes ont des scores d'implication de 0,26 / 0,74 / 0,95,
+impossibles à séparer des justes (`results/run13/`).
+
+### Vision : sondes et run 14 (rejeté)
+
+Sondes sur les 7 premières questions « graphique » (`results/vision/`) : Qwen2.5-VL-3B 1/7, Qwen2.5-VL-7B 3/7,
+Qwen3-VL-8B 4/7 (35 à 55 s par page en 4 bits), Granite 4.0 3B Vision 1/7. Sur les graphiques **découpés**
+(`rag2/chart_crops.py`), Qwen3-VL-8B lit 6 valeurs sur 6.
+
+Run 14 : les 874 graphiques découpés décrits par Qwen3-VL-2B (lecture A) et Qwen3-VL-4B (lecture B), deux modèles
+pour que la concordance puisse confirmer une valeur dessinée. Score brut **+0,31** (le meilleur), graphiques
+−0,375 → −0,08 ; mais après abstention +0,50 contre +0,525 : les descriptions ajoutées perturbent des questions
+sans graphique, et une réponse juste (val1-060, 28 %) est notée fausse par le juge. 107 min de description sur un
+T4, trop pour les 2 h d'indexation. Non retenu (`results/run14/`).
+
+## 5. Récapitulatif du palier 2
+
+| Run | Changement | Validation v1 | Retenu |
+|---|---|---|---|
+| 1 | hybride + reranker, 1 appel | +0,28 | oui |
+| 2 | réponse courte, 5 extraits, réponses hésitantes → INTROUVABLE | +0,355 | oui |
+| 3 | concordance de deux lectures | +0,425 | oui |
+| 4 | descriptions de graphiques (Qwen2.5-VL-3B) | +0,37 | non |
+| 4b | concordance par inclusion | +0,465 | oui |
+| 5 | vote à 3 | +0,455 | non |
+| 6 | tableaux structurés dans les deux lectures | +0,445 | non |
+| 7 | tableaux dans la 1re lecture seulement (duoX) | +0,475 | oui |
+| 8 | consignes / présentation des tableaux | +0,470 | non |
+| 9 | 3e appel ciblé sur les rangées + dispense | +0,505 | oui |
+| 10 | 3e appel généralisé aux phrases | +0,445 | non |
+| 11 | 2e lecture sur pages entières | +0,45 | non |
+| 12 | repêchage des INTROUVABLE sur tableau | **+0,525** | oui |
+| 13 | vérificateur NLI | +0,485 | non |
+| 14 | graphiques décrits par Qwen3-VL-2B / 4B | +0,50 | non |
+
+Ce qui a marché : la **recherche** (reranker) et le **contrôle de la réponse** (deux lectures différentes qui
+doivent concorder). Ce qui n'a pas marché : tout ce qui ajoute au contexte une information que les deux lectures
+partagent (descriptions de graphiques, mêmes tableaux), et tout ce qui demande au modèle 3B de juger sa propre
+réponse (auto-vérification, 3e appel hors tableau). Mesure : avec 100 questions, l'écart-type du score est
+d'environ 0,07 ; un changement n'a été gardé que si l'analyse des erreurs expliquait le gain (quelles questions
+basculent, et pourquoi), pas sur le seul score.
