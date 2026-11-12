@@ -12,6 +12,7 @@ rag2.ablation), sinon struct_title + hybrid_rerank.
 """
 import argparse
 import json
+import os
 import subprocess
 import sys
 import time
@@ -42,6 +43,9 @@ def cmd_index(args):
         print(f"{len(pages)} pages relues depuis {pages_path}")
     else:
         pages = read_pdf_dir(args.pdf_dir, ocr=not args.no_ocr, ocr_images=not args.no_ocr_images)
+        if os.environ.get("RAG_SCAN_VLM"):            # pages numérisées transcrites par un modèle de vision
+            from rag2.scan_vlm import apply as scan_apply
+            scan_apply(pages, args.pdf_dir, os.environ.get("RAG_SCAN_LOG"))
         pages_path.write_text(json.dumps(pages, ensure_ascii=False), encoding="utf-8")
         print(f"{len(pages)} pages lues en {time.time() - t0:.0f} s")
 
@@ -122,6 +126,9 @@ def cmd_update(args):
     for p in new_pdfs:                                  # on ne lit que les nouveaux fichiers
         shutil.copy(p, tmp / p.name)
     new_pages = read_pdf_dir(str(tmp), ocr=True, ocr_images=True)
+    if os.environ.get("RAG_SCAN_VLM"):                # pages numérisées transcrites par un modèle de vision
+        from rag2.scan_vlm import apply as scan_apply
+        scan_apply(new_pages, str(tmp), os.environ.get("RAG_SCAN_LOG"))
     print(f"  {len(new_pages)} pages lues en {time.time() - t0:.0f} s")
     pages += new_pages
     (idx / "pages.json").write_text(json.dumps(pages, ensure_ascii=False), encoding="utf-8")
