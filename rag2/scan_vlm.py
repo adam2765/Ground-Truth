@@ -23,9 +23,10 @@ import time
 from pathlib import Path
 
 PROMPT = (
-    "Transcris fidèlement tout le texte de cette page d'un rapport public français, dans l'ordre de lecture "
-    "(colonne par colonne). Recopie les chiffres exactement, avec leurs virgules. Écris chaque tableau en Markdown "
-    "(| ... |), avec sa ligne d'en-têtes. N'ajoute aucun commentaire."
+    "Cette page d'un rapport public français contient un ou plusieurs tableaux de chiffres. Recopie uniquement ces "
+    "tableaux en Markdown (| ... |), chacun avec sa ligne d'en-têtes de colonnes, et la première colonne avec "
+    "l'intitulé de chaque rangée. Recopie les chiffres exactement, avec leurs virgules. Pas de texte courant, pas "
+    "de commentaire. S'il n'y a aucun tableau, écris seulement : AUCUN."
 )
 DEFAULT_MODEL = "Qwen/Qwen3-VL-2B-Instruct"
 MIN_CHARS, MIN_NUMBERS = 200, 25     # pages ciblées : texte OCR assez long et riche en chiffres (tableaux)
@@ -60,6 +61,43 @@ def md_tables_to_rows(text: str) -> str:
     return "\n".join(out)
 
 
+def cut_loops(text: str, max_repeat: int = 2) -> str:
+    """Coupe la transcription à la première ligne (non triviale) déjà vue max_repeat fois : les petits modèles de
+    vision finissent souvent par répéter les mêmes lignes jusqu'à la limite de tokens (test du 12/11 : 24 pages
+    sur 36)."""
+    seen: dict[str, int] = {}
+    out = []
+    for ln in text.splitlines():
+        key = re.sub(r"\s+", " ", ln.strip())
+        if len(key) > 5:
+            seen[key] = seen.get(key, 0) + 1
+            if seen[key] > max_repeat:
+                break
+        out.append(ln)
+    return "\n".join(out)
+
+
+def md_tables(text: str) -> list[dict]:
+    """Tableaux Markdown -> format de rag2/tables.py : {"first", "heads", "rows": [[intitulé, [[j, valeur]...]]]}."""
+    tables, block = [], []
+    for ln in cut_loops(text).splitlines() + [""]:
+        if ln.strip().startswith("|"):
+            block.append(ln)
+            continue
+        if block:
+            rows = [[c.strip() for c in b.strip().strip("|").split("|")] for b in block]
+            rows = [r for r in rows if not all(re.fullmatch(r":?-{2,}:?", c) or not c for c in r)]
+            if len(rows) >= 2 and len(rows[0]) >= 2:
+                head = rows[0]
+                body = [[r[0], [[j, c] for j, c in enumerate(r) if j > 0 and c and j < len(head)]] for r in rows[1:]]
+                body = [b for b in body if b[1] and any(re.search(r"\d", v) for _, v in b[1])]
+                if body:
+                    tables.append({"first": head[0], "heads": [h or f"colonne {j + 1}" for j, h in enumerate(head)],
+                                   "rows": body})
+            block = []
+    return tables
+
+
 def _paragraphs(text: str) -> list[str]:
     from rag2.parse import _clean
     text = md_tables_to_rows(text)
@@ -68,7 +106,7 @@ def _paragraphs(text: str) -> list[str]:
 
 
 def transcribe(jobs: list[tuple[str, str, int]], model_id: str | None = None, budget_s: float | None = None,
-               batch: int = 4, max_new: int = 2048, dpi: int = 150) -> dict[str, str]:
+               batch: int = 4, max_new: int = 1024, dpi: int = 150) -> dict[str, str]:
     """jobs : [(clé, chemin du PDF, n° de page 0-based)] -> {clé: transcription}. Ne lève jamais d'exception."""
     model_id = model_id or os.environ.get("RAG_SCAN_VLM") or DEFAULT_MODEL
     budget_s = budget_s if budget_s is not None else float(os.environ.get("SCAN_VLM_BUDGET", 3600))
@@ -148,16 +186,45 @@ def apply(pages: list[dict], pdf_dir: str, log: str | None = None, **kw) -> int:
     return n
 
 
+def apply_tables(pages: list[dict], pdf_dir: str, tables: dict, log: str | None = None, **kw) -> int:
+    """Version retenue (12/11, 3e essai) : le texte des pages reste celui de Tesseract (bon sur la prose) ; les
+    tableaux transcrits sont ajoutés aux tableaux structurés (clé « doc|page »), que seule la 1re lecture voit.
+    Un chiffre mal lu par le modèle de vision fait diverger les deux lectures -> abstention plutôt qu'erreur."""
+    idx = [i for i, p in enumerate(pages) if p.get("source") == "ocr" and len(p.get("text", "")) >= MIN_CHARS
+           and len(re.findall(r"\d+(?:,\d+)?", p.get("text", ""))) >= MIN_NUMBERS
+           and f"{p['doc_id']}|{p['page']}" not in tables]
+    jobs = [(str(i), str(Path(pdf_dir) / f"{pages[i]['doc_id']}.pdf"), pages[i]["page"] - 1) for i in idx]
+    jobs = [j for j in jobs if Path(j[1]).exists()]
+    res = transcribe(jobs, **kw)
+    n = 0
+    logf = open(log, "a", encoding="utf-8") if log else None
+    for k, t in res.items():
+        rec = pages[int(k)]
+        tabs = md_tables(t)
+        if logf:
+            logf.write(json.dumps({"doc_id": rec["doc_id"], "page": rec["page"], "n_tables": len(tabs), "vlm": t},
+                                  ensure_ascii=False) + "\n")
+        if tabs:
+            tables[f"{rec['doc_id']}|{rec['page']}"] = tabs
+            n += 1
+    if logf:
+        logf.close()
+    print(f"tableaux des scans : {n} pages avec tableau transcrit sur {len(idx)} ciblées", flush=True)
+    return n
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--index-dir", required=True)
     ap.add_argument("--pdf-dir", required=True)
     ap.add_argument("--log")
     a = ap.parse_args()
-    p = Path(a.index_dir) / "pages.json"
-    pages = json.loads(p.read_text(encoding="utf-8"))
-    apply(pages, a.pdf_dir, a.log)
-    p.write_text(json.dumps(pages, ensure_ascii=False), encoding="utf-8")
+    from rag2.tables import load, save
+    pages = json.loads((Path(a.index_dir) / "pages.json").read_text(encoding="utf-8"))
+    tp = Path(a.index_dir) / "tables.json.gz"
+    tables = load(tp)
+    apply_tables(pages, a.pdf_dir, tables, a.log)
+    save(tables, tp)
 
 
 if __name__ == "__main__":

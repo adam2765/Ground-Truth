@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-# Test de la transcription des pages numérisées par Qwen3-VL-2B (12/11, 2e essai), ~1 h 15 sur Kaggle T4.
+# Test de la transcription des pages numérisées par Qwen3-VL-2B (12/11, 3e essai), ~1 h sur Kaggle T4.
 # 1er essai (4B, toutes les pages) : 77 s/page à cause des pages sans texte, budget épuisé avant les Insee.
-# 2e essai : seulement les ~36 pages numérisées riches en chiffres (tableaux), modèle 2B.
+# 2e essai (2B, 36 pages riches en chiffres) : +0,01, boucles sur 24 pages, chiffres faux remplaçant Tesseract.
+# 3e essai : le modèle ne transcrit que les tableaux, ajoutés aux tableaux structurés (1re lecture seulement) ;
+# le texte des pages reste Tesseract. Boucles coupées.
 # Tesseract abîme les tableaux scannés (les 9 questions « scan » de la v1 rapportent +0,11 en moyenne).
 # rag2/scan_vlm.py fait transcrire les 104 pages numérisées (97 v1 + 7 v2) par un modèle de vision, tableaux en
 # Markdown réécrits au format « rangée | en-tête : valeur ». Mesure aussi le temps (limite : index 2 h, update 20 min).
@@ -27,13 +29,13 @@ python -c "import pymupdf, Stemmer, sentence_transformers" || { echo "setup.sh a
 python corpus/download_corpus.py | tail -n 1
 set -e
 I=/tmp/index; mkdir -p $I runs
-step "transcription des pages numérisées v1 riches en chiffres (OCR Tesseract en cache pour le reste)"
+step "index v1 (OCR Tesseract en cache) puis tableaux des pages numérisées lus par $VLM"
 gunzip -c cache/pages_v1.json.gz > $I/pages.json
-export RAG_SCAN_VLM=$VLM
-chrono python -m rag2.scan_vlm --index-dir $I --pdf-dir corpus/pdf --log runs/scan_v1.jsonl
-step "index + update v2 (avec transcription des scans v2)"
 echo '{"strategy": "naive_title", "mode": "hybrid_rerank"}' > $I/best.json
 python -m rag2.pipeline index --pdf-dir corpus/pdf --index-dir $I --strategies naive_title 2>&1 | grep -v -E "Batches|Loading weights|it/s" | tail -n 3
+export RAG_SCAN_VLM=$VLM
+chrono python -m rag2.scan_vlm --index-dir $I --pdf-dir corpus/pdf --log runs/scan_v1.jsonl
+step "update v2 (avec tableaux des scans v2)"
 RAG_SCAN_LOG=runs/scan_v2.jsonl chrono python -m rag2.pipeline update --index-dir $I --pdf-dir corpus/pdf_v2 2>&1 | grep -v -E "Batches|Loading weights|it/s" | tail -n 8
 unset RAG_SCAN_VLM
 
@@ -43,7 +45,9 @@ for S in v1 v2; do
   python - $S <<'PY'
 import json, sys
 pages = json.load(open("/tmp/index/pages.json"))
-scanned = {p["doc_id"] for p in pages if p.get("source") == "vlm"}   # pages réellement transcrites
+from rag2.tables import load as load_t
+vlm_pages = {json.loads(l)["doc_id"] + "|" + str(json.loads(l)["page"]) for f in ("runs/scan_v1.jsonl", "runs/scan_v2.jsonl")
+             if __import__("os").path.exists(f) for l in open(f) if json.loads(l)["n_tables"]}
 S = sys.argv[1]
 chunks = json.load(open("/tmp/index/naive_title/chunks.json"))
 items = json.load(open(f"runs/ret_{S}.json"))["items"]
@@ -58,13 +62,12 @@ todo = []
 with open(f"runs/raw_{S}.json.partial.jsonl", "w", encoding="utf-8") as f:
     for it in items:
         q = it["qid"]
-        new_docs = {chunks[h["idx"]]["doc_id"] for h in it["hits"]}
-        old_docs = {r["doc_id"] for r in ref[q].get("retrieved", [])}
-        if not ((new_docs | old_docs) & scanned):
+        pg = {f'{chunks[h["idx"]]["doc_id"]}|{chunks[h["idx"]]["page"]}' for h in it["hits"][:8]}
+        if not (pg & vlm_pages):
             f.write(json.dumps(ref[q], ensure_ascii=False) + "\n")
         else:
             todo.append(q)
-print(f"{S} : {len(todo)} questions sur {len(items)} touchent un document numérisé (régénérées) ; numérisés : {sorted(scanned)}")
+print(f"{S} : {len(todo)} questions sur {len(items)} touchent une page à tableau transcrit (régénérées) ; pages à tableau transcrit : {len(vlm_pages)}")
 json.dump(todo, open(f"runs/todo_{S}.json", "w"))
 json.dump({"predictions": list(ref.values())}, open(f"runs/ref_{S}_raw.json", "w"), ensure_ascii=False)
 PY
@@ -80,7 +83,7 @@ python - <<'PY'
 import json
 for S in ('v1', 'v2'):
     rows = [json.loads(l) for l in open(f'runs/scan_{S}.jsonl')] if __import__('os').path.exists(f'runs/scan_{S}.jsonl') else []
-    print(f'transcriptions {S} : {sum(r["ok"] for r in rows)} gardées sur {len(rows)}')
+    print(f'transcriptions {S} : {sum(bool(r["n_tables"]) for r in rows)} pages avec tableau sur {len(rows)}')
 PY
 python - <<'PY'
 import json
