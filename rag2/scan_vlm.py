@@ -11,7 +11,7 @@ Garde-fous (la finale ne doit jamais casser à cause de cette étape) :
   - budget de temps (SCAN_VLM_BUDGET, 60 min par défaut) : au-delà, les pages restantes gardent Tesseract ;
   - transcription nettement plus courte que l'OCR (page tronquée, refus) : on garde Tesseract.
 
-    RAG_SCAN_VLM=Qwen/Qwen3-VL-4B-Instruct bash run.sh index corpus/pdf /tmp/index     (actif dans run.sh)
+    RAG_SCAN_VLM=Qwen/Qwen3-VL-2B-Instruct bash run.sh index corpus/pdf /tmp/index     (actif dans run.sh)
     python -m rag2.scan_vlm --index-dir /tmp/index --pdf-dir corpus/pdf --log runs/scan_v1.jsonl
 """
 import argparse
@@ -27,7 +27,8 @@ PROMPT = (
     "(colonne par colonne). Recopie les chiffres exactement, avec leurs virgules. Écris chaque tableau en Markdown "
     "(| ... |), avec sa ligne d'en-têtes. N'ajoute aucun commentaire."
 )
-DEFAULT_MODEL = "Qwen/Qwen3-VL-4B-Instruct"
+DEFAULT_MODEL = "Qwen/Qwen3-VL-2B-Instruct"
+MIN_CHARS, MIN_NUMBERS = 200, 25     # pages ciblées : texte OCR assez long et riche en chiffres (tableaux)
 
 
 def md_tables_to_rows(text: str) -> str:
@@ -67,7 +68,7 @@ def _paragraphs(text: str) -> list[str]:
 
 
 def transcribe(jobs: list[tuple[str, str, int]], model_id: str | None = None, budget_s: float | None = None,
-               batch: int = 4, max_new: int = 1536, dpi: int = 150) -> dict[str, str]:
+               batch: int = 4, max_new: int = 2048, dpi: int = 150) -> dict[str, str]:
     """jobs : [(clé, chemin du PDF, n° de page 0-based)] -> {clé: transcription}. Ne lève jamais d'exception."""
     model_id = model_id or os.environ.get("RAG_SCAN_VLM") or DEFAULT_MODEL
     budget_s = budget_s if budget_s is not None else float(os.environ.get("SCAN_VLM_BUDGET", 3600))
@@ -120,7 +121,11 @@ def transcribe(jobs: list[tuple[str, str, int]], model_id: str | None = None, bu
 
 def apply(pages: list[dict], pdf_dir: str, log: str | None = None, **kw) -> int:
     """Remplace le texte Tesseract des pages numérisées par la transcription (si elle passe le contrôle)."""
-    idx = [i for i, p in enumerate(pages) if p.get("source") == "ocr"]
+    # Pages numérisées riches en chiffres seulement. Test du 12/11 (Qwen3-VL-4B, toutes les pages) : sur la prose,
+    # la transcription vaut Tesseract ; sur les pages de garde ou de graphiques sans texte, le modèle écrit des
+    # cases vides jusqu'à la limite (77 s/page) et le budget était épuisé avant les Insee Première numérisés.
+    idx = [i for i, p in enumerate(pages) if p.get("source") == "ocr" and len(p.get("text", "")) >= MIN_CHARS
+           and len(re.findall(r"\d+(?:,\d+)?", p.get("text", ""))) >= MIN_NUMBERS]
     jobs = [(str(i), str(Path(pdf_dir) / f"{pages[i]['doc_id']}.pdf"), pages[i]["page"] - 1) for i in idx]
     jobs = [j for j in jobs if Path(j[1]).exists()]
     res = transcribe(jobs, **kw)
@@ -139,7 +144,7 @@ def apply(pages: list[dict], pdf_dir: str, log: str | None = None, **kw) -> int:
             n += 1
     if logf:
         logf.close()
-    print(f"transcription des scans : {n} pages remplacées sur {len(idx)}", flush=True)
+    print(f"transcription des scans : {n} pages remplacées sur {len(idx)} ciblées", flush=True)
     return n
 
 

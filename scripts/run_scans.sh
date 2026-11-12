@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Test de la transcription des pages numérisées par Qwen3-VL-4B (12/11), ~1 h 45 sur Kaggle T4.
+# Test de la transcription des pages numérisées par Qwen3-VL-2B (12/11, 2e essai), ~1 h 15 sur Kaggle T4.
+# 1er essai (4B, toutes les pages) : 77 s/page à cause des pages sans texte, budget épuisé avant les Insee.
+# 2e essai : seulement les ~36 pages numérisées riches en chiffres (tableaux), modèle 2B.
 # Tesseract abîme les tableaux scannés (les 9 questions « scan » de la v1 rapportent +0,11 en moyenne).
 # rag2/scan_vlm.py fait transcrire les 104 pages numérisées (97 v1 + 7 v2) par un modèle de vision, tableaux en
 # Markdown réécrits au format « rangée | en-tête : valeur ». Mesure aussi le temps (limite : index 2 h, update 20 min).
@@ -13,7 +15,7 @@ cd "$(dirname "$0")/.."
 git pull -q || true
 OUT="${OUT:-$( [ -d /kaggle/working ] && echo /kaggle/working || pwd )}"
 export CUDA_VISIBLE_DEVICES=0 HF_HUB_DISABLE_XET=1
-VLM="${VLM:-Qwen/Qwen3-VL-4B-Instruct}"
+VLM="${VLM:-Qwen/Qwen3-VL-2B-Instruct}"
 exec > >(tee "$OUT/log_scans.txt") 2>&1
 T0=$(date +%s)
 step() { echo; echo "=== [$(( ($(date +%s) - T0) / 60 )) min] $* ==="; }
@@ -25,7 +27,7 @@ python -c "import pymupdf, Stemmer, sentence_transformers" || { echo "setup.sh a
 python corpus/download_corpus.py | tail -n 1
 set -e
 I=/tmp/index; mkdir -p $I runs
-step "transcription des 97 pages numérisées v1 (OCR Tesseract en cache pour le reste)"
+step "transcription des pages numérisées v1 riches en chiffres (OCR Tesseract en cache pour le reste)"
 gunzip -c cache/pages_v1.json.gz > $I/pages.json
 export RAG_SCAN_VLM=$VLM
 chrono python -m rag2.scan_vlm --index-dir $I --pdf-dir corpus/pdf --log runs/scan_v1.jsonl
