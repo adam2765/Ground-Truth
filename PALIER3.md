@@ -162,3 +162,20 @@ réponse fausse causée par des chiffres mal lus qui remplaçaient le texte Tess
   tableau ; Tesseract l'avait abîmé), val1-086 et val1-088 passent de faux à abstention, val1-090 (synthèse)
   perdue : le modèle s'est concentré sur les montants du tableau au lieu des comportements d'achat. v2 inchangée.
   Repli : modèle absent ou en erreur -> Tesseract seul ; budget de 60 min.
+
+## 9. Répétition générale finale (12/11, `results/final3/`)
+
+Configuration figée pour le tag `final` : duoXRS + correctif des questions datées + tableaux des scans
+(Qwen3-VL-2B). Commandes exactes du jour J, sans cache, juge officiel.
+
+| | Résultat | Limite |
+|---|---|---|
+| `setup.sh` | 2 min 59 s | |
+| `run.sh index` (dont 19,9 min de tableaux des scans) | 39 min 30 s | 2 h |
+| `run.sh update` | 4 min 34 s | 20 min |
+| Validation v1 | **+0,475** (brut +0,255) ; scan +0,11 → +0,33 | |
+| Validation v2 | **+0,2375** | |
+| Temps tout compris | 21,5 s (v1), 29,5 s (v2), **23,8 s en moyenne** | 30 s |
+
+Scores identiques à ceux attendus par les tests séparés (+0,475 / +0,2375) : la configuration est reproductible.
+

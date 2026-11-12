@@ -1,0 +1,76 @@
+
+=== [0 min] setup.sh (réseau) ===
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+gradio 6.26.0 requires pillow<13.0,>=8.0, but you have pillow 13.0.0 which is incompatible.
+tesseract OK (français)
+mistralai/Ministral-3-3B-Instruct-2512 : 33 s
+BAAI/bge-m3 : 22 s
+BAAI/bge-reranker-v2-m3 : 17 s
+Qwen/Qwen3-VL-2B-Instruct : 30 s
+setup OK
+  -> 2 min 59 s
+numérisé : cc-pac-synthese
+numérisé : cc-vaccination-synthese
+
+=== [3 min] run.sh index (v1, limite 2 h) ===
+OCR : 97 pages numérisées, 479 images, 4 processus
+  50/576  100/576  150/576  200/576  250/576  300/576  350/576  400/576  450/576  500/576  550/576  576/576
+2658 pages lues en 274 s
+transcription des scans : Qwen/Qwen3-VL-2B-Instruct chargé en 15 s, 34 pages
+transcription des scans : 34 pages en 19.9 min
+tableaux des scans : 19 pages avec tableau transcrit sur 34 ciblées
+[naive_title] 8917 chunks
+[naive_title] embeddings en 167 s
+110 documents, 6 liens « édition plus récente »
+indexation terminée en 39.4 min
+  -> 39 min 30 s
+   insee-ip2033 -> ['insee-ip2108']
+   insee-ip2037 -> ['insee-ip2092']
+   insee-ip2038 -> ['insee-ip2095']
+   insee-ip2045 -> ['insee-ip2097']
+   insee-ip2051 -> ['insee-ip2107']
+   insee-ip2052 -> ['insee-ip2094']
+
+=== [43 min] run.sh update (v2, limite 20 min) ===
+20 nouveaux documents (sur 20)
+OCR : 7 pages numérisées, 89 images, 4 processus
+  50/96  96/96
+  634 pages lues en 37 s
+tableaux des scans : 0 pages avec tableau transcrit sur 0 ciblées
+  [naive_title] +2220 chunks
+  21 liens « édition plus récente »
+mise à jour terminée en 4.5 min
+  -> 4 min 34 s
+   insee-ip2033 -> ['insee-ip2108']
+   insee-ip2037 -> ['insee-ip2092']
+   insee-ip2038 -> ['insee-ip2095']
+   insee-ip2045 -> ['insee-ip2097']
+   insee-ip2051 -> ['insee-ip2107']
+   insee-ip2052 -> ['insee-ip2094']
+   insee-ip2053 -> ['insee-ip2105']
+   insee-ip2054 -> ['insee-ip2106']
+   insee-ip2056 -> ['insee-ip2110']
+   insee-ip2060 -> ['insee-ip2114']
+   insee-ip2062 -> ['insee-ip2116']
+   insee-ip2065 -> ['insee-ip2100', 'insee-ip2101', 'insee-ip2102']
+   insee-ip2066 -> ['insee-ip2100', 'insee-ip2101']
+   insee-ip2067 -> ['insee-ip2100', 'insee-ip2102']
+   insee-ip2071 -> ['insee-ip2124']
+   insee-ip2077 -> ['insee-ip2130']
+   insee-ip2086 -> ['insee-ip2116']
+
+=== [47 min] run.sh answer : validation v1 ===
+100 réponses, 57 INTROUVABLE (57%) -> runs/val_v1.json
+  -> 35 min 48 s
+  -> 21.5 s/question tout compris (recherche + génération + abstention)
+VALIDATION v1 : score 0.475 (brut 0.255 ) {'juste + citation': 33, 'réponse fausse': 7, 'abstention': 36, 'abstention juste': 21, 'hallucination (piège)': 1, 'juste, citation invalide': 1, 'prémisse corrigée': 1}
+  par type : {'graphique': -0.1667, 'multi-doc': 0.0, 'piege': 0.913, 'scan': 0.3333, 'synthese': 0.125, 'tableau': 0.4706, 'texte': 0.6346}
+
+=== [86 min] run.sh answer : validation v2 ===
+40 réponses, 20 INTROUVABLE (50%) -> runs/val_v2.json
+  -> 19 min 39 s
+  -> 29.5 s/question tout compris (recherche + génération + abstention)
+VALIDATION v2 : score 0.2375 (brut 0.05 ) {'réponse fausse': 5, 'abstention': 20, 'juste + citation': 14, 'juste, citation invalide': 1}
+  par type : {'graphique': 0.0, 'multi-doc': 0.2857, 'synthese': 0.0, 'tableau': 0.6667, 'temporel': 0.125, 'texte': 0.25}
+temps de génération : 21.4 s/question (max 48 s), limite 30 s tout compris
+journal du générateur : 304 appels, 140 questions, max 3 appels/question (limite 4)

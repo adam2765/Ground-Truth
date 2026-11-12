@@ -49,7 +49,7 @@ recherche dense exacte (produit matriciel numpy sur ~11 000 vecteurs) prend ~1 m
 
 | | v1 (100 q.) | v2 (40 q.) |
 |---|---|---|
-| Score de confiance (répétition générale du 9/11, + correctif des questions datées) | +0,42 → +0,455 | +0,2375 |
+| Score de confiance (répétition générale finale du 12/11) | **+0,475** | **+0,2375** |
 | Meilleur score v1 avant le palier 3 (run 12, estimé) | +0,525 | |
 | Recall@5 de la recherche | 0,87 | 0,94 |
 
@@ -59,9 +59,9 @@ restantes viennent surtout du générateur, qui choisit le mauvais chiffre dans 
 
 ## Contraintes respectées
 
-- 30 s par question en moyenne : 22,2 s mesurées, tout compris (max 47 s sur une question).
+- 30 s par question en moyenne : 23,8 s mesurées, tout compris (répétition du 12/11).
 - 4 appels au générateur : 3 au maximum, 2,1 en moyenne (`runs/generator_log.jsonl`).
-- `run.sh update` < 20 min : 4 min 21 s. `run.sh index` < 2 h : 18 min 22 s + 21 min de tableaux des scans.
+- `run.sh update` < 20 min : 4 min 21 s. `run.sh index` < 2 h : 39 min 30 s (dont 20 min de tableaux des scans).
 - Pas de réseau après `setup.sh` (`HF_HUB_OFFLINE=1`), pas de cache précalculé (`RAG_NO_CACHE=1`).
 - Palier 1 from scratch dans `my_rag/` (BM25, dense, chunking sans librairie de recherche).
 
