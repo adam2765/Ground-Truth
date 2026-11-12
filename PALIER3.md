@@ -137,3 +137,20 @@ Soumissions v2 : 2026-11-04_1 (1re répétition, +0,20), 2026-11-04_2 (duoXRS + 
   140 réponses, rejetée. Le modèle calcule juste, mais sur les mauvais opérandes (val2-004 : « 2 228 − 2 150 = 78 »
   est exact, il fallait 26 740 − 25 760 = 980). Remplacer la règle « chiffre absent des extraits » par « chiffre ni
   écrit ni recalculable » récupère 3 réponses justes mais en laisse passer 7 fausses (−0,02 sur v1, −0,075 sur v2).
+
+## 8. Transcription des pages numérisées par modèle de vision (12/11, rejetée)
+
+`rag2/scan_vlm.py` (option `RAG_SCAN_VLM`, non activée dans `run.sh`) : les pages numérisées sont transcrites par
+Qwen3-VL au lieu de Tesseract, tableaux en Markdown réécrits au format « rangée | en-tête : valeur ». Garde-fous :
+repli sur Tesseract si le modèle manque ou plante, budget de temps, transcription trop courte ignorée.
+
+- Essai 1 (Qwen3-VL-4B, les 97 pages) : 77 s/page. Les pages sans texte (garde, graphiques) font écrire au modèle
+  des cases vides jusqu'à la limite ; budget de 60 min épuisé avant les Insee Première numérisés. Rien de mesuré.
+- Essai 2 (Qwen3-VL-2B, les 36 pages riches en chiffres, `results/scans/`) : 47 min ; 23 transcriptions gardées,
+  13 rejetées ; sur 24 des 36 pages, le modèle finit par répéter les mêmes lignes en boucle. v1 +0,455 → +0,465
+  (val1-015 et val1-088 gagnées grâce à des tableaux mieux lus, val1-090 perdue à cause de chiffres faux dans une
+  transcription), v2 inchangée.
+
+**Rejetée** : +1 question nette, dans le bruit, pour 47 min de plus à l'indexation, une dépendance de plus au jour J
+et du texte parasite (boucles) dans l'index. Une version avec coupure des boucles serait à retester, sans le temps
+de le faire avant la finale.

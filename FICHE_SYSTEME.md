@@ -68,7 +68,9 @@ restantes viennent surtout du générateur, qui choisit le mauvais chiffre dans 
 Description des graphiques par modèle de vision (runs 4 et 14 : score brut meilleur, score final moins bon,
 trop lent) ; vote à 3 ; vérificateur NLI ; 2e lecture sur pages entières ; 3e appel généralisé ; auto-vérification
 par le générateur ; traduction des questions anglaises ; vérification des calculs par Python.
+Transcription des pages numérisées par Qwen3-VL-2B (+1 question nette, 47 min d'indexation en plus, boucles de
+répétition). Dates seulement quand deux éditions sont présentes (pas de gain).
 Non tentées, avec la raison : fine-tuning du reranker (gain attendu dans le bruit de mesure, poids de 1 Go à
-héberger hors GitHub) ; transcription des scans par modèle de vision (une dépendance de plus au jour J) ;
+héberger hors GitHub) ;
 RAG agentique piloté par le modèle (budget de 4 appels, modèle trop petit pour décider) ; quantification
 (générateur imposé, et le temps est pris par la génération, pas par la recherche).

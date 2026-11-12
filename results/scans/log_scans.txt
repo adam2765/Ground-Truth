@@ -1,0 +1,65 @@
+
+=== [0 min] setup + Qwen/Qwen3-VL-2B-Instruct ===
+BAAI/bge-m3 : 16 s
+BAAI/bge-reranker-v2-m3 : 17 s
+setup OK
+numérisé : cc-vaccination-synthese
+
+=== [3 min] transcription des pages numérisées v1 riches en chiffres (OCR Tesseract en cache pour le reste) ===
+transcription des scans : Qwen/Qwen3-VL-2B-Instruct chargé en 14 s, 36 pages
+  4/36 pages (258 s)
+  8/36 pages (577 s)
+  12/36 pages (896 s)
+  16/36 pages (1214 s)
+  20/36 pages (1533 s)
+  24/36 pages (1851 s)
+  28/36 pages (2170 s)
+  32/36 pages (2489 s)
+  36/36 pages (2807 s)
+transcription des scans : 36 pages en 46.8 min
+transcription des scans : 23 pages remplacées sur 36 ciblées
+  -> 46 min 51 s
+
+=== [50 min] index + update v2 (avec transcription des scans v2) ===
+[naive_title] embeddings en 154 s
+110 documents, 6 liens « édition plus récente »
+indexation terminée en 2.8 min
+  50/96  96/96
+transcription des scans : 0 pages remplacées sur 0 ciblées
+  634 pages lues en 33 s
+  [naive_title] +2220 chunks
+  21 liens « édition plus récente »
+mise à jour terminée en 4.1 min
+  -> 4 min 6 s
+
+=== [57 min] recherche v1 (comme run.sh : --split --year-keep) et questions à régénérer ===
+recherche : naive_title / hybrid_rerank, 100 questions -> runs/ret_v1.json
+v1 : 22 questions sur 100 touchent un document numérisé (régénérées) ; numérisés : ['cc-pac-synthese', 'cc-vaccination-synthese', 'insee-ip2036', 'insee-ip2041', 'insee-ip2055', 'insee-ip2075', 'insee-ip2088', 'insee-ip2103', 'insee-ip2119', 'insee-ip2127']
+
+=== [59 min] génération v1 (duoXRS, questions touchant un scan) ===
+tableaux structurés : 410 pages
+reprise : 78/100 réponses déjà faites
+réponses brutes (avant abstention calibrée) -> runs/raw_v1.json
+100 réponses, 54 INTROUVABLE (54%) -> runs/val_v1.json
+
+=== [69 min] recherche v2 (comme run.sh : --split --year-keep) et questions à régénérer ===
+recherche : naive_title / hybrid_rerank, 40 questions -> runs/ret_v2.json
+v2 : 1 questions sur 40 touchent un document numérisé (régénérées) ; numérisés : ['cc-pac-synthese', 'cc-vaccination-synthese', 'insee-ip2036', 'insee-ip2041', 'insee-ip2055', 'insee-ip2075', 'insee-ip2088', 'insee-ip2103', 'insee-ip2119', 'insee-ip2127']
+
+=== [70 min] génération v2 (duoXRS, questions touchant un scan) ===
+tableaux structurés : 410 pages
+reprise : 39/40 réponses déjà faites
+réponses brutes (avant abstention calibrée) -> runs/raw_v2.json
+40 réponses, 20 INTROUVABLE (50%) -> runs/val_v2.json
+
+=== [72 min] Comparaison (référence : 9/11 + correctif des questions datées = v1 +0,455, v2 +0,2375) ===
+transcriptions v1 : 23 gardées sur 36
+transcriptions v2 : 0 gardées sur 0
+v1 : référence +0.4550 | scans transcrits +0.4650
+   val1-015 : +0.0 -> +1.0
+   val1-088 : -1.0 -> +0.0
+   val1-090 : +0.0 -> -1.0
+   temps moyen de génération (questions régénérées) : 19.6 s
+v2 : référence +0.2375 | scans transcrits +0.2375
+   temps moyen de génération (questions régénérées) : 22.6 s
+ÉCART : v1 +0.0100, v2 +0.0000 -> GARDER la transcription
