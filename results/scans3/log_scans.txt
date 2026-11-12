@@ -1,0 +1,66 @@
+
+=== [0 min] setup + Qwen/Qwen3-VL-2B-Instruct ===
+BAAI/bge-m3 : 26 s
+BAAI/bge-reranker-v2-m3 : 25 s
+setup OK
+numérisé : cc-vaccination-synthese
+
+=== [4 min] index v1 (OCR Tesseract en cache) puis tableaux des pages numérisées lus par Qwen/Qwen3-VL-2B-Instruct ===
+[naive_title] embeddings en 152 s
+110 documents, 6 liens « édition plus récente »
+indexation terminée en 2.8 min
+transcription des scans : Qwen/Qwen3-VL-2B-Instruct chargé en 16 s, 36 pages
+  4/36 pages (122 s)
+  8/36 pages (266 s)
+  12/36 pages (410 s)
+  16/36 pages (555 s)
+  20/36 pages (699 s)
+  24/36 pages (843 s)
+  28/36 pages (988 s)
+  32/36 pages (1132 s)
+  36/36 pages (1276 s)
+transcription des scans : 36 pages en 21.3 min
+tableaux des scans : 19 pages avec tableau transcrit sur 36 ciblées
+  -> 21 min 19 s
+
+=== [28 min] update v2 (avec tableaux des scans v2) ===
+  50/96  96/96
+  634 pages lues en 33 s
+tableaux des scans : 0 pages avec tableau transcrit sur 0 ciblées
+  [naive_title] +2220 chunks
+  21 liens « édition plus récente »
+mise à jour terminée en 4.3 min
+  -> 4 min 18 s
+
+=== [32 min] recherche v1 (comme run.sh : --split --year-keep) et questions à régénérer ===
+recherche : naive_title / hybrid_rerank, 100 questions -> runs/ret_v1.json
+v1 : 12 questions sur 100 touchent une page à tableau transcrit (régénérées) ; pages à tableau transcrit : 19
+
+=== [35 min] génération v1 (duoXRS, questions touchant un scan) ===
+tableaux structurés : 429 pages
+reprise : 88/100 réponses déjà faites
+réponses brutes (avant abstention calibrée) -> runs/raw_v1.json
+100 réponses, 55 INTROUVABLE (55%) -> runs/val_v1.json
+
+=== [42 min] recherche v2 (comme run.sh : --split --year-keep) et questions à régénérer ===
+recherche : naive_title / hybrid_rerank, 40 questions -> runs/ret_v2.json
+v2 : 0 questions sur 40 touchent une page à tableau transcrit (régénérées) ; pages à tableau transcrit : 19
+
+=== [44 min] génération v2 (duoXRS, questions touchant un scan) ===
+tableaux structurés : 429 pages
+reprise : 40/40 réponses déjà faites
+réponses brutes (avant abstention calibrée) -> runs/raw_v2.json
+40 réponses, 20 INTROUVABLE (50%) -> runs/val_v2.json
+
+=== [45 min] Comparaison (référence : 9/11 + correctif des questions datées = v1 +0,455, v2 +0,2375) ===
+transcriptions v1 : 19 pages avec tableau sur 36
+transcriptions v2 : 0 pages avec tableau sur 0
+v1 : référence +0.4550 | scans transcrits +0.4750
+   val1-020 : +0.0 -> +1.0
+   val1-086 : -1.0 -> +0.0
+   val1-088 : -1.0 -> +0.0
+   val1-090 : +0.0 -> -1.0
+   temps moyen de génération (questions régénérées) : 23.6 s
+v2 : référence +0.2375 | scans transcrits +0.2375
+   temps moyen de génération (questions régénérées) : 0.0 s
+ÉCART : v1 +0.0200, v2 +0.0000 -> GARDER la transcription

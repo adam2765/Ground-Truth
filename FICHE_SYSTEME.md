@@ -38,9 +38,11 @@ RÉPONSE (run.sh answer, 22 s/question en moyenne)
 | Tableaux structurés | 1re lecture seulement | Dans les deux lectures : +0,445 (sous la référence +0,465, elles se trompent ensemble) ; dans la 1re seulement : +0,475 |
 | 3e appel ciblé, repêchage | rangées de tableau | +0,475 → +0,505 (run 9) → +0,525 (run 12, estimé) |
 | Graphe des éditions | titres + dates, sans LLM | Palier 3 : la plus récente fait foi, sauf question d'évolution |
+| Tableaux des scans | Qwen3-VL-2B, tableaux seulement, 1re lecture | v1 +0,455 → +0,475 (21 min à l'index, repli Tesseract) |
 
 Modèles (tous open weights, téléchargés par `setup.sh`) : Ministral-3-3B (générateur officiel, inchangé),
-BAAI/bge-m3 (embeddings), BAAI/bge-reranker-v2-m3 (reranker). Aucun fine-tuning. Pas de base vectorielle : la
+BAAI/bge-m3 (embeddings), BAAI/bge-reranker-v2-m3 (reranker), Qwen/Qwen3-VL-2B-Instruct (tableaux des pages
+numérisées, à l'indexation seulement : il transcrit, il ne répond jamais). Aucun fine-tuning. Pas de base vectorielle : la
 recherche dense exacte (produit matriciel numpy sur ~11 000 vecteurs) prend ~1 ms.
 
 ## Résultats (validation, juge officiel)
@@ -59,7 +61,7 @@ restantes viennent surtout du générateur, qui choisit le mauvais chiffre dans 
 
 - 30 s par question en moyenne : 22,2 s mesurées, tout compris (max 47 s sur une question).
 - 4 appels au générateur : 3 au maximum, 2,1 en moyenne (`runs/generator_log.jsonl`).
-- `run.sh update` < 20 min : 4 min 21 s. `run.sh index` < 2 h : 18 min 22 s.
+- `run.sh update` < 20 min : 4 min 21 s. `run.sh index` < 2 h : 18 min 22 s + 21 min de tableaux des scans.
 - Pas de réseau après `setup.sh` (`HF_HUB_OFFLINE=1`), pas de cache précalculé (`RAG_NO_CACHE=1`).
 - Palier 1 from scratch dans `my_rag/` (BM25, dense, chunking sans librairie de recherche).
 
@@ -68,8 +70,8 @@ restantes viennent surtout du générateur, qui choisit le mauvais chiffre dans 
 Description des graphiques par modèle de vision (runs 4 et 14 : score brut meilleur, score final moins bon,
 trop lent) ; vote à 3 ; vérificateur NLI ; 2e lecture sur pages entières ; 3e appel généralisé ; auto-vérification
 par le générateur ; traduction des questions anglaises ; vérification des calculs par Python.
-Transcription des pages numérisées par Qwen3-VL-2B (+1 question nette, 47 min d'indexation en plus, boucles de
-répétition). Dates seulement quand deux éditions sont présentes (pas de gain).
+Transcription de pages numérisées entières par modèle de vision (essais 1 et 2 : trop lent, boucles, chiffres faux
+à la place du texte Tesseract). Dates seulement quand deux éditions sont présentes (pas de gain).
 Non tentées, avec la raison : fine-tuning du reranker (gain attendu dans le bruit de mesure, poids de 1 Go à
 héberger hors GitHub) ;
 RAG agentique piloté par le modèle (budget de 4 appels, modèle trop petit pour décider) ; quantification

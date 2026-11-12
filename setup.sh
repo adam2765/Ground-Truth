@@ -26,6 +26,7 @@ for repo in [
     "mistralai/Ministral-3-3B-Instruct-2512",   # générateur officiel
     "BAAI/bge-m3",                              # embeddings (recherche dense, graphe des éditions)
     "BAAI/bge-reranker-v2-m3",                  # reranker (cross-encoder)
+    "Qwen/Qwen3-VL-2B-Instruct",                # tableaux des pages numérisées (facultatif : sans lui, Tesseract seul)
 ]:
     for attempt in range(3):
         try:

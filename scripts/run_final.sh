@@ -3,7 +3,7 @@
 #   - avant le 2 novembre : index v1 chronométré + validation v1 (juge officiel)
 #   - à partir du 2 novembre : en plus, update v2 chronométré (limite 20 min), validation v2
 #   - LB=1 : leaderboard v2 et soumission en plus (+1 h)
-#   Durée : ~4 h. Vérifie : temps index/update, s/question tout compris, appels/question, scores v1 0,44 / v2 0,2375 attendus
+#   Durée : ~2 h. Vérifie : temps index (+21 min de tableaux des scans)/update, s/question tout compris, appels/question, scores v1 ~0,475 / v2 0,2375 attendus
 #
 #   !git clone -q https://github.com/adam2765/Ground-Truth.git /tmp/gt; bash /tmp/gt/scripts/run_final.sh
 set -uo pipefail

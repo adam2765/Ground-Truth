@@ -138,7 +138,7 @@ Soumissions v2 : 2026-11-04_1 (1re répétition, +0,20), 2026-11-04_2 (duoXRS + 
   est exact, il fallait 26 740 − 25 760 = 980). Remplacer la règle « chiffre absent des extraits » par « chiffre ni
   écrit ni recalculable » récupère 3 réponses justes mais en laisse passer 7 fausses (−0,02 sur v1, −0,075 sur v2).
 
-## 8. Transcription des pages numérisées par modèle de vision (12/11, rejetée)
+## 8. Tableaux des pages numérisées lus par un modèle de vision (12/11, 3 essais, retenu)
 
 `rag2/scan_vlm.py` (option `RAG_SCAN_VLM`, non activée dans `run.sh`) : les pages numérisées sont transcrites par
 Qwen3-VL au lieu de Tesseract, tableaux en Markdown réécrits au format « rangée | en-tête : valeur ». Garde-fous :
@@ -151,6 +151,14 @@ repli sur Tesseract si le modèle manque ou plante, budget de temps, transcripti
   (val1-015 et val1-088 gagnées grâce à des tableaux mieux lus, val1-090 perdue à cause de chiffres faux dans une
   transcription), v2 inchangée.
 
-**Rejetée** : +1 question nette, dans le bruit, pour 47 min de plus à l'indexation, une dépendance de plus au jour J
-et du texte parasite (boucles) dans l'index. Une version avec coupure des boucles serait à retester, sans le temps
-de le faire avant la finale.
+Essai 2 non retenu : +1 question nette pour 47 min d'indexation, du texte parasite (boucles) dans l'index, et une
+réponse fausse causée par des chiffres mal lus qui remplaçaient le texte Tesseract.
+
+- **Essai 3 (retenu, activé dans `run.sh`)** : le modèle ne transcrit **que les tableaux** ; le texte des pages
+  reste celui de Tesseract (recherche inchangée). Les tableaux transcrits rejoignent les tableaux structurés, que
+  seule la 1re lecture voit : un chiffre mal lu fait diverger les deux lectures, d'où une abstention plutôt
+  qu'une erreur (même principe que le run 7). Boucles coupées (ligne répétée plus de 2 fois). 21 min pour
+  36 pages, 19 pages avec tableau. v1 +0,455 → **+0,475** : val1-020 gagnée (5 699 prénoms mixtes, lu dans le
+  tableau ; Tesseract l'avait abîmé), val1-086 et val1-088 passent de faux à abstention, val1-090 (synthèse)
+  perdue : le modèle s'est concentré sur les montants du tableau au lieu des comportements d'achat. v2 inchangée.
+  Repli : modèle absent ou en erreur -> Tesseract seul ; budget de 60 min.

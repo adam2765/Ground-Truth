@@ -14,6 +14,9 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 JAX_PLATFORMS=cpu RAG_NO_CACHE=1   # tout est recalculé
+# Tableaux des pages numérisées lus par un modèle de vision (rag2/scan_vlm.py, ~21 min à l'index) ; s'il manque ou
+# plante, on garde Tesseract seul.
+export RAG_SCAN_VLM="${RAG_SCAN_VLM-Qwen/Qwen3-VL-2B-Instruct}"
 STRATEGY=naive_title; VARIANT=duoXRS; RULE=rag2/abstention_final.json
 cmd="$1"; shift
 case "$cmd" in

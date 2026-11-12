@@ -60,7 +60,6 @@ def cmd_index(args):
 
         from rag2.tables import extract_dir, save
         cache = Path(__file__).resolve().parents[1] / "cache" / "tables_v1.json.gz"
-        import os
         if (cache.exists() and not os.environ.get("RAG_NO_CACHE")
                 and Path(args.pdf_dir).resolve() == (cache.parents[1] / "corpus" / "pdf").resolve()):
             shutil.copy(cache, tab_path)
