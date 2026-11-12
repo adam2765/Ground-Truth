@@ -118,8 +118,11 @@ Les commandes exactes du jour J (`setup.sh`, `run.sh index`, `update`, `answer`)
 | Répétition générale sans cache (9/11) | +0,42 | +0,2375 |
 | + correctif des questions datées (11/11, règle affinée) | **+0,455** | **+0,2375** |
 
-La consigne temporelle et les dates coûtent ~0,05 sur la v1 (le modèle hésite davantage quand deux dates sont
-présentes) ; le filtre VersionRAG retire la preuve de 3 questions v1 datées (corrigé par `--year-keep`, section 2).
+Les dates et la consigne temporelle semblaient coûter ~0,05 sur la v1. **Testé le 12/11 et démenti**
+(`results/temporal/`, variante duoXRSt : dates et consigne seulement si deux éditions sont dans le contexte ou si
+la question porte sur une évolution ; 74 questions v1 et 17 v2 régénérées sans dates) : v1 +0,455 → +0,445, v2
++0,2375 → +0,2375. 8 questions basculent dans un sens ou dans l'autre, sans tendance : l'écart entre le run 12 et
+la 1re répétition venait du bruit (et de l'estimation de +0,525), pas des dates. duoXRS est gardée ; le filtre VersionRAG retire la preuve de 3 questions v1 datées (corrigé par `--year-keep`, section 2).
 Ces choix sont gardés parce que le test mélange les deux types de questions (dont 30 en anglais) : sans eux,
 la v2 reste à +0,1875 / +0,20.
 

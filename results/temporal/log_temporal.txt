@@ -1,0 +1,49 @@
+
+=== [0 min] setup ===
+BAAI/bge-m3 : 16 s
+BAAI/bge-reranker-v2-m3 : 14 s
+setup OK
+numérisé : cc-vaccination-synthese
+
+=== [3 min] run.sh index + update (comme la référence, ~25 min) ===
+[naive_title] embeddings en 152 s
+110 documents, 6 liens « édition plus récente »
+indexation terminée en 18.2 min
+  [naive_title] +2220 chunks
+  21 liens « édition plus récente »
+mise à jour terminée en 4.2 min
+
+=== [25 min] recherche v1 (comme run.sh : --split --year-keep) et questions à régénérer ===
+recherche : naive_title / hybrid_rerank, 100 questions -> runs/ret_v1.json
+v1 : dates retirées pour 74 questions sur 100 (régénérées)
+
+=== [28 min] génération v1 (duoXRSt, questions sans dates seulement) ===
+tableaux structurés : 410 pages
+reprise : 26/100 réponses déjà faites
+réponses brutes (avant abstention calibrée) -> runs/raw_v1.json
+100 réponses, 55 INTROUVABLE (55%) -> runs/val_v1.json
+
+=== [52 min] recherche v2 (comme run.sh : --split --year-keep) et questions à régénérer ===
+recherche : naive_title / hybrid_rerank, 40 questions -> runs/ret_v2.json
+v2 : dates retirées pour 17 questions sur 40 (régénérées)
+
+=== [53 min] génération v2 (duoXRSt, questions sans dates seulement) ===
+tableaux structurés : 410 pages
+reprise : 23/40 réponses déjà faites
+réponses brutes (avant abstention calibrée) -> runs/raw_v2.json
+40 réponses, 19 INTROUVABLE (48%) -> runs/val_v2.json
+
+=== [61 min] Comparaison (référence : 9/11 + correctif des questions datées = v1 +0,455, v2 +0,2375) ===
+v1 : référence +0.4550 | duoXRSt +0.4450
+   val1-007 : +0.0 -> -1.0
+   val1-047 : +1.0 -> +0.0
+   val1-065 : -1.0 -> +0.0
+   val1-086 : -1.0 -> +0.0
+   val1-090 : +0.0 -> -1.0
+   temps moyen de génération (questions régénérées) : 17.3 s
+v2 : référence +0.2375 | duoXRSt +0.2375
+   val2-017 : -1.0 -> +0.5
+   val2-028 : +1.0 -> +0.5
+   val2-033 : +0.0 -> -1.0
+   temps moyen de génération (questions régénérées) : 23.3 s
+ÉCART : v1 -0.0100, v2 +0.0000 -> garder duoXRS
