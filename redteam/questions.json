@@ -1,0 +1,324 @@
+{
+ "author": "Adam Fatah",
+ "corpus_version": 2,
+ "questions": [
+  {
+   "id": "rt-01",
+   "question": "Selon l'Insee, quelle part de l'empreinte carbone de la France provenait d'émissions réalisées en Chine en 2024 ?",
+   "lang": "fr",
+   "type": "piege",
+   "difficulty": "difficile",
+   "answerable": false,
+   "answer": "INTROUVABLE",
+   "notes": "La ventilation géographique de l'empreinte n'est donnée que pour 2023 (insee-ip2077 p.3, publication d'octobre 2025 : 11 % de Chine) et pour 2025 (insee-ip2130 p.3, octobre 2026 : 10 % de Chine). Aucune des deux éditions ne donne la part de 2024, et aucun autre document du corpus ne ventile l'empreinte carbone par pays d'origine (recherche « Chine » + « empreinte » / « GES » sur les 130 documents). Piège : l'édition « 2024 » (ip2077) donne en réalité la ventilation de 2023.",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-02",
+   "question": "Selon la dernière estimation de l'Insee, de combien les émissions de gaz à effet de serre des unités résidentes françaises ont-elles baissé en 2024 ?",
+   "lang": "fr",
+   "type": "temporel",
+   "difficulty": "difficile",
+   "answerable": true,
+   "answer": "Selon l'édition d'octobre 2026 (Insee Première n° 2130), les émissions des unités résidentes ont baissé de 1,5 % en 2024, soit -6,1 Mt CO2 éq. La première estimation (Insee Première n° 2077, octobre 2025) donnait -0,9 % : la baisse a été révisée.",
+   "key_values": [
+    "1,5 %"
+   ],
+   "evidence": [
+    [
+     {
+      "doc_id": "insee-ip2130",
+      "page": 2
+     },
+     {
+      "doc_id": "insee-ip2130",
+      "page": 4
+     }
+    ]
+   ],
+   "source_quote": "l’évolution entre 2023 et 2024 est légèrement abaissée (-1,5 % au lieu de -0,9 %)",
+   "notes": "Piège temporel : l'édition 2025 (insee-ip2077 p.1-2) affiche -0,9 % en titre ; la révision n'apparaît que dans l'encadré et le corps de l'édition 2026.",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-03",
+   "question": "En 2024, quel est le taux de pauvreté des personnes vivant dans un ménage classé « autres types de ménages » dont la personne de référence a 65 ans ou plus ?",
+   "lang": "fr",
+   "type": "tableau",
+   "difficulty": "difficile",
+   "answerable": true,
+   "answer": "En 2024, le taux de pauvreté des « autres types de ménages » dont la personne de référence a 65 ans ou plus est de 11,6 % (15,5 % en 2023), en France métropolitaine.",
+   "key_values": [
+    "11,6 %"
+   ],
+   "evidence": [
+    [
+     {
+      "doc_id": "insee-ip2117",
+      "page": 3
+     }
+    ]
+   ],
+   "source_quote": "Autres types de ménages 0,9 23 410 86 15,5 0,9 24 780 67 11,6",
+   "notes": "Tableau 4 de ip2117 : la rangée « Autres types de ménages » existe deux fois (personne de référence de moins de 65 ans : 23,8 % ; de 65 ans ou plus : 11,6 %). Il faut rattacher la rangée au bon sous-titre et prendre la colonne 2024 (et non 2023).",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-04",
+   "question": "Début 2024, selon l'enquête Logement de l'Insee, quel taux d'effort net (part des revenus consacrée à la résidence principale, aides au logement déduites) supportent les ménages logés gratuitement ?",
+   "lang": "fr",
+   "type": "piege",
+   "difficulty": "moyen",
+   "answerable": false,
+   "answer": "INTROUVABLE",
+   "notes": "Insee Première n° 2128 (taux d'effort 2024) précise que les ménages logés gratuitement sont inclus dans l'ensemble mais pas ventilés : « Les effectifs sont trop faibles pour obtenir des résultats robustes sur les ménages logés gratuitement » (p.1, p.2). Même exclusion dans ip2090 (conditions de logement 2024). Le rapport de la Cour sur l'encadrement des loyers donne un « taux de surcharge » Eurostat pour les locataires à loyer réduit ou gratuit (p.180), indicateur différent (part de la population dont le coût dépasse 40 % du revenu), pas un taux d'effort net Insee. Recherche « logés gratuitement » / « à titre gratuit » sur tout le corpus.",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-05",
+   "question": "D'après l'Insee, en 2025, parmi les nouveau-nés reconnus par leurs deux parents dont au moins un parent est né dans un pays de langue portugaise, quelle part porte uniquement le nom de famille du père ?",
+   "lang": "fr",
+   "type": "scan",
+   "difficulty": "difficile",
+   "answerable": true,
+   "answer": "46,2 % de ces enfants portent uniquement le nom du père en 2025 ; 51,7 % portent un double nom (35,1 % dans l'ordre mère-père).",
+   "key_values": [
+    "46,2 %"
+   ],
+   "evidence": [
+    [
+     {
+      "doc_id": "insee-ip2119",
+      "page": 2
+     }
+    ]
+   ],
+   "source_quote": "Dans un pays lusophone 35,1 16,6 51,7 46,2 2,0 0,1 100,0",
+   "notes": "Document numérisé (pas de couche texte) : la valeur 46,2 % n'existe que dans le tableau de la figure 2. Le texte (p.4) ne donne que les doubles noms (52 et 35 sur 100).",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-06",
+   "question": "According to Insee's most recent national accounts, by how much did France's GDP grow in volume in 2024?",
+   "lang": "en",
+   "type": "temporel",
+   "difficulty": "moyen",
+   "answerable": true,
+   "answer": "According to the 2025 national accounts (Insee Première no. 2105, May 2026), GDP grew by 1.5% in volume in 2024, revised up by 0.3 point from the 1.2% first published in the 2024 accounts (Insee Première no. 2053).",
+   "key_values": [
+    "1,5 %"
+   ],
+   "evidence": [
+    [
+     {
+      "doc_id": "insee-ip2105",
+      "page": 1
+     },
+     {
+      "doc_id": "insee-ip2105",
+      "page": 4
+     },
+     {
+      "doc_id": "insee-ip2130",
+      "page": 2
+     }
+    ]
+   ],
+   "source_quote": "et la croissance de 2024 est révisée à +1,5 % (+0,3 point)",
+   "notes": "Piège temporel en anglais : ip2053 (comptes 2024) et ip2077 donnent +1,2 % ; seule l'édition 2026 (ip2105, et ip2130 p.2) donne la croissance révisée.",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-07",
+   "question": "En 2021, quelle quantité d'ordures ménagères résiduelles a été collectée par habitant en Corse-du-Sud ?",
+   "lang": "fr",
+   "type": "scan",
+   "difficulty": "moyen",
+   "answerable": true,
+   "answer": "En 2021, 460 kg par habitant d'ordures ménagères résiduelles ont été collectés en Corse-du-Sud (pour 770 kg/hab. de déchets ménagers et assimilés au total, hors déblais et gravats).",
+   "key_values": [
+    "460"
+   ],
+   "evidence": [
+    [
+     {
+      "doc_id": "insee-ip2055",
+      "page": 3
+     }
+    ]
+   ],
+   "source_quote": "comme en Corse-du-Sud (770 kg/hab.) ou dans le Var (740 kg/hab.), en lien avec des quantités d’ordures ménagères résiduelles plus importantes (respectivement 460 kg/hab. et 390 kg/hab. dans ces deux départements)",
+   "notes": "Document numérisé (OCR nécessaire). Piège : le chiffre total de la Corse-du-Sud (770) est cité juste avant ; la valeur demandée vient d'un « respectivement ».",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-08",
+   "question": "Combien de personnes vivaient sous le seuil de pauvreté en France en 2024 en comptant aussi les DROM, les personnes vivant en communautés et les personnes sans domicile ?",
+   "lang": "fr",
+   "type": "piege",
+   "difficulty": "difficile",
+   "answerable": false,
+   "answer": "INTROUVABLE",
+   "notes": "Le corpus donne 9,8 millions de personnes pauvres en 2024 sur le champ France métropolitaine, logements ordinaires (insee-ip2117 p.1 et p.3). Sur le champ élargi (DROM, communautés, sans domicile), la seule estimation citée porte sur 2021 (11,2 millions, ip2117 p.3, d'après [Martin, 2024]) ; ip2129 se limite à la France hors outre-mer en logement ordinaire. Aucune estimation 2024 sur ce champ dans le corpus (recherche « millions de personnes », « champ plus large », « sans domicile »).",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-09",
+   "question": "Combien de postes d'internat sont restés non pourvus à l'issue de la procédure de 2024, et quel a été cette année-là le taux d'inadéquation national ?",
+   "lang": "fr",
+   "type": "tableau",
+   "difficulty": "moyen",
+   "answerable": true,
+   "answer": "En 2024, 371 postes sont restés non pourvus (8 666 postes ouverts, 8 295 pourvus) et le taux d'inadéquation national était de 4,01 %.",
+   "key_values": [
+    "371",
+    "4,01 %"
+   ],
+   "evidence": [
+    [
+     {
+      "doc_id": "cc-3e-cycle-medecine",
+      "page": 62
+     }
+    ]
+   ],
+   "source_quote": "Taux d'inadéquation national 3,66 % 4,16 % 2,34 % 1,76 % 2,41 % 1,87 % 1,82 % 4,01 % 2,03 %",
+   "notes": "Tableau n° 7 : dans le texte extrait, les taux d'inadéquation forment une ligne détachée des années ; il faut compter les colonnes (2024 = 8e). La note du tableau cite d'autres effectifs (692/641 et 7 974/7 654) qui ne sont pas la réponse.",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-10",
+   "question": "In early 2024, what share of their income did single people aged 65 or over (household reference person) spend on their main home, net of housing benefits, according to Insee?",
+   "lang": "en",
+   "type": "tableau",
+   "difficulty": "difficile",
+   "answerable": true,
+   "answer": "Single people aged 65 or over had a net housing cost ratio (taux d'effort net) of 17.8% in early 2024 (average net spending of 5,000 euros a year for an average income of 28,200 euros).",
+   "key_values": [
+    "17,8 %"
+   ],
+   "evidence": [
+    [
+     {
+      "doc_id": "insee-ip2128",
+      "page": 3
+     }
+    ]
+   ],
+   "source_quote": "Personnes de référence de 65 ans ou plus Personnes seules 17,8 5 000 28 200 16,8",
+   "notes": "Tableau 4 de ip2128 : la rangée « Personnes seules » existe pour les moins de 65 ans (24,5 %) et pour les 65 ans ou plus (17,8 %). Le texte ne cite que 24,5 % et le 9,2 % des couples de 65 ans ou plus.",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-11",
+   "question": "Selon les comptes les plus récents de l'Insee, à combien s'élevait la dette publique au sens de Maastricht, en pourcentage du PIB, fin 2024 ?",
+   "lang": "fr",
+   "type": "temporel",
+   "difficulty": "moyen",
+   "answerable": true,
+   "answer": "D'après le compte des administrations publiques 2025 (Insee Première n° 2106, mai 2026), la dette publique atteignait 112,6 % du PIB fin 2024 (avant 115,7 % fin 2025). La première estimation (ip2054, mai 2025) donnait 113,2 %.",
+   "key_values": [
+    "112,6 %"
+   ],
+   "evidence": [
+    [
+     {
+      "doc_id": "insee-ip2106",
+      "page": 1
+     },
+     {
+      "doc_id": "insee-ip2106",
+      "page": 4
+     }
+    ]
+   ],
+   "source_quote": "La dette publique s’établit à 115,7 % du PIB, après 112,6 % en 2024.",
+   "notes": "Piège temporel : ip2054 (corpus v1) donne 113,2 % pour 2024 ; le ratio a été révisé avec le PIB dans ip2106.",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-12",
+   "question": "En 2021, combien de kilogrammes de déchets ménagers et assimilés par habitant (hors déblais et gravats) ont été collectés dans la région Bretagne ?",
+   "lang": "fr",
+   "type": "piege",
+   "difficulty": "difficile",
+   "answerable": false,
+   "answer": "INTROUVABLE",
+   "notes": "Insee Première n° 2055 (document numérisé) ne donne de valeur régionale que pour l'Île-de-France (450), Auvergne-Rhône-Alpes et Grand Est (500), la Corse (720), les Hauts-de-France, la Normandie et PACA (640) (p.3). Pour la Bretagne, seuls deux départements sont cités (Côtes-d'Armor 760, Finistère 710 kg/hab.) et la carte de la figure 4 ne donne que des classes par département. Aucun autre document du corpus ne donne de quantité de déchets par habitant pour la Bretagne (recherche « Bretagne » + « déchets » / « kg »).",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-13",
+   "question": "In 2024, according to the Eurostat figures reported by the Cour des comptes, what share of French tenants paying a reduced rent or housed free of charge were overburdened by housing costs?",
+   "lang": "en",
+   "type": "tableau",
+   "difficulty": "moyen",
+   "answerable": true,
+   "answer": "12.2% in France in 2024 (housing cost overburden rate for tenants at a reduced rent or free of charge), against 20.2% for tenants paying a market rent and 7.0% for the whole population.",
+   "key_values": [
+    "12,2 %"
+   ],
+   "evidence": [
+    [
+     {
+      "doc_id": "cc-encadrement-loyers",
+      "page": 180
+     }
+    ]
+   ],
+   "source_quote": "France | 7,0 | 1,1 | 1,4 | 20,2 | 12,2",
+   "notes": "Tableau n° 46 (annexe internationale du rapport sur l'encadrement des loyers) : 5 colonnes, la réponse est la dernière de la rangée France. Le texte de la page ne cite que le taux moyen français (7 %).",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-14",
+   "question": "Selon l'Insee, combien de millions de tonnes équivalent CO2 ont été émises en 2025 sur le territoire français d'après les inventaires du Citepa au format Secten ?",
+   "lang": "fr",
+   "type": "texte",
+   "difficulty": "moyen",
+   "answerable": true,
+   "answer": "359 Mt CO2 éq en 2025 sur le territoire français selon les inventaires du Citepa (en recul de 2,1 %), contre 398 Mt pour les émissions des unités résidentes au format AEA retenues par l'Insee.",
+   "key_values": [
+    "359"
+   ],
+   "evidence": [
+    [
+     {
+      "doc_id": "insee-ip2130",
+      "page": 4
+     }
+    ]
+   ],
+   "source_quote": "qui comptabilisent les émissions ayant lieu sur le territoire français (359 Mt CO2 éq, en recul de 2,1 %)",
+   "notes": "Le chiffre-titre de la publication (398 Mt) est celui des unités résidentes, pas du territoire ; l'édition précédente (ip2077 p.4) donne 369 Mt pour 2024.",
+   "corpus_version": 2
+  },
+  {
+   "id": "rt-15",
+   "question": "Hors outre-mer, Poitiers a en 2024 le taux d'encadrement des internes le plus dégradé (7,1 internes par enseignant hospitalo-universitaire). Selon le graphique de la Cour des comptes, quelle université arrive juste derrière ?",
+   "lang": "fr",
+   "type": "graphique",
+   "difficulty": "difficile",
+   "answerable": true,
+   "answer": "L'Université de Bourgogne (Dijon), avec environ 6,4 internes par HU en 2024, juste devant l'Université de Caen Normandie.",
+   "key_values": [
+    "Bourgogne"
+   ],
+   "evidence": [
+    [
+     {
+      "doc_id": "cc-3e-cycle-medecine",
+      "page": 75
+     },
+     {
+      "doc_id": "cc-3e-cycle-medecine",
+      "page": 74
+     }
+    ]
+   ],
+   "source_quote": "Graphique n° 8 : évolution du taux d’encadrement des internes entre 2016 et 2024",
+   "notes": "La réponse n'est lisible que sur le graphique n° 8 (barres classées par ratio 2024 décroissant : Poitiers, puis Bourgogne, Caen Normandie, Franche-Comté...). Le texte cite Lille (5,6) et Rennes (3,5), et les plus fortes dégradations (Limoges, Tours), qui ne sont pas la réponse.",
+   "corpus_version": 2
+  }
+ ]
+}
