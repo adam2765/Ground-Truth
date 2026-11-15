@@ -1,0 +1,1265 @@
+{
+ "run_name": "rag2-calibre",
+ "commit": "",
+ "predictions": [
+  {
+   "qid": "rt1-01",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2077",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 38
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt1-02",
+   "answer": "Les émissions de gaz à effet de serre des unités résidentes françaises ont baissé de 1,5 % en 2024, soit une baisse de 6,1 Mt CO₂ équivalent.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt1-03",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2125",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt1-04",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt1-05",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "rt1-06",
+   "answer": "Le PIB en volume en 2024 a augmenté de 1,5 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2111",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2058",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2033",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2033",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2033",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt1-07",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2055",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt1-08",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt1-09",
+   "answer": "En 2024, 371 postes d’internat sont restés non pourvus, avec un taux d’inadéquation national de 4,01 %.",
+   "citations": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 62
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 64
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 63
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 107
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 135
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 69
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 65
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 133
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 21
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 59
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 108
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 66
+    }
+   ]
+  },
+  {
+   "qid": "rt1-10",
+   "answer": "Les personnes seules de 65 ans ou plus consacrent 17,8 % de leurs revenus à leur résidence principale, après déduction des aides au logement.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2078",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 21
+    }
+   ]
+  },
+  {
+   "qid": "rt1-11",
+   "answer": "112,6 % du PIB fin 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2106",
+     "page": 4
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2106",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 81
+    }
+   ]
+  },
+  {
+   "qid": "rt1-12",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2055",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "rt1-13",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 179
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 180
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt1-14",
+   "answer": "359 millions de tonnes équivalent CO2 (Mt CO2éq).",
+   "citations": [
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 36
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 36
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2099",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2099",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "rt1-15",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 75
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 101
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 145
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 144
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 108
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 142
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 81
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 151
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 70
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 71
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 100
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 66
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 102
+    }
+   ]
+  },
+  {
+   "qid": "rt5-01",
+   "answer": "La croissance du PIB français en volume en 2024 est estimée à +1,5 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2059",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt5-02",
+   "answer": "Le pouvoir d'achat du revenu disponible brut des ménages a augmenté de 2,7 % en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt5-03",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 112
+    },
+    {
+     "doc_id": "insee-ip2059",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 91
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 110
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2058",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2058",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt5-04",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "rt5-05",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2045",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2107",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "rt5-06",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt5-07",
+   "answer": "Le salaire net moyen mensuel en EQTP pour les agents des services départementaux d'incendie et de secours (SDIS) est de 3 156 euros en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2101",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2101",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt5-08",
+   "answer": "En 2024, les personnes seules âgées de 65 ans ou plus consacrent 17,8 % de leurs revenus au logement après déduction des aides, avec des dépenses nettes moyennes annuelles de 5 000 euros.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt5-09",
+   "answer": "Entre 2020 et 2023, 8,2 % de la population était en situation de pauvreté monétaire sans interruption sur quatre ans.\nEntre 2021 et 2024, cette part est passée à 7,2 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2129",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2129",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2104",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt5-10",
+   "answer": "Au 1er janvier 2024, la Cour des comptes recense 20 502 officines.\nEn 2022, l'Insee en dénombrait 22 700.",
+   "citations": [
+    {
+     "doc_id": "cc-vaccination",
+     "page": 88
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 2
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "cc-vaccination",
+     "page": 88
+    },
+    {
+     "doc_id": "insee-ip2052",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 44
+    },
+    {
+     "doc_id": "insee-ip2047",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 52
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt5-11",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "rt5-12",
+   "answer": "Le salaire net mensuel moyen en euros constants pour les agents de catégorie A des SDIS en 2024 est de 3 543 euros.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    }
+   ],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt5-13",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2057",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2074",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "rt5-14",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt5-15",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 53
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 67
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 81
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 32
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 14
+    }
+   ]
+  }
+ ]
+}

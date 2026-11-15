@@ -1,0 +1,1822 @@
+{
+ "run_name": "rag2-naive_title-hybrid_rerank-duoXRS",
+ "commit": "",
+ "predictions": [
+  {
+   "qid": "rt1-01",
+   "answer": "11 % de l’empreinte carbone de la France provenait d’émissions réalisées en Chine en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2077",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "11 % de l’empreinte carbone de la France provenait d’émissions réalisées en Chine en 2024.\n\nSOURCES: [insee-ip2077 p.3]",
+    "top_score": 0.9951171875,
+    "margin": 0.0126953125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "INTROUVABLE",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 27.98
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2077",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 38
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt1-02",
+   "answer": "Les émissions de gaz à effet de serre des unités résidentes françaises ont baissé de 1,5 % en 2024, soit une baisse de 6,1 Mt CO₂ équivalent.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "Les émissions de gaz à effet de serre des unités résidentes françaises ont baissé de 1,5 % en 2024, soit une baisse de 6,1 Mt CO₂ équivalent.\n\nSOURCES: [insee-ip2130 p.1] et [insee-ip2130 p.2]",
+    "top_score": 1.0,
+    "margin": 0.0,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "En 2024, les émissions de gaz à effet de serre des unités résidentes françaises ont baissé de 1,5 %, soit 6,1 millions de tonnes équivalent CO₂.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 24.13
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt1-03",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99853515625,
+    "margin": 0.00146484375,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 8.61
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2125",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt1-04",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99951171875,
+    "margin": 0.0009765625,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 4.97
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt1-05",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99951171875,
+    "margin": 0.00048828125,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 8.76
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "rt1-06",
+   "answer": "Le PIB en volume en 2024 a augmenté de 1,5 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "Le PIB en volume en 2024 a augmenté de 1,5 %.\n\nSOURCES: [insee-ip2105 p.1]",
+    "top_score": 0.97509765625,
+    "margin": 0.146484375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "France's GDP grew by 1.5% in volume in 2024.",
+    "agree": true,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 16.71
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2111",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2058",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2033",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2033",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2033",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt1-07",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99658203125,
+    "margin": 0.0146484375,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 4.92
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2055",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt1-08",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 1.0,
+    "margin": 0.0,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 7.28
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2117",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2063",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt1-09",
+   "answer": "En 2024, 371 postes d’internat sont restés non pourvus, avec un taux d’inadéquation national de 4,01 %.",
+   "citations": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 62
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, **371 postes d’internat** sont restés non pourvus, avec un taux d’inadéquation national de **4,01 %**.\n\nSOURCES: [cc-3e-cycle-medecine p.62]",
+    "top_score": 0.9990234375,
+    "margin": 0.01611328125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "En 2024, 371 postes d’internat restaient non pourvus.\nLe taux d’inadéquation national était de 4,01 %.",
+    "agree": true,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 20.64
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 62
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 64
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 63
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 107
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 135
+    },
+    {
+     "doc_id": "cc-medecin-traitant",
+     "page": 69
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 65
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 83
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 133
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 18
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 21
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 60
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 59
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 108
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 66
+    }
+   ]
+  },
+  {
+   "qid": "rt1-10",
+   "answer": "Les personnes seules de 65 ans ou plus consacrent 17,8 % de leurs revenus à leur résidence principale, après déduction des aides au logement.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "Les personnes seules de 65 ans ou plus consacrent 17,8 % de leurs revenus à leur résidence principale, après déduction des aides au logement.\n\nSOURCES: [insee-ip2128 p.3]",
+    "top_score": 0.99365234375,
+    "margin": 0.01025390625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "In early 2024, single people aged 65 or over spent 17,8% of their net income on their main home after housing benefits.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 26.52
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2078",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2040",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 21
+    }
+   ]
+  },
+  {
+   "qid": "rt1-11",
+   "answer": "112,6 % du PIB fin 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2106",
+     "page": 4
+    }
+   ],
+   "_meta": {
+    "raw": "112,6 % du PIB fin 2024.\n\nSOURCES: [insee-ip2106 p.4]",
+    "top_score": 1.0,
+    "margin": 0.00439453125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Fin 2024, la dette publique au sens de Maastricht représentait 112,6 % du PIB.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 14.76
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2106",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2106",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 16
+    },
+    {
+     "doc_id": "cc-rspfp-2026-synthese",
+     "page": 10
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 81
+    }
+   ]
+  },
+  {
+   "qid": "rt1-12",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99365234375,
+    "margin": 0.005859375,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 4.98
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2055",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2055",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "rt1-13",
+   "answer": "En 2024, selon les données Eurostat citées par la Cour des comptes, 12,2 % des ménages français locataires bénéficiant d’un loyer réduit ou gratuit étaient en situation de surcharge des coûts du logement.",
+   "citations": [
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 180
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, selon les données Eurostat citées par la Cour des comptes, **12,2 % des ménages français locataires bénéficiant d’un loyer réduit ou gratuit** étaient en situation de surcharge des coûts du logement.\n\nSOURCES: [cc-encadrement-loyers p.180]",
+    "top_score": 0.9736328125,
+    "margin": 0.03759765625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "In 2024, 10.0 % of French tenants paying reduced rent or free housing were overburdened by housing costs according to Eurostat data.",
+    "agree": false,
+    "third": "INTROUVABLE",
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false,
+    "seconds": 20.56
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 179
+    },
+    {
+     "doc_id": "cc-encadrement-loyers",
+     "page": 180
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt1-14",
+   "answer": "359 millions de tonnes équivalent CO2 (Mt CO2éq).",
+   "citations": [
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 36
+    }
+   ],
+   "_meta": {
+    "raw": "359 millions de tonnes équivalent CO2 (Mt CO2éq).\n\nSOURCES: [cc-transition-ecologique p.36]",
+    "top_score": 0.99853515625,
+    "margin": 0.0009765625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "D'après les inventaires du Citepa au format Secten, les émissions sur le territoire français en 2025 s'élèvent à 359 Mt CO₂ équivalent.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 16.07
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2130",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 36
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2099",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2077",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2099",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "rt1-15",
+   "answer": "L’université de Limoges arrive juste derrière Poitiers avec un taux d’encadrement de 7,1 internes pour un HU en 2024.",
+   "citations": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 75
+    }
+   ],
+   "_meta": {
+    "raw": "L’université de Limoges arrive juste derrière Poitiers avec un taux d’encadrement de 7,1 internes pour un HU en 2024.\n\nSOURCES: [cc-3e-cycle-medecine p.75]",
+    "top_score": 0.9990234375,
+    "margin": 0.01806640625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "En 2024, Lille arrive juste derrière Poitiers avec un taux d’encadrement de 5,6 internes pour un HU, selon le graphique de la Cour des comptes.",
+    "agree": false,
+    "third": "INTROUVABLE",
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "row_check": "INTROUVABLE",
+    "agree_inclus": false,
+    "seconds": 20.68
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 74
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 75
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 101
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 145
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 144
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 22
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 108
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 142
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 72
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 58
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 81
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 151
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 70
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 71
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 100
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 66
+    },
+    {
+     "doc_id": "cc-3e-cycle-medecine",
+     "page": 102
+    }
+   ]
+  },
+  {
+   "qid": "rt5-01",
+   "answer": "La croissance du PIB français en volume en 2024 est estimée à +1,5 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    }
+   ],
+   "_meta": {
+    "raw": "La croissance du PIB français en volume en 2024 est estimée à **+1,5 %**.\n\nSOURCES: [insee-ip2105 p.1] [insee-ip2105 p.4]",
+    "top_score": 0.994140625,
+    "margin": 0.01025390625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Selon la révision la plus récente de l'Insee, la croissance du PIB français en volume en 2024 est estimée à +1,5 %.",
+    "agree": true,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 21.19
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2059",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt5-02",
+   "answer": "Le pouvoir d'achat du revenu disponible brut des ménages a augmenté de 2,7 % en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "Le pouvoir d'achat du revenu disponible brut des ménages a augmenté de 2,7 % en 2024.\n\nSOURCES: [insee-ip2105 p.3], [insee-ip2110 p.3]",
+    "top_score": 0.95947265625,
+    "margin": 0.00146484375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "The purchasing power of French households' gross disposable income increased by 2.7% in 2024.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 21.2
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2110",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2117",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt5-03",
+   "answer": "L’investissement total en volume a reculé de 1,8 % en France en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "L’investissement total en volume a reculé de 1,8 % en France en 2024.\n\nSOURCES: [insee-ip2105 p.2]",
+    "top_score": 0.95263671875,
+    "margin": 0.021484375,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "L'investissement total en volume en France a reculé de 2,4 % en 2024.",
+    "agree": false,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 14.9
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 112
+    },
+    {
+     "doc_id": "insee-ip2059",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 41
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 91
+    },
+    {
+     "doc_id": "insee-ip2130",
+     "page": 3
+    },
+    {
+     "doc_id": "cc-transition-ecologique",
+     "page": 110
+    },
+    {
+     "doc_id": "insee-ip2124",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2081",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2058",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2058",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt5-04",
+   "answer": "Le salaire moyen net d'un agent de la fonction publique de l’État dépasse celui de la fonction publique territoriale de 701 euros nets par mois en EQTP (3 018 € - 2 317 €).",
+   "citations": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "Le salaire moyen net d'un agent de la fonction publique de l’État dépasse celui de la fonction publique territoriale de 701 euros nets par mois en EQTP (3 018 € - 2 317 €).\n\nSOURCES: [insee-ip2100 p.1], [insee-ip2101 p.1]",
+    "top_score": 1.0,
+    "margin": 0.0,
+    "llm_abstain": false,
+    "unsupported": 1,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "En 2024, le salaire moyen d'un agent de la fonction publique de l'État dépasse celui d'un salarié de la fonction publique territoriale de 701 euros nets par mois.",
+    "agree": false,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 23.96
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 2
+    }
+   ]
+  },
+  {
+   "qid": "rt5-05",
+   "answer": "En 2025, 15,1 % des enfants nés en France ont reçu les noms de leurs deux parents, contre 10,3 % en 2014.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    }
+   ],
+   "_meta": {
+    "raw": "En 2025, **15,1 %** des enfants nés en France ont reçu les noms de leurs deux parents, contre **10,3 %** en 2014.\n\nSOURCES: [insee-ip2119 p.1]",
+    "top_score": 0.99951171875,
+    "margin": 0.00048828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "En 2025, 16,0 % des enfants nés en France ont reçu les noms de leurs deux parents, contre 10,9 % en 2014.",
+    "agree": false,
+    "third": "En 2025, la part des enfants nés en France avec les noms de famille des deux parents est de 0 %.\nEn 2014, cette part était de 100 %.",
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "row_check": "En 2025, la part des enfants nés en France avec les noms de famille des deux parents est de 0 %.\nEn 2014, cette part était de 100 %.",
+    "agree_inclus": false,
+    "seconds": 26.41
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2045",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2107",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "rt5-06",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99853515625,
+    "margin": 0.00341796875,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 5.81
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2032",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt5-07",
+   "answer": "Le salaire net moyen mensuel en EQTP pour les agents des services départementaux d'incendie et de secours (SDIS) est de 3 156 euros en 2024.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2101",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "Le salaire net moyen mensuel en EQTP pour les agents des services départementaux d'incendie et de secours (SDIS) est de 3 156 euros en 2024.\n\nSOURCES: [insee-ip2101 p.3]",
+    "top_score": 0.9365234375,
+    "margin": 0.20556640625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "The average monthly net salary for employees of France’s territorial civil service in the departmental fire and rescue services (SDIS) was 3 156 euros in 2024.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 19.04
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2101",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt5-08",
+   "answer": "En 2024, les personnes seules âgées de 65 ans ou plus consacrent 17,8 % de leurs revenus au logement après déduction des aides, avec des dépenses nettes moyennes annuelles de 5 000 euros.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "En 2024, les personnes seules âgées de 65 ans ou plus consacrent 17,8 % de leurs revenus au logement après déduction des aides, avec des dépenses nettes moyennes annuelles de 5 000 euros.\n\nSOURCES: [insee-ip2128 p.3]",
+    "top_score": 1.0,
+    "margin": 0.0009765625,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Les personnes seules âgées de 65 ans ou plus consacrent 17,8 % de leurs revenus au logement en 2024, après déduction des aides. Leurs dépenses nettes moyennes s’élèvent à 5 000 euros par an.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 23.18
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2128",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2128",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2090",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt5-09",
+   "answer": "Entre 2020 et 2023, 8,2 % de la population était en situation de pauvreté monétaire sans interruption sur quatre ans.\nEntre 2021 et 2024, cette part est passée à 7,2 %.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2129",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "Entre 2020 et 2023, 8,2 % de la population était en situation de pauvreté monétaire sans interruption sur quatre ans.\nEntre 2021 et 2024, cette part est passée à 7,2 %.\n\nSOURCES: [insee-ip2129 p.3]",
+    "top_score": 0.9990234375,
+    "margin": 0.0,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "Entre 2020 et 2023, 8,2 % de la population était en situation de pauvreté monétaire continue sur quatre ans, tandis qu’entre 2021 et 2024, ce taux était de 7,2 %.",
+    "agree": true,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 30.36
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2129",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2104",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2129",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt5-10",
+   "answer": "Au 1er janvier 2024, la Cour des comptes recense 20 502 officines.\nEn 2022, l'Insee en dénombrait 22 700.",
+   "citations": [
+    {
+     "doc_id": "cc-vaccination",
+     "page": 88
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 2
+    }
+   ],
+   "_meta": {
+    "raw": "Au 1er janvier 2024, la Cour des comptes recense **20 502 officines**.\nEn 2022, l'Insee en dénombrait **22 700**.\n\nSOURCES: [cc-vaccination p.88], [insee-ip2036 p.2]",
+    "top_score": 0.99365234375,
+    "margin": 0.28173828125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": "La Cour des comptes recense 20 502 officines au 1er janvier 2024.\n\nRÉPONSE: L'Insee en dénombrait 22 700 officines en 2022.",
+    "agree": true,
+    "third": null,
+    "n_context": 5,
+    "n_tables": 0,
+    "n_charts": 0,
+    "seconds": 23.69
+   },
+   "retrieved": [
+    {
+     "doc_id": "cc-vaccination",
+     "page": 88
+    },
+    {
+     "doc_id": "insee-ip2052",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 44
+    },
+    {
+     "doc_id": "insee-ip2047",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 1
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 8
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 45
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 9
+    },
+    {
+     "doc_id": "cc-vaccination",
+     "page": 52
+    },
+    {
+     "doc_id": "cc-vaccination-synthese",
+     "page": 7
+    },
+    {
+     "doc_id": "insee-ip2036",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt5-11",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.99755859375,
+    "margin": 0.00341796875,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 7.03
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2127",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2127",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2119",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "rt5-12",
+   "answer": "Le salaire net mensuel moyen en euros constants pour les agents de catégorie A des SDIS en 2024 est de 3 543 euros.",
+   "citations": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    }
+   ],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.9326171875,
+    "margin": 0.02783203125,
+    "llm_abstain": false,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "rescue": {
+     "rows_answer": "Le salaire net mensuel moyen en euros constants pour les agents de catégorie A des SDIS en 2024 est de 3 543 euros.",
+     "check": "INTROUVABLE",
+     "ok": false
+    },
+    "agree_inclus": true,
+    "row_check": "Le salaire net mensuel moyen en euros constants pour les agents de catégorie A des SDIS en 2024 est de 3 543 euros.",
+    "seconds": 12.62
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2100",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2101",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 4
+    }
+   ]
+  },
+  {
+   "qid": "rt5-13",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.884765625,
+    "margin": 0.1103515625,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 6,
+    "n_tables": 1,
+    "n_charts": 0,
+    "seconds": 7.83
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2057",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2074",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2116",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2062",
+     "page": 3
+    }
+   ]
+  },
+  {
+   "qid": "rt5-14",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.9951171875,
+    "margin": -0.0048828125,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 5.72
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2100",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 4
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2102",
+     "page": 3
+    },
+    {
+     "doc_id": "insee-ip2066",
+     "page": 1
+    }
+   ]
+  },
+  {
+   "qid": "rt5-15",
+   "answer": "INTROUVABLE",
+   "citations": [],
+   "_meta": {
+    "raw": "INTROUVABLE",
+    "top_score": 0.92431640625,
+    "margin": 0.02880859375,
+    "llm_abstain": true,
+    "unsupported": 0,
+    "verified": null,
+    "quote_ok": null,
+    "variant": "duoXRS",
+    "second": null,
+    "agree": null,
+    "third": null,
+    "n_context": 7,
+    "n_tables": 2,
+    "n_charts": 0,
+    "seconds": 6.84
+   },
+   "retrieved": [
+    {
+     "doc_id": "insee-ip2105",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 53
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 67
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 57
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 81
+    },
+    {
+     "doc_id": "insee-ip2105",
+     "page": 2
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 32
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 2
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 1
+    },
+    {
+     "doc_id": "insee-ip2053",
+     "page": 4
+    },
+    {
+     "doc_id": "cc-rspfp-2026",
+     "page": 14
+    }
+   ]
+  }
+ ]
+}

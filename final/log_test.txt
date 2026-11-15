@@ -1,0 +1,33 @@
+data/test_questions.json : 283 questions
+data/redteam_questions.json : 30 questions
+code : 86acee9 (tag final)
+
+=== [0 min] setup.sh ===
+tesseract OK (français)
+mistralai/Ministral-3-3B-Instruct-2512 : 67 s
+BAAI/bge-m3 : 14 s
+BAAI/bge-reranker-v2-m3 : 14 s
+Qwen/Qwen3-VL-2B-Instruct : 49 s
+setup OK
+numérisé : cc-vaccination-synthese
+
+=== [4 min] run.sh index (v1) ===
+transcription des scans : Qwen/Qwen3-VL-2B-Instruct chargé en 14 s, 34 pages
+transcription des scans : 34 pages en 20.0 min
+tableaux des scans : 19 pages avec tableau transcrit sur 34 ciblées
+indexation terminée en 38.7 min
+
+=== [43 min] run.sh update (v2) ===
+20 nouveaux documents (sur 20)
+mise à jour terminée en 4.4 min
+
+=== [47 min] run.sh answer : test ===
+réponses brutes (avant abstention calibrée) -> /tmp/tmp.JZkC6mcyfg/raw.json
+283 réponses, 139 INTROUVABLE (49%) -> final/predictions_test.json
+
+=== [154 min] run.sh answer : redteam ===
+réponses brutes (avant abstention calibrée) -> /tmp/tmp.iWdSbOAOCz/raw.json
+30 réponses, 17 INTROUVABLE (57%) -> final/predictions_redteam.json
+journal du générateur : 662 appels, 313 questions, max 3 appels/question
+
+=== [163 min] terminé ===
