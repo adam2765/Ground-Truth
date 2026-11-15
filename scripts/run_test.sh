@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Run final officiel (14 nov. 18 h -> 15 nov. 23 h 59), en une seule commande (faisable depuis un téléphone).
-# Code : le commit tagué « final » ; questions : publiées par le mentor sur main après le tag.
+# Run final officiel (repoussé au 16 nov. au soir par le mentor), en une seule commande (faisable depuis un téléphone).
+# Code : le commit tagué « final » ; questions : publiées par le mentor dans data/ du kit officiel.
 # Produit /kaggle/working/final.zip (final/predictions_test.json, final/predictions_redteam.json,
 # final/generator_log.jsonl, log) à envoyer pour qu'il soit poussé dans final/.
 #
@@ -17,8 +17,11 @@ MAIN=$(pwd)
 # le code du tag « final » dans un dossier à part (ce script continue de tourner depuis main)
 rm -rf /tmp/gt_final; git worktree add -q /tmp/gt_final final || { echo "tag « final » introuvable"; exit 1; }
 cd /tmp/gt_final
-for f in data/test_questions.json data/redteam_questions.json; do     # publiés par le mentor sur main après le tag
-  git checkout -q origin/main -- "$f" 2>/dev/null || true
+# Questions publiées par le mentor après le tag : dans le kit officiel (Mathos34/ground-truth-kit, data/),
+# sinon sur main de ce repo.
+git fetch -q https://github.com/Mathos34/ground-truth-kit.git main 2>/dev/null && KIT=FETCH_HEAD || KIT=""
+for f in data/test_questions.json data/redteam_questions.json; do
+  { [ -n "$KIT" ] && git checkout -q "$KIT" -- "$f" 2>/dev/null; } || git checkout -q origin/main -- "$f" 2>/dev/null || true
 done
 for f in data/test_questions.json data/redteam_questions.json; do
   [ -f "$f" ] && echo "$f : $(python -c "import json; d=json.load(open('$f')); print(len(d['questions'] if isinstance(d, dict) else d))") questions" \
